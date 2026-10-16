@@ -1,0 +1,419 @@
+% Bibliography — TrackMB3 (NEW-MB-KERNEL) deep literature review
+% Execution claude-mb3-lit-20261016, 2026-10-16.
+% evidence = F (full-text section read by this worker), S (summarising fetch / secondary full-text quote),
+%            A (abstract or snippet), I (identity verified only; content not read).
+% verified = how the identifier was checked (arXiv API, Crossref, OpenAlex).
+% Keys reused from sources/ bibliographies where the same work appears there.
+
+% ---------------- Core: kernel / distance / cross-covariance tests under LRD ----------------
+
+@article{betken2021ldr,
+  author = {Betken, Annika and Dehling, Herold},
+  title = {Test for independence of long-range dependent time series using distance covariance},
+  year = {2021}, eprint = {2107.03041v3}, archivePrefix = {arXiv},
+  note = {evidence=F (Thm 2.2, Rem 2.1, Cor 2.1, Thm 2.3, Thm 2.4, Sec 4); verified=arXiv API (v3 27 Jan 2026); PDF header "Submitted to Bernoulli"; no journal ref}
+}
+@article{betken2024bootstrap,
+  author = {Betken, Annika and Dehling, Herold and Kroll, Marius},
+  title = {A Bootstrap Test for Independence of Time Series Based on the Distance Covariance},
+  year = {2021}, eprint = {2112.14091v3}, archivePrefix = {arXiv},
+  note = {evidence=A; verified=arXiv API (v3 5 Feb 2024); alpha-mixing only, no LRD}
+}
+@article{dehling2017twosample,
+  author = {Dehling, Herold and Rooch, Aeneas and Wendler, Martin},
+  title = {Two-sample {U}-statistic processes for long-range dependent data},
+  journal = {Statistics}, volume = {51}, number = {1}, pages = {84--104}, year = {2017},
+  doi = {10.1080/02331888.2016.1270542}, eprint = {1404.0551},
+  note = {evidence=F (Sec 2, Thm 2.1, Hermite rank definition); verified=Crossref; same work as sources key dehling2014twosample}
+}
+@article{zhai2026ggmlong,
+  author = {Zhai, Percy S. and Zhong, Ping-Shou and Wu, Wei Biao},
+  title = {High-dimensional Gaussian Graphical Model Testing for Long-Memory Time Series},
+  year = {2026}, eprint = {2609.30565v1}, archivePrefix = {arXiv},
+  note = {evidence=F (Cond 1 beta>3/4, Sec 4.1, Sec 6); verified=arXiv API (24 Sep 2026)}
+}
+@article{zhai2026simultaneous,
+  author = {Zhai, Percy S. and Kolar, Mladen and Wu, Wei Biao},
+  title = {Simultaneous Inference for Covariance and Precision Matrices of Long-Range Dependent Time Series},
+  journal = {IEEE Transactions on Information Theory}, volume = {72}, number = {6}, pages = {4246--4296}, year = {2026},
+  doi = {10.1109/TIT.2026.3685246}, eprint = {2604.16219v1},
+  note = {evidence=F (Cond 1, Sec II, scope statement, sims beta=0.55); verified=Crossref + arXiv API (17 Apr 2026)}
+}
+@article{ghoshal2026rkhs,
+  author = {Ghoshal, Deep and Shao, Xiaofeng},
+  title = {Resampling-free inference for time series via {RKHS} embedding},
+  journal = {Electronic Journal of Statistics}, year = {2026}, doi = {10.1214/26-EJS2488},
+  eprint = {2601.13468v2},
+  note = {evidence=F (Assumption 1, Prop 1, Thm 3.1, Sec 5); verified=Crossref (EJS, same title) + arXiv API; v2 says strong (alpha) mixing, v1 abstract said absolute regularity}
+}
+@article{dizcastro2026hsic,
+  author = {Diz-Castro, Daniel and Febrero-Bande, Manuel and Gonz{\'a}lez-Manteiga, Wenceslao},
+  title = {Kernel-based independence and mean independence tests for weakly dependent data},
+  year = {2026}, eprint = {2604.28104v2}, archivePrefix = {arXiv},
+  note = {evidence=F (scan of assumptions); verified=arXiv API (v2 11 Oct 2026); L1-NED on beta-mixing; no LRD}
+}
+@inproceedings{chwialkowski2014wild,
+  author = {Chwialkowski, Kacper and Sejdinovic, Dino and Gretton, Arthur},
+  title = {A Wild Bootstrap for Degenerate Kernel Tests},
+  booktitle = {Advances in Neural Information Processing Systems 27}, year = {2014}, eprint = {1408.5404},
+  note = {evidence=F (eq. 3-4, Table 1, Sec 5 text on artificial degeneration); verified=arXiv/NeurIPS proceedings page}
+}
+@inproceedings{chwialkowski2014random,
+  author = {Chwialkowski, Kacper and Gretton, Arthur},
+  title = {A Kernel Independence Test for Random Processes},
+  booktitle = {Proceedings of the 31st International Conference on Machine Learning (PMLR 32)}, year = {2014}, eprint = {1402.4501},
+  note = {evidence=A (via search); phi- and beta-mixing}
+}
+@article{shao2009portmanteau,
+  author = {Shao, Xiaofeng},
+  title = {A generalized portmanteau test for independence between two stationary time series},
+  journal = {Econometric Theory}, volume = {25}, number = {1}, pages = {195--210}, year = {2009},
+  doi = {10.1017/S0266466608090063}, eprint = {0810.2276},
+  note = {evidence=F (Sec 1, Assumptions 2.1-2.9, Thms 2.1-2.2); verified=Crossref}
+}
+@article{tsay2000spurious,
+  author = {Tsay, Wen-Jen and Chung, Ching-Fan},
+  title = {The spurious regression of fractionally integrated processes},
+  journal = {Journal of Econometrics}, volume = {96}, number = {1}, pages = {155--182}, year = {2000},
+  doi = {10.1016/S0304-4076(99)00056-1},
+  note = {evidence=S (verbatim quote of p.155 read in ventosa2022spurious, F); verified=Crossref}
+}
+@article{ventosa2022spurious,
+  author = {Ventosa-Santaul{\`a}ria, Daniel and Vera-Vald{\'e}s, J. Eduardo and Lasak, Katarzyna and Ram{\'i}rez-Vargas, Ricardo},
+  title = {Spurious multivariate regressions under fractionally integrated processes},
+  journal = {Communications in Statistics -- Theory and Methods}, volume = {51}, number = {7}, pages = {2034--2056}, year = {2022},
+  doi = {10.1080/03610926.2020.1758945},
+  note = {evidence=F (Sec 1 and Thm 1 discussion; AAU accepted manuscript); verified=DOI printed on repository cover}
+}
+@article{robinson1997regression,
+  author = {Robinson, Peter M. and Hidalgo, F. Javier},
+  title = {Time series regression with long-range dependence},
+  journal = {The Annals of Statistics}, volume = {25}, number = {1}, pages = {77--104}, year = {1997},
+  doi = {10.1214/aos/1034276622},
+  note = {evidence=A (abstract via OpenAlex); verified=Crossref; full text not reached (Project Euclid fetch empty)}
+}
+@article{ernst2025fbmindep,
+  author = {Ernst, Philip A. and Viens, Frederi G. and Yan, Shuo},
+  title = {Tests of independence for pairs of paths of non-stationary Gaussian processes},
+  year = {2025}, eprint = {2510.23563}, archivePrefix = {arXiv},
+  note = {evidence=A; verified=arXiv API; only citer of betken2021ldr found by Semantic Scholar}
+}
+@article{zhai2026coverage,
+  author = {Zhai, Percy S. and Cheng, Maggie and Wu, Wei Biao},
+  title = {Conformal Coverage of Time Series: Validity and Inference},
+  year = {2026}, eprint = {2609.33868v1}, archivePrefix = {arXiv},
+  note = {evidence=F (Assumption 3, Thms 5-7, Study 3 Table 2); verified=arXiv API (27 Sep 2026)}
+}
+@article{zhai2026splitconformal,
+  author = {Zhai, Percy S. and Cheng, Maggie and Wu, Wei Biao},
+  title = {Valid and Efficient Split Conformal Regression for Time Series},
+  year = {2026}, eprint = {2609.33866v1}, archivePrefix = {arXiv},
+  note = {evidence=A; verified=arXiv API}
+}
+@article{bauer2012persistence,
+  author = {Bauer, Dietmar and Maynard, Alex},
+  title = {Persistence-robust surplus-lag {G}ranger causality testing},
+  journal = {Journal of Econometrics}, year = {2012},
+  note = {evidence=R (reused from sources/, A there); not re-read}
+}
+
+% ---------------- Calibration under LRD: SN, subsampling, block bootstrap, wild bootstrap ----------------
+
+@article{shao2010sn,
+  author = {Shao, Xiaofeng},
+  title = {A self-normalized approach to confidence interval construction in time series},
+  journal = {Journal of the Royal Statistical Society: Series B}, volume = {72}, number = {3}, pages = {343--366}, year = {2010},
+  doi = {10.1111/j.1467-9868.2009.00737.x},
+  note = {evidence=A (OpenAlex); verified=Crossref (72(3):343-366)}
+}
+@article{shao2011lrdcp,
+  author = {Shao, Xiaofeng},
+  title = {A simple test of changes in mean in the possible presence of long-range dependence},
+  journal = {Journal of Time Series Analysis}, volume = {32}, number = {6}, pages = {598--606}, year = {2011},
+  doi = {10.1111/j.1467-9892.2010.00717.x},
+  note = {evidence=A (abstract) + S (dependence of limit on H stated in bai2016snbs, F); full text paywalled}
+}
+@article{shao2015review,
+  author = {Shao, Xiaofeng},
+  title = {Self-normalization for time series: a review of recent developments},
+  journal = {Journal of the American Statistical Association}, volume = {110}, number = {512}, pages = {1797--1817}, year = {2015},
+  doi = {10.1080/01621459.2015.1050493},
+  note = {evidence=A (abstract lists "inference for long memory time series"); verified=Crossref (110(512):1797-1817); full text not reached}
+}
+@article{betken2016sn,
+  author = {Betken, Annika},
+  title = {Testing for change-points in long-range dependent time series by means of a self-normalized {W}ilcoxon test},
+  journal = {Journal of Time Series Analysis}, volume = {37}, number = {6}, pages = {785--809}, year = {2016},
+  doi = {10.1111/jtsa.12187}, eprint = {1403.0265},
+  note = {evidence=F (Sec 2, Table 1 critical values by H, Table 2 sizes); verified=Crossref}
+}
+@article{betken2018subsampling,
+  author = {Betken, Annika and Wendler, Martin},
+  title = {Subsampling for general statistics under long range dependence},
+  journal = {Statistica Sinica}, year = {2018}, doi = {10.5705/ss.202015.0435}, eprint = {1509.05720},
+  note = {evidence=F (Sec 1 literature review, block-length condition, Sec 3); verified=Crossref}
+}
+@article{bai2016snbs,
+  author = {Bai, Shuyang and Taqqu, Murad S. and Zhang, Ting},
+  title = {A unified approach to self-normalized block sampling},
+  journal = {Stochastic Processes and their Applications}, volume = {126}, number = {8}, pages = {2465--2493}, year = {2016},
+  doi = {10.1016/j.spa.2016.02.007}, eprint = {1512.00820},
+  note = {evidence=F (Sec 1-2, scope of Thm 3.1/3.2, Rosenblatt example); verified=Crossref}
+}
+@article{bai2017resampling,
+  author = {Bai, Shuyang and Taqqu, Murad S.},
+  title = {On the validity of resampling methods under long memory},
+  journal = {The Annals of Statistics}, volume = {45}, number = {6}, pages = {2365--2399}, year = {2017},
+  doi = {10.1214/16-AOS1524}, eprint = {1512.00819},
+  note = {evidence=A; verified=Crossref}
+}
+@article{tewes2018blockbootstrap,
+  author = {Tewes, Johannes},
+  title = {Block bootstrap for the empirical process of long-range dependent data},
+  journal = {Journal of Time Series Analysis}, volume = {39}, number = {1}, pages = {28--53}, year = {2018},
+  doi = {10.1111/jtsa.12256}, eprint = {1601.01122},
+  note = {evidence=A; verified=Crossref}
+}
+@article{zhang2022optimalblock,
+  author = {Zhang, Qihao and Lahiri, Soumendra N. and Nordman, Daniel J.},
+  title = {On optimal block resampling for {G}aussian-subordinated long-range dependent processes},
+  journal = {The Annals of Statistics}, volume = {50}, number = {6}, pages = {3619--3646}, year = {2022},
+  doi = {10.1214/22-AOS2242}, eprint = {2208.01713},
+  note = {evidence=A; verified=Crossref}
+}
+@article{zhang2013blocksampling,
+  author = {Zhang, Ting and Ho, Hwai-Chung and Wendler, Martin and Wu, Wei Biao},
+  title = {Block sampling under strong dependence},
+  journal = {Stochastic Processes and their Applications}, volume = {123}, number = {6}, pages = {2323--2339}, year = {2013},
+  doi = {10.1016/j.spa.2013.02.006},
+  note = {evidence=I (content known only via citing F sources zhai2026coverage, bai2016snbs)}
+}
+@article{hall1998samplingwindow,
+  author = {Hall, Peter and Jing, Bing-Yi and Lahiri, Soumendra Nath},
+  title = {On the sampling window method for long-range dependent data},
+  journal = {Statistica Sinica}, volume = {8}, number = {4}, pages = {1189--1204}, year = {1998},
+  note = {evidence=I (reference list of betken2018subsampling, F); no DOI. Corrects the hand-off's "Hall, Horowitz & Jing (1998)"}
+}
+@article{nordman2005samplingwindow,
+  author = {Nordman, Daniel J. and Lahiri, Soumendra N.},
+  title = {Validity of the sampling window method for long-range dependent linear processes},
+  journal = {Econometric Theory}, volume = {21}, number = {6}, year = {2005}, doi = {10.1017/S0266466605050541},
+  note = {evidence=I; verified=Crossref}
+}
+@article{jach2012subsampling,
+  author = {Jach, Agnieszka and McElroy, Tucker and Politis, Dimitris N.},
+  title = {Subsampling inference for the mean of heavy-tailed long-memory time series},
+  journal = {Journal of Time Series Analysis}, volume = {33}, number = {1}, pages = {96--111}, year = {2012},
+  doi = {10.1111/j.1467-9892.2011.00742.x},
+  note = {evidence=A (OpenAlex); verified=Crossref; corrigendum JTSA 37(5):713-720 (2016), doi 10.1111/jtsa.12191}
+}
+@article{bertail1999unknownrate,
+  author = {Bertail, Patrice and Politis, Dimitris N. and Romano, Joseph P.},
+  title = {On subsampling estimators with unknown rate of convergence},
+  journal = {Journal of the American Statistical Association}, volume = {94}, number = {446}, pages = {569--579}, year = {1999},
+  doi = {10.1080/01621459.1999.10474151},
+  note = {evidence=A (OpenAlex); verified=Crossref}
+}
+@article{mcelroy2007sn,
+  author = {McElroy, Tucker and Politis, Dimitris N.},
+  title = {Self-normalization for heavy-tailed time series with long memory},
+  journal = {Statistica Sinica}, volume = {17}, number = {1}, year = {2007},
+  note = {evidence=I (reference list of betken2018subsampling)}
+}
+@article{lahiri1993mbb,
+  author = {Lahiri, Soumendra Nath},
+  title = {On the moving block bootstrap under long range dependence},
+  journal = {Statistics \& Probability Letters}, volume = {18}, number = {5}, pages = {405--413}, year = {1993},
+  doi = {10.1016/0167-7152(93)90035-H},
+  note = {evidence=I + S (content as described in betken2018subsampling: MBB "might fail" under LRD)}
+}
+@article{kim2011blockbootstrap,
+  author = {Kim, Young Min and Nordman, Daniel J.},
+  title = {Properties of a block bootstrap under long-range dependence},
+  journal = {Sankhya A}, volume = {73}, number = {1}, pages = {79--109}, year = {2011},
+  doi = {10.1007/s13171-011-0003-3},
+  note = {evidence=I (identity only; no abstract retrieved; content not checked)}
+}
+@article{leucht2013dwb,
+  author = {Leucht, Anne and Neumann, Michael H.},
+  title = {Dependent wild bootstrap for degenerate {U}- and {V}-statistics},
+  journal = {Journal of Multivariate Analysis}, volume = {117}, pages = {257--280}, year = {2013},
+  doi = {10.1016/j.jmva.2013.03.003},
+  note = {evidence=I + S (its Sec 5 finding on centred multipliers as reported in chwialkowski2014wild, F)}
+}
+@article{shao2010dwb,
+  author = {Shao, Xiaofeng},
+  title = {The dependent wild bootstrap},
+  journal = {Journal of the American Statistical Association}, volume = {105}, number = {489}, pages = {218--235}, year = {2010},
+  doi = {10.1198/jasa.2009.tm08744},
+  note = {evidence=A (OpenAlex)}
+}
+@article{peligrad2012snlinear,
+  author = {Peligrad, Magda and Sang, Hailin},
+  title = {Asymptotic properties of self-normalized linear processes with long memory},
+  year = {2010}, eprint = {1006.1572}, archivePrefix = {arXiv},
+  note = {evidence=A; verified=arXiv API}
+}
+@article{betken2017lmsv,
+  author = {Betken, Annika and Kulik, Rafa{\l}},
+  title = {Testing for change in stochastic volatility with long range dependence},
+  year = {2017}, eprint = {1706.06351}, archivePrefix = {arXiv},
+  note = {evidence=F (Sec 1 and Sec 3 text on Shao 2011 and SN); verified=arXiv API}
+}
+@article{betken2022rank,
+  author = {Betken, Annika and Wendler, Martin},
+  title = {Rank-based change-point analysis for long-range dependent time series},
+  journal = {Bernoulli}, volume = {28}, number = {4}, pages = {2209--2233}, year = {2022},
+  doi = {10.3150/21-BEJ1416}, eprint = {2004.06574},
+  note = {evidence=A; verified=Crossref}
+}
+@article{tewes2017localalt,
+  author = {Tewes, Johannes},
+  title = {Change-point tests under local alternatives for long-range dependent processes},
+  journal = {Electronic Journal of Statistics}, volume = {11}, number = {1}, pages = {2461--2498}, year = {2017},
+  doi = {10.1214/17-EJS1285}, eprint = {1506.07296},
+  note = {evidence=A (search snippet: covers change of Hermite rank)}
+}
+
+% ---------------- Hermite-rank limit theory for U- and V-statistics ----------------
+
+@article{dehling1989empirical,
+  author = {Dehling, Herold and Taqqu, Murad S.},
+  title = {The empirical process of some long-range dependent sequences with an application to {U}-statistics},
+  journal = {The Annals of Statistics}, volume = {17}, number = {4}, pages = {1767--1783}, year = {1989},
+  doi = {10.1214/aos/1176347394}, note = {evidence=I; verified=Crossref}
+}
+@article{dehling1991bivariate,
+  author = {Dehling, Herold and Taqqu, Murad S.},
+  title = {Bivariate symmetric statistics of long-range dependent observations},
+  journal = {Journal of Statistical Planning and Inference}, volume = {28}, number = {2}, pages = {153--165}, year = {1991},
+  doi = {10.1016/0378-3758(91)90023-8}, note = {evidence=I; verified=Crossref}
+}
+@article{hsing2004weighted,
+  author = {Hsing, Tailen and Wu, Wei Biao},
+  title = {On weighted {U}-statistics for stationary processes},
+  journal = {The Annals of Probability}, volume = {32}, number = {2}, pages = {1600--1631}, year = {2004},
+  doi = {10.1214/009117904000000333}, note = {evidence=I; verified=Crossref}
+}
+@article{beutner2014cma,
+  author = {Beutner, Eric and Z{\"a}hle, Henryk},
+  title = {Continuous mapping approach to the asymptotics of {U}- and {V}-statistics},
+  journal = {Bernoulli}, volume = {20}, number = {2}, pages = {846--877}, year = {2014},
+  doi = {10.3150/13-BEJ508}, note = {evidence=I + S (betken2018subsampling: U-statistic limits can mix Hermite ranks)}
+}
+@article{levyleduc2011uprocess,
+  author = {L{\'e}vy-Leduc, C{\'e}line and Boistard, H{\'e}l{\`e}ne and Moulines, Eric and Taqqu, Murad S. and Reisen, Valderio A.},
+  title = {Asymptotic properties of {U}-processes under long-range dependence},
+  journal = {The Annals of Statistics}, volume = {39}, number = {3}, pages = {1399--1426}, year = {2011},
+  doi = {10.1214/10-AOS867}, note = {evidence=I; verified=Crossref (five authors)}
+}
+@article{breuer1983clt,
+  author = {Breuer, P{\'e}ter and Major, P{\'e}ter},
+  title = {Central limit theorems for non-linear functionals of {G}aussian fields},
+  journal = {Journal of Multivariate Analysis}, volume = {13}, number = {3}, pages = {425--441}, year = {1983},
+  doi = {10.1016/0047-259X(83)90019-2}, note = {evidence=I; verified=Crossref}
+}
+@article{dobrushin1979nclt,
+  author = {Dobrushin, Roland L. and Major, P{\'e}ter},
+  title = {Non-central limit theorems for non-linear functionals of {G}aussian fields},
+  journal = {Zeitschrift f{\"u}r Wahrscheinlichkeitstheorie und verwandte Gebiete}, volume = {50}, number = {1}, pages = {27--52}, year = {1979},
+  doi = {10.1007/BF00535673}, note = {evidence=I; verified=Crossref}
+}
+@article{taqqu1979hermite,
+  author = {Taqqu, Murad S.},
+  title = {Convergence of integrated processes of arbitrary {H}ermite rank},
+  journal = {Zeitschrift f{\"u}r Wahrscheinlichkeitstheorie und verwandte Gebiete}, volume = {50}, number = {1}, pages = {53--83}, year = {1979},
+  doi = {10.1007/BF00535674}, note = {evidence=I; verified=Crossref}
+}
+@article{arcones1994vector,
+  author = {Arcones, Miguel A.},
+  title = {Limit theorems for nonlinear functionals of a stationary {G}aussian sequence of vectors},
+  journal = {The Annals of Probability}, volume = {22}, number = {4}, pages = {2242--2274}, year = {1994},
+  doi = {10.1214/aop/1176988503}, note = {evidence=I; verified=Crossref}
+}
+@article{bai2013multivariate,
+  author = {Bai, Shuyang and Taqqu, Murad S.},
+  title = {Multivariate limit theorems in the context of long-range dependence},
+  journal = {Journal of Time Series Analysis}, volume = {34}, number = {6}, pages = {717--743}, year = {2013},
+  doi = {10.1111/jtsa.12046}, note = {evidence=A (OpenAlex); verified=Crossref}
+}
+@article{bai2018instability,
+  author = {Bai, Shuyang and Taqqu, Murad S.},
+  title = {How the instability of ranks under long memory affects large-sample inference},
+  journal = {Statistical Science}, volume = {33}, number = {1}, pages = {96--116}, year = {2018},
+  doi = {10.1214/17-STS633}, eprint = {1610.00690}, note = {evidence=A; verified=Crossref + arXiv API}
+}
+@article{bai2019sensitivity,
+  author = {Bai, Shuyang and Taqqu, Murad S.},
+  title = {Sensitivity of the {H}ermite rank},
+  journal = {Stochastic Processes and their Applications}, volume = {129}, number = {3}, pages = {822--840}, year = {2019},
+  doi = {10.1016/j.spa.2018.03.020}, note = {evidence=I; verified=Crossref}
+}
+
+% ---------------- Prewhitening, AR approximation, CI / Granger ----------------
+
+@article{chen2004portmanteau,
+  author = {Chen, Willa W. and Deo, Rohit S.},
+  title = {A generalized portmanteau goodness-of-fit test for time series models},
+  journal = {Econometric Theory}, volume = {20}, number = {2}, pages = {382--416}, year = {2004},
+  doi = {10.1017/S0266466604202067}, note = {evidence=I + S (described in shao2009portmanteau, F)}
+}
+@article{haugh1976independence,
+  author = {Haugh, Larry D.},
+  title = {Checking the independence of two covariance-stationary time series: a univariate residual cross-correlation approach},
+  journal = {Journal of the American Statistical Association}, volume = {71}, number = {354}, pages = {378--385}, year = {1976},
+  doi = {10.1080/01621459.1976.10480353}, note = {evidence=I; verified=Crossref}
+}
+@article{hong1996independence,
+  author = {Hong, Yongmiao},
+  title = {Testing for independence between two covariance stationary time series},
+  journal = {Biometrika}, volume = {83}, number = {3}, pages = {615--625}, year = {1996},
+  doi = {10.1093/biomet/83.3.615}, note = {evidence=A (search snippet); verified=Crossref}
+}
+@article{poskitt2007ar,
+  author = {Poskitt, D. S.},
+  title = {Autoregressive approximation in nonstandard situations: the fractionally integrated and non-invertible cases},
+  journal = {Annals of the Institute of Statistical Mathematics}, volume = {59}, number = {4}, pages = {697--725}, year = {2007},
+  doi = {10.1007/s10463-006-0074-4}, note = {evidence=I; verified=Crossref; content not read}
+}
+@article{bhansali2006far,
+  author = {Bhansali, R. J. and Giraitis, L. and Kokoszka, P. S.},
+  title = {Estimation of the memory parameter by fitting fractionally differenced autoregressive models},
+  journal = {Journal of Multivariate Analysis}, volume = {97}, number = {10}, pages = {2101--2130}, year = {2006},
+  doi = {10.1016/j.jmva.2006.01.003}, note = {evidence=I + S (used in shao2009portmanteau, F)}
+}
+@article{shi2026gtcm,
+  author = {Shi, Jieru and Shah, Rajen D.},
+  title = {Conditional Independence Testing in Time Series},
+  year = {2026}, eprint = {2609.20772}, archivePrefix = {arXiv},
+  note = {evidence=A; verified=arXiv API; weak dependence}
+}
+@article{shah2020gcm,
+  author = {Shah, Rajen D. and Peters, Jonas},
+  title = {The hardness of conditional independence testing and the generalised covariance measure},
+  journal = {The Annals of Statistics}, volume = {48}, number = {3}, pages = {1514--1538}, year = {2020}, doi = {10.1214/19-AOS1857},
+  note = {evidence=A (search snippet); i.i.d.}
+}
+
+% ---------------- Finance memory (H9) ----------------
+
+@article{sato2023lmf,
+  author = {Sato, Yuki and Kanazawa, Kiyoshi},
+  title = {Can we infer microscopic financial information from the long memory in market-order flow?: a quantitative test of the {L}illo-{M}ike-{F}armer model},
+  journal = {Physical Review Letters}, volume = {131}, pages = {197401}, year = {2023},
+  doi = {10.1103/PhysRevLett.131.197401}, eprint = {2301.13505},
+  note = {evidence=A (abstract: gamma approx alpha-1) + S (search summary: alpha near 3/2); numeric gamma not read in source}
+}
+@article{toth2015persistent,
+  author = {T{\'o}th, Bence and Palit, Imon and Lillo, Fabrizio and Farmer, J. Doyne},
+  title = {Why is equity order flow so persistent?},
+  journal = {Journal of Economic Dynamics and Control}, volume = {51}, pages = {218--239}, year = {2015},
+  doi = {10.1016/j.jedc.2014.10.007}, eprint = {1108.1632},
+  note = {evidence=A (abstract) + failed numeric extraction from full text (pdftotext xref error); exponent not read}
+}
+@misc{hwu2026didlongmemory,
+  author = {Hwu, S.-T. and Tsay, Wen-Jen},
+  title = {Aggregation-Induced Long Memory and Spurious Inference in Difference-in-Differences},
+  year = {2026}, howpublished = {SSRN 7546859},
+  note = {evidence=A (Google Scholar title/byline only); not verified further; adjacent}
+}

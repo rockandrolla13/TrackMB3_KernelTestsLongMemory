@@ -1,0 +1,27 @@
+question: "Where does inference for kernel tests, double-machine-learning causal intervals and Hawkes Granger tests break as memory grows, and does the break follow the H = 3/4 boundary in financial data?"
+review_route: broad_literature
+source_material:
+  - "Author 2026-10-15: keen on this direction; asked for it as a clear research track"
+  - "runs/JOB-NEW-MKC-LIT-20261015/synthesis.md sha256 8bb461a17adf222509d6725c55a5bc35221589a7b1e000c45aba767225784d36, direction 1 (breakdown map)"
+  - "runs/JOB-NEW-MKC-LIT-20261015/memory-kernel/ (D1, D2, D5) and memory-causal/ (C1, C2): field-map, gap-map, directions, bibliography"
+  - "Tracks E (CL-E4, G5), K, F-CAUSAL, B2-COMP status files, read-only, for overlap"
+search_scope: |
+  Pre-emption and design check before any simulation. (1) Close the earlier scan's reading gap:
+  search SSRN, Google Scholar and econometrics / probability journals (J. Econometrics, Econometric
+  Theory, JTSA, Bernoulli, AoS, EJS) for size or coverage studies of kernel independence /
+  two-sample / CI tests, DML or AIPW intervals, and Hawkes or point-process Granger tests under
+  long-range dependence, fractional or near-critical dynamics. (2) Verify the H = 3/4 boundary
+  claims (Betken-Dehling 2107.03041; Zhai-Zhong-Wu 2609.30565) at theorem level and state exactly
+  which statistics they cover; say whether extending them to HSIC/MMD and DML scores is direct.
+  (3) Check whether the C1 decomposition (memory enters a DML/AIPW score only through effect
+  heterogeneity in a long-memory state) is stated anywhere. (4) Collect published H / d estimates for
+  financial series (order signs, volume, spreads, realised volatility, trade durations) with sources.
+  (5) Propose a fixed simulation design (processes, H grid, statistics, calibrations, sample sizes,
+  reps, kill criteria) for author approval; do not run it.
+selection_rules: |
+  Theorem-level or simulation-study sources; label F / S / A; verify identifiers; keep contrary
+  results; a bounded scan cannot establish novelty.
+resource_limit: "One worker session; screen <=60 records, extract <=20, full-text reads <=12; no data, no simulation runs; job directory only."
+stopping_criterion: "Stop early if a source already maps size/coverage across H for these methods; otherwise when (1)-(5) are written or at budget."
+expected_outputs:
+  - "pre-emption.md, boundary-theorems.md, finance-memory-estimates.md, simulation-design.md (proposed, not run), search-log.md, bibliography.bib, handoff.md, events.jsonl"

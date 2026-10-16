@@ -1,0 +1,21 @@
+question: "Where do kernel two-sample, independence and conditional-independence tests (MMD, HSIC, distance covariance) lose size under long memory, and does the break follow the Hermite-rank map on financial-type series?"
+review_route: broad_literature
+source_material:
+  - "/media/ak/10E1026C4FA6006E/GitRepos/TrackMB3_KernelTestsLongMemory/FINDINGS.md and /media/ak/10E1026C4FA6006E/GitRepos/TrackMB3_KernelTestsLongMemory/README.md"
+  - "/media/ak/10E1026C4FA6006E/GitRepos/TrackMB3_KernelTestsLongMemory/sources/ (copied JOB-NEW-MKC-LIT-20261015 and JOB-NEW-MEMORY-BOUNDARY-LIT-20261015 field maps, gap maps, theorems, bibliographies)"
+  - "/media/ak/10E1026C4FA6006E/GitRepos/TrackMB3_KernelTestsLongMemory/experiments/ (copied simulation outputs)"
+  - "/media/ak/10E1026C4FA6006E/GitRepos/TrackMB3_KernelTestsLongMemory/hypotheses/ (written first by Agent 1; Agent 2 starts from it)"
+search_scope: |
+  Three agents. Agent 1 writes the hypotheses and claims this track should investigate (hypotheses/).
+  Agent 3 scopes the first exploratory experiments in <=200 words (scoping/). Agent 2 takes Agent 1's
+  hand-off and runs a deep literature review with the deep-research skill (lit-review mode; systematic-
+  review mode with screening and a PRISMA flow where the evidence base allows), plus a gap analysis
+  against the hypotheses, then writes a summary with the ars-3w skill (literature/). Close the earlier
+  scans' reading gap: SSRN, Google Scholar, econometrics, statistics and probability journals.
+selection_rules: |
+  Label every source F (full-text section read), S (summarising fetch), A (abstract). Verify
+  identifiers. Keep contrary results and pre-emption risks. A bounded scan cannot establish novelty.
+resource_limit: "Agents 1 and 3: one session each, reading only. Agent 2: one session; screen <=120 records, extract <=40, full-text <=20. No data, no simulations, no downloads beyond papers. All writes inside /media/ak/10E1026C4FA6006E/GitRepos/TrackMB3_KernelTestsLongMemory only."
+stopping_criterion: "Stop when hypotheses, scoping note, review, gap analysis and summary are written, or at budget."
+expected_outputs:
+  - "hypotheses/hypotheses-and-claims.md, scoping/first-experiments.md, literature/review.md, literature/gap-analysis.md, literature/summary-3w.md, literature/search-log.md, literature/bibliography.bib, events.jsonl per agent"

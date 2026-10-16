@@ -1,0 +1,63 @@
+question: "Where do memory (long-range dependence, self-excitation, rough or fractional dynamics), kernel methods and causal inference for time series meet, and what is open there for financial data?"
+review_route: broad_literature
+source_material:
+  - "Author request 2026-10-15: memory effects in time series, kernels, causal inference, ideally their intersection"
+  - "research_assistant docs/topics/conformal_causal_fin_ts/ LIT_REVIEW 3bb4e722..., GAP_ANALYSIS 1e052a8d..., S2, S3, S5, S8, DEVILS_ADVOCATE, VERIFICATION (read first, reuse)"
+  - "research_assistant docs/topics/track_e_kernels_causality/ LIT_REVIEW c13549c4..., GAP_ANALYSIS 5ba91915..., E1, E2 (read first, reuse)"
+  - "ResearchHarness programme/catalog.yaml tracks E, J, B1, B2-COMP, B2-HTE, F-CAUSAL, F-KERNEL, K and their status files (read-only, for overlap labels)"
+  - "Closed Track A jobs runs/JOB-A-HAWKES-CHECK, runs/JOB-A-P1-LITGAP-20261013 (Hawkes and mixing leads)"
+search_scope: |
+  Job question:
+  Author request 2026-10-15: understand the broader literature and where the gaps are, around
+  memory effects in time-series data, kernels, and causal inference, ideally their intersection.
+  Produce a map of the field, a gap map tied to the author's interests, and candidate directions,
+  marked against existing programme tracks so nothing is duplicated.
+
+  Memory scope:
+  "Memory" means dependence beyond geometric (short) mixing: long-range dependence and
+  fractional processes (ARFIMA, fractional Brownian/Gaussian noise, Hurst exponent), rough
+  volatility, self-exciting point processes (Hawkes, near-critical branching, power-law kernels),
+  propagator / transient-impact kernels, and non-mixing or slowly mixing regimes. Short-memory
+  (geometric beta/alpha-mixing) results are the baseline that breaks.
+
+  Workstreams (one worker each; coordinator writes the intersection synthesis):
+  memory-causal: |
+  Causal inference with memory: identification and estimation of causal effects in time series
+  under long memory or self-excitation (potential-outcome time series, sequential ignorability,
+  marginal structural models, DML / orthogonal learning under dependence, proxy / negative-control
+  methods, Granger and transfer-entropy style causality, interventions on Hawkes processes,
+  causal discovery for point processes); what guarantees need mixing and what survives long
+  memory; finance and microstructure applications (order-flow impact, policy changes).
+  memory-kernel: |
+  Kernels with memory: kernel two-sample / independence tests (MMD, HSIC, kernel CI tests)
+  under dependence and long memory; kernel mean embeddings and conditional embeddings for
+  time series; signature and path kernels; kernel and RKHS methods for Hawkes / point-process
+  kernels and propagators; kernel-based conformal prediction under dependence; kernel causal
+  methods (kernel proxy, kernel IV, kernel treatment effects) and their dependence assumptions.
+  intersection: |
+  Coordinator synthesis from both: results or open problems that need all three - e.g. kernel
+  causal estimators or tests whose validity rests on mixing that fails under long memory or
+  near-critical self-excitation; kernel-based causal discovery for self-exciting or rough
+  processes; and what an empirical finance study at the intersection would need.
+
+  Reuse first:
+  Existing programme reviews (read first, cite, do not redo): research_assistant
+  docs/topics/conformal_causal_fin_ts/ (LIT_REVIEW 3bb4e722..., GAP_ANALYSIS 1e052a8d...,
+  sections S2 conformal-dependence, S3 causal time series, S8 point processes, S5 adjacent,
+  DEVILS_ADVOCATE, VERIFICATION); docs/topics/track_e_kernels_causality/ (LIT_REVIEW c13549c4...,
+  GAP_ANALYSIS 5ba91915..., E1 kernel tests under dependence, E2 kernel causal discovery);
+  programme/catalog.yaml tracks E, J, B1, B2-COMP, B2-HTE, F-CAUSAL, F-KERNEL, K and their
+  status files (read-only); closed ResearchHarness jobs on Track A (Hawkes check, LITGAP) for
+  memory/Hawkes leads. The new scan updates these, especially 2025-01-01 to 2026-10-15, and fills
+  the long-memory angle they treat least.
+
+selection_rules: |
+  Theorem-level or method papers and empirical studies; label every source F (full text section
+  read), S (summarising fetch) or A (abstract). Verify identifiers. Keep contrary results and
+  pre-emption risks. A bounded scan cannot establish novelty; do not infer a gap from unsuccessful
+  searching. For each gap say which existing track (if any) already owns or overlaps it.
+resource_limit: "Two parallel workers, one per workstream, one session each. Each: screen <=70 records, extract <=25, full-text reads <=12. No data, no experiments, no downloads beyond papers. Each worker writes only its subdirectory; coordinator writes the synthesis."
+stopping_criterion: "Stop when each workstream has its field map, gap map with track-overlap labels and evidence classes, and 3-5 candidate directions; or at budget."
+expected_outputs:
+  - "per workstream: field-map.md (main lines of work, key results and assumptions), gap-map.md (open / contested / closed, track overlap), directions.md (3-5 candidates with cheapest decisive check), search-log.md, bibliography.bib, handoff.md, events.jsonl"
+  - "coordinator: synthesis.md - intersection map, ranked directions against author interests and existing tracks"

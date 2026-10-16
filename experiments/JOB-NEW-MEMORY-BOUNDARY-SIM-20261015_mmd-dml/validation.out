@@ -1,0 +1,132 @@
+PASS  DH eigen >= 0 H=0.1 n=500  min sqrt-eig 1.177e-03
+PASS  DH eigen >= 0 H=0.1 n=1000  min sqrt-eig 6.310e-04
+PASS  DH eigen >= 0 H=0.1 n=2000  min sqrt-eig 3.381e-04
+PASS  DH eigen >= 0 H=0.1 n=4000  min sqrt-eig 1.812e-04
+PASS  DH eigen >= 0 H=0.1 n=8000  min sqrt-eig 9.710e-05
+PASS  DH eigen >= 0 H=0.1 n=9000  min sqrt-eig 8.733e-05
+PASS  DH eigen >= 0 H=0.6 n=500  min sqrt-eig 2.807e-02
+PASS  DH eigen >= 0 H=0.6 n=1000  min sqrt-eig 1.985e-02
+PASS  DH eigen >= 0 H=0.6 n=2000  min sqrt-eig 1.403e-02
+PASS  DH eigen >= 0 H=0.6 n=4000  min sqrt-eig 9.924e-03
+PASS  DH eigen >= 0 H=0.6 n=8000  min sqrt-eig 7.017e-03
+PASS  DH eigen >= 0 H=0.6 n=9000  min sqrt-eig 6.616e-03
+PASS  DH eigen >= 0 H=0.7 n=500  min sqrt-eig 2.404e-02
+PASS  DH eigen >= 0 H=0.7 n=1000  min sqrt-eig 1.700e-02
+PASS  DH eigen >= 0 H=0.7 n=2000  min sqrt-eig 1.202e-02
+PASS  DH eigen >= 0 H=0.7 n=4000  min sqrt-eig 8.498e-03
+PASS  DH eigen >= 0 H=0.7 n=8000  min sqrt-eig 6.009e-03
+PASS  DH eigen >= 0 H=0.7 n=9000  min sqrt-eig 5.666e-03
+PASS  DH eigen >= 0 H=0.75 n=500  min sqrt-eig 2.179e-02
+PASS  DH eigen >= 0 H=0.75 n=1000  min sqrt-eig 1.541e-02
+PASS  DH eigen >= 0 H=0.75 n=2000  min sqrt-eig 1.089e-02
+PASS  DH eigen >= 0 H=0.75 n=4000  min sqrt-eig 7.703e-03
+PASS  DH eigen >= 0 H=0.75 n=8000  min sqrt-eig 5.447e-03
+PASS  DH eigen >= 0 H=0.75 n=9000  min sqrt-eig 5.136e-03
+PASS  DH eigen >= 0 H=0.8 n=500  min sqrt-eig 1.933e-02
+PASS  DH eigen >= 0 H=0.8 n=1000  min sqrt-eig 1.367e-02
+PASS  DH eigen >= 0 H=0.8 n=2000  min sqrt-eig 9.665e-03
+PASS  DH eigen >= 0 H=0.8 n=4000  min sqrt-eig 6.834e-03
+PASS  DH eigen >= 0 H=0.8 n=8000  min sqrt-eig 4.832e-03
+PASS  DH eigen >= 0 H=0.8 n=9000  min sqrt-eig 4.556e-03
+PASS  DH eigen >= 0 H=0.9 n=500  min sqrt-eig 1.340e-02
+PASS  DH eigen >= 0 H=0.9 n=1000  min sqrt-eig 9.473e-03
+PASS  DH eigen >= 0 H=0.9 n=2000  min sqrt-eig 6.698e-03
+PASS  DH eigen >= 0 H=0.9 n=4000  min sqrt-eig 4.737e-03
+PASS  DH eigen >= 0 H=0.9 n=8000  min sqrt-eig 3.349e-03
+PASS  DH eigen >= 0 H=0.9 n=9000  min sqrt-eig 3.158e-03
+PASS  fGn acf H=0.1 lag=0  est 0.99936 exact 1.00000 se 0.00085
+PASS  fGn acf H=0.1 lag=1  est -0.42507 exact -0.42565 se 0.00062
+PASS  fGn acf H=0.1 lag=2  est -0.02619 exact -0.02583 se 0.00058
+PASS  fGn acf H=0.1 lag=5  est -0.00426 exact -0.00449 se 0.00059
+PASS  fGn acf H=0.1 lag=10  est -0.00045 exact -0.00127 se 0.00058
+PASS  fGn acf H=0.1 lag=50  est -0.00004 exact -0.00007 se 0.00059
+PASS  fGn Var(S_m)/m^2H H=0.1 m=10  ratio 1.0072 se 0.0225
+PASS  fGn Var(S_m)/m^2H H=0.1 m=100  ratio 1.0162 se 0.0227
+PASS  fGn Var(S_m)/m^2H H=0.1 m=1000  ratio 1.0062 se 0.0225
+PASS  fGn E X^4 H=0.1  est 2.9975 se 0.0057
+PASS  fGn acf H=0.5 lag=0  est 1.00078 exact 1.00000 se 0.00072
+PASS  fGn acf H=0.5 lag=1  est 0.00096 exact 0.00000 se 0.00049
+PASS  fGn acf H=0.5 lag=2  est -0.00120 exact 0.00000 se 0.00051
+PASS  fGn acf H=0.5 lag=5  est 0.00036 exact 0.00000 se 0.00050
+PASS  fGn acf H=0.5 lag=10  est 0.00034 exact 0.00000 se 0.00051
+PASS  fGn acf H=0.5 lag=50  est 0.00009 exact 0.00000 se 0.00051
+PASS  fGn Var(S_m)/m^2H H=0.5 m=10  ratio 0.9663 se 0.0216
+PASS  fGn Var(S_m)/m^2H H=0.5 m=100  ratio 1.0106 se 0.0226
+PASS  fGn Var(S_m)/m^2H H=0.5 m=1000  ratio 0.9596 se 0.0215
+PASS  fGn E X^4 H=0.5  est 3.0041 se 0.0049
+PASS  fGn acf H=0.6 lag=0  est 0.99990 exact 1.00000 se 0.00073
+PASS  fGn acf H=0.6 lag=1  est 0.14850 exact 0.14870 se 0.00056
+PASS  fGn acf H=0.6 lag=2  est 0.07132 exact 0.07120 se 0.00055
+PASS  fGn acf H=0.6 lag=5  est 0.03309 exact 0.03327 se 0.00053
+PASS  fGn acf H=0.6 lag=10  est 0.01807 exact 0.01904 se 0.00053
+PASS  fGn acf H=0.6 lag=50  est 0.00551 exact 0.00525 se 0.00054
+PASS  fGn Var(S_m)/m^2H H=0.6 m=10  ratio 0.9946 se 0.0222
+PASS  fGn Var(S_m)/m^2H H=0.6 m=100  ratio 0.9784 se 0.0219
+PASS  fGn Var(S_m)/m^2H H=0.6 m=1000  ratio 0.9762 se 0.0218
+PASS  fGn E X^4 H=0.6  est 3.0007 se 0.0050
+PASS  fGn acf H=0.7 lag=0  est 0.99968 exact 1.00000 se 0.00092
+PASS  fGn acf H=0.7 lag=1  est 0.31831 exact 0.31951 se 0.00083
+PASS  fGn acf H=0.7 lag=2  est 0.18805 exact 0.18875 se 0.00080
+PASS  fGn acf H=0.7 lag=5  est 0.10585 exact 0.10695 se 0.00078
+PASS  fGn acf H=0.7 lag=10  est 0.06981 exact 0.07039 se 0.00075
+PASS  fGn acf H=0.7 lag=50  est 0.02609 exact 0.02678 se 0.00073
+PASS  fGn Var(S_m)/m^2H H=0.7 m=10  ratio 0.9935 se 0.0222
+PASS  fGn Var(S_m)/m^2H H=0.7 m=100  ratio 0.9532 se 0.0213
+PASS  fGn Var(S_m)/m^2H H=0.7 m=1000  ratio 1.0155 se 0.0227
+PASS  fGn E X^4 H=0.7  est 2.9987 se 0.0060
+PASS  fGn acf H=0.75 lag=0  est 1.00194 exact 1.00000 se 0.00121
+PASS  fGn acf H=0.75 lag=1  est 0.41669 exact 0.41421 se 0.00115
+PASS  fGn acf H=0.75 lag=2  est 0.27170 exact 0.26965 se 0.00113
+PASS  fGn acf H=0.75 lag=5  est 0.16942 exact 0.16813 se 0.00111
+PASS  fGn acf H=0.75 lag=10  est 0.11939 exact 0.11866 se 0.00108
+PASS  fGn acf H=0.75 lag=50  est 0.05164 exact 0.05303 se 0.00103
+PASS  fGn Var(S_m)/m^2H H=0.75 m=10  ratio 1.0404 se 0.0233
+PASS  fGn Var(S_m)/m^2H H=0.75 m=100  ratio 1.0020 se 0.0224
+PASS  fGn Var(S_m)/m^2H H=0.75 m=1000  ratio 0.9848 se 0.0220
+PASS  fGn E X^4 H=0.75  est 3.0120 se 0.0077
+PASS  fGn acf H=0.8 lag=0  est 1.00086 exact 1.00000 se 0.00186
+PASS  fGn acf H=0.8 lag=1  est 0.51680 exact 0.51572 se 0.00183
+PASS  fGn acf H=0.8 lag=2  est 0.36946 exact 0.36834 se 0.00180
+PASS  fGn acf H=0.8 lag=5  est 0.25274 exact 0.25262 se 0.00179
+PASS  fGn acf H=0.8 lag=10  est 0.19180 exact 0.19118 se 0.00177
+PASS  fGn acf H=0.8 lag=50  est 0.10040 exact 0.10038 se 0.00172
+PASS  fGn Var(S_m)/m^2H H=0.8 m=10  ratio 0.9864 se 0.0221
+PASS  fGn Var(S_m)/m^2H H=0.8 m=100  ratio 1.0292 se 0.0230
+PASS  fGn Var(S_m)/m^2H H=0.8 m=1000  ratio 0.9962 se 0.0223
+PASS  fGn E X^4 H=0.8  est 3.0115 se 0.0116
+PASS  fGn acf H=0.9 lag=0  est 0.99823 exact 1.00000 se 0.00579
+PASS  fGn acf H=0.9 lag=1  est 0.73891 exact 0.74110 se 0.00579
+PASS  fGn acf H=0.9 lag=2  est 0.62804 exact 0.63013 se 0.00578
+PASS  fGn acf H=0.9 lag=5  est 0.52055 exact 0.52226 se 0.00577
+PASS  fGn acf H=0.9 lag=10  est 0.45304 exact 0.45438 se 0.00577
+PASS  fGn acf H=0.9 lag=50  est 0.32712 exact 0.32926 se 0.00576
+PASS  fGn Var(S_m)/m^2H H=0.9 m=10  ratio 0.9730 se 0.0218
+PASS  fGn Var(S_m)/m^2H H=0.9 m=100  ratio 0.9895 se 0.0221
+PASS  fGn Var(S_m)/m^2H H=0.9 m=1000  ratio 0.9877 se 0.0221
+PASS  fGn E X^4 H=0.9  est 2.9935 se 0.0354
+PASS  t_0.975 nu=5  got 2.570582 table 2.570582
+PASS  t_0.975 nu=10  got 2.228139 table 2.228139
+PASS  t_0.975 nu=25  got 2.059539 table 2.059539
+PASS  t_0.975 nu=30  got 2.042272 table 2.042272
+PASS  t_0.975 nu=63  got 1.998341 table 1.998341
+PASS  t_0.975 nu=160  got 1.974902 table 1.974902
+PASS  Phi(0.0)  got 0.500000000000000
+PASS  Phi(1.959963984540054)  got 0.975000000000000
+PASS  Phi(-1.0)  got 0.158655253931457
+PASS  G2 mean  -0.0072
+PASS  G2 var=1/3  0.3330
+PASS  G2 range  [-1.0000,1.0000]
+PASS  G3 values  [-1.  1.]
+PASS  G3 balance  -0.0093
+INFO  R1 lambda=0.01: mean within-path var 1.176, lag-1 acf 0.568
+INFO  R1 lambda=0.1: mean within-path var 0.781, lag-1 acf 0.292
+PASS  IRLS recovers (0, 0.5)  [-0.002788   0.4936548]
+PASS  GB fits x + x^2 (rmse under N(0,1), n=4000)  rmse 0.262
+PASS  GB error falls with n (400 -> 4000)  0.602 -> 0.262
+PASS  multiplier autocorr lag 1  0.952 vs 0.951
+PASS  multiplier autocorr lag 20  0.379 vs 0.368
+PASS  multiplier values  [-1.  1.]
+PASS  median heuristic = median over pairs  0.955185
+PASS  MMD2 V-stat identity  2.170769e-03
+
+TOTAL FAILS: 0

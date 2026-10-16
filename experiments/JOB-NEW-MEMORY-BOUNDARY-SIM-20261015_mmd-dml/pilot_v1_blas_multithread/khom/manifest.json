@@ -1,0 +1,1203 @@
+{
+ "job": "JOB-NEW-MEMORY-BOUNDARY-SIM-20261015",
+ "worker": "claude-mb-mmddml-20261015",
+ "family": "khom",
+ "tag": "pilot",
+ "evidence_class": "exploratory simulation (timing pilot; not evidence)",
+ "master_seed": 2026101599,
+ "seed_scheme": "SeedSequence(entropy=2026101599, spawn_key=(0, cell_idx, rep))",
+ "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:50:00) [GCC 14.3.0]",
+ "numpy": "2.5.2",
+ "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+ "procs": 6,
+ "script_sha256": {
+  "common.py": "0ed009c55c58438a58d7e793082a73b85e33cc6702cfa4f13bac5bef1852e2c1",
+  "khom.py": "6c52e38911b32ffb84b42643266de2ca1be2e5ef69bdb77e62549ba38c56688e",
+  "dml.py": "3731bd33471282cb4e7eded1761d772477afc403208f2129543fd95218dfe32f",
+  "run.py": "695f6dbdc94db98fc97373fad38dd63fe1bbad7275cceea5a102cb868745a337"
+ },
+ "cells": [
+  {
+   "process": "G1",
+   "param": 0.5,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 0,
+   "cell_id": "khom_G1_0.5_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    0,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.5,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 1,
+   "cell_id": "khom_G1_0.5_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    1,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.5,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 2,
+   "cell_id": "khom_G1_0.5_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    2,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.5,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 3,
+   "cell_id": "khom_G1_0.5_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    3,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.6,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 4,
+   "cell_id": "khom_G1_0.6_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    4,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.6,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 5,
+   "cell_id": "khom_G1_0.6_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    5,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.6,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 6,
+   "cell_id": "khom_G1_0.6_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    6,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.6,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 7,
+   "cell_id": "khom_G1_0.6_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    7,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.7,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 8,
+   "cell_id": "khom_G1_0.7_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    8,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.7,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 9,
+   "cell_id": "khom_G1_0.7_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    9,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.7,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 10,
+   "cell_id": "khom_G1_0.7_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    10,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.7,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 11,
+   "cell_id": "khom_G1_0.7_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    11,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.75,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 12,
+   "cell_id": "khom_G1_0.75_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    12,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.75,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 13,
+   "cell_id": "khom_G1_0.75_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    13,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.75,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 14,
+   "cell_id": "khom_G1_0.75_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    14,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.75,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 15,
+   "cell_id": "khom_G1_0.75_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    15,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.8,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 16,
+   "cell_id": "khom_G1_0.8_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    16,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.8,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 17,
+   "cell_id": "khom_G1_0.8_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    17,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.8,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 18,
+   "cell_id": "khom_G1_0.8_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    18,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.8,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 19,
+   "cell_id": "khom_G1_0.8_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    19,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.9,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 20,
+   "cell_id": "khom_G1_0.9_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    20,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.9,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 21,
+   "cell_id": "khom_G1_0.9_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    21,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.9,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 22,
+   "cell_id": "khom_G1_0.9_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    22,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.9,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 23,
+   "cell_id": "khom_G1_0.9_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    23,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.5,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 24,
+   "cell_id": "khom_G2_0.5_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    24,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.5,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 25,
+   "cell_id": "khom_G2_0.5_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    25,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.5,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 26,
+   "cell_id": "khom_G2_0.5_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    26,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.5,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 27,
+   "cell_id": "khom_G2_0.5_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    27,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.6,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 28,
+   "cell_id": "khom_G2_0.6_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    28,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.6,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 29,
+   "cell_id": "khom_G2_0.6_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    29,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.6,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 30,
+   "cell_id": "khom_G2_0.6_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    30,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.6,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 31,
+   "cell_id": "khom_G2_0.6_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    31,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.7,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 32,
+   "cell_id": "khom_G2_0.7_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    32,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.7,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 33,
+   "cell_id": "khom_G2_0.7_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    33,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.7,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 34,
+   "cell_id": "khom_G2_0.7_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    34,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.7,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 35,
+   "cell_id": "khom_G2_0.7_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    35,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.75,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 36,
+   "cell_id": "khom_G2_0.75_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    36,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.75,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 37,
+   "cell_id": "khom_G2_0.75_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    37,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.75,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 38,
+   "cell_id": "khom_G2_0.75_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    38,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.75,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 39,
+   "cell_id": "khom_G2_0.75_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    39,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.8,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 40,
+   "cell_id": "khom_G2_0.8_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    40,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.8,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 41,
+   "cell_id": "khom_G2_0.8_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    41,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.8,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 42,
+   "cell_id": "khom_G2_0.8_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    42,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.8,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 43,
+   "cell_id": "khom_G2_0.8_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    43,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.9,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 44,
+   "cell_id": "khom_G2_0.9_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    44,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.9,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 45,
+   "cell_id": "khom_G2_0.9_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    45,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.9,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 46,
+   "cell_id": "khom_G2_0.9_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    46,
+    "rep"
+   ]
+  },
+  {
+   "process": "G2",
+   "param": 0.9,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 47,
+   "cell_id": "khom_G2_0.9_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    47,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.5,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 48,
+   "cell_id": "khom_G3_0.5_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    48,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.5,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 49,
+   "cell_id": "khom_G3_0.5_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    49,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.5,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 50,
+   "cell_id": "khom_G3_0.5_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    50,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.5,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 51,
+   "cell_id": "khom_G3_0.5_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    51,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.6,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 52,
+   "cell_id": "khom_G3_0.6_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    52,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.6,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 53,
+   "cell_id": "khom_G3_0.6_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    53,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.6,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 54,
+   "cell_id": "khom_G3_0.6_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    54,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.6,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 55,
+   "cell_id": "khom_G3_0.6_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    55,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.7,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 56,
+   "cell_id": "khom_G3_0.7_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    56,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.7,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 57,
+   "cell_id": "khom_G3_0.7_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    57,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.7,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 58,
+   "cell_id": "khom_G3_0.7_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    58,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.7,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 59,
+   "cell_id": "khom_G3_0.7_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    59,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.75,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 60,
+   "cell_id": "khom_G3_0.75_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    60,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.75,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 61,
+   "cell_id": "khom_G3_0.75_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    61,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.75,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 62,
+   "cell_id": "khom_G3_0.75_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    62,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.75,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 63,
+   "cell_id": "khom_G3_0.75_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    63,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.8,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 64,
+   "cell_id": "khom_G3_0.8_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    64,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.8,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 65,
+   "cell_id": "khom_G3_0.8_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    65,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.8,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 66,
+   "cell_id": "khom_G3_0.8_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    66,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.8,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 67,
+   "cell_id": "khom_G3_0.8_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    67,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.9,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 68,
+   "cell_id": "khom_G3_0.9_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    68,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.9,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 69,
+   "cell_id": "khom_G3_0.9_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    69,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.9,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 70,
+   "cell_id": "khom_G3_0.9_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    70,
+    "rep"
+   ]
+  },
+  {
+   "process": "G3",
+   "param": 0.9,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 71,
+   "cell_id": "khom_G3_0.9_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    71,
+    "rep"
+   ]
+  },
+  {
+   "process": "R1",
+   "param": 0.01,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 72,
+   "cell_id": "khom_R1_0.01_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    72,
+    "rep"
+   ]
+  },
+  {
+   "process": "R1",
+   "param": 0.01,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 73,
+   "cell_id": "khom_R1_0.01_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    73,
+    "rep"
+   ]
+  },
+  {
+   "process": "R1",
+   "param": 0.01,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 74,
+   "cell_id": "khom_R1_0.01_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    74,
+    "rep"
+   ]
+  },
+  {
+   "process": "R1",
+   "param": 0.01,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 75,
+   "cell_id": "khom_R1_0.01_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    75,
+    "rep"
+   ]
+  },
+  {
+   "process": "R1",
+   "param": 0.1,
+   "n": 500,
+   "shift": 0.0,
+   "cell_idx": 76,
+   "cell_id": "khom_R1_0.1_n500",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    76,
+    "rep"
+   ]
+  },
+  {
+   "process": "R1",
+   "param": 0.1,
+   "n": 1000,
+   "shift": 0.0,
+   "cell_idx": 77,
+   "cell_id": "khom_R1_0.1_n1000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    77,
+    "rep"
+   ]
+  },
+  {
+   "process": "R1",
+   "param": 0.1,
+   "n": 2000,
+   "shift": 0.0,
+   "cell_idx": 78,
+   "cell_id": "khom_R1_0.1_n2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    78,
+    "rep"
+   ]
+  },
+  {
+   "process": "R1",
+   "param": 0.1,
+   "n": 4000,
+   "shift": 0.0,
+   "cell_idx": 79,
+   "cell_id": "khom_R1_0.1_n4000",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    79,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.7,
+   "n": 500,
+   "shift": 0.3,
+   "cell_idx": 80,
+   "cell_id": "khom_G1_0.7_n500_power",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    80,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.7,
+   "n": 1000,
+   "shift": 0.3,
+   "cell_idx": 81,
+   "cell_id": "khom_G1_0.7_n1000_power",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    81,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.7,
+   "n": 2000,
+   "shift": 0.3,
+   "cell_idx": 82,
+   "cell_id": "khom_G1_0.7_n2000_power",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    82,
+    "rep"
+   ]
+  },
+  {
+   "process": "G1",
+   "param": 0.7,
+   "n": 4000,
+   "shift": 0.3,
+   "cell_idx": 83,
+   "cell_id": "khom_G1_0.7_n4000_power",
+   "reps": 20,
+   "seed_spawn_key": [
+    0,
+    83,
+    "rep"
+   ]
+  }
+ ],
+ "started_utc": "2026-10-15T22:44:30Z",
+ "tasks_pending": 336,
+ "finished_utc": "2026-10-15T22:49:57Z",
+ "wall_s_this_invocation": 326.375431060791,
+ "cpu_s_this_invocation": 4326.456506039997,
+ "errors_this_invocation": 0
+}

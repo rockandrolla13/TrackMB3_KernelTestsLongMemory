@@ -1,0 +1,2511 @@
+{
+ "mode": "main",
+ "master_entropy": 20261015002,
+ "seed_rule": "np.random.SeedSequence(entropy=master_entropy, spawn_key=(cell_idx, rep)); one default_rng per replication",
+ "B_wild_bootstrap": 500,
+ "numpy": "2.5.2",
+ "python": "3.12.13",
+ "workers": 8,
+ "cells": [
+  {
+   "idx": 0,
+   "name": "kind__G1_H0.5__n500",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     0,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 1,
+   "name": "kind__G1_H0.5__n1000",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     1,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 4,
+   "name": "kind__G1_H0.6__n500",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     4,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 5,
+   "name": "kind__G1_H0.6__n1000",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     5,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 8,
+   "name": "kind__G1_H0.7__n500",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     8,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 9,
+   "name": "kind__G1_H0.7__n1000",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     9,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 12,
+   "name": "kind__G1_H0.75__n500",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     12,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 13,
+   "name": "kind__G1_H0.75__n1000",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     13,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 16,
+   "name": "kind__G1_H0.8__n500",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     16,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 17,
+   "name": "kind__G1_H0.8__n1000",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     17,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 20,
+   "name": "kind__G1_H0.9__n500",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     20,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 21,
+   "name": "kind__G1_H0.9__n1000",
+   "family": "kind",
+   "proc": "G1",
+   "sid": "G1_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     21,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 24,
+   "name": "kind__G2_H0.5__n500",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     24,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 25,
+   "name": "kind__G2_H0.5__n1000",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     25,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 28,
+   "name": "kind__G2_H0.6__n500",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     28,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 29,
+   "name": "kind__G2_H0.6__n1000",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     29,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 32,
+   "name": "kind__G2_H0.7__n500",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     32,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 33,
+   "name": "kind__G2_H0.7__n1000",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     33,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 36,
+   "name": "kind__G2_H0.75__n500",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     36,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 37,
+   "name": "kind__G2_H0.75__n1000",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     37,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 40,
+   "name": "kind__G2_H0.8__n500",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     40,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 41,
+   "name": "kind__G2_H0.8__n1000",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     41,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 44,
+   "name": "kind__G2_H0.9__n500",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     44,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 45,
+   "name": "kind__G2_H0.9__n1000",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     45,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 48,
+   "name": "kind__G3_H0.5__n500",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     48,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 49,
+   "name": "kind__G3_H0.5__n1000",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     49,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 52,
+   "name": "kind__G3_H0.6__n500",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     52,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 53,
+   "name": "kind__G3_H0.6__n1000",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     53,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 56,
+   "name": "kind__G3_H0.7__n500",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     56,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 57,
+   "name": "kind__G3_H0.7__n1000",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     57,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 60,
+   "name": "kind__G3_H0.75__n500",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     60,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 61,
+   "name": "kind__G3_H0.75__n1000",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     61,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 64,
+   "name": "kind__G3_H0.8__n500",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     64,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 65,
+   "name": "kind__G3_H0.8__n1000",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     65,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 68,
+   "name": "kind__G3_H0.9__n500",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     68,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 69,
+   "name": "kind__G3_H0.9__n1000",
+   "family": "kind",
+   "proc": "G3",
+   "sid": "G3_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     69,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 72,
+   "name": "kind__G4_HX0.6_HY0.85__n500",
+   "family": "kind",
+   "proc": "G4",
+   "sid": "G4_HX0.6_HY0.85",
+   "HX": 0.6,
+   "HY": 0.85,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     72,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 73,
+   "name": "kind__G4_HX0.6_HY0.85__n1000",
+   "family": "kind",
+   "proc": "G4",
+   "sid": "G4_HX0.6_HY0.85",
+   "HX": 0.6,
+   "HY": 0.85,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     73,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 76,
+   "name": "kind__G4_HX0.7_HY0.8__n500",
+   "family": "kind",
+   "proc": "G4",
+   "sid": "G4_HX0.7_HY0.8",
+   "HX": 0.7,
+   "HY": 0.8,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     76,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 77,
+   "name": "kind__G4_HX0.7_HY0.8__n1000",
+   "family": "kind",
+   "proc": "G4",
+   "sid": "G4_HX0.7_HY0.8",
+   "HX": 0.7,
+   "HY": 0.8,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     77,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 80,
+   "name": "kind__G4_HX0.7_HY0.9__n500",
+   "family": "kind",
+   "proc": "G4",
+   "sid": "G4_HX0.7_HY0.9",
+   "HX": 0.7,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     80,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 81,
+   "name": "kind__G4_HX0.7_HY0.9__n1000",
+   "family": "kind",
+   "proc": "G4",
+   "sid": "G4_HX0.7_HY0.9",
+   "HX": 0.7,
+   "HY": 0.9,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     81,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 84,
+   "name": "kind__G4_HX0.6_HY0.9__n500",
+   "family": "kind",
+   "proc": "G4",
+   "sid": "G4_HX0.6_HY0.9",
+   "HX": 0.6,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     84,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 85,
+   "name": "kind__G4_HX0.6_HY0.9__n1000",
+   "family": "kind",
+   "proc": "G4",
+   "sid": "G4_HX0.6_HY0.9",
+   "HX": 0.6,
+   "HY": 0.9,
+   "lam": null,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     85,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 88,
+   "name": "kind__R1_lam0.01__n500",
+   "family": "kind",
+   "proc": "R1",
+   "sid": "R1_lam0.01",
+   "HX": 0.1,
+   "HY": 0.1,
+   "lam": 0.01,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     88,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 89,
+   "name": "kind__R1_lam0.01__n1000",
+   "family": "kind",
+   "proc": "R1",
+   "sid": "R1_lam0.01",
+   "HX": 0.1,
+   "HY": 0.1,
+   "lam": 0.01,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     89,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 92,
+   "name": "kind__R1_lam0.1__n500",
+   "family": "kind",
+   "proc": "R1",
+   "sid": "R1_lam0.1",
+   "HX": 0.1,
+   "HY": 0.1,
+   "lam": 0.1,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     92,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 93,
+   "name": "kind__R1_lam0.1__n1000",
+   "family": "kind",
+   "proc": "R1",
+   "sid": "R1_lam0.1",
+   "HX": 0.1,
+   "HY": 0.1,
+   "lam": 0.1,
+   "n": 1000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     93,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 96,
+   "name": "lind__G1_H0.5__n500",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     96,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 97,
+   "name": "lind__G1_H0.5__n2000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     97,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 98,
+   "name": "lind__G1_H0.5__n8000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     98,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 99,
+   "name": "lind__G1_H0.6__n500",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     99,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 100,
+   "name": "lind__G1_H0.6__n2000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     100,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 101,
+   "name": "lind__G1_H0.6__n8000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     101,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 102,
+   "name": "lind__G1_H0.7__n500",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     102,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 103,
+   "name": "lind__G1_H0.7__n2000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     103,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 104,
+   "name": "lind__G1_H0.7__n8000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     104,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 105,
+   "name": "lind__G1_H0.75__n500",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     105,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 106,
+   "name": "lind__G1_H0.75__n2000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     106,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 107,
+   "name": "lind__G1_H0.75__n8000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     107,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 108,
+   "name": "lind__G1_H0.8__n500",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     108,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 109,
+   "name": "lind__G1_H0.8__n2000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     109,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 110,
+   "name": "lind__G1_H0.8__n8000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     110,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 111,
+   "name": "lind__G1_H0.9__n500",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     111,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 112,
+   "name": "lind__G1_H0.9__n2000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     112,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 113,
+   "name": "lind__G1_H0.9__n8000",
+   "family": "lind",
+   "proc": "G1",
+   "sid": "G1_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     113,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 114,
+   "name": "lind__G2_H0.5__n500",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     114,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 115,
+   "name": "lind__G2_H0.5__n2000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     115,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 116,
+   "name": "lind__G2_H0.5__n8000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     116,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 117,
+   "name": "lind__G2_H0.6__n500",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     117,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 118,
+   "name": "lind__G2_H0.6__n2000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     118,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 119,
+   "name": "lind__G2_H0.6__n8000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     119,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 120,
+   "name": "lind__G2_H0.7__n500",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     120,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 121,
+   "name": "lind__G2_H0.7__n2000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     121,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 122,
+   "name": "lind__G2_H0.7__n8000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     122,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 123,
+   "name": "lind__G2_H0.75__n500",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     123,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 124,
+   "name": "lind__G2_H0.75__n2000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     124,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 125,
+   "name": "lind__G2_H0.75__n8000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     125,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 126,
+   "name": "lind__G2_H0.8__n500",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     126,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 127,
+   "name": "lind__G2_H0.8__n2000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     127,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 128,
+   "name": "lind__G2_H0.8__n8000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     128,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 129,
+   "name": "lind__G2_H0.9__n500",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     129,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 130,
+   "name": "lind__G2_H0.9__n2000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     130,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 131,
+   "name": "lind__G2_H0.9__n8000",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     131,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 132,
+   "name": "lind__G3_H0.5__n500",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     132,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 133,
+   "name": "lind__G3_H0.5__n2000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     133,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 134,
+   "name": "lind__G3_H0.5__n8000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.5",
+   "HX": 0.5,
+   "HY": 0.5,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     134,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 135,
+   "name": "lind__G3_H0.6__n500",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     135,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 136,
+   "name": "lind__G3_H0.6__n2000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     136,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 137,
+   "name": "lind__G3_H0.6__n8000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.6",
+   "HX": 0.6,
+   "HY": 0.6,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     137,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 138,
+   "name": "lind__G3_H0.7__n500",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     138,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 139,
+   "name": "lind__G3_H0.7__n2000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     139,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 140,
+   "name": "lind__G3_H0.7__n8000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     140,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 141,
+   "name": "lind__G3_H0.75__n500",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     141,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 142,
+   "name": "lind__G3_H0.75__n2000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     142,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 143,
+   "name": "lind__G3_H0.75__n8000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.75",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     143,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 144,
+   "name": "lind__G3_H0.8__n500",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     144,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 145,
+   "name": "lind__G3_H0.8__n2000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     145,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 146,
+   "name": "lind__G3_H0.8__n8000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.8",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     146,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 147,
+   "name": "lind__G3_H0.9__n500",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     147,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 148,
+   "name": "lind__G3_H0.9__n2000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     148,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 149,
+   "name": "lind__G3_H0.9__n8000",
+   "family": "lind",
+   "proc": "G3",
+   "sid": "G3_H0.9",
+   "HX": 0.9,
+   "HY": 0.9,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     149,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 150,
+   "name": "lind__G4_HX0.6_HY0.85__n500",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.6_HY0.85",
+   "HX": 0.6,
+   "HY": 0.85,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     150,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 151,
+   "name": "lind__G4_HX0.6_HY0.85__n2000",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.6_HY0.85",
+   "HX": 0.6,
+   "HY": 0.85,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     151,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 152,
+   "name": "lind__G4_HX0.6_HY0.85__n8000",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.6_HY0.85",
+   "HX": 0.6,
+   "HY": 0.85,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     152,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 153,
+   "name": "lind__G4_HX0.7_HY0.8__n500",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.7_HY0.8",
+   "HX": 0.7,
+   "HY": 0.8,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     153,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 154,
+   "name": "lind__G4_HX0.7_HY0.8__n2000",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.7_HY0.8",
+   "HX": 0.7,
+   "HY": 0.8,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     154,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 155,
+   "name": "lind__G4_HX0.7_HY0.8__n8000",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.7_HY0.8",
+   "HX": 0.7,
+   "HY": 0.8,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     155,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 156,
+   "name": "lind__G4_HX0.7_HY0.9__n500",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.7_HY0.9",
+   "HX": 0.7,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     156,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 157,
+   "name": "lind__G4_HX0.7_HY0.9__n2000",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.7_HY0.9",
+   "HX": 0.7,
+   "HY": 0.9,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     157,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 158,
+   "name": "lind__G4_HX0.7_HY0.9__n8000",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.7_HY0.9",
+   "HX": 0.7,
+   "HY": 0.9,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     158,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 159,
+   "name": "lind__G4_HX0.6_HY0.9__n500",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.6_HY0.9",
+   "HX": 0.6,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     159,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 160,
+   "name": "lind__G4_HX0.6_HY0.9__n2000",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.6_HY0.9",
+   "HX": 0.6,
+   "HY": 0.9,
+   "lam": null,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     160,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 161,
+   "name": "lind__G4_HX0.6_HY0.9__n8000",
+   "family": "lind",
+   "proc": "G4",
+   "sid": "G4_HX0.6_HY0.9",
+   "HX": 0.6,
+   "HY": 0.9,
+   "lam": null,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     161,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 162,
+   "name": "lind__R1_lam0.01__n500",
+   "family": "lind",
+   "proc": "R1",
+   "sid": "R1_lam0.01",
+   "HX": 0.1,
+   "HY": 0.1,
+   "lam": 0.01,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     162,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 163,
+   "name": "lind__R1_lam0.01__n2000",
+   "family": "lind",
+   "proc": "R1",
+   "sid": "R1_lam0.01",
+   "HX": 0.1,
+   "HY": 0.1,
+   "lam": 0.01,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     163,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 164,
+   "name": "lind__R1_lam0.01__n8000",
+   "family": "lind",
+   "proc": "R1",
+   "sid": "R1_lam0.01",
+   "HX": 0.1,
+   "HY": 0.1,
+   "lam": 0.01,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     164,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 165,
+   "name": "lind__R1_lam0.1__n500",
+   "family": "lind",
+   "proc": "R1",
+   "sid": "R1_lam0.1",
+   "HX": 0.1,
+   "HY": 0.1,
+   "lam": 0.1,
+   "n": 500,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     165,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 166,
+   "name": "lind__R1_lam0.1__n2000",
+   "family": "lind",
+   "proc": "R1",
+   "sid": "R1_lam0.1",
+   "HX": 0.1,
+   "HY": 0.1,
+   "lam": 0.1,
+   "n": 2000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     166,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 167,
+   "name": "lind__R1_lam0.1__n8000",
+   "family": "lind",
+   "proc": "R1",
+   "sid": "R1_lam0.1",
+   "HX": 0.1,
+   "HY": 0.1,
+   "lam": 0.1,
+   "n": 8000,
+   "r": 0.0,
+   "reps": 2000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     167,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 168,
+   "name": "kind__G2_H0.7__n500__r0.25",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 500,
+   "r": 0.25,
+   "reps": 1000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     168,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 169,
+   "name": "kind__G2_H0.7__n1000__r0.25",
+   "family": "kind",
+   "proc": "G2",
+   "sid": "G2_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 1000,
+   "r": 0.25,
+   "reps": 1000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     169,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 172,
+   "name": "lind__G2_H0.7__n500__r0.25",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 500,
+   "r": 0.25,
+   "reps": 1000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     172,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 173,
+   "name": "lind__G2_H0.7__n2000__r0.25",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 2000,
+   "r": 0.25,
+   "reps": 1000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     173,
+     "rep"
+    ]
+   }
+  },
+  {
+   "idx": 174,
+   "name": "lind__G2_H0.7__n8000__r0.25",
+   "family": "lind",
+   "proc": "G2",
+   "sid": "G2_H0.7",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 8000,
+   "r": 0.25,
+   "reps": 1000,
+   "seed": {
+    "entropy": 20261015002,
+    "spawn_key": [
+     174,
+     "rep"
+    ]
+   }
+  }
+ ]
+}

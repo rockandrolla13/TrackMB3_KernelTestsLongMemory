@@ -1,0 +1,93 @@
+[PASS] embedding H=0.1 n=500: min eig=1.389e-03, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.1 n=1000: min eig=7.969e-04, max|ifft(lam)[:n]-gamma|=4.16e-17
+[PASS] embedding H=0.1 n=2000: min eig=4.575e-04, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.1 n=4000: min eig=2.627e-04, max|ifft(lam)[:n]-gamma|=5.55e-17
+[PASS] embedding H=0.1 n=8000: min eig=1.509e-04, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.1 n=5000: min eig=2.197e-04, max|ifft(lam)[:n]-gamma|=4.44e-16
+[PASS] embedding H=0.1 n=9000: min eig=1.373e-04, max|ifft(lam)[:n]-gamma|=3.76e-17
+[PASS] embedding H=0.1 n=1100: min eig=7.383e-04, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.5 n=500: min eig=1.000e+00, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.5 n=1000: min eig=1.000e+00, max|ifft(lam)[:n]-gamma|=2.85e-17
+[PASS] embedding H=0.5 n=2000: min eig=1.000e+00, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.5 n=4000: min eig=1.000e+00, max|ifft(lam)[:n]-gamma|=5.69e-17
+[PASS] embedding H=0.5 n=8000: min eig=1.000e+00, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.5 n=5000: min eig=1.000e+00, max|ifft(lam)[:n]-gamma|=4.44e-16
+[PASS] embedding H=0.5 n=9000: min eig=1.000e+00, max|ifft(lam)[:n]-gamma|=5.53e-17
+[PASS] embedding H=0.5 n=1100: min eig=1.000e+00, max|ifft(lam)[:n]-gamma|=5.64e-17
+[PASS] embedding H=0.6 n=500: min eig=7.878e-01, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.6 n=1000: min eig=7.878e-01, max|ifft(lam)[:n]-gamma|=4.27e-17
+[PASS] embedding H=0.6 n=2000: min eig=7.878e-01, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.6 n=4000: min eig=7.878e-01, max|ifft(lam)[:n]-gamma|=7.81e-17
+[PASS] embedding H=0.6 n=8000: min eig=7.878e-01, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.6 n=5000: min eig=7.878e-01, max|ifft(lam)[:n]-gamma|=4.44e-16
+[PASS] embedding H=0.6 n=9000: min eig=7.878e-01, max|ifft(lam)[:n]-gamma|=5.55e-17
+[PASS] embedding H=0.6 n=1100: min eig=7.878e-01, max|ifft(lam)[:n]-gamma|=7.34e-17
+[PASS] embedding H=0.7 n=500: min eig=5.778e-01, max|ifft(lam)[:n]-gamma|=5.55e-17
+[PASS] embedding H=0.7 n=1000: min eig=5.778e-01, max|ifft(lam)[:n]-gamma|=8.33e-17
+[PASS] embedding H=0.7 n=2000: min eig=5.778e-01, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.7 n=4000: min eig=5.778e-01, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.7 n=8000: min eig=5.778e-01, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.7 n=5000: min eig=5.778e-01, max|ifft(lam)[:n]-gamma|=4.44e-16
+[PASS] embedding H=0.7 n=9000: min eig=5.778e-01, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.7 n=1100: min eig=5.778e-01, max|ifft(lam)[:n]-gamma|=5.55e-17
+[PASS] embedding H=0.75 n=500: min eig=4.747e-01, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.75 n=1000: min eig=4.747e-01, max|ifft(lam)[:n]-gamma|=5.55e-17
+[PASS] embedding H=0.75 n=2000: min eig=4.747e-01, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.75 n=4000: min eig=4.747e-01, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.75 n=8000: min eig=4.747e-01, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.75 n=5000: min eig=4.747e-01, max|ifft(lam)[:n]-gamma|=4.44e-16
+[PASS] embedding H=0.75 n=9000: min eig=4.747e-01, max|ifft(lam)[:n]-gamma|=5.55e-17
+[PASS] embedding H=0.75 n=1100: min eig=4.747e-01, max|ifft(lam)[:n]-gamma|=6.42e-17
+[PASS] embedding H=0.8 n=500: min eig=3.736e-01, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.8 n=1000: min eig=3.736e-01, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.8 n=2000: min eig=3.736e-01, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.8 n=4000: min eig=3.736e-01, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.8 n=8000: min eig=3.736e-01, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.8 n=5000: min eig=3.736e-01, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.8 n=9000: min eig=3.736e-01, max|ifft(lam)[:n]-gamma|=1.11e-16
+[PASS] embedding H=0.8 n=1100: min eig=3.736e-01, max|ifft(lam)[:n]-gamma|=9.02e-17
+[PASS] embedding H=0.85 n=500: min eig=2.750e-01, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.85 n=1000: min eig=2.750e-01, max|ifft(lam)[:n]-gamma|=1.39e-16
+[PASS] embedding H=0.85 n=2000: min eig=2.750e-01, max|ifft(lam)[:n]-gamma|=1.67e-16
+[PASS] embedding H=0.85 n=4000: min eig=2.750e-01, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.85 n=8000: min eig=2.750e-01, max|ifft(lam)[:n]-gamma|=1.67e-16
+[PASS] embedding H=0.85 n=5000: min eig=2.750e-01, max|ifft(lam)[:n]-gamma|=4.44e-16
+[PASS] embedding H=0.85 n=9000: min eig=2.750e-01, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.85 n=1100: min eig=2.750e-01, max|ifft(lam)[:n]-gamma|=1.67e-16
+[PASS] embedding H=0.9 n=500: min eig=1.794e-01, max|ifft(lam)[:n]-gamma|=4.72e-16
+[PASS] embedding H=0.9 n=1000: min eig=1.795e-01, max|ifft(lam)[:n]-gamma|=2.22e-16
+[PASS] embedding H=0.9 n=2000: min eig=1.795e-01, max|ifft(lam)[:n]-gamma|=3.05e-16
+[PASS] embedding H=0.9 n=4000: min eig=1.795e-01, max|ifft(lam)[:n]-gamma|=3.33e-16
+[PASS] embedding H=0.9 n=8000: min eig=1.795e-01, max|ifft(lam)[:n]-gamma|=3.61e-16
+[PASS] embedding H=0.9 n=5000: min eig=1.795e-01, max|ifft(lam)[:n]-gamma|=4.16e-16
+[PASS] embedding H=0.9 n=9000: min eig=1.795e-01, max|ifft(lam)[:n]-gamma|=3.61e-16
+[PASS] embedding H=0.9 n=1100: min eig=1.795e-01, max|ifft(lam)[:n]-gamma|=3.05e-16
+[PASS] autocov H=0.1: k=0: 1.0009 vs 1.0000 (z=+1.08); k=1: -0.4258 vs -0.4257 (z=-0.31); k=2: -0.0262 vs -0.0258 (z=-0.68); k=5: -0.0044 vs -0.0045 (z=+0.08); k=10: -0.0025 vs -0.0013 (z=-2.17); k=50: 0.0004 vs -0.0001 (z=+0.85); k=200: 0.0002 vs -0.0000 (z=+0.30)
+[PASS] Var(sum)/n^2H H=0.1: 0.9850 (MC se 0.0224)
+[PASS] autocov H=0.5: k=0: 0.9992 vs 1.0000 (z=-1.12); k=1: -0.0000 vs 0.0000 (z=-0.05); k=2: -0.0002 vs 0.0000 (z=-0.32); k=5: -0.0004 vs 0.0000 (z=-0.78); k=10: -0.0007 vs 0.0000 (z=-1.45); k=50: 0.0008 vs 0.0000 (z=+1.69); k=200: -0.0002 vs 0.0000 (z=-0.37)
+[PASS] Var(sum)/n^2H H=0.5: 1.0112 (MC se 0.0224)
+[PASS] autocov H=0.7: k=0: 1.0010 vs 1.0000 (z=+1.11); k=1: 0.3203 vs 0.3195 (z=+0.93); k=2: 0.1894 vs 0.1888 (z=+0.79); k=5: 0.1068 vs 0.1070 (z=-0.22); k=10: 0.0708 vs 0.0704 (z=+0.59); k=50: 0.0265 vs 0.0268 (z=-0.38); k=200: 0.0112 vs 0.0117 (z=-0.56)
+[PASS] Var(sum)/n^2H H=0.7: 1.0162 (MC se 0.0224)
+[PASS] autocov H=0.9: k=0: 1.0086 vs 1.0000 (z=+1.44); k=1: 0.7497 vs 0.7411 (z=+1.45); k=2: 0.6382 vs 0.6301 (z=+1.36); k=5: 0.5302 vs 0.5223 (z=+1.34); k=10: 0.4625 vs 0.4544 (z=+1.36); k=50: 0.3362 vs 0.3293 (z=+1.16); k=200: 0.2553 vs 0.2495 (z=+0.96)
+[PASS] Var(sum)/n^2H H=0.9: 1.0254 (MC se 0.0224)
+[PASS] full covariance n=16 H=0.6: max |C_hat - Toeplitz| = 0.0274 (MC scale ~0.01)
+[PASS] full covariance n=16 H=0.9: max |C_hat - Toeplitz| = 0.0143 (MC scale ~0.01)
+[PASS] norm_cdf(1.959964): 0.975000000000000
+[PASS] t_quantile(0.975, 10): 2.228138852 vs 2.228138851986
+[PASS] t_quantile(0.975, 25): 2.059538553 vs 2.059538552753
+[PASS] t_quantile(0.975, 60): 2.000297822 vs 2.000297821732
+[PASS] t_quantile(0.975, 120): 1.979930405 vs 1.979930405146
+[PASS] shift FFT vs brute force: max abs err 8.33e-17
+[PASS] median bandwidth: 1.154663 vs 1.154663
+[PASS] median bandwidth sign data > 0: 2.0
+[PASS] dCov^2 V-stat identity: 0.0209941542 vs 0.0209941542
+[PASS] subsample windows vs brute force: max abs err 4.44e-16, m=64
+[PASS] wild-bootstrap multiplier acf: k=1: 0.951 vs 0.951; k=10: 0.601 vs 0.607; k=20: 0.359 vs 0.368; k=40: 0.125 vs 0.135
+[PASS] wild_boot_stats: quadratic forms match
+[PASS] EWC cosine basis Parseval: 50.8746236979 vs 50.8746236979
+[PASS] NW S=1 equals gamma0: ok
+[PASS] G2 range and mean: corr(G2, xi)=0.9784 vs sqrt(3/pi)=0.9772
+[PASS] fOU stationarity lam=0.01: var first 100=1.1589, last 100=1.1941
+[PASS] fOU stationarity lam=0.1: var first 100=0.7809, last 100=0.7839
+
+OVERALL: PASS

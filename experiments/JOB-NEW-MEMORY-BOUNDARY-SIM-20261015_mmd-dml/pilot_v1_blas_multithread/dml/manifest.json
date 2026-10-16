@@ -1,0 +1,729 @@
+{
+ "job": "JOB-NEW-MEMORY-BOUNDARY-SIM-20261015",
+ "worker": "claude-mb-mmddml-20261015",
+ "family": "dml",
+ "tag": "pilot",
+ "evidence_class": "exploratory simulation (timing pilot; not evidence)",
+ "master_seed": 2026101599,
+ "seed_scheme": "SeedSequence(entropy=2026101599, spawn_key=(1, cell_idx, rep))",
+ "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:50:00) [GCC 14.3.0]",
+ "numpy": "2.5.2",
+ "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+ "procs": 6,
+ "script_sha256": {
+  "common.py": "0ed009c55c58438a58d7e793082a73b85e33cc6702cfa4f13bac5bef1852e2c1",
+  "khom.py": "6c52e38911b32ffb84b42643266de2ca1be2e5ef69bdb77e62549ba38c56688e",
+  "dml.py": "3731bd33471282cb4e7eded1761d772477afc403208f2129543fd95218dfe32f",
+  "run.py": "695f6dbdc94db98fc97373fad38dd63fe1bbad7275cceea5a102cb868745a337"
+ },
+ "cells": [
+  {
+   "tau": "const",
+   "H": 0.5,
+   "T": 500,
+   "cell_idx": 0,
+   "cell_id": "dml_const_H0.5_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    0,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.5,
+   "T": 2000,
+   "cell_idx": 1,
+   "cell_id": "dml_const_H0.5_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    1,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.5,
+   "T": 8000,
+   "cell_idx": 2,
+   "cell_id": "dml_const_H0.5_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    2,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.6,
+   "T": 500,
+   "cell_idx": 3,
+   "cell_id": "dml_const_H0.6_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    3,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.6,
+   "T": 2000,
+   "cell_idx": 4,
+   "cell_id": "dml_const_H0.6_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    4,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.6,
+   "T": 8000,
+   "cell_idx": 5,
+   "cell_id": "dml_const_H0.6_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    5,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.7,
+   "T": 500,
+   "cell_idx": 6,
+   "cell_id": "dml_const_H0.7_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    6,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.7,
+   "T": 2000,
+   "cell_idx": 7,
+   "cell_id": "dml_const_H0.7_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    7,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.7,
+   "T": 8000,
+   "cell_idx": 8,
+   "cell_id": "dml_const_H0.7_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    8,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.75,
+   "T": 500,
+   "cell_idx": 9,
+   "cell_id": "dml_const_H0.75_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    9,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.75,
+   "T": 2000,
+   "cell_idx": 10,
+   "cell_id": "dml_const_H0.75_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    10,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.75,
+   "T": 8000,
+   "cell_idx": 11,
+   "cell_id": "dml_const_H0.75_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    11,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.8,
+   "T": 500,
+   "cell_idx": 12,
+   "cell_id": "dml_const_H0.8_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    12,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.8,
+   "T": 2000,
+   "cell_idx": 13,
+   "cell_id": "dml_const_H0.8_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    13,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.8,
+   "T": 8000,
+   "cell_idx": 14,
+   "cell_id": "dml_const_H0.8_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    14,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.9,
+   "T": 500,
+   "cell_idx": 15,
+   "cell_id": "dml_const_H0.9_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    15,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.9,
+   "T": 2000,
+   "cell_idx": 16,
+   "cell_id": "dml_const_H0.9_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    16,
+    "rep"
+   ]
+  },
+  {
+   "tau": "const",
+   "H": 0.9,
+   "T": 8000,
+   "cell_idx": 17,
+   "cell_id": "dml_const_H0.9_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    17,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.5,
+   "T": 500,
+   "cell_idx": 18,
+   "cell_id": "dml_rank1_H0.5_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    18,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.5,
+   "T": 2000,
+   "cell_idx": 19,
+   "cell_id": "dml_rank1_H0.5_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    19,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.5,
+   "T": 8000,
+   "cell_idx": 20,
+   "cell_id": "dml_rank1_H0.5_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    20,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.6,
+   "T": 500,
+   "cell_idx": 21,
+   "cell_id": "dml_rank1_H0.6_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    21,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.6,
+   "T": 2000,
+   "cell_idx": 22,
+   "cell_id": "dml_rank1_H0.6_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    22,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.6,
+   "T": 8000,
+   "cell_idx": 23,
+   "cell_id": "dml_rank1_H0.6_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    23,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.7,
+   "T": 500,
+   "cell_idx": 24,
+   "cell_id": "dml_rank1_H0.7_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    24,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.7,
+   "T": 2000,
+   "cell_idx": 25,
+   "cell_id": "dml_rank1_H0.7_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    25,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.7,
+   "T": 8000,
+   "cell_idx": 26,
+   "cell_id": "dml_rank1_H0.7_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    26,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.75,
+   "T": 500,
+   "cell_idx": 27,
+   "cell_id": "dml_rank1_H0.75_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    27,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.75,
+   "T": 2000,
+   "cell_idx": 28,
+   "cell_id": "dml_rank1_H0.75_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    28,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.75,
+   "T": 8000,
+   "cell_idx": 29,
+   "cell_id": "dml_rank1_H0.75_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    29,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.8,
+   "T": 500,
+   "cell_idx": 30,
+   "cell_id": "dml_rank1_H0.8_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    30,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.8,
+   "T": 2000,
+   "cell_idx": 31,
+   "cell_id": "dml_rank1_H0.8_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    31,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.8,
+   "T": 8000,
+   "cell_idx": 32,
+   "cell_id": "dml_rank1_H0.8_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    32,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.9,
+   "T": 500,
+   "cell_idx": 33,
+   "cell_id": "dml_rank1_H0.9_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    33,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.9,
+   "T": 2000,
+   "cell_idx": 34,
+   "cell_id": "dml_rank1_H0.9_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    34,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank1",
+   "H": 0.9,
+   "T": 8000,
+   "cell_idx": 35,
+   "cell_id": "dml_rank1_H0.9_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    35,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.5,
+   "T": 500,
+   "cell_idx": 36,
+   "cell_id": "dml_rank2_H0.5_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    36,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.5,
+   "T": 2000,
+   "cell_idx": 37,
+   "cell_id": "dml_rank2_H0.5_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    37,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.5,
+   "T": 8000,
+   "cell_idx": 38,
+   "cell_id": "dml_rank2_H0.5_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    38,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.6,
+   "T": 500,
+   "cell_idx": 39,
+   "cell_id": "dml_rank2_H0.6_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    39,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.6,
+   "T": 2000,
+   "cell_idx": 40,
+   "cell_id": "dml_rank2_H0.6_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    40,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.6,
+   "T": 8000,
+   "cell_idx": 41,
+   "cell_id": "dml_rank2_H0.6_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    41,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.7,
+   "T": 500,
+   "cell_idx": 42,
+   "cell_id": "dml_rank2_H0.7_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    42,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.7,
+   "T": 2000,
+   "cell_idx": 43,
+   "cell_id": "dml_rank2_H0.7_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    43,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.7,
+   "T": 8000,
+   "cell_idx": 44,
+   "cell_id": "dml_rank2_H0.7_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    44,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.75,
+   "T": 500,
+   "cell_idx": 45,
+   "cell_id": "dml_rank2_H0.75_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    45,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.75,
+   "T": 2000,
+   "cell_idx": 46,
+   "cell_id": "dml_rank2_H0.75_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    46,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.75,
+   "T": 8000,
+   "cell_idx": 47,
+   "cell_id": "dml_rank2_H0.75_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    47,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.8,
+   "T": 500,
+   "cell_idx": 48,
+   "cell_id": "dml_rank2_H0.8_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    48,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.8,
+   "T": 2000,
+   "cell_idx": 49,
+   "cell_id": "dml_rank2_H0.8_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    49,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.8,
+   "T": 8000,
+   "cell_idx": 50,
+   "cell_id": "dml_rank2_H0.8_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    50,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.9,
+   "T": 500,
+   "cell_idx": 51,
+   "cell_id": "dml_rank2_H0.9_T500",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    51,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.9,
+   "T": 2000,
+   "cell_idx": 52,
+   "cell_id": "dml_rank2_H0.9_T2000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    52,
+    "rep"
+   ]
+  },
+  {
+   "tau": "rank2",
+   "H": 0.9,
+   "T": 8000,
+   "cell_idx": 53,
+   "cell_id": "dml_rank2_H0.9_T8000",
+   "reps": 20,
+   "seed_spawn_key": [
+    1,
+    53,
+    "rep"
+   ]
+  }
+ ],
+ "started_utc": "2026-10-15T22:42:49Z",
+ "tasks_pending": 108,
+ "finished_utc": "2026-10-15T22:44:30Z",
+ "wall_s_this_invocation": 101.20569610595703,
+ "cpu_s_this_invocation": 897.482394699,
+ "errors_this_invocation": 0
+}

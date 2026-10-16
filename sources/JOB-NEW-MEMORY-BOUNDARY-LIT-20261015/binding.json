@@ -1,0 +1,225 @@
+{
+  "approval_decision_id": "D-3debf5bb28",
+  "job_id": "JOB-NEW-MEMORY-BOUNDARY-LIT-20261015",
+  "parent_sources": [
+    {
+      "commit": "f35d38c61a2bc04b5a81d7678581a161a01f2600",
+      "repository": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness"
+    },
+    {
+      "commit": "be4179e5940ac5b61b378a73a6d3810688aea128",
+      "repository": "/media/ak/10E1026C4FA6006E/GitRepos/research_assistant"
+    }
+  ],
+  "plan_path": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/runs/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015/literature-plan.yaml",
+  "plan_route": "broad_literature",
+  "plan_sha256": "9c1d4ffa4a5ef386cfb5b854fe9bf127769f9d4522a066443c8d02452918065f",
+  "proposal_path": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/programme/proposals/NEW-MEMORY-BOUNDARY.yaml",
+  "record_path": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/runs/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015.md",
+  "schema_version": 1,
+  "selected_routes": {
+    "broad_literature": {
+      "checked_at_utc": "2026-10-15T22:09:06.599907Z",
+      "engine": "claude",
+      "engine_access": "not_tested_by_binding",
+      "engine_executable": "/home/ak/.local/bin/claude",
+      "engine_loaded": false,
+      "execution_tested": false,
+      "files_read": [
+        {
+          "actual_sha256": "f903840f07c447abe51fc7f52c6fe2354a9b15af25bfd254728a199cd26985be",
+          "expected_sha256": "f903840f07c447abe51fc7f52c6fe2354a9b15af25bfd254728a199cd26985be",
+          "git_revision": "49e79a7c99296e431cecce60225bf8f5393f3fbb",
+          "git_status": "",
+          "path": "/home/ak/academic-research-skills/deep-research/SKILL.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "c9db57cadc12863fee48a7a29d27e29961d2ff3be6aaa016c36b0fadceb454cc",
+          "expected_sha256": "c9db57cadc12863fee48a7a29d27e29961d2ff3be6aaa016c36b0fadceb454cc",
+          "git_revision": "49e79a7c99296e431cecce60225bf8f5393f3fbb",
+          "git_status": "",
+          "path": "/home/ak/academic-research-skills/deep-research/references/mode_selection_guide.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "16fd63d6a97d8c31b60ee66cb1268c3b078ff7f8eec9487177229be5cb39f92b",
+          "expected_sha256": "16fd63d6a97d8c31b60ee66cb1268c3b078ff7f8eec9487177229be5cb39f92b",
+          "git_revision": "49e79a7c99296e431cecce60225bf8f5393f3fbb",
+          "git_status": "",
+          "path": "/home/ak/academic-research-skills/deep-research/references/source_quality_hierarchy.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "c2250c066d304c2ed7dd1401313216d813dc30b0ef9b873910b2d0bcd4b48052",
+          "expected_sha256": "c2250c066d304c2ed7dd1401313216d813dc30b0ef9b873910b2d0bcd4b48052",
+          "git_revision": "49e79a7c99296e431cecce60225bf8f5393f3fbb",
+          "git_status": "",
+          "path": "/home/ak/academic-research-skills/deep-research/references/failure_paths.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "de877cb8fe71a226f07033f7cd9735638d6cb645461af0702363ce9b13094344",
+          "expected_sha256": "de877cb8fe71a226f07033f7cd9735638d6cb645461af0702363ce9b13094344",
+          "git_revision": "49e79a7c99296e431cecce60225bf8f5393f3fbb",
+          "git_status": "M deep-research/references/semantic_scholar_api_protocol.md",
+          "path": "/home/ak/academic-research-skills/deep-research/references/semantic_scholar_api_protocol.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "025f2d6ae8ca06cb11e8eee3db9f471f09a4ea3e81c98f5f1882770873a12093",
+          "expected_sha256": "025f2d6ae8ca06cb11e8eee3db9f471f09a4ea3e81c98f5f1882770873a12093",
+          "git_revision": "49e79a7c99296e431cecce60225bf8f5393f3fbb",
+          "git_status": "",
+          "path": "/home/ak/academic-research-skills/deep-research/references/systematic_review_protocol.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "885ef79f7a37cc03e0fcb9c4a7deecb9bb9f9bbae5b98ce2c7c9e42804e76dea",
+          "expected_sha256": "885ef79f7a37cc03e0fcb9c4a7deecb9bb9f9bbae5b98ce2c7c9e42804e76dea",
+          "git_revision": "49e79a7c99296e431cecce60225bf8f5393f3fbb",
+          "git_status": "",
+          "path": "/home/ak/academic-research-skills/deep-research/agents/bibliography_agent.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "3ffecae526acdde6d28bb8d2a9f5a88f95c00f51338c8f4d4a724ced3f7777bf",
+          "expected_sha256": "3ffecae526acdde6d28bb8d2a9f5a88f95c00f51338c8f4d4a724ced3f7777bf",
+          "git_revision": "49e79a7c99296e431cecce60225bf8f5393f3fbb",
+          "git_status": "",
+          "path": "/home/ak/academic-research-skills/deep-research/agents/source_verification_agent.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "e7427a4ae9db6d45fd82765b886c47bf2bde406ebe037fd105bcb20409d63b91",
+          "expected_sha256": "e7427a4ae9db6d45fd82765b886c47bf2bde406ebe037fd105bcb20409d63b91",
+          "git_revision": "49e79a7c99296e431cecce60225bf8f5393f3fbb",
+          "git_status": "",
+          "path": "/home/ak/academic-research-skills/deep-research/templates/literature_matrix_template.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "10a6a524c2e804a36435beb14a18a31d48e22ec5e7e9e4b2ab390f3829627a76",
+          "expected_sha256": "10a6a524c2e804a36435beb14a18a31d48e22ec5e7e9e4b2ab390f3829627a76",
+          "git_revision": "49e79a7c99296e431cecce60225bf8f5393f3fbb",
+          "git_status": "",
+          "path": "/home/ak/academic-research-skills/shared/references/intent_clarification_protocol.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "1e340c0f4ea582f72cd1b94a2bbdb9a1621f624d2c1baed7f193c893e237ce61",
+          "expected_sha256": "1e340c0f4ea582f72cd1b94a2bbdb9a1621f624d2c1baed7f193c893e237ce61",
+          "git_revision": "49e79a7c99296e431cecce60225bf8f5393f3fbb",
+          "git_status": "",
+          "path": "/home/ak/academic-research-skills/shared/compliance_checkpoint_protocol.md",
+          "state": "matches_pin"
+        }
+      ],
+      "inputs": [
+        {
+          "path": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/runs/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015/literature-plan.yaml",
+          "sha256": "9c1d4ffa4a5ef386cfb5b854fe9bf127769f9d4522a066443c8d02452918065f"
+        }
+      ],
+      "job_record": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/runs/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015.md",
+      "output_dir": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/runs/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015",
+      "protocol_hash": null,
+      "resource_limits": {
+        "allow_dirty_tree": false,
+        "max_workers": 4,
+        "plan_limit": "One worker session; screen <=60 records, extract <=20, full-text reads <=12; no data, no simulation runs; job directory only.",
+        "timeout_seconds": 3600
+      },
+      "tools_reported": [
+        "web__run"
+      ]
+    },
+    "gap_synthesis": {
+      "checked_at_utc": "2026-10-15T22:09:07.715444Z",
+      "engine": "claude",
+      "engine_access": "not_tested_by_binding",
+      "engine_executable": "/home/ak/.local/bin/claude",
+      "engine_loaded": false,
+      "execution_tested": false,
+      "files_read": [
+        {
+          "actual_sha256": "e81cb1de0f36e7378f315418a0e2386571c03a84d25ceec15cec6e18f1d25919",
+          "expected_sha256": "e81cb1de0f36e7378f315418a0e2386571c03a84d25ceec15cec6e18f1d25919",
+          "git_revision": null,
+          "git_status": null,
+          "path": "/home/ak/skills-sources/jup-local/academic-skills/research-gap-finder/SKILL.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "a5c625dd5437974ea4bad80b9f153767842f887f4ac9247ebc17571904f34448",
+          "expected_sha256": "a5c625dd5437974ea4bad80b9f153767842f887f4ac9247ebc17571904f34448",
+          "git_revision": null,
+          "git_status": null,
+          "path": "/home/ak/skills-sources/jup-local/academic-skills/research-gap-finder/references/gap_analysis_template.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "80a2e390c3ac17898b62aae9f5463b6e19acdb86f12fdeca4036016a52da40f2",
+          "expected_sha256": "80a2e390c3ac17898b62aae9f5463b6e19acdb86f12fdeca4036016a52da40f2",
+          "git_revision": null,
+          "git_status": null,
+          "path": "/home/ak/skills-sources/jup-local/academic-skills/research-gap-finder/references/problem_framing_template.md",
+          "state": "matches_pin"
+        },
+        {
+          "actual_sha256": "b0a96432d88885e919348aaf502641eec363a810627ca88b8f428ab7db66ad89",
+          "expected_sha256": "b0a96432d88885e919348aaf502641eec363a810627ca88b8f428ab7db66ad89",
+          "git_revision": null,
+          "git_status": null,
+          "path": "/home/ak/skills-sources/jup-local/academic-skills/research-gap-finder/agents/openai.yaml",
+          "state": "matches_pin"
+        }
+      ],
+      "inputs": [
+        {
+          "path": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/runs/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015/literature-plan.yaml",
+          "sha256": "9c1d4ffa4a5ef386cfb5b854fe9bf127769f9d4522a066443c8d02452918065f"
+        }
+      ],
+      "job_record": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/runs/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015.md",
+      "output_dir": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/runs/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015",
+      "protocol_hash": null,
+      "resource_limits": {
+        "allow_dirty_tree": false,
+        "max_workers": 4,
+        "plan_limit": "One worker session; screen <=60 records, extract <=20, full-text reads <=12; no data, no simulation runs; job directory only.",
+        "timeout_seconds": 3600
+      },
+      "tools_reported": []
+    },
+    "scholarly_metadata": {
+      "checked_at_utc": "2026-10-15T22:09:07.105756Z",
+      "engine": "claude",
+      "engine_access": "not_tested_by_binding",
+      "engine_executable": "/home/ak/.local/bin/claude",
+      "engine_loaded": false,
+      "execution_tested": false,
+      "files_read": [],
+      "inputs": [
+        {
+          "path": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/runs/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015/literature-plan.yaml",
+          "sha256": "9c1d4ffa4a5ef386cfb5b854fe9bf127769f9d4522a066443c8d02452918065f"
+        }
+      ],
+      "job_record": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/runs/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015.md",
+      "output_dir": "/media/ak/10E1026C4FA6006E/GitRepos/ResearchHarness/runs/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015",
+      "protocol_hash": null,
+      "resource_limits": {
+        "allow_dirty_tree": false,
+        "max_workers": 4,
+        "plan_limit": "One worker session; screen <=60 records, extract <=20, full-text reads <=12; no data, no simulation runs; job directory only.",
+        "timeout_seconds": 3600
+      },
+      "tools_reported": [
+        "web__run"
+      ]
+    }
+  },
+  "state": "proposed",
+  "track_id": "NEW-MEMORY-BOUNDARY"
+}

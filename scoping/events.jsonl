@@ -1,0 +1,2 @@
+{"event":"started","execution_id":"claude-mb3-scope-20261016","timestamp_utc":"2026-10-16T13:13:48Z","details":"scoping first experiments"}
+{"event":"finished","execution_id":"claude-mb3-scope-20261016","timestamp_utc":"2026-10-16T13:15:34Z","details":{"outputs":{"scoping/first-experiments.md":"57514799c3d506da322bf96900684cf3714b2df4ccf02f48851dd981a4f3fb39"},"proposal_words":200,"kernel_linear_status":"pending (part2 ~860/4900 chunks at read)","holdout_touched":false,"queries":0,"simulations":0}}
