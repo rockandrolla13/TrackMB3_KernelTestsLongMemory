@@ -1,0 +1,12 @@
+{
+  "description": "Figures reproduce saved EXP1 summaries; no simulations rerun.",
+  "inputs": {
+    "e2_summary.csv": "81e6151b75951445127bc1fe5cbbb8b7d702926652798769635ccfde746b3ed6",
+    "e3_summary.csv": "8ed1e34bdbea50e736e53b3a40a93fd44f974ba616ddac4f9858b124f296c300"
+  },
+  "outputs": {
+    "mmd_size.pdf": "116617a5b8789157d72815a0c7ce51319055e70cb92c0c16155ccdaf7d5e6e89",
+    "independence_size.pdf": "a9aaa88e7303d8e628277dd5a6cff22818e4ffec863f0a5101d97c4464acb0db",
+    "size_slopes.pdf": "a35d85c26675951378a36881d1fc0962c38fd290031dec80942877b03fc4be06"
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "data": "XNAS.ITCH AAPL, MSFT, NVDA regular-session trades, January\u2013June 2024",
+  "interpretation": "Exploratory placebo; process independence is unverified; days are reused.",
+  "nominal_percent": 5,
+  "cells": [
+    {
+      "pairing": "AAPL-MSFT",
+      "n": 500,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 122,
+      "distinct_b_days": 121,
+      "maximum_reuse_a": 9,
+      "maximum_reuse_b": 9,
+      "rejection_percent": {
+        "HSIC wild": 9.4,
+        "HSIC shift": 4.4,
+        "HSIC subsampling": 10.0,
+        "dCov wild": 9.0,
+        "dCov subsampling": 9.8,
+        "Pearson NW": 5.8,
+        "Pearson EWC": 6.2
+      }
+    },
+    {
+      "pairing": "AAPL-MSFT",
+      "n": 1000,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 123,
+      "distinct_b_days": 122,
+      "maximum_reuse_a": 10,
+      "maximum_reuse_b": 10,
+      "rejection_percent": {
+        "HSIC wild": 7.0,
+        "HSIC shift": 3.8,
+        "HSIC subsampling": 9.4,
+        "dCov wild": 7.6,
+        "dCov subsampling": 9.0,
+        "Pearson NW": 4.8,
+        "Pearson EWC": 4.4
+      }
+    },
+    {
+      "pairing": "AAPL-MSFT",
+      "n": 2000,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 121,
+      "distinct_b_days": 122,
+      "maximum_reuse_a": 9,
+      "maximum_reuse_b": 10,
+      "rejection_percent": {
+        "HSIC wild": 8.6,
+        "HSIC shift": 5.6,
+        "HSIC subsampling": 8.4,
+        "dCov wild": 8.4,
+        "dCov subsampling": 8.8,
+        "Pearson NW": 7.8,
+        "Pearson EWC": 7.0
+      }
+    },
+    {
+      "pairing": "AAPL-NVDA",
+      "n": 500,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 123,
+      "distinct_b_days": 123,
+      "maximum_reuse_a": 10,
+      "maximum_reuse_b": 10,
+      "rejection_percent": {
+        "HSIC wild": 11.0,
+        "HSIC shift": 6.8,
+        "HSIC subsampling": 11.6,
+        "dCov wild": 8.2,
+        "dCov subsampling": 10.2,
+        "Pearson NW": 7.0,
+        "Pearson EWC": 5.6
+      }
+    },
+    {
+      "pairing": "AAPL-NVDA",
+      "n": 1000,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 124,
+      "distinct_b_days": 123,
+      "maximum_reuse_a": 10,
+      "maximum_reuse_b": 9,
+      "rejection_percent": {
+        "HSIC wild": 8.4,
+        "HSIC shift": 6.0,
+        "HSIC subsampling": 10.0,
+        "dCov wild": 9.0,
+        "dCov subsampling": 10.0,
+        "Pearson NW": 8.4,
+        "Pearson EWC": 7.2
+      }
+    },
+    {
+      "pairing": "AAPL-NVDA",
+      "n": 2000,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 124,
+      "distinct_b_days": 121,
+      "maximum_reuse_a": 10,
+      "maximum_reuse_b": 10,
+      "rejection_percent": {
+        "HSIC wild": 5.8,
+        "HSIC shift": 4.8,
+        "HSIC subsampling": 9.2,
+        "dCov wild": 6.0,
+        "dCov subsampling": 7.2,
+        "Pearson NW": 5.0,
+        "Pearson EWC": 3.8
+      }
+    },
+    {
+      "pairing": "MSFT-NVDA",
+      "n": 500,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 124,
+      "distinct_b_days": 124,
+      "maximum_reuse_a": 10,
+      "maximum_reuse_b": 9,
+      "rejection_percent": {
+        "HSIC wild": 9.2,
+        "HSIC shift": 5.4,
+        "HSIC subsampling": 10.8,
+        "dCov wild": 9.2,
+        "dCov subsampling": 11.8,
+        "Pearson NW": 8.0,
+        "Pearson EWC": 5.6
+      }
+    },
+    {
+      "pairing": "MSFT-NVDA",
+      "n": 1000,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 122,
+      "distinct_b_days": 120,
+      "maximum_reuse_a": 11,
+      "maximum_reuse_b": 9,
+      "rejection_percent": {
+        "HSIC wild": 7.8,
+        "HSIC shift": 5.6,
+        "HSIC subsampling": 10.6,
+        "dCov wild": 9.4,
+        "dCov subsampling": 10.0,
+        "Pearson NW": 8.2,
+        "Pearson EWC": 6.2
+      }
+    },
+    {
+      "pairing": "MSFT-NVDA",
+      "n": 2000,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 122,
+      "distinct_b_days": 122,
+      "maximum_reuse_a": 10,
+      "maximum_reuse_b": 10,
+      "rejection_percent": {
+        "HSIC wild": 7.2,
+        "HSIC shift": 5.4,
+        "HSIC subsampling": 10.2,
+        "dCov wild": 6.4,
+        "dCov subsampling": 11.2,
+        "Pearson NW": 7.4,
+        "Pearson EWC": 5.6
+      }
+    },
+    {
+      "pairing": "AAPL-AAPL",
+      "n": 500,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 123,
+      "distinct_b_days": 124,
+      "maximum_reuse_a": 10,
+      "maximum_reuse_b": 12,
+      "rejection_percent": {
+        "HSIC wild": 8.6,
+        "HSIC shift": 6.0,
+        "HSIC subsampling": 9.4,
+        "dCov wild": 8.2,
+        "dCov subsampling": 8.6,
+        "Pearson NW": 7.0,
+        "Pearson EWC": 5.6
+      }
+    },
+    {
+      "pairing": "AAPL-AAPL",
+      "n": 1000,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 121,
+      "distinct_b_days": 122,
+      "maximum_reuse_a": 10,
+      "maximum_reuse_b": 12,
+      "rejection_percent": {
+        "HSIC wild": 8.8,
+        "HSIC shift": 6.8,
+        "HSIC subsampling": 10.0,
+        "dCov wild": 8.0,
+        "dCov subsampling": 9.0,
+        "Pearson NW": 6.8,
+        "Pearson EWC": 5.6
+      }
+    },
+    {
+      "pairing": "AAPL-AAPL",
+      "n": 2000,
+      "rows": 500,
+      "valid": 500,
+      "distinct_a_days": 120,
+      "distinct_b_days": 121,
+      "maximum_reuse_a": 10,
+      "maximum_reuse_b": 10,
+      "rejection_percent": {
+        "HSIC wild": 4.8,
+        "HSIC shift": 3.4,
+        "HSIC subsampling": 7.2,
+        "dCov wild": 5.0,
+        "dCov subsampling": 7.6,
+        "Pearson NW": 4.2,
+        "Pearson EWC": 4.6
+      }
+    }
+  ]
+}

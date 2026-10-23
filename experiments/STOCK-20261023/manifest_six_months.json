@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-10-23T01:41:19.622599+00:00",
+  "phase": "six_months",
+  "dataset": "XNAS.ITCH",
+  "schema": "trades",
+  "symbols": [
+    "AAPL",
+    "MSFT",
+    "NVDA"
+  ],
+  "stype_in": "raw_symbol",
+  "cost_quote_usd": 15.004068285227,
+  "cost_cap_usd": 18.0,
+  "files": [
+    {
+      "start": "2024-01-01",
+      "end_exclusive": "2024-02-01",
+      "path": "data/raw/xnas_stock_trades_2024/xnas_trades_2024-01-01_2024-02-01.dbn.zst",
+      "bytes": 112986363,
+      "sha256": "8d328a24d192449c5494ff6c6fa1c0038848db84d1489baefc46495efe3ee808"
+    },
+    {
+      "start": "2024-02-01",
+      "end_exclusive": "2024-03-01",
+      "path": "data/raw/xnas_stock_trades_2024/xnas_trades_2024-02-01_2024-03-01.dbn.zst",
+      "bytes": 124588265,
+      "sha256": "59b39e35767e661a6ec99864b98f869e92029c25226a68b2575e4bd1727f6b8e"
+    },
+    {
+      "start": "2024-03-01",
+      "end_exclusive": "2024-04-01",
+      "path": "data/raw/xnas_stock_trades_2024/xnas_trades_2024-03-01_2024-04-01.dbn.zst",
+      "bytes": 150736521,
+      "sha256": "07cfd031d1f023c25b5064e10d0a759992629b4a4e7ebcf443157ff04dcf6c9a"
+    },
+    {
+      "start": "2024-04-01",
+      "end_exclusive": "2024-05-01",
+      "path": "data/raw/xnas_stock_trades_2024/xnas_trades_2024-04-01_2024-05-01.dbn.zst",
+      "bytes": 141893939,
+      "sha256": "c0f773374f281f228c2db7bb80b1bd11ddfbc8ec105bda1a648b56d2495fed98"
+    },
+    {
+      "start": "2024-05-01",
+      "end_exclusive": "2024-06-01",
+      "path": "data/raw/xnas_stock_trades_2024/xnas_trades_2024-05-01_2024-06-01.dbn.zst",
+      "bytes": 140969248,
+      "sha256": "61790e0acc186ef45a8cc909741ebe2539243713339c2d58de38a6b2e63d2564"
+    },
+    {
+      "start": "2024-06-01",
+      "end_exclusive": "2024-07-01",
+      "path": "data/raw/xnas_stock_trades_2024/xnas_trades_2024-06-01_2024-07-01.dbn.zst",
+      "bytes": 194011552,
+      "sha256": "2da8e521cba317654a0c363d66fa611bcc465362907635b1a8662a5031ab5109"
+    }
+  ]
+}

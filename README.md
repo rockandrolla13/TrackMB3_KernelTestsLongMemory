@@ -6,6 +6,9 @@
 
 ## Layout
 
+- `paper/long-memory-kernel-tests/`: working paper, PDF, figures, and Overleaf package. The paper separates known-null simulations from descriptive Nasdaq stock-duration placebos.
+- `experiments/STOCK-20261023/`: stock-duration extraction, pair results, and request manifests. Raw licensed trade files are excluded.
+- `experiments/EXP1-20261016/`: H5, E2, and E3 simulation extensions used in the figures and rule summary table.
 - `FINDINGS.md`: what is known so far, with evidence class and source paths.
 - `experiments/`: copied simulation outputs, byte for byte, with the original job record.
 - `sources/`: copied literature and design jobs this track grew from.

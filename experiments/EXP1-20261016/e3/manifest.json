@@ -1,0 +1,520 @@
+{
+ "mode": "main",
+ "master_entropy": 2026101632,
+ "B_wild": 500,
+ "numpy": "2.5.2",
+ "python": "3.12.13",
+ "workers": 5,
+ "cells": [
+  {
+   "proc": "G4",
+   "HX": 0.65,
+   "HY": 0.65,
+   "lam": null,
+   "n": 500,
+   "idx": 0,
+   "name": "e3__HX0.65_HY0.65__n500",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     0,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.65,
+   "HY": 0.65,
+   "lam": null,
+   "n": 1000,
+   "idx": 1,
+   "name": "e3__HX0.65_HY0.65__n1000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     1,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.65,
+   "HY": 0.65,
+   "lam": null,
+   "n": 2000,
+   "idx": 2,
+   "name": "e3__HX0.65_HY0.65__n2000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     2,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 500,
+   "idx": 3,
+   "name": "e3__HX0.7_HY0.7__n500",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     3,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 1000,
+   "idx": 4,
+   "name": "e3__HX0.7_HY0.7__n1000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     4,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.7,
+   "HY": 0.7,
+   "lam": null,
+   "n": 2000,
+   "idx": 5,
+   "name": "e3__HX0.7_HY0.7__n2000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     5,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.725,
+   "HY": 0.725,
+   "lam": null,
+   "n": 500,
+   "idx": 6,
+   "name": "e3__HX0.725_HY0.725__n500",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     6,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.725,
+   "HY": 0.725,
+   "lam": null,
+   "n": 1000,
+   "idx": 7,
+   "name": "e3__HX0.725_HY0.725__n1000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     7,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.725,
+   "HY": 0.725,
+   "lam": null,
+   "n": 2000,
+   "idx": 8,
+   "name": "e3__HX0.725_HY0.725__n2000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     8,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 500,
+   "idx": 9,
+   "name": "e3__HX0.75_HY0.75__n500",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     9,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 1000,
+   "idx": 10,
+   "name": "e3__HX0.75_HY0.75__n1000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     10,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.75,
+   "HY": 0.75,
+   "lam": null,
+   "n": 2000,
+   "idx": 11,
+   "name": "e3__HX0.75_HY0.75__n2000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     11,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.775,
+   "HY": 0.775,
+   "lam": null,
+   "n": 500,
+   "idx": 12,
+   "name": "e3__HX0.775_HY0.775__n500",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     12,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.775,
+   "HY": 0.775,
+   "lam": null,
+   "n": 1000,
+   "idx": 13,
+   "name": "e3__HX0.775_HY0.775__n1000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     13,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.775,
+   "HY": 0.775,
+   "lam": null,
+   "n": 2000,
+   "idx": 14,
+   "name": "e3__HX0.775_HY0.775__n2000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     14,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 500,
+   "idx": 15,
+   "name": "e3__HX0.8_HY0.8__n500",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     15,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 1000,
+   "idx": 16,
+   "name": "e3__HX0.8_HY0.8__n1000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     16,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.8,
+   "HY": 0.8,
+   "lam": null,
+   "n": 2000,
+   "idx": 17,
+   "name": "e3__HX0.8_HY0.8__n2000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     17,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.85,
+   "HY": 0.85,
+   "lam": null,
+   "n": 500,
+   "idx": 18,
+   "name": "e3__HX0.85_HY0.85__n500",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     18,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.85,
+   "HY": 0.85,
+   "lam": null,
+   "n": 1000,
+   "idx": 19,
+   "name": "e3__HX0.85_HY0.85__n1000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     19,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.85,
+   "HY": 0.85,
+   "lam": null,
+   "n": 2000,
+   "idx": 20,
+   "name": "e3__HX0.85_HY0.85__n2000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     20,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.55,
+   "HY": 0.85,
+   "lam": null,
+   "n": 500,
+   "idx": 21,
+   "name": "e3__HX0.55_HY0.85__n500",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     21,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.55,
+   "HY": 0.85,
+   "lam": null,
+   "n": 1000,
+   "idx": 22,
+   "name": "e3__HX0.55_HY0.85__n1000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     22,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.55,
+   "HY": 0.85,
+   "lam": null,
+   "n": 2000,
+   "idx": 23,
+   "name": "e3__HX0.55_HY0.85__n2000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     23,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.6,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "idx": 24,
+   "name": "e3__HX0.6_HY0.9__n500",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     24,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.6,
+   "HY": 0.9,
+   "lam": null,
+   "n": 1000,
+   "idx": 25,
+   "name": "e3__HX0.6_HY0.9__n1000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     25,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.6,
+   "HY": 0.9,
+   "lam": null,
+   "n": 2000,
+   "idx": 26,
+   "name": "e3__HX0.6_HY0.9__n2000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     26,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.65,
+   "HY": 0.9,
+   "lam": null,
+   "n": 500,
+   "idx": 27,
+   "name": "e3__HX0.65_HY0.9__n500",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     27,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.65,
+   "HY": 0.9,
+   "lam": null,
+   "n": 1000,
+   "idx": 28,
+   "name": "e3__HX0.65_HY0.9__n1000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     28,
+     "rep"
+    ]
+   }
+  },
+  {
+   "proc": "G4",
+   "HX": 0.65,
+   "HY": 0.9,
+   "lam": null,
+   "n": 2000,
+   "idx": 29,
+   "name": "e3__HX0.65_HY0.9__n2000",
+   "reps": 2000,
+   "seed": {
+    "entropy": 2026101632,
+    "spawn_key": [
+     29,
+     "rep"
+    ]
+   }
+  }
+ ]
+}

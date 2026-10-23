@@ -1,0 +1,83 @@
+{
+  "source": "experiments/STOCK-20261023/duration_extraction_summary.json",
+  "method": "different-day exploratory duration placebo; within-day windows",
+  "seed": 2026102301,
+  "min_gap_trading_days": 20,
+  "pairs_per_cell": 500,
+  "wild_draws": 500,
+  "cells": [
+    {
+      "a": "AAPL",
+      "b": "MSFT",
+      "n": 500,
+      "index": 0
+    },
+    {
+      "a": "AAPL",
+      "b": "MSFT",
+      "n": 1000,
+      "index": 1
+    },
+    {
+      "a": "AAPL",
+      "b": "MSFT",
+      "n": 2000,
+      "index": 2
+    },
+    {
+      "a": "AAPL",
+      "b": "NVDA",
+      "n": 500,
+      "index": 3
+    },
+    {
+      "a": "AAPL",
+      "b": "NVDA",
+      "n": 1000,
+      "index": 4
+    },
+    {
+      "a": "AAPL",
+      "b": "NVDA",
+      "n": 2000,
+      "index": 5
+    },
+    {
+      "a": "MSFT",
+      "b": "NVDA",
+      "n": 500,
+      "index": 6
+    },
+    {
+      "a": "MSFT",
+      "b": "NVDA",
+      "n": 1000,
+      "index": 7
+    },
+    {
+      "a": "MSFT",
+      "b": "NVDA",
+      "n": 2000,
+      "index": 8
+    },
+    {
+      "a": "AAPL",
+      "b": "AAPL",
+      "n": 500,
+      "index": 9
+    },
+    {
+      "a": "AAPL",
+      "b": "AAPL",
+      "n": 1000,
+      "index": 10
+    },
+    {
+      "a": "AAPL",
+      "b": "AAPL",
+      "n": 2000,
+      "index": 11
+    }
+  ],
+  "note": "Reused days make sampled pairs dependent; rejection fractions are descriptive."
+}

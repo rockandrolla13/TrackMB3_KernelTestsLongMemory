@@ -1,0 +1,124 @@
+{
+  "seed": 2026102301,
+  "B": 500,
+  "null": "independent H=0.5 Gaussian fGn",
+  "500": {
+    "p_hsic_centred": {
+      "rejections": 90,
+      "replications": 1000,
+      "rate": 0.09,
+      "wilson95": [
+        0.07379614931508309,
+        0.1093417926430721
+      ]
+    },
+    "p_hsic_raw": {
+      "rejections": 39,
+      "replications": 1000,
+      "rate": 0.039,
+      "wilson95": [
+        0.028658960904180485,
+        0.052869310419501346
+      ]
+    },
+    "p_dcov_centred": {
+      "rejections": 80,
+      "replications": 1000,
+      "rate": 0.08,
+      "wilson95": [
+        0.06474803809836388,
+        0.09846643902950242
+      ]
+    },
+    "p_dcov_raw": {
+      "rejections": 37,
+      "replications": 1000,
+      "rate": 0.037,
+      "wilson95": [
+        0.026961180875554734,
+        0.05058239748206931
+      ]
+    }
+  },
+  "1000": {
+    "p_hsic_centred": {
+      "rejections": 64,
+      "replications": 1000,
+      "rate": 0.064,
+      "wilson95": [
+        0.050436200898229526,
+        0.08090073250117454
+      ]
+    },
+    "p_hsic_raw": {
+      "rejections": 36,
+      "replications": 1000,
+      "rate": 0.036,
+      "wilson95": [
+        0.02611557140738732,
+        0.049435660467207834
+      ]
+    },
+    "p_dcov_centred": {
+      "rejections": 65,
+      "replications": 1000,
+      "rate": 0.065,
+      "wilson95": [
+        0.051323770569062045,
+        0.0820055093133709
+      ]
+    },
+    "p_dcov_raw": {
+      "rejections": 34,
+      "replications": 1000,
+      "rate": 0.034,
+      "wilson95": [
+        0.024431348663226313,
+        0.04713519024531107
+      ]
+    }
+  },
+  "2000": {
+    "p_hsic_centred": {
+      "rejections": 59,
+      "replications": 1000,
+      "rate": 0.059,
+      "wilson95": [
+        0.04601429821280047,
+        0.07536090277145915
+      ]
+    },
+    "p_hsic_raw": {
+      "rejections": 40,
+      "replications": 1000,
+      "rate": 0.04,
+      "wilson95": [
+        0.02951097368545276,
+        0.05400964412125796
+      ]
+    },
+    "p_dcov_centred": {
+      "rejections": 70,
+      "replications": 1000,
+      "rate": 0.07,
+      "wilson95": [
+        0.05577636414629404,
+        0.08751464815128336
+      ]
+    },
+    "p_dcov_raw": {
+      "rejections": 39,
+      "replications": 1000,
+      "rate": 0.039,
+      "wilson95": [
+        0.028658960904180485,
+        0.052869310419501346
+      ]
+    }
+  },
+  "inputs": {
+    "investigations/hsic-dcov-calibration-2026-10-23/run_check.py": "1b885f3b9994b6916bedeb3480ca2f99eb3c5a10497863c8131fad34ea8d0ec4",
+    "experiments/EXP1-20261016/mbcore.py": "9c1a3d4af589f5cd2d3cef3433d2988f3085752c1e28eab9317977b61b5e6643"
+  },
+  "output_sha256": "e039836f3560a251df51563b06ce1fa0c05805e9206ed43684ab88045539c54c"
+}

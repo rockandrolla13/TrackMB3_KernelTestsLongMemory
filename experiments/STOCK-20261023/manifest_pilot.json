@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-10-23T01:37:48.154321+00:00",
+  "phase": "pilot",
+  "dataset": "XNAS.ITCH",
+  "schema": "trades",
+  "symbols": [
+    "AAPL",
+    "MSFT",
+    "NVDA"
+  ],
+  "stype_in": "raw_symbol",
+  "cost_quote_usd": 0.431055665016,
+  "cost_cap_usd": 1.0,
+  "files": [
+    {
+      "start": "2024-01-08",
+      "end_exclusive": "2024-01-13",
+      "path": "data/raw/xnas_stock_trades_2024/xnas_trades_2024-01-08_2024-01-13.dbn.zst",
+      "bytes": 26392184,
+      "sha256": "aa93382d0bc370b7a46d3fddbe01c1e859e826e7b3c2332276f630b765622b47"
+    }
+  ]
+}

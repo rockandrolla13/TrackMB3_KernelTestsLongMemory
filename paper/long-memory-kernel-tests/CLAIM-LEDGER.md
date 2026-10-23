@@ -1,0 +1,19 @@
+# Claim and evidence ledger
+
+This ledger is for the simulation-paper route selected in `PLAN-revise-manuscript.md`. It fixes the meaning of the principal claims before new calibration runs. The estimand is the probability that a **specified implemented test** rejects at nominal 5% under a **specified simulated null**, at the reported finite sample size. For E1, the estimand is only the rejection frequency of sampled trade-window pairs because their independence null is not established.
+
+| Manuscript claim | Status | Supporting record | Limit |
+| --- | --- | --- | --- |
+| Rank-one feature means can change rate for any `H>1/2`; rank-two means have a candidate change near `H=3/4` | Scalar Hermite covariance calculation; statistic-specific inference open | `../../sources/JOB-NEW-MEMORY-BOUNDARY-LIT-20261015/boundary-theorems.md`; manuscript §2 | Does not prove a split-MMD limit or calibration validity. At equality, slowly varying factors matter. |
+| Independent product features have covariance decay governed by `D_X+D_Y`; candidate `H_X+H_Y=3/2` | Algebraic mechanism under independent processes, with rank-one leading factors | Manuscript Eq. (cross)–(sum); `../../subtracks/NEW-MB-KERNEL-G1-HSIC/paper/paper.tex` | Does not prove Gaussian-kernel HSIC, mixed-memory limits, or critical values. |
+| Betken–Dehling Gaussian and non-central distance-covariance results | Published theorem | `../../literature/bibliography.bib`; manuscript §2; arXiv:2107.03041v3, Theorem 2.2 and Corollary 2.1 | Gaussian side requires both memory exponents above one-half; non-central identity-transform side uses their own statistic and assumptions. Their subsampling theorem does not validate the implemented finite-sample rule. |
+| MMD rank-one and rank-two rejection curves differ | Measured under simulated stationary homogeneity nulls | `../../experiments/EXP1-20261016/e2_summary.csv` and `e2_tables.md` | Calibration-specific, `n≤2000`; rank argument is not a proof of the curves. |
+| Independence-test rejections differ by critical-value rule near memory sum 1.4–1.6 | Measured under independent simulated fGn pairs | `../../experiments/EXP1-20261016/e3_summary.csv` and E3 cell CSVs | Fixed grid; adjacent-grid slopes are descriptive and do not estimate a universal threshold. |
+| HSIC/dCov wild bootstrap has memory-free baseline excess | Measured under independent Gaussian controls | `../../experiments/EXP1-20261016/e3_tables.md`, `H=0.5` reference; prior EXP1 review | MMD on-size variant does not automatically repair HSIC/dCov. |
+| Removing empirical centering repairs the HSIC/dCov multiplier baseline | Tested and not supported by the predeclared gate | `../../investigations/hsic-dcov-calibration-2026-10-23/report.md`; `DESIGN.md` and cell outputs | Raw multipliers were conservative in all six memory-free cells and farther from 5% in two. No E1 p-value was replaced. |
+| E1 duration pairs reject more often than selected Gaussian comparators | Recorded placebo comparison | `../../experiments/EXP1-20261016/e1_summary.csv`; `../../investigations/trade-durations-2026-10-23/report.md` | Twenty-day separation ensures nonoverlap of saved duration pairs, not process independence. H estimates and bootstrap calibration are unsettled. This is not a known false-alarm rate. |
+| Some sign-memory estimates exceed `H=1` | Recorded estimator output | `../../experiments/EXP1-20261016/e1/memory_long.json` | Such estimates fall outside the stationary fGn model; they are sensitivity/model-mismatch evidence, not valid H values for that model. |
+
+## Decision on headline scope
+
+The manuscript's headline is the **method-specific finite-sample size map** for simulated nulls. E1 remains a secondary placebo illustration. No claim of a validated calibration, universal `3/2` threshold, or real-data effect beyond memory will be made until the corresponding plan steps produce and verify that evidence.
