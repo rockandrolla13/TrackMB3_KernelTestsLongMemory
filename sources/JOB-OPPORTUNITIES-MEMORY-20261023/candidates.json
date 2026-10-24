@@ -1,0 +1,312 @@
+[
+  {
+    "id": "MB-G1-HSIC-MIXED-NULL",
+    "rank": 1,
+    "next_priority": 2,
+    "question": "For two independent Gaussian-subordinated long-memory series with one memory exponent below 1/2 and D_X+D_Y>1 (the mixed region), and for non-Gaussian marginals above the H_X+H_Y=3/2 line, what is the null limit of HSIC with a fixed bounded characteristic kernel?",
+    "setting": "Kernel independence tests (HSIC) compare two series. With long memory their usual null theory can fail. The best existing theorem (Betken–Dehling, for distance covariance) covers two cases and openly leaves a third, 'mixed' case and the nonlinear high-memory case unproved.",
+    "proposed_contribution": "A theorem, or a counterexample, for one fixed kernel and one specified pair of transforms, in the mixed region; with the kernel's leading Hermite coefficients written out.",
+    "parent_tracks": [
+      "NEW-MB-KERNEL-G1-HSIC",
+      "NEW-MB-KERNEL",
+      "NEW-MEMORY-BOUNDARY"
+    ],
+    "parent_sources": [
+      "ResearchHarness@e79a7f30f82592bd19f1fad96493c034ece1de03",
+      "catalog.yaml sha256 83ea8ca007df48c188a31f8bac7c9b3df02ee60fc07986d331a04267c13df4af",
+      "TrackMB3_KernelTestsLongMemory@61cc8d9b5ec3473bc9179d10fb6ad79116abf437"
+    ],
+    "assessment": "ranked",
+    "gap_status": "narrowed",
+    "importance": "It decides whether the empirical sum-rule knot seen in the October 2026 simulation (H_X+H_Y≈1.5) has a theorem behind it for HSIC, not just for distance covariance.",
+    "remaining_uncertainty": "Arcones 1994 and the newer U-process literature (e.g. 'Hermite ranks and U-statistics', HAL hal-01197638, abstract only, authors unverified) were not read in full; a general theorem may already imply the case.",
+    "gap_confidence": "moderate",
+    "feasibility": "Pen-and-paper for one kernel and Gaussian inputs; a specialist proof check is needed. No data required.",
+    "fit": "Directly continues TrackMB3 theory and the G1 proposal; uses the existing simulation as a check.",
+    "supporting_evidence": [
+      {
+        "source": "https://arxiv.org/html/2107.03041v3",
+        "passage_or_section": "Remark 2.1(i): 'Theorem 2.2 does not cover the case Dξ+Dη>1, but requires either Dξ<1/2 or Dη<1/2'; Theorem 2.2(ii) only for G1=G2=id",
+        "assessment": "The closest independence theorem explicitly leaves the mixed region and the non-Gaussian above-line case open. Re-inspected this job.",
+        "read_depth": "full_text",
+        "retrieved_utc": "2026-10-23T21:58Z"
+      }
+    ],
+    "contrary_evidence": [
+      {
+        "source": "https://arxiv.org/abs/2107.03041",
+        "passage_or_section": "Search hits for v3 (27 Jan 2026) and author listing",
+        "assessment": "No newer Betken–Dehling version closing the mixed case was found; a Betken–Dehling–Kroll bootstrap paper is mixing-only (prior jobs). Absence is a search result.",
+        "read_depth": "abstract",
+        "retrieved_utc": "2026-10-23T21:53Z"
+      }
+    ],
+    "contrary_searches": [
+      "Betken 2026 arXiv independence test long-range dependent kernel OR distance correlation OR HSIC new",
+      "empirical characteristic function independence test long-range dependent non-central limit Rosenblatt 2025 2026",
+      "arXiv 2026 independence test fractional Gaussian noise kernel OR distance covariance strongly dependent size simulation Hurst 0.9",
+      "Hermite rank kernel mean embedding OR reproducing kernel long-range dependence U-statistic degenerate limit"
+    ],
+    "next_investigation": "Compute the centred feature Hermite coefficients for a Gaussian kernel with identity marginals; check whether Dehling–Taqqu-type reduction plus Major's vector theorem already gives the mixed-region limit.",
+    "best_next_reason": "Strongest supported gap: the closest source states the hole in its own words.",
+    "stopping_criterion": "Stop if an existing U/V-process or vector non-central theorem is shown to imply the mixed-region HSIC limit directly.",
+    "coverage_limits": "22 live searches across all items this job; no forward-citation index (OpenAlex/Scholar) used; Arcones and Major originals not re-read.",
+    "difficulties": "Tightness of the RKHS-valued cross process after empirical centring."
+  },
+  {
+    "id": "MB-G2-LOWFREQ-KERNEL",
+    "rank": 2,
+    "next_priority": 1,
+    "question": "Can low-frequency (fixed number of cosine averages) inference in the style of Müller–Watson be applied to kernel feature maps to give an HSIC or MMD calibration that stays valid on both sides of the memory boundary without estimating H?",
+    "setting": "G2 asks for a kernel test that works whatever the memory level. Econometrics already has a method that keeps coverage across many persistence types, but only for linear quantities. Whether it carries over to kernel tests is unknown.",
+    "proposed_contribution": "A check of whether low-frequency averages of centred kernel features have a usable (Gaussian or tabulable) joint limit across the line; if yes, a calibrated H-free kernel test; if no, a stated obstruction.",
+    "parent_tracks": [
+      "NEW-MB-KERNEL-G2-HFREE",
+      "NEW-MB-KERNEL",
+      "NEW-MEMORY-BOUNDARY"
+    ],
+    "parent_sources": [
+      "ResearchHarness@e79a7f30f82592bd19f1fad96493c034ece1de03",
+      "catalog.yaml sha256 83ea8ca007df48c188a31f8bac7c9b3df02ee60fc07986d331a04267c13df4af",
+      "TrackMB3_KernelTestsLongMemory@61cc8d9b5ec3473bc9179d10fb6ad79116abf437"
+    ],
+    "assessment": "ranked",
+    "gap_status": "open",
+    "importance": "It is the only route found that has proven uniform coverage across fractional persistence, and it was missing from every earlier G2 review.",
+    "remaining_uncertainty": "Worker inference, not in a source: above the line, low-frequency averages of rank-2 or cross features converge to non-Gaussian Hermite/Rosenblatt limits, so the Gaussian low-frequency framework may break exactly where it is needed.",
+    "gap_confidence": "low",
+    "feasibility": "A derivation for one kernel, then a small simulation if the derivation is viable. Needs a separate author decision.",
+    "fit": "Fits TrackMB3 and the author's econometrics strengths; reuses the simulation code base.",
+    "supporting_evidence": [
+      {
+        "source": "https://www.nber.org/papers/w23186.pdf",
+        "passage_or_section": "Abstract and Section 'Coverage properties of restricted versions of the model' (Table 2 discussion): the general model 'controls coverage uniformly across these models'; I(0) sets have 'coverage of just 1%' under other persistence models",
+        "assessment": "Uniform coverage over I(0), I(1), local-to-unity and fractional persistence is achievable for a linear second-moment (covariability) parameter using q≈12 low-frequency cosine averages. Linear only; relies on Gaussian low-frequency limits.",
+        "read_depth": "full_text",
+        "retrieved_utc": "2026-10-23T21:50Z"
+      },
+      {
+        "source": "https://www.princeton.edu/~umueller/robLRVP.pdf",
+        "passage_or_section": "Theorem 1 and discussion p.1335-1338: consistent LRV estimators 'necessarily lack robustness'; Theorem 1 is 'Rather than being a statement about the impossibility of valid inference'; Theorem 2(iv) fixed-b kernel estimators not robust to C2T(d)",
+        "assessment": "Any long-run-variance estimator consistent in a benchmark model is fragile to small low-frequency contamination; inconsistent (low-frequency) estimators can be robust. Not an impossibility theorem for inference.",
+        "read_depth": "full_text",
+        "retrieved_utc": "2026-10-23T21:47Z"
+      }
+    ],
+    "contrary_evidence": [
+      {
+        "source": "https://arxiv.org/abs/0810.2276",
+        "passage_or_section": "Abstract (Shao 2009, Econometric Theory 25(1):195-210), via search snippet",
+        "assessment": "Prewhitened frequency-domain independence statistics are N(0,1) while each series may have short memory, long memory or anti-persistence. Linear dependence only. TrackMB3 records an F read; this job saw the abstract only.",
+        "read_depth": "abstract",
+        "retrieved_utc": "2026-10-23T21:52Z"
+      },
+      {
+        "source": "https://arxiv.org/abs/2601.13468",
+        "passage_or_section": "Ghoshal & Shao (EJS 2026) Theorems 3.1-3.5, inherited F read from GAPLIT G2",
+        "assessment": "RKHS split-project-self-normalise exists under strong mixing only. Anticipates the method idea.",
+        "read_depth": "abstract",
+        "retrieved_utc": "2026-10-23T21:52Z"
+      }
+    ],
+    "contrary_searches": [
+      "low-frequency cosine transforms independence test nonlinear kernel long memory robust Müller Watson extension HSIC",
+      "kernel two-sample test long memory time series unknown Hurst exponent calibration self-normalized maximum mean discrepancy 2026",
+      "long-range dependence Hilbert space self-normalization OR fixed-b functional data change point Hurst-free"
+    ],
+    "next_investigation": "For a Gaussian kernel and fGn inputs, derive the limit of q low-frequency cosine averages of the centred cross feature at H_X+H_Y below, at and above 3/2.",
+    "best_next_reason": "Cheapest decisive check: one derivation tells whether the route is open or blocked.",
+    "stopping_criterion": "Stop if the derivation shows a non-Gaussian, H-dependent limit that cannot be tabulated without H.",
+    "coverage_limits": "Müller–Watson 2016 'Low-frequency econometrics' and 2008 'Testing models of low-frequency variability' not read; no search of Müller–Watson forward citations.",
+    "difficulties": "Non-Gaussian limits above the line; choice of q."
+  },
+  {
+    "id": "MB-UNIFORM-SIZE-LIMITS",
+    "rank": 3,
+    "next_priority": 3,
+    "question": "Do known impossibility and fragility results (Pötscher 2002; Preinerstorfer–Pötscher 2016; Müller 2007) imply that no memory-agnostic kernel, DML or Granger calibration can control size uniformly near and above the boundary, or only that consistent variance estimation must be given up?",
+    "setting": "Before promising an 'H-free' test it helps to know whether such a test can exist. Econometrics has several 'it cannot be done uniformly' results for related problems. None of the earlier jobs cited them.",
+    "proposed_contribution": "A short framing note that states which uniformity is impossible and which is achievable, with the exact premises, to bound the G2 and DML repair claims.",
+    "parent_tracks": [
+      "NEW-MEMORY-BOUNDARY",
+      "NEW-MB-KERNEL-G2-HFREE"
+    ],
+    "parent_sources": [
+      "ResearchHarness@e79a7f30f82592bd19f1fad96493c034ece1de03",
+      "catalog.yaml sha256 83ea8ca007df48c188a31f8bac7c9b3df02ee60fc07986d331a04267c13df4af",
+      "TrackMB3_KernelTestsLongMemory@61cc8d9b5ec3473bc9179d10fb6ad79116abf437"
+    ],
+    "assessment": "ranked",
+    "gap_status": "narrowed",
+    "importance": "Prevents an over-claim: a referee familiar with Pötscher or Müller will ask what uniformity is claimed.",
+    "remaining_uncertainty": "Pötscher 2002 and Preinerstorfer–Pötscher were read at abstract level only; whether their model classes include fractional processes near d=1/4 is unchecked.",
+    "gap_confidence": "low",
+    "feasibility": "Reading task: two full texts.",
+    "fit": "Framing for TrackMB1 (H5 repair) and G2; no compute.",
+    "supporting_evidence": [
+      {
+        "source": "https://www.princeton.edu/~umueller/robLRVP.pdf",
+        "passage_or_section": "Theorem 1 and discussion p.1335-1338: consistent LRV estimators 'necessarily lack robustness'; Theorem 1 is 'Rather than being a statement about the impossibility of valid inference'; Theorem 2(iv) fixed-b kernel estimators not robust to C2T(d)",
+        "assessment": "Any long-run-variance estimator consistent in a benchmark model is fragile to small low-frequency contamination; inconsistent (low-frequency) estimators can be robust. Not an impossibility theorem for inference.",
+        "read_depth": "full_text",
+        "retrieved_utc": "2026-10-23T21:47Z"
+      },
+      {
+        "source": "https://www.econometricsociety.org/publications/econometrica/browse/2002/05/01/lower-risk-bounds-and-properties-confidence-sets-ill‐posed",
+        "passage_or_section": "Abstract (Pötscher 2002, Econometrica 70(3):1035-1065)",
+        "assessment": "Minimax risk for spectral density at zero is infinite; confidence sets nearly uninformative; similar results for persistence and long-memory parameters. Abstract only; full text unavailable (working-paper URL returned HTML).",
+        "read_depth": "abstract",
+        "retrieved_utc": "2026-10-23T21:45Z"
+      },
+      {
+        "source": "https://arxiv.org/abs/1304.1383",
+        "passage_or_section": "Abstract (Preinerstorfer & Pötscher, Econometric Theory 32 (2016) 261-358)",
+        "assessment": "HAR F-type tests have size one or nuisance-infimal power zero under weak assumptions on stationary disturbances. Abstract does not mention long memory.",
+        "read_depth": "abstract",
+        "retrieved_utc": "2026-10-23T21:46Z"
+      }
+    ],
+    "contrary_evidence": [
+      {
+        "source": "https://www.nber.org/papers/w23186.pdf",
+        "passage_or_section": "Abstract and Section 'Coverage properties of restricted versions of the model' (Table 2 discussion): the general model 'controls coverage uniformly across these models'; I(0) sets have 'coverage of just 1%' under other persistence models",
+        "assessment": "Uniform coverage over I(0), I(1), local-to-unity and fractional persistence is achievable for a linear second-moment (covariability) parameter using q≈12 low-frequency cosine averages. Linear only; relies on Gaussian low-frequency limits.",
+        "read_depth": "full_text",
+        "retrieved_utc": "2026-10-23T21:50Z"
+      }
+    ],
+    "contrary_searches": [
+      "uniformly valid inference long memory parameter d uniform over [0,1/2) confidence interval mean or regression subsampling Andrews Guggenberger Mikusheva fractional",
+      "Müller 2007 A theory of robust long-run variance estimation Journal of Econometrics long memory contamination"
+    ],
+    "next_investigation": "Read Pötscher 2002 Sections 2-3 and Preinerstorfer–Pötscher 2016 Section 3 for the covariance model classes; check if fractional d∈(0,1/2) is inside them.",
+    "best_next_reason": "Cheap, and it constrains how the G2 and TrackMB1 H5 repairs can be worded.",
+    "stopping_criterion": "Stop once each result's model class is recorded against the d grid used in the simulation.",
+    "coverage_limits": "Abstract-level for two of three sources.",
+    "difficulties": "Full texts paywalled; working-paper copy failed."
+  },
+  {
+    "id": "MB-G3-LMSV-RANK1",
+    "question": "Does an |x|-type or squared transform of financial returns enjoy Hermite rank-2 protection under standard long-memory stochastic volatility models, with or without leverage?",
+    "setting": "G3 hoped that symmetric transforms like |x| or x² keep a 'rank 2' property that delays the break to H=3/4. In the usual stochastic volatility model of returns, the memory sits in volatility, and the relevant rank is the rank of the volatility function.",
+    "proposed_contribution": "None as a standalone gap. Use as a correction: in exponential-volatility models the relevant rank is 1, so the break for |r| or r² features is expected at H=1/2, not 3/4.",
+    "parent_tracks": [
+      "NEW-MB-KERNEL-G3-RANK",
+      "NEW-MB-KERNEL"
+    ],
+    "parent_sources": [
+      "ResearchHarness@e79a7f30f82592bd19f1fad96493c034ece1de03",
+      "catalog.yaml sha256 83ea8ca007df48c188a31f8bac7c9b3df02ee60fc07986d331a04267c13df4af",
+      "TrackMB3_KernelTestsLongMemory@61cc8d9b5ec3473bc9179d10fb6ad79116abf437"
+    ],
+    "assessment": "rejected",
+    "gap_status": "answered",
+    "importance": "Removes the finance premise of G3 in its model form; the narrowed G3 paper must not claim rank-2 protection for returns.",
+    "remaining_uncertainty": "Model-level answer only. Whether real returns follow exp-LMSV, and the empirical rank, remain open (rank tests: Beran–Möhrle–Ghosh, abstract only in GAPLIT). The step 'E[|r| | X] = σ(X)E|Z|, so rank = rank of σ' is worker derivation for the no-leverage case.",
+    "gap_confidence": "moderate",
+    "feasibility": "Not applicable as a gap.",
+    "fit": "Corrects G3 and TrackMB3 finance wording.",
+    "supporting_evidence": [
+      {
+        "source": "https://ar5iv.arxiv.org/html/1109.5298",
+        "passage_or_section": "Section 5.1: 'for σ(x)=exp(x), τ*_p(s)=1 for all s'; Introduction: partial-sum theory 'entirely similar' with leverage but 'sample autocovariances may be very different in the presence of leverage'; Example 5.2: rank of K is 1 'except if E[Z_0 η_0]=0'",
+        "assessment": "Kulik & Soulier (Adv. Appl. Probab. 44(4) 2012). In the standard LMSV model with exponential volatility, every power |Y|^p has Hermite rank 1 in the latent Gaussian; leverage changes ranks and rates of sample covariances.",
+        "read_depth": "full_text",
+        "retrieved_utc": "2026-10-23T21:57Z"
+      }
+    ],
+    "contrary_evidence": [
+      {
+        "source": "https://arxiv.org/abs/1710.01612",
+        "passage_or_section": "Bai & Taqqu 2019 Theorems 2.1, 2.5, 3.1, inherited F from GAPLIT G3",
+        "assessment": "Generic rank-instability mechanism already closed G3 as a standalone claim; consistent with, not contrary to, this finding.",
+        "read_depth": "abstract",
+        "retrieved_utc": "2026-10-23T21:54Z"
+      }
+    ],
+    "contrary_searches": [
+      "Hermite rank stochastic volatility leverage asymmetry absolute returns long memory nonlinear transform limit theorem",
+      "long memory stochastic volatility Hermite rank absolute returns powers exp volatility function rank one squared returns limit"
+    ],
+    "next_investigation": "If G3 continues, state the volatility function explicitly and compute its first Hermite coefficient; cite Kulik–Soulier for the leverage case.",
+    "stopping_criterion": "Already met for the model-level question.",
+    "coverage_limits": "Kulik–Soulier read in HTML (first 100k of 150k chars); the finite-variance LMSV literature (Surgailis–Viano, Deo–Hurvich) not re-read."
+  },
+  {
+    "id": "MB-CROSS-CLASS-MAP",
+    "question": "Has any paper mapped size or coverage across a common memory grid for kernel tests, DML intervals and Hawkes Granger tests together?",
+    "setting": "The headline idea of NEW-MEMORY-BOUNDARY is one map of where three kinds of inference break as memory grows. Two earlier scans found nothing like it.",
+    "proposed_contribution": "A cross-class benchmark organised by Hermite rank (rank 1: H=1/2; rank 2: H=3/4; cross terms: H_X+H_Y=3/2) and, for Hawkes, by branching ratio.",
+    "parent_tracks": [
+      "NEW-MEMORY-BOUNDARY"
+    ],
+    "parent_sources": [
+      "ResearchHarness@e79a7f30f82592bd19f1fad96493c034ece1de03",
+      "catalog.yaml sha256 83ea8ca007df48c188a31f8bac7c9b3df02ee60fc07986d331a04267c13df4af",
+      "TrackMB3_KernelTestsLongMemory@61cc8d9b5ec3473bc9179d10fb6ad79116abf437"
+    ],
+    "assessment": "provisional",
+    "gap_status": "uncertain",
+    "importance": "It is the track's paper-level contribution; its value is a stated warning and benchmark rather than a theorem.",
+    "remaining_uncertainty": "Forward citations of Betken–Dehling, Zhai–Zhong–Wu and Zhai–Cheng–Wu still not enumerated. Müller–Watson Table 2 is a precedent format (coverage across persistence models) for a linear parameter, not a pre-emption.",
+    "gap_confidence": "low",
+    "feasibility": "Simulation already exists (exploratory); writing is the main cost.",
+    "fit": "Core of the track.",
+    "supporting_evidence": [
+      {
+        "source": "https://www.nber.org/papers/w23186.pdf",
+        "passage_or_section": "Abstract and Section 'Coverage properties of restricted versions of the model' (Table 2 discussion): the general model 'controls coverage uniformly across these models'; I(0) sets have 'coverage of just 1%' under other persistence models",
+        "assessment": "Uniform coverage over I(0), I(1), local-to-unity and fractional persistence is achievable for a linear second-moment (covariability) parameter using q≈12 low-frequency cosine averages. Linear only; relies on Gaussian low-frequency limits.",
+        "read_depth": "full_text",
+        "retrieved_utc": "2026-10-23T21:50Z"
+      }
+    ],
+    "contrary_evidence": [],
+    "contrary_searches": [
+      "non-central limit theorem consequences statistical inference survey Hermite rank which statistics lose root-n Rosenblatt boundary 3/4",
+      "long-range dependence cross-fitting OR orthogonal score OR Neyman orthogonal inference coverage Hurst",
+      "debiased machine learning long memory fractionally integrated covariate treatment effect inference 2026 arXiv"
+    ],
+    "next_investigation": "Run the forward-citation sweep through a working scholarly index, as the 2026-10-22 job recommended.",
+    "stopping_criterion": "Stop if a paper reports size or coverage over an H grid for at least two of the three classes.",
+    "coverage_limits": "WebSearch result only: no paper found; this is a search result, not proof of absence; no OpenAlex/Scholar access; SSRN not searched."
+  },
+  {
+    "id": "MB-HAWKES-NO-H-LINE",
+    "question": "Does the size of Hawkes likelihood-ratio Granger tests break at an H=3/4 memory line?",
+    "setting": "Hawkes processes model event arrivals. Their 'memory' is the branching ratio and kernel tail, not a Gaussian Hurst index, so a 3/4 line has no theoretical basis there.",
+    "proposed_contribution": "None as framed. Reframe the Hawkes arm by branching ratio, kernel tail and baseline misspecification.",
+    "parent_tracks": [
+      "NEW-MEMORY-BOUNDARY"
+    ],
+    "parent_sources": [
+      "ResearchHarness@e79a7f30f82592bd19f1fad96493c034ece1de03",
+      "catalog.yaml sha256 83ea8ca007df48c188a31f8bac7c9b3df02ee60fc07986d331a04267c13df4af",
+      "TrackMB3_KernelTestsLongMemory@61cc8d9b5ec3473bc9179d10fb6ad79116abf437"
+    ],
+    "assessment": "rejected",
+    "gap_status": "narrowed",
+    "importance": "Keeps the cross-class paper from forcing Hawkes into a Hermite-rank frame.",
+    "remaining_uncertainty": "Exploratory simulation (JOB-NEW-MEMORY-BOUNDARY-SIM-20261015 hawkes) shows size depends on ρ, kernel tail and baseline; the size-inflation mechanism under misspecification is not proved.",
+    "gap_confidence": "low",
+    "feasibility": "n/a",
+    "fit": "TrackMB2 owns this arm.",
+    "supporting_evidence": [],
+    "contrary_evidence": [
+      {
+        "source": "https://arxiv.org/html/1308.6756v3",
+        "passage_or_section": "Search result summary (Filimonov–Sornette, apparent criticality)",
+        "assessment": "Kernel misspecification and regime shifts bias the branching ratio upward; already in TrackMB2 bibliography.",
+        "read_depth": "abstract",
+        "retrieved_utc": "2026-10-23T21:54Z"
+      }
+    ],
+    "contrary_searches": [
+      "Hawkes process Granger causality test misspecified kernel power-law size distortion near-critical branching ratio 2026",
+      "Granger causality test fractionally integrated processes size distortion spurious causality long memory Monte Carlo"
+    ],
+    "next_investigation": "None from this job; TrackMB2 literature is the reference.",
+    "stopping_criterion": "Met.",
+    "coverage_limits": "Two searches only; TrackMB2's 49-entry bibliography not re-screened."
+  }
+]

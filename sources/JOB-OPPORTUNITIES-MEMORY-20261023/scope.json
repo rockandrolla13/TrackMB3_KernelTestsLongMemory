@@ -1,0 +1,9 @@
+{
+  "kind": "topic",
+  "tracks": [],
+  "topic": "Where does inference for kernel tests, double-machine-learning causal intervals and Hawkes Granger tests break as memory grows, and does the break follow the H = 3/4 boundary in financial data? Sub-questions from proposals NEW-MB-KERNEL-G1-HSIC (HSIC null limit with general bounded kernels on each side of H_X+H_Y=3/2), G2-HFREE (projected or self-normalised kernel statistic valid across the 3/4 line without estimating H) and G3-RANK (asymmetric |x|-type or squared transforms and Hermite rank-2 protection on financial data).",
+  "catalog_sha256": "83ea8ca007df48c188a31f8bac7c9b3df02ee60fc07986d331a04267c13df4af",
+  "registry_sha256": "90fe403f680c8f30be0bbd3051b83eba9e6f2d9f3ac754a8c4991f039e84866d",
+  "opened_utc": "2026-10-23T21:48:56.239381+00:00",
+  "previous_job": null
+}
