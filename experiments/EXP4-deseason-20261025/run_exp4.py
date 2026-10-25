@@ -5,7 +5,9 @@ Usage:
   python -I run_exp4.py --mode main  --reps 1000 --out main  --workers 5
 
 One CSV per (generator, H, n) cell in --out, one row per (replication, adjustment), appended as
-chunks finish. Re-running resumes (replications already on disk are skipped). Seeds: replication r
+chunks finish. Re-running resumes per (replication, adjustment): a pair counts as done only if a
+complete row with status ok exists, so error rows are retried and a new adjustment is run for
+replications already on disk. Seeds: replication r
 of cell c draws the pair from SeedSequence(entropy=MASTER[mode], spawn_key=(c, r, 0)). Every
 adjustment's test multipliers come from a fresh rng on spawn_key=(c, r, 1), so all adjustments of
 one replication share the same data and the same multipliers (common random numbers).
@@ -23,6 +25,7 @@ import json  # noqa: E402
 import multiprocessing as mp  # noqa: E402
 import sys  # noqa: E402
 import time  # noqa: E402
+from collections import defaultdict  # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np  # noqa: E402
@@ -43,6 +46,15 @@ KIND = ["hsic_stat", "dcov_stat", "p_hsic_wb", "p_hsic_shift", "p_hsic_sub", "re
         "p_dcov_wb", "p_dcov_sub", "rej_dcov_sub", "shift_check"]
 LIND = ["pearson_r", "nw_bw", "t_nw", "p_nw", "rej_nw", "ewc_nu", "t_ewc", "rej_ewc", "nw_lrv_nonpos"]
 FIELDS = ["rep", "adj", "status", "error", "cpu_s", "px", "py", "srcx", "srcy", "reused"] + KIND + LIND
+
+
+def completed_pairs(path: str) -> set[tuple[int, str]]:
+    """(rep, adj) pairs with a complete status-ok row. Truncated rows (crash mid-write) are ignored."""
+    if not os.path.exists(path):
+        return set()
+    with open(path) as f:
+        return {(int(row["rep"]), row["adj"]) for row in csv.DictReader(f)
+                if None not in row.values() and row["status"] == "ok"}
 
 
 def cell_list() -> list[dict]:
@@ -101,8 +113,8 @@ def main():
     ap.add_argument("--adj", default=",".join(ADJ), help="adjustments; n=2000 may drop A0 (see --adj2000)")
     ap.add_argument("--adj2000", default=None, help="adjustment list for n = 2000 cells, if different")
     a = ap.parse_args()
-    if a.workers > 5:
-        sys.exit("at most 5 worker processes")
+    if a.workers > 16:
+        sys.exit("at most 16 worker processes (DESIGN.md amendment 5)")
     outdir = os.path.join(HERE, a.out)
     os.makedirs(outdir, exist_ok=True)
     master = MASTER[a.mode]
@@ -113,17 +125,19 @@ def main():
     for c in cells:
         adjs = tuple((a.adj2000 if (c["n"] == 2000 and a.adj2000) else a.adj).split(","))
         path = os.path.join(outdir, c["name"] + ".csv")
-        done = set()
-        if os.path.exists(path):
-            with open(path) as f:
-                done = {int(row["rep"]) for row in csv.DictReader(f)}
-        todo = [r for r in range(a.reps) if r not in done]
-        mcells.append({**c, "reps": a.reps, "adjustments": adjs, "already_done": len(done),
+        done = completed_pairs(path)
+        todo = defaultdict(list)  # missing-adjustment tuple -> replications
+        for r in range(a.reps):
+            missing = tuple(x for x in adjs if (r, x) not in done)
+            if missing:
+                todo[missing].append(r)
+        mcells.append({**c, "reps": a.reps, "adjustments": adjs, "already_done_pairs": len(done),
                        "seed": {"entropy": master, "spawn_key_data": [c["idx"], "rep", 0],
                                 "spawn_key_test": [c["idx"], "rep", 1]}})
         cs = CHUNK[c["n"]]
-        for i in range(0, len(todo), cs):
-            tasks.append((c, todo[i:i + cs], master, adjs))
+        for missing, reps in todo.items():
+            for i in range(0, len(reps), cs):
+                tasks.append((c, reps[i:i + cs], master, missing))
     stamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
     with open(os.path.join(outdir, f"manifest_{stamp}.json"), "w") as f:
         json.dump({"mode": a.mode, "master": master,

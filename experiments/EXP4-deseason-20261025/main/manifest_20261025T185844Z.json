@@ -1,0 +1,79 @@
+{
+ "mode": "main",
+ "master": 2026102542,
+ "seed_rule": "data: SeedSequence(master, spawn_key=(cell_idx, rep, 0)); tests: fresh rng on (cell_idx, rep, 1) per adjustment",
+ "B_wild": 500,
+ "period_true": 50,
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 16,
+ "argv": [
+  "run_exp4.py",
+  "--mode",
+  "main",
+  "--reps",
+  "1000",
+  "--out",
+  "main",
+  "--workers",
+  "16",
+  "--only",
+  "SEAS-V-slow__H0.5__n2000,SEAS-V-slow__H0.8__n2000",
+  "--adj",
+  "A0",
+  "--adj2000",
+  "A0"
+ ],
+ "cells": [
+  {
+   "gen": "SEAS-V-slow",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 25,
+   "name": "ind__SEAS-V-slow__H0.5__n2000",
+   "reps": 1000,
+   "adjustments": [
+    "A0"
+   ],
+   "already_done_pairs": 300,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key_data": [
+     25,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     25,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V-slow",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 29,
+   "name": "ind__SEAS-V-slow__H0.8__n2000",
+   "reps": 1000,
+   "adjustments": [
+    "A0"
+   ],
+   "already_done_pairs": 300,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key_data": [
+     29,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     29,
+     "rep",
+     1
+    ]
+   }
+  }
+ ]
+}
