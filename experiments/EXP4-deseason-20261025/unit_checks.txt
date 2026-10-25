@@ -1,0 +1,7 @@
+n=500 H=0.5 max|adjusted seasonal - adjusted core| over 50 series: M-A1 8.05e-15, M-A2 1.51e-14, V-A2 7.11e-15, V-A1 1.62e+00
+n=500 H=0.8 max|adjusted seasonal - adjusted core| over 50 series: M-A1 8.10e-15, M-A2 1.44e-14, V-A2 8.10e-15, V-A1 1.71e+00
+n=2000 H=0.5 max|adjusted seasonal - adjusted core| over 50 series: M-A1 3.97e-14, M-A2 4.40e-14, V-A2 4.04e-14, V-A1 2.03e+00
+n=2000 H=0.8 max|adjusted seasonal - adjusted core| over 50 series: M-A1 3.97e-14, M-A2 4.97e-14, V-A2 4.09e-14, V-A1 1.91e+00
+n=1999 H=0.5 max|adjusted seasonal - adjusted core| over 50 series: M-A1 3.95e-14, M-A2 4.22e-14, V-A2 4.35e-14, V-A1 1.94e+00
+n=1999 H=0.8 max|adjusted seasonal - adjusted core| over 50 series: M-A1 4.00e-14, M-A2 4.19e-14, V-A2 4.26e-14, V-A1 2.17e+00
+Expected: M-A1, M-A2, V-A2 at rounding level (1e-15). V-A1 order 1 (A1 leaves the scale).

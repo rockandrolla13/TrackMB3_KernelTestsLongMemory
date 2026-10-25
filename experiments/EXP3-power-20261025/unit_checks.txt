@@ -1,0 +1,12 @@
+[1] n=500 max |kind_tests - kind_ext| over 19 shared fields = 0.00e+00
+    p_hsic_wb=0.9701 r_hsic_wb=0.1778  rej_hsic_sub=0 r_hsic_sub=0.1727
+[1] n=2000 max |kind_tests - kind_ext| over 19 shared fields = 0.00e+00
+    p_hsic_wb=0.0918 r_hsic_wb=0.8498  rej_hsic_sub=1 r_hsic_sub=1.2295
+[2] G0: max |null - lin(rho=0)| = 0.00e+00
+[2] SEAS-V: max |null - lin(rho=0)| = 0.00e+00
+[3] lin rho=0.3: mean corr(X,Y) = 0.3012 (target 0.3)
+    sq  rho=0.3: mean corr(X,Y) = -0.0018 (target 0), corr(X^2,Y) = 0.3001 (target 0.3)
+[3] SEAS-V lin rho=0.3 one path: corr = 0.2558
+[4] shift: first half max |d| = 0.00e+00, second half d in [0.500, 0.500]
+[4] mmd_ext on shifted series: mmd2=0.0512, sigma=0.9343, t_n=25.6, p_unc_05=0.00998, r_unc_05=1.807, l_sqrt=22, q95_sqrt=8.005, r_sub_sqrt=3.198, sn_T=529, sn_q95_05=267.5, r_sn_05=1.978
+ALL OK

@@ -1,0 +1,862 @@
+{
+ "mode": "main",
+ "master": 2026102542,
+ "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
+ "B_wild": 500,
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 10,
+ "argv": [
+  "run_exp3.py",
+  "--mode",
+  "main",
+  "--reps",
+  "1000",
+  "--out",
+  "main",
+  "--workers",
+  "10"
+ ],
+ "cells": [
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 0,
+   "name": "ind__G0__null0__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     0,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.7,
+   "n": 2000,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 1,
+   "name": "ind__G0__null0__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     1,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.8,
+   "n": 2000,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 2,
+   "name": "ind__G0__null0__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     2,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.5,
+   "n": 500,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 3,
+   "name": "ind__G0__null0__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     3,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.7,
+   "n": 500,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 4,
+   "name": "ind__G0__null0__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     4,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.8,
+   "n": 500,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 5,
+   "name": "ind__G0__null0__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     5,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "null",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 6,
+   "name": "ind__SEAS-V__null0__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     6,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "null",
+   "H": 0.7,
+   "n": 2000,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 7,
+   "name": "ind__SEAS-V__null0__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     7,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "null",
+   "H": 0.8,
+   "n": 2000,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 8,
+   "name": "ind__SEAS-V__null0__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     8,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "null",
+   "H": 0.5,
+   "n": 500,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 9,
+   "name": "ind__SEAS-V__null0__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     9,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "null",
+   "H": 0.7,
+   "n": 500,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 10,
+   "name": "ind__SEAS-V__null0__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     10,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "null",
+   "H": 0.8,
+   "n": 500,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 11,
+   "name": "ind__SEAS-V__null0__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     11,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 12,
+   "name": "mmd__G0__null0__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     12,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.7,
+   "n": 2000,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 13,
+   "name": "mmd__G0__null0__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     13,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.8,
+   "n": 2000,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 14,
+   "name": "mmd__G0__null0__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     14,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.5,
+   "n": 500,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 15,
+   "name": "mmd__G0__null0__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     15,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.7,
+   "n": 500,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 16,
+   "name": "mmd__G0__null0__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     16,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.8,
+   "n": 500,
+   "param": 0.0,
+   "param_n2000": 0.0,
+   "idx": 17,
+   "name": "mmd__G0__null0__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     17,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.065,
+   "param_n2000": 0.065,
+   "idx": 18,
+   "name": "ind__G0__lin0.065__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     18,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.7,
+   "n": 2000,
+   "param": 0.065,
+   "param_n2000": 0.065,
+   "idx": 19,
+   "name": "ind__G0__lin0.065__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     19,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.8,
+   "n": 2000,
+   "param": 0.065,
+   "param_n2000": 0.065,
+   "idx": 20,
+   "name": "ind__G0__lin0.065__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     20,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 500,
+   "param": 0.13,
+   "param_n2000": 0.065,
+   "idx": 21,
+   "name": "ind__G0__lin0.13__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     21,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.7,
+   "n": 500,
+   "param": 0.13,
+   "param_n2000": 0.065,
+   "idx": 22,
+   "name": "ind__G0__lin0.13__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     22,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.8,
+   "n": 500,
+   "param": 0.13,
+   "param_n2000": 0.065,
+   "idx": 23,
+   "name": "ind__G0__lin0.13__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     23,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "sq",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.075,
+   "param_n2000": 0.075,
+   "idx": 24,
+   "name": "ind__G0__sq0.075__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     24,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "sq",
+   "H": 0.7,
+   "n": 2000,
+   "param": 0.075,
+   "param_n2000": 0.075,
+   "idx": 25,
+   "name": "ind__G0__sq0.075__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     25,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "sq",
+   "H": 0.8,
+   "n": 2000,
+   "param": 0.075,
+   "param_n2000": 0.075,
+   "idx": 26,
+   "name": "ind__G0__sq0.075__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     26,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "sq",
+   "H": 0.5,
+   "n": 500,
+   "param": 0.15,
+   "param_n2000": 0.075,
+   "idx": 27,
+   "name": "ind__G0__sq0.15__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     27,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "sq",
+   "H": 0.7,
+   "n": 500,
+   "param": 0.15,
+   "param_n2000": 0.075,
+   "idx": 28,
+   "name": "ind__G0__sq0.15__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     28,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "sq",
+   "H": 0.8,
+   "n": 500,
+   "param": 0.15,
+   "param_n2000": 0.075,
+   "idx": 29,
+   "name": "ind__G0__sq0.15__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     29,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.065,
+   "param_n2000": 0.065,
+   "idx": 30,
+   "name": "ind__SEAS-V__lin0.065__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     30,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "lin",
+   "H": 0.7,
+   "n": 2000,
+   "param": 0.065,
+   "param_n2000": 0.065,
+   "idx": 31,
+   "name": "ind__SEAS-V__lin0.065__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     31,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "lin",
+   "H": 0.8,
+   "n": 2000,
+   "param": 0.065,
+   "param_n2000": 0.065,
+   "idx": 32,
+   "name": "ind__SEAS-V__lin0.065__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     32,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 500,
+   "param": 0.13,
+   "param_n2000": 0.065,
+   "idx": 33,
+   "name": "ind__SEAS-V__lin0.13__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     33,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "lin",
+   "H": 0.7,
+   "n": 500,
+   "param": 0.13,
+   "param_n2000": 0.065,
+   "idx": 34,
+   "name": "ind__SEAS-V__lin0.13__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     34,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "lin",
+   "H": 0.8,
+   "n": 500,
+   "param": 0.13,
+   "param_n2000": 0.065,
+   "idx": 35,
+   "name": "ind__SEAS-V__lin0.13__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     35,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "shift",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.1,
+   "param_n2000": 0.1,
+   "idx": 36,
+   "name": "mmd__G0__shift0.1__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     36,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "shift",
+   "H": 0.7,
+   "n": 2000,
+   "param": 0.1,
+   "param_n2000": 0.1,
+   "idx": 37,
+   "name": "mmd__G0__shift0.1__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     37,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "shift",
+   "H": 0.8,
+   "n": 2000,
+   "param": 0.1,
+   "param_n2000": 0.1,
+   "idx": 38,
+   "name": "mmd__G0__shift0.1__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     38,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "shift",
+   "H": 0.5,
+   "n": 500,
+   "param": 0.2,
+   "param_n2000": 0.1,
+   "idx": 39,
+   "name": "mmd__G0__shift0.2__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     39,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "shift",
+   "H": 0.7,
+   "n": 500,
+   "param": 0.2,
+   "param_n2000": 0.1,
+   "idx": 40,
+   "name": "mmd__G0__shift0.2__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     40,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "shift",
+   "H": 0.8,
+   "n": 500,
+   "param": 0.2,
+   "param_n2000": 0.1,
+   "idx": 41,
+   "name": "mmd__G0__shift0.2__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     41,
+     "rep"
+    ]
+   }
+  }
+ ]
+}
