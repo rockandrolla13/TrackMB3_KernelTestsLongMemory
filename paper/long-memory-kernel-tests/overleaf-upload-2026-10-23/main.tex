@@ -14,7 +14,7 @@
 \newcommand{\E}{\mathbb E}
 \newcommand{\Cov}{\operatorname{Cov}}
 \newcommand{\one}{\mathbf 1}
-\title{Hermite rank and memory sums shape kernel-test size under long memory}
+\title{When do kernel tests raise false alarms on long-memory data?}
 \author{Exploratory manuscript draft}
 \date{23 October 2026}
 
@@ -22,21 +22,23 @@
 \maketitle
 
 \begin{abstract}
-We make three contributions to the study of kernel tests on long-memory data. First, we measure false alarms under known null models. A test set to reject $5\%$ of true nulls instead rejects $27.1\%$ for split-sample maximum mean discrepancy (MMD) on stationary fractional Gaussian noise (fGn) at $H=0.8$, $n=2000$, with uncentred wild multipliers (271 of 1,000 series). The Hilbert--Schmidt independence criterion (HSIC) rejects $9.2\%$ for independent fGn pairs at $H_X=H_Y=0.7$, $n=2000$, with subsampling (184 of 2,000 pairs). Long memory makes averages of kernel features fluctuate differently from short-memory averages; the tested critical-value rules capture different amounts of that dependence. Second, a Hermite-rank calculation explains why split MMD and independence tests have different memory rates. It identifies $H_X+H_Y=1.5$ as a useful axis for the latter, without proving their critical-value laws. Third, we apply the rules to Nasdaq stock-trade durations. At $n=2000$, HSIC shifts reject $3.4\%$--$5.6\%$ and subsampling $7.2\%$--$10.2\%$ across four 500-pair cells. These market rates are descriptive because process independence is unknown.
+We make four contributions to the study of kernel tests on long-memory data. First, we measure false alarms under known null models. A test set to reject $5\%$ of true nulls instead rejects $27.1\%$ for split-sample maximum mean discrepancy (MMD) on stationary fractional Gaussian noise (fGn) at $H=0.8$, $n=2000$, with uncentred wild multipliers (271 of 1,000 series). The Hilbert--Schmidt independence criterion (HSIC) rejects $9.2\%$ for independent fGn pairs at $H_X=H_Y=0.7$, $n=2000$, with subsampling (184 of 2,000 pairs). Long memory makes averages of kernel features fluctuate differently from short-memory averages; the tested critical-value rules capture different amounts of that dependence. Second, a Hermite-rank calculation explains why split MMD and independence tests have different memory rates. It identifies $H_X+H_Y=1.5$ as a useful axis for the latter, without proving their critical-value laws. Third, a factorial experiment switches on heavy tails, nonlinear dynamics, and seasonality one at a time, with and without memory. Memory still drives most of the excess. A seasonal scale shared by two independent series is a separate failure that is specific to the kernel tests. With no memory and $n=2000$, HSIC with wild multipliers rejects $73.3\%$ of 1,000 such pairs, while Pearson correlation rejects $4.7\%$ and HSIC circular shifts $5.0\%$. Fourth, we apply the rules to Nasdaq stock-trade durations. At $n=2000$, HSIC shifts reject $3.4\%$--$5.6\%$ and subsampling $7.2\%$--$10.2\%$ across four 500-pair cells. These market rates are descriptive because process independence is unknown.
 \end{abstract}
 
-\noindent\textbf{Keywords:} long-range dependence; kernel tests; Hermite rank; MMD; HSIC; distance covariance; market microstructure.
+\noindent\textbf{Keywords:} long-range dependence; kernel tests; Hermite rank; MMD; HSIC; distance covariance; seasonality; market microstructure.
 
 \section{Introduction}
-This paper makes three contributions for machine-learning tests on ordered data. First, it measures false-alarm rates for split MMD, HSIC, and distance covariance when the null is known. At a nominal $5\%$ level and $n=2000$, split MMD rejects $27.1\%$ of 1,000 stationary fGn series at $H=0.8$ with uncentred wild multipliers. HSIC rejects $9.2\%$ of 2,000 independent fGn pairs at $H_X=H_Y=0.7$ with subsampling. Second, we use Hermite rank to explain the different memory rates of a one-series split and a product of two independent series. Third, we examine the same independence rules on separated Nasdaq trade-duration windows, where the null cannot be verified.
+This paper makes four contributions for machine-learning tests on ordered data. First, it measures false-alarm rates for split MMD, HSIC, and distance covariance when the null is known. At a nominal $5\%$ level and $n=2000$, split MMD rejects $27.1\%$ of 1,000 stationary fGn series at $H=0.8$ with uncentred wild multipliers. HSIC rejects $9.2\%$ of 2,000 independent fGn pairs at $H_X=H_Y=0.7$ with subsampling. Second, we use Hermite rank to explain the different memory rates of a one-series split and a product of two independent series. Third, we cross memory with heavy tails, nonlinear dynamics, and seasonality to ask which failures come from memory and which from other process features. Fourth, we examine the same independence rules on separated Nasdaq trade-duration windows, where the null cannot be verified.
 
-MMD is often used to flag a change in distribution. HSIC is used to flag dependence between paired variables or representations. A nominal $5\%$ test should reject a true null about five times in 100 repeated samples. That interpretation becomes unreliable if the observations are persistent and the critical value does not reflect their dependence. The two rates above come from different nulls and different rules; they are examples of the problem, not a head-to-head ranking of MMD against HSIC.
+MMD \citep{gretton2012kernel} is often used to flag a change in distribution. HSIC \citep{gretton2008kernel} is used to flag dependence between paired variables or representations. Distance covariance \citep{szekely2007dcov} asks the same question as HSIC through pairwise distances. All three tests were introduced for independent and identically distributed observations. A nominal $5\%$ test should reject a true null about five times in 100 repeated samples. That interpretation becomes unreliable if the observations are persistent and the critical value does not reflect their dependence. The two rates above come from different nulls and different rules; they are examples of the problem, not a head-to-head ranking of MMD against HSIC.
 
 Long memory means that correlation fades slowly with time. Even a long series may therefore contain much less information than the same number of independent observations. Kernel features inherit some of this persistence. Their averages can vary more than a critical-value rule based on short windows or short multiplier correlations expects. We vary memory, transformations, sample size, and rule to see where this mismatch appears.
 
 The two tests require separate explanations. Split MMD compares the first and second halves of one stationary series; its null says the halves have the same distribution. HSIC and distance covariance compare two aligned series; their null says the two processes are independent, although each may have memory within itself. For a rank-one split-MMD feature, the mean can change rate as soon as $H>1/2$. For the product of two independent rank-one features, the covariance calculation instead points to $H_X+H_Y=3/2$. Neither calculation provides a critical value for the exact kernel tests used here.
 
 The rule matters as much as the statistic. On the same independent-fGn cell, $(H_X,H_Y)=(0.7,0.7)$ and $n=2000$, HSIC rejects $9.2\%$ with subsampling, $7.35\%$ with wild multipliers, and $5.45\%$ with circular shifts. The wild rule also rejects $6.5\%$ at the $H_X=H_Y=0.5$ baseline. Table~\ref{tab:rules} separates that baseline error from the change associated with stronger memory.
+
+Memory is not the only process feature that can break these tests. We therefore switch on one feature at a time and cross it with memory. Heavy tails and nonlinear dynamics change the size of the memory effect but do not create a large excess on their own. Seasonality does. A seasonal mean shared by two independent series misleads every test we ran, including Pearson correlation. This is the classical nonsense-correlation problem \citep{yule1926nonsense}. A seasonal \emph{scale} behaves differently. With no memory, it leaves Pearson at $4.7\%$ but drives HSIC with wild multipliers to $73.3\%$. The kernel test sees that the two series swing widely at the same times, even though their signs are unrelated. This sensitivity to more than linear correlation is the reason to use a kernel test. On ordered data it is also an extra exposure.
 
 The final application uses AAPL, MSFT, and NVDA trade durations to test the boundary of this account in market microstructure. Paired windows are at least 20 trading days apart, but that gap does not prove process independence. We treat their rejection fractions as descriptive observations, not measured false-alarm rates.
 
@@ -88,7 +90,7 @@ Hermite covariance calculation & Rate of a scalar transformed Gaussian mean or i
 \end{tabular}
 \end{table}
 
-Published critical-value results have their own entry conditions. The wild-bootstrap work of \citet{chwialkowski2014wild} and random-process HSIC work of \citet{chwialkowski2014random} assume weak dependence, which long memory may violate. \citet[Theorem 2.4]{betken2021ldr} prove a subsampling result when a statistic has a nondegenerate limit and the process and block lengths meet their conditions. The theorem allows the offset $d_n=\lfloor0.1n\rfloor$. Together with their distance-covariance limit, it may cover some independent-fGn dCov cases, but only after checking our exact statistic and block rule.
+Published critical-value results have their own entry conditions. The random-process HSIC test of \citet{chwialkowski2014random} and the distance-covariance block bootstrap of \citet{betken2024bootstrap} assume absolute regularity ($\beta$-mixing) at a polynomial rate. The RKHS self-normalized tests of \citet{ghoshal2026rkhs} assume summable strong-mixing coefficients; the authors note that this ``requires the underlying temporal dependence to be of short-range type''. Fractional Gaussian noise with $H>1/2$ is not completely regular \citep[Example~1]{betken2018subsampling}. For a stationary Gaussian sequence, the maximal correlation is bounded by $2\pi$ times the strong-mixing coefficient \citep[Section~7]{bradley2005mixing}, so such fGn is not strongly mixing and these conditions exclude our long-memory cells. The wild bootstrap of \citet{chwialkowski2014wild} uses a $\tau$-dependence coefficient. Taking one future observation and the identity as the one-Lipschitz test function gives $\tau(r)\geq\E|\E(Z_r\mid\mathcal F_0)|$. For a stationary Gaussian series, conditioning on the whole past leaves the conditional mean with variance at least $\rho(r)^2$, so $\tau(r)\geq(2/\pi)^{1/2}|\rho(r)|$. For fGn this bound decays like $r^{2H-2}$. Their rate conditions, $\sum_r r^2\tau(r)^{1/2}<\infty$ for the degenerate $V$-statistic limit and $\tau(r)=O(r^{-6-\epsilon})$ for MMD, therefore fail for every $H>1/2$. Their MMD result also requires the two samples to be independent, which the two halves of one long-memory series are not. The HSIC wild bootstrap of \citet{dizcastro2026hsic} assumes near-epoch dependence on a $\beta$-mixing process with summable rates. Its Gaussian limit has a covariance operator defined by a series over lags. For independent fGn pairs and a rank-one product feature, that series diverges when $H_X+H_Y\geq3/2$ by Equation~\eqref{eq:sum}, so their conditions cannot hold there. Below that line, representing fGn through its own Gaussian innovations fails their rate condition, but we have not excluded every possible representation. \citet[Theorem 2.4]{betken2021ldr} prove a subsampling result when a statistic has a nondegenerate limit and the process and block lengths meet their conditions. The theorem allows the offset $d_n=\lfloor0.1n\rfloor$. Together with their distance-covariance limit, it may cover some independent-fGn dCov cases, but only after checking our exact statistic and block rule.
 
 It does not validate our HSIC rule. An HSIC null limit under these assumptions is missing, and our subsampling windows reuse bandwidths selected from the full sample. Other long-memory subsampling and self-normalized block results also require statistic-specific conditions \citep{betken2018subsampling,bai2016snbs}. Block choice can matter under Gaussian subordination \citep{zhang2022optimalblock}. Table~\ref{tab:scope} separates these published results from what remains open here.
 
@@ -102,10 +104,11 @@ Every rule targets a nominal $5\%$ rejection level. In a simulation cell, we kno
 \toprule
 Arm & Series and comparison & Sample size & Replications or pairs \\
 \midrule
-Initial MMD & Stationary fGn and transforms, split in halves & 500--4,000 & 1,000--2,000 \\
+Initial MMD & Stationary fGn and transforms, split in halves & 500, 1,000, 2,000, 4,000 & 1,000--2,000 \\
 Initial independence & Independent fGn, subordinated and unequal-memory pairs & 500, 1,000, 2,000 & 2,000 per cell \\
 EXP1 H5/E2 & MMD rule control and rank-one/two transforms & 500, 1,000, 2,000 & 1,000--2,000 \\
 EXP1 E3 & Ten equal or unequal independent fGn pairs & 500, 1,000, 2,000 & 2,000 per cell \\
+EXP2 & Gaussian, heavy-tailed, nonlinear, and seasonal generators crossed with $H\in\{0.5,0.7,0.8\}$ & 500, 2,000 & 1,000 per cell \\
 Stock placebo & Separated AAPL, MSFT, NVDA duration windows & 500, 1,000, 2,000 & 500 pairs per cell \\
 Revision control & Independent $H=0.5$ fGn pairs; centred versus raw multipliers & 500, 1,000, 2,000 & 1,000 per cell \\
 \bottomrule
@@ -136,6 +139,22 @@ Self-normalized MMD divides $n\MMD_n^2$ by a within-series measure of variation:
 
 E3 uses ten equal and unequal independent fGn pairs with $H_X+H_Y$ from $1.3$ to $1.7$. Each $n\in\{500,1000,2000\}$ cell has 2,000 replications. We plot the rates and changes between adjacent grid points; we do not fit a breakpoint.
 
+\subsection{Process features crossed with memory}\label{sec:exp2-design}
+EXP2 asks whether a test fails because of memory alone, a process feature alone, or the two together. Let $\xi_t$ be unit-variance fGn with Hurst parameter $H$. At $H=0.5$ it is independent standard Gaussian noise. Every generator is driven by this $\xi_t$, so the Gaussian row shares the same code path. We switch on one feature at a time:
+\begin{itemize}[nosep]
+\item \emph{G0, Gaussian baseline:} $X_t=\xi_t$.
+\item \emph{HT-S, instantaneous heavy tails:} $X_t=F_{t_3}^{-1}\{\Phi(\xi_t)\}/\sqrt3$. This is an odd, increasing function of $\xi_t$, so it has Hermite rank one and the rank calculation of Section~\ref{sec:theory} applies.
+\item \emph{HT-L, filtered heavy tails:} an ARFIMA$(0,H-1/2,0)$ filter of independent $t_3$ innovations. This process is not a function of a Gaussian series.
+\item \emph{NL-SV, stochastic volatility:} $X_t=\exp(h_t/2)\varepsilon_t$, where $h_t$ is a unit-variance AR(1) filter of $\xi_t$ with coefficient $0.9$ and $\varepsilon_t$ is independent Gaussian noise. The series is uncorrelated, and its memory sits in its volatility.
+\item \emph{NL-TAR, threshold autoregression:} $X_t=a(X_{t-1})X_{t-1}+\xi_t$, with $a(x)=0.8$ for $x\le0$ and $-0.4$ otherwise.
+\item \emph{SEAS-M, seasonal mean:} $X_t=\xi_t+\sin\{2\pi(t+U)/50\}$.
+\item \emph{SEAS-V, seasonal scale:} $X_t=[1+0.5\sin\{2\pi(t+U)/50\}]\xi_t$.
+\end{itemize}
+The phase $U$ is uniform on $\{0,\ldots,49\}$ and is drawn afresh for each series. Each series in an independence pair therefore has its own phase, and the null of independent processes holds exactly. A diagnostic row gives both series the same fixed phase. These settings are illustrative and are not calibrated to market data.
+
+Each generator is crossed with $H\in\{0.5,0.7,0.8\}$ and $n\in\{500,2000\}$, with 1,000 replications per cell. The independence arm uses the HSIC, distance-covariance, and Pearson rules described above. The MMD arm uses the uncentred wild rule, square-root subsampling, and self-normalized blocks. We read two effects. The \emph{alone} effect is the rate at $H=0.5$ minus the Gaussian rate at $H=0.5$. The \emph{interaction} asks whether the rise from $H=0.5$ to $H=0.7$, and from $H=0.5$ to $H=0.8$, differs from the Gaussian rise. The hypotheses, generator checks, and a pilot were fixed in a design record before the main run.
+
+\subsection{Stock-duration placebo}
 The applied arm uses Databento XNAS.ITCH trade records\footnote{Dataset and trade-schema documentation: \url{https://databento.com/datasets/XNAS.ITCH} and \url{https://databento.com/docs/schemas/trades}.} for AAPL, MSFT, and NVDA from January through June 2024. We keep trades from 09:30 to 16:00 New York time. Within each day, we sort by event timestamp and feed sequence, collapse prints with the same event timestamp, and measure the positive gaps between distinct timestamps. A gap is one intertrade duration.
 
 We take the log of each duration in seconds and subtract that stock's pooled mean for its 15-minute clock bin. This removes a coarse time-of-day pattern. The local cache also keeps the raw gap, timestamp, day, and clock bin for checks described in Appendix~\ref{sec:evidence}.
@@ -175,12 +194,12 @@ There is a cost to some apparent size improvements. In one $H=0.7$ fGn shift alt
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.83\linewidth]{figures/mmd_size.pdf}
+\includegraphics[width=0.83\linewidth]{figures/mmd_size.png}
 \caption{MMD rejection under the stationary split-series null at $n=2000$, using the tested uncentred wild multiplier with length $\lfloor n^{0.5}\rfloor$. Points are saved E2 cell rates; bars are Wilson $95\%$ counting intervals from 1,000 replications. The lines compare process-specific finite-sample behaviour, not proved asymptotic thresholds.}\label{fig:mmd}
 \end{figure}
 
 \subsection{Independent pairs: the rule changes the answer}
-The independent-pair experiments show a different pattern. At $(H_X,H_Y)=(0.7,0.7)$ and $n=2000$, HSIC subsampling rejects $9.2\%$ of true nulls and distance-covariance subsampling rejects $10.6\%$. On those same pairs, HSIC rejects $7.35\%$ with wild multipliers and $5.45\%$ with circular shifts. Pearson with NW and EWC references rejects $8.15\%$ and $5.95\%$. Thus the critical-value rule changes the measured false-alarm rate even though the data and statistic are fixed.
+The independent-pair experiments show a different pattern. At $(H_X,H_Y)=(0.7,0.7)$ and $n=2000$, HSIC subsampling rejects $9.2\%$ of true nulls and distance-covariance subsampling rejects $10.6\%$. On those same pairs, HSIC rejects $7.35\%$ with wild multipliers and $5.45\%$ with circular shifts. Pearson with NW and EWC references rejects $8.15\%$ and $5.95\%$. Thus the critical-value rule changes the measured false-alarm rate even though the data and statistic are fixed. Oversized distance-covariance subsampling is not new. \citet[Appendix~C, Table~1]{betken2021ldr} report empirical sizes of $7.3$--$13.1\%$ at $H=0.6$ and $11.2$--$17.5\%$ at $H=0.7$ for a lag-weighted dCov statistic on independent fGn pairs, with $n\le1000$ and blocks of length $n^{0.4}$ or $n^{0.5}$. Our dCov subsampling rows extend that observation to $n=2000$ and place it beside the wild and shift rules and the Gaussian-kernel HSIC statistic.
 
 This excess appears below the covariance balance $H_X+H_Y=1.5$. HSIC subsampling stays near $9.2\%$ across $n=500,1000,2000$ ($9.1\%,9.15\%,9.2\%$). The wild-multiplier rule rejects $6.45\%$ even at the $H_X=H_Y=0.5$ baseline and $n=2000$. Its excess at sum $1.4$ therefore includes an error already present without long memory. At higher memory, subsampling becomes much more oversized, while circular shifts stay closest to $5\%$ on this grid (Table~\ref{tab:rules}). None of these patterns proves a rule valid outside the tested cells.
 
@@ -188,17 +207,53 @@ The unequal pair $(0.55,0.85)$ has rates similar to the equal pair $(0.7,0.7)$. 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{figures/independence_size.pdf}
+\includegraphics[width=\linewidth]{figures/independence_size.png}
 \caption{E3 null rejection at $n=2000$ for independent fGn pairs. Connected circles are equal-memory pairs; crosses are unequal pairs. The horizontal dashed line is the nominal $5\%$ rate and the vertical dotted line marks the candidate sum $H_X+H_Y=1.5$. Each point has 2,000 replications. No line is a proved rejection boundary.}\label{fig:ind}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{figures/size_slopes.pdf}
+\includegraphics[width=\linewidth]{figures/size_slopes.png}
 \caption{Adjacent-grid changes in null rejection at $n=2000$. Left: split MMD under the uncentred wild rule, measured in percentage points per $0.1$ increase in $H$. Right: HSIC on equal-memory independent pairs, measured per $0.1$ increase in $H_X+H_Y$. Points sit at interval midpoints. These finite differences are descriptive, depend on grid spacing and Monte Carlo error, and do not estimate a change point.}\label{fig:slope}
 \end{figure}
 
 We also tested whether raw multipliers would fix the memory-free HSIC and distance-covariance baseline. They moved rejection from above $5\%$ to below it and did not improve every cell. We therefore kept the original centred rule for the stock placebo. Appendix~\ref{sec:evidence} gives the paired counts and selection rule.
+
+\subsection{Process features: seasonal scale is a kernel-specific failure}\label{sec:exp2}
+Table~\ref{tab:exp2} gives the independence results of EXP2 at $n=2000$. Four findings stand out. Monte Carlo standard errors are about $0.7$ points near $5\%$ and $1.6$ points near $50\%$. We correct the 288 tests behind the EXP2 verdicts with Holm's step-down method. These are 96 one-sided tests of an effect without memory and 192 two-sided tests of a change in the memory effect. Holm's method controls the familywise error under any dependence between the tests. Claims that compare rejection levels at $H=0.8$ are corrected in a larger family, which adds 96 level comparisons for 384 tests in all. Every claim below survives this correction unless we say otherwise.
+
+\begin{table}[H]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{EXP2 null rejection percentages for independent pairs at $n=2000$ and nominal $5\%$, with $H_X=H_Y=H$. Each cell has 1,000 replications. The last row is a diagnostic in which both series share one fixed seasonal phase. It is excluded from the effect estimates.}\label{tab:exp2}
+\begin{tabular}{@{}lrrrrrrrrrr@{}}
+\toprule
+& \multicolumn{2}{c}{HSIC wild} & \multicolumn{2}{c}{HSIC shift} & \multicolumn{2}{c}{HSIC sub} & \multicolumn{2}{c}{dCov sub} & \multicolumn{2}{c}{Pearson NW} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(l){10-11}
+Generator & $.5$ & $.8$ & $.5$ & $.8$ & $.5$ & $.8$ & $.5$ & $.8$ & $.5$ & $.8$ \\
+\midrule
+G0 Gaussian & 6.8 & 8.1 & 5.3 & 5.3 & 5.8 & 17.5 & 6.8 & 22.8 & 5.0 & 14.1 \\
+HT-S tails, instantaneous & 6.1 & 7.0 & 4.5 & 3.8 & 4.3 & 15.7 & 3.2 & 16.5 & 5.7 & 11.5 \\
+HT-L tails, filtered & 8.9 & 10.6 & 6.4 & 5.3 & 6.8 & 25.9 & 3.2 & 25.9 & 4.2 & 16.2 \\
+NL-SV volatility & 7.9 & 6.7 & 5.8 & 3.9 & 4.9 & 6.2 & 2.2 & 1.9 & 5.2 & 4.6 \\
+NL-TAR threshold AR & 7.1 & 11.9 & 4.7 & 7.0 & 7.2 & 29.8 & 6.4 & 33.5 & 6.6 & 12.1 \\
+SEAS-M seasonal mean & 91.2 & 85.2 & 5.8 & 5.9 & 90.9 & 85.4 & 91.3 & 86.6 & 91.4 & 84.5 \\
+SEAS-V seasonal scale & 73.3 & 68.0 & 5.0 & 5.1 & 71.5 & 73.0 & 45.6 & 53.3 & 4.7 & 13.4 \\
+\midrule
+Shared fixed phase & 100.0 & 100.0 & 34.3 & 27.9 & 100.0 & 100.0 & 100.0 & 100.0 & 100.0 & 100.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+First, a seasonal mean misleads every single-path test, kernel or linear. With no memory, HSIC, distance covariance, and Pearson each reject about $91\%$ of independent pairs. The phases are independent, so the processes are independent. Within one path, however, each series carries a fixed sinusoid with the same period. The sample correlation of two such sinusoids depends on their phase gap and does not shrink as $n$ grows. The random phase acts as a component that never forgets, so a single path cannot average it out. This is the nonsense-correlation problem of \citet{yule1926nonsense}, not a kernel-specific failure. Circular shifts stay at $5.8\%$. A shift moves one series against the other and re-randomizes their phase gap, which is what the null requires. Small declines at $H=0.8$ in these rows reflect a ceiling near $90\%$, not a protective effect of memory.
+
+Second, a seasonal scale misleads the kernel tests but not Pearson. With no memory, HSIC rejects $73.3\%$ with wild multipliers and $71.5\%$ with subsampling, and distance covariance rejects $45.6\%$ with subsampling. Pearson-NW rejects $4.7\%$. A shared seasonal scale makes $|X_t|$ and $|Y_t|$ large at the same times while their signs stay unrelated. Pearson correlation sees only the linear layer, which is unaffected. HSIC and distance covariance also see the squared layer. SEAS-V is not a function of a Gaussian series, so the Hermite calculation of Section~\ref{sec:theory} does not apply directly. Informally, the shared pattern lives in the squared features of the two series, the analogue of the second Hermite layer that the even transforms isolate in the MMD experiment. Circular shifts again stay at $5.0\%$. When both series share one fixed phase, even circular shifts reject $28$--$34\%$, because no shift can break a common deterministic pattern.
+
+Third, heavy tails matter little. The instantaneous $t_3$ transform tracks the Gaussian row within noise, as its rank-one structure predicts. The filtered $t_3$ process raises HSIC subsampling to $25.9\%$ at $H=0.8$, against $17.5\%$ for the Gaussian row (Holm $p\le0.002$). Its gain over the Gaussian memory effect, $7.4$ points, does not survive correction (Holm $p=0.12$). For distance-covariance subsampling, the filtered process is within noise of the Gaussian row at $H=0.8$.
+
+Fourth, the two nonlinear processes move the memory effect in opposite directions. Stochastic volatility places the memory in the variance of each series. HSIC and distance-covariance subsampling then stay at or below $6.2\%$ even at $H=0.8$, against $17.5\%$ and $22.8\%$ for the Gaussian row. The threshold autoregression adds $11$--$12$ points to both subsampling rules at $H=0.8$. That process also adds short-range persistence of its own. Its mean local-Whittle memory estimate is $0.59$ at nominal $H=0.5$ and $n=2000$, against $0.50$ for the Gaussian row. Its excess is therefore not a pure nonlinearity effect.
+
+The MMD arm agrees with this picture. Uncentred wild MMD rejects $26$--$31\%$ at $H=0.8$ across the five non-seasonal generators, including $26.5\%$ for the Gaussian row. Stochastic volatility breaks square-root subsampling even without memory ($13.3\%$ at $H=0.5$), because its AR(0.9) volatility persists beyond a $\sqrt n$ window. Self-normalized blocks stay between $3.1\%$ and $13.0\%$ across the non-seasonal generators and memory levels. Seasonal series make split MMD conservative ($0$--$2\%$ at $H=0.5$), because both halves contain whole seasonal cycles.
 
 \subsection{Stock durations: an applied boundary test}\label{sec:real}
 The six-month extraction gives 124 trading days per stock and 9.68 million AAPL, 6.57 million MSFT, and 14.21 million NVDA positive durations. Every stock has observations in all 26 clock bins. The paired windows cannot overlap in calendar time because they come from separated days. Separation alone does not make the underlying processes independent.
@@ -227,17 +282,21 @@ The simulations establish rule-specific false-alarm rates under their stated nul
 
 Theory and experiment meet only within stated assumptions. The subsampling theorem discussed in Section~\ref{sec:theory} may apply to restricted independent-fGn distance-covariance settings once our statistic and block rule are checked exactly. We still lack the corresponding HSIC null limit and a proof for its window rule. The MMD feature-rank argument likewise does not validate its multiplier or self-normalized critical values.
 
-The stock study shows how the rules behave on observed market durations, where a true process-independence null is unavailable. The 20-session gap prevents overlap but cannot turn a rejection into a measured false alarm. A stronger claim would require a specified null, a validated rule, and matched surrogates that separate memory from heavy tails, volatility clustering, nonlinear dynamics, and seasonality.
+The stock study shows how the rules behave on observed market durations, where a true process-independence null is unavailable. The 20-session gap prevents overlap but cannot turn a rejection into a measured false alarm. A stronger claim would require a specified null, a validated rule, and matched surrogates. EXP2 separates memory from heavy tails, volatility, nonlinear dynamics, and seasonality in simulation, and its seasonal-scale result bears on the stock arm. We removed a clock-bin mean from log durations but not a clock-bin scale. A window of 2,000 durations covers about 7 to 15 minutes of a 390-minute session, so it sees only a small part of the daily cycle. Whether a residual intraday scale pattern contributes to the stock fractions is untested.
+
+EXP2 separates two failures that a user would see as the same false alarm. The first comes from memory. Process features change its size, but not its direction, except stochastic volatility, which moves memory into a layer the independence tests barely weight. The second comes from seasonality. A shared seasonal mean breaks every single-path test, so its remedy is deseasonalization or a shift-based rule, not a different kernel. A shared seasonal scale breaks HSIC and distance covariance while leaving Pearson at $5\%$. That failure is specific to tests that look beyond linear correlation. On this grid, circular shifts were the only rule that held size under both seasonal forms.
+
+Kernel choice is a second lever, alongside the critical-value rule. The E2 results suggest that features without a rank-one component hold size until $H=3/4$. A kernel or feature map built to remove the first Hermite layer might therefore postpone over-rejection. The same layer, however, carries the first-order effect of a mean shift. For a feature $g$ of a standard Gaussian $\xi$, $\partial_\mu\E g(\xi+\mu)|_{\mu=0}=\E\{\xi g(\xi)\}$, which is the first Hermite coefficient of $g$. A feature with no rank-one component therefore responds to a small mean shift only at second order. Whether a kernel can trade some of this sensitivity for size control, and at what cost in power, is open. Answering it requires size and size-adjusted power on the same cells, which this paper does not report.
 
 Three proof problems remain. First, HSIC needs a null limit that covers transformed features and mixed-memory pairs. Second, an $H$-free MMD rule needs a specified statistic and block construction, a size proof, and a power comparison. Third, any claim that local asymmetry changes Hermite rank needs an explicit transform, kernel, and asymmetry sequence. These are open questions, not results of this paper.
 
 \section{Limitations}
-Our simulation map covers Gaussian and Gaussian-subordinated series and one discrete slow-mean-reversion comparison. Kernel tests stop at $n=2000$. Flat rates over this range do not tell us what happens as $n$ becomes much larger. Adjacent-grid slopes are noisy finite differences, not estimates of a structural threshold. We test one main bandwidth rule and only a small set of power alternatives. Some rules already miss $5\%$ at the $H=0.5$ baseline.
+Our main simulation map covers Gaussian and Gaussian-subordinated series and one discrete slow-mean-reversion comparison. EXP2 adds four processes outside the Hermite framework, but at one parameter setting each, with 1,000 replications per cell and $n\le2000$. Its seasonal generators use one period, one amplitude, and a uniform random phase. Kernel tests stop at $n=2000$. Flat rates over this range do not tell us what happens as $n$ becomes much larger. Adjacent-grid slopes are noisy finite differences, not estimates of a structural threshold. We test one main bandwidth rule and only a small set of power alternatives. Some rules already miss $5\%$ at the $H=0.5$ baseline.
 
 The market illustration covers three stocks and six months. Reused days and changing stock-specific regimes make its pair fractions dependent. Pooled clock-bin adjustment may leave within-bin seasonality and day-to-day shifts. Raw gaps and timestamps remain in the local cache for further checks. No theorem in Section~\ref{sec:theory} establishes validity for the exact implemented HSIC or MMD rules or for the stock-window comparison.
 
 \section{Conclusion}
-Under the simulated nulls, rank-one split MMD begins to over-reject at weaker memory than the even rank-two transforms. For independent pairs, HSIC and distance-covariance rejection depends strongly on the critical-value rule, even below a memory sum of $1.5$. Hermite rank explains why these patterns differ, but it does not supply a valid cutoff. The stock results show the behaviour of the rules on market data; without a known independence null, they remain descriptive.
+Under the simulated nulls, rank-one split MMD begins to over-reject at weaker memory than the even rank-two transforms. For independent pairs, HSIC and distance-covariance rejection depends strongly on the critical-value rule, even below a memory sum of $1.5$. A seasonal scale shared by two independent series is a second, kernel-specific source of false alarms that appears without any memory. Circular shifts resisted it on our grid. Hermite rank explains why these patterns differ, but it does not supply a valid cutoff. The stock results show the behaviour of the rules on market data; without a known independence null, they remain descriptive.
 
 \paragraph{Data and code availability.} The public repository and reproduction paths are given in Appendix~\ref{sec:evidence}. It contains simulation code and outputs, stock request manifests and derived results, and the manuscript source. Raw Databento trades are excluded. No market-data redistribution right is claimed.
 
@@ -247,7 +306,7 @@ Under the simulated nulls, rank-one split MMD begins to over-reject at weaker me
 \section{Reproducibility and audit trail}\label{sec:evidence}
 The public \href{https://github.com/rockandrolla13/TrackMB3_KernelTestsLongMemory}{GitHub repository} contains the code and saved outputs named below. All paths are relative to its root. Raw Databento files are excluded and require separate licensed access. The stock manifests give source-file hashes, dates, and API cost quotes. The stock experiment README gives the commands to download, extract, test, and summarize those data.
 
-\paragraph{Simulation outputs.} The initial experiments are in two \path{experiments/} folders ending \texttt{mmd-dml} and \texttt{kernel-linear}. The \texttt{EXP1-20261016} folder holds the H5, E2, and E3 scripts, cell files, and summaries. Its manifests record seeds and target counts.
+\paragraph{Simulation outputs.} The initial experiments are in two \path{experiments/} folders ending \texttt{mmd-dml} and \texttt{kernel-linear}. The \texttt{EXP1-20261016} folder holds the H5, E2, and E3 scripts, cell files, and summaries. Its manifests record seeds and target counts. The \texttt{EXP2-20261023} folder holds the process-feature design record, generator checks, pilot, main-run cell files, \texttt{summary\_main.csv}, and \texttt{RESULTS.md}. The design record was written before the pilot and lists two later amendments.
 
 The initial MMD cells used 2,000 null replications up to $n=2000$ and 1,000 at $n=4000$ after a runtime fallback. E2 used 2,000 null replications up to $n=1000$ and 1,000 at $n=2000$; each power cell used 500. E3 used 2,000 per cell. The paper's \texttt{make\_figures.py} reads the saved E2/E3 summaries and records input and output hashes in \texttt{figures/manifest.json}. It does not rerun simulations.
 
