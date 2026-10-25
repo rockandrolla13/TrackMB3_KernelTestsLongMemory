@@ -1,0 +1,1119 @@
+{
+ "family": {
+  "verdict_family_total": 288,
+  "alone": 96,
+  "interaction": 192,
+  "mmd": 108,
+  "ind": 180,
+  "level_family": 96,
+  "augmented": 384,
+  "flags_uncorrected": 88,
+  "raw_p_lt_05": 92,
+  "holm_lt_05": 48,
+  "by_lt_05": 62,
+  "bh_lt_05": 76,
+  "bonf_lt_05": 48,
+  "flag_and_holm": 48,
+  "flag_and_by": 62,
+  "alone_fisher_disagree": [
+   "mmd_sub_sqrt|n2000|NL-TAR z_p=0.0451 fisher_p=0.0546"
+  ]
+ },
+ "survival": {
+  "all_holm": {
+   "verdicts": 96,
+   "non_null": 50,
+   "non_null_n2000": 26,
+   "survive_exact": 28,
+   "survive_exact_n2000": 15,
+   "survive_any_component": 32,
+   "new_nonnull": 0,
+   "changed": [
+    {
+     "key": "mmd_unc_wild|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_unc_wild|n2000|SEAS-M",
+     "n": 2000,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sub_sqrt|n500|HT-L",
+     "n": 500,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sub_sqrt|n500|SEAS-V",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n500|NL-SV",
+     "n": 500,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n500|NL-TAR",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n500|SEAS-M",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n2000|NL-SV",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n2000|NL-TAR",
+     "n": 2000,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n2000|SEAS-V",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n500|SEAS-V",
+     "n": 500,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n2000|NL-TAR",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n2000|SEAS-V",
+     "n": 2000,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_shift|n500|SEAS-M",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_sub|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n500|NL-SV",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n500|SEAS-V",
+     "n": 500,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n2000|NL-TAR",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n500|HT-S",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n500|SEAS-V",
+     "n": 500,
+     "old": "breaks alone",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "A"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n2000|SEAS-V",
+     "n": 2000,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    }
+   ]
+  },
+  "arm_holm": {
+   "verdicts": 96,
+   "non_null": 50,
+   "non_null_n2000": 26,
+   "survive_exact": 30,
+   "survive_exact_n2000": 16,
+   "survive_any_component": 34,
+   "new_nonnull": 0,
+   "changed": [
+    {
+     "key": "mmd_unc_wild|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_unc_wild|n2000|SEAS-M",
+     "n": 2000,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sub_sqrt|n500|HT-L",
+     "n": 500,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sub_sqrt|n500|SEAS-V",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n500|NL-SV",
+     "n": 500,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n500|NL-TAR",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n2000|NL-TAR",
+     "n": 2000,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n2000|SEAS-V",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n500|SEAS-V",
+     "n": 500,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n2000|NL-TAR",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n2000|SEAS-V",
+     "n": 2000,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_shift|n500|SEAS-M",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_sub|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n500|NL-SV",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n500|SEAS-V",
+     "n": 500,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n2000|NL-TAR",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n500|HT-S",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n500|SEAS-V",
+     "n": 500,
+     "old": "breaks alone",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "A"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n2000|SEAS-V",
+     "n": 2000,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    }
+   ]
+  },
+  "all_by": {
+   "verdicts": 96,
+   "non_null": 50,
+   "non_null_n2000": 26,
+   "survive_exact": 37,
+   "survive_exact_n2000": 18,
+   "survive_any_component": 40,
+   "new_nonnull": 0,
+   "changed": [
+    {
+     "key": "mmd_unc_wild|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_unc_wild|n2000|SEAS-M",
+     "n": 2000,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sub_sqrt|n500|SEAS-V",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n500|NL-SV",
+     "n": 500,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n2000|SEAS-V",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n2000|NL-TAR",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n2000|SEAS-V",
+     "n": 2000,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_shift|n500|SEAS-M",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n500|NL-SV",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n500|SEAS-V",
+     "n": 500,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n2000|NL-TAR",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n2000|SEAS-V",
+     "n": 2000,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    }
+   ]
+  },
+  "all_bh": {
+   "verdicts": 96,
+   "non_null": 50,
+   "non_null_n2000": 26,
+   "survive_exact": 43,
+   "survive_exact_n2000": 22,
+   "survive_any_component": 44,
+   "new_nonnull": 0,
+   "changed": [
+    {
+     "key": "mmd_unc_wild|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n2000|SEAS-V",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n2000|NL-TAR",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_shift|n500|SEAS-M",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_sub|n500|NL-TAR",
+     "n": 500,
+     "old": "only with memory",
+     "new": "breaks alone and amplifies memory",
+     "full": false,
+     "kept": [
+      "I+"
+     ],
+     "lost": [],
+     "gained": [
+      "A"
+     ]
+    },
+    {
+     "key": "dcov_wild|n500|NL-SV",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n2000|NL-TAR",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    }
+   ]
+  },
+  "two_holm": {
+   "verdicts": 96,
+   "non_null": 50,
+   "non_null_n2000": 26,
+   "survive_exact": 28,
+   "survive_exact_n2000": 15,
+   "survive_any_component": 32,
+   "new_nonnull": 0,
+   "changed": [
+    {
+     "key": "mmd_unc_wild|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_unc_wild|n2000|SEAS-M",
+     "n": 2000,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sub_sqrt|n500|HT-L",
+     "n": 500,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sub_sqrt|n500|SEAS-V",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n500|NL-SV",
+     "n": 500,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n500|NL-TAR",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n500|SEAS-M",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n2000|NL-SV",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n2000|NL-TAR",
+     "n": 2000,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "mmd_sn_block|n2000|SEAS-V",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n500|SEAS-V",
+     "n": 500,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n2000|NL-TAR",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_wild|n2000|SEAS-V",
+     "n": 2000,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_shift|n500|SEAS-M",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "hsic_sub|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n500|NL-SV",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n500|SEAS-V",
+     "n": 500,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_wild|n2000|NL-TAR",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n500|HT-S",
+     "n": 500,
+     "old": "dampens memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n500|SEAS-V",
+     "n": 500,
+     "old": "breaks alone",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "A"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n2000|HT-L",
+     "n": 2000,
+     "old": "only with memory",
+     "new": "no effect",
+     "full": false,
+     "kept": [],
+     "lost": [
+      "I+"
+     ],
+     "gained": []
+    },
+    {
+     "key": "dcov_sub|n2000|SEAS-V",
+     "n": 2000,
+     "old": "breaks alone; dampens memory",
+     "new": "breaks alone",
+     "full": false,
+     "kept": [
+      "A"
+     ],
+     "lost": [
+      "I-"
+     ],
+     "gained": []
+    }
+   ]
+  }
+ }
+}

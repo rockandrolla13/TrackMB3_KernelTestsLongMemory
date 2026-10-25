@@ -1,0 +1,1557 @@
+{
+ "mode": "main",
+ "masters": {
+  "mmd_pilot": 2026102321,
+  "mmd_main": 2026102322,
+  "ind_pilot": 2026102331,
+  "ind_main": 2026102332
+ },
+ "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
+ "B_wild": 500,
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 16,
+ "argv": [
+  "run_exp2.py",
+  "--mode",
+  "main",
+  "--reps",
+  "1000",
+  "--out",
+  "main",
+  "--workers",
+  "16"
+ ],
+ "cells": [
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "H": 0.5,
+   "n": 500,
+   "idx": 0,
+   "name": "mmd__G0__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     0,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 1,
+   "name": "mmd__G0__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     1,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "H": 0.7,
+   "n": 500,
+   "idx": 2,
+   "name": "mmd__G0__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     2,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 3,
+   "name": "mmd__G0__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     3,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "H": 0.8,
+   "n": 500,
+   "idx": 4,
+   "name": "mmd__G0__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     4,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 5,
+   "name": "mmd__G0__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     5,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-S",
+   "H": 0.5,
+   "n": 500,
+   "idx": 6,
+   "name": "mmd__HT-S__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     6,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-S",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 7,
+   "name": "mmd__HT-S__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     7,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-S",
+   "H": 0.7,
+   "n": 500,
+   "idx": 8,
+   "name": "mmd__HT-S__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     8,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-S",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 9,
+   "name": "mmd__HT-S__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     9,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-S",
+   "H": 0.8,
+   "n": 500,
+   "idx": 10,
+   "name": "mmd__HT-S__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     10,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-S",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 11,
+   "name": "mmd__HT-S__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     11,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-L",
+   "H": 0.5,
+   "n": 500,
+   "idx": 12,
+   "name": "mmd__HT-L__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     12,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-L",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 13,
+   "name": "mmd__HT-L__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     13,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-L",
+   "H": 0.7,
+   "n": 500,
+   "idx": 14,
+   "name": "mmd__HT-L__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     14,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-L",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 15,
+   "name": "mmd__HT-L__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     15,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-L",
+   "H": 0.8,
+   "n": 500,
+   "idx": 16,
+   "name": "mmd__HT-L__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     16,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "HT-L",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 17,
+   "name": "mmd__HT-L__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     17,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-SV",
+   "H": 0.5,
+   "n": 500,
+   "idx": 18,
+   "name": "mmd__NL-SV__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     18,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-SV",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 19,
+   "name": "mmd__NL-SV__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     19,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-SV",
+   "H": 0.7,
+   "n": 500,
+   "idx": 20,
+   "name": "mmd__NL-SV__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     20,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-SV",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 21,
+   "name": "mmd__NL-SV__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     21,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-SV",
+   "H": 0.8,
+   "n": 500,
+   "idx": 22,
+   "name": "mmd__NL-SV__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     22,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-SV",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 23,
+   "name": "mmd__NL-SV__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     23,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-TAR",
+   "H": 0.5,
+   "n": 500,
+   "idx": 24,
+   "name": "mmd__NL-TAR__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     24,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-TAR",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 25,
+   "name": "mmd__NL-TAR__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     25,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-TAR",
+   "H": 0.7,
+   "n": 500,
+   "idx": 26,
+   "name": "mmd__NL-TAR__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     26,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-TAR",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 27,
+   "name": "mmd__NL-TAR__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     27,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-TAR",
+   "H": 0.8,
+   "n": 500,
+   "idx": 28,
+   "name": "mmd__NL-TAR__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     28,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "NL-TAR",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 29,
+   "name": "mmd__NL-TAR__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     29,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-M",
+   "H": 0.5,
+   "n": 500,
+   "idx": 30,
+   "name": "mmd__SEAS-M__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     30,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-M",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 31,
+   "name": "mmd__SEAS-M__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     31,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-M",
+   "H": 0.7,
+   "n": 500,
+   "idx": 32,
+   "name": "mmd__SEAS-M__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     32,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-M",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 33,
+   "name": "mmd__SEAS-M__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     33,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-M",
+   "H": 0.8,
+   "n": 500,
+   "idx": 34,
+   "name": "mmd__SEAS-M__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     34,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-M",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 35,
+   "name": "mmd__SEAS-M__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     35,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-V",
+   "H": 0.5,
+   "n": 500,
+   "idx": 36,
+   "name": "mmd__SEAS-V__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     36,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-V",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 37,
+   "name": "mmd__SEAS-V__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     37,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-V",
+   "H": 0.7,
+   "n": 500,
+   "idx": 38,
+   "name": "mmd__SEAS-V__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     38,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-V",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 39,
+   "name": "mmd__SEAS-V__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     39,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-V",
+   "H": 0.8,
+   "n": 500,
+   "idx": 40,
+   "name": "mmd__SEAS-V__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     40,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "SEAS-V",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 41,
+   "name": "mmd__SEAS-V__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102322,
+    "spawn_key": [
+     41,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "H": 0.5,
+   "n": 500,
+   "idx": 0,
+   "name": "ind__G0__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     0,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 1,
+   "name": "ind__G0__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     1,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "H": 0.7,
+   "n": 500,
+   "idx": 2,
+   "name": "ind__G0__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     2,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 3,
+   "name": "ind__G0__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     3,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "H": 0.8,
+   "n": 500,
+   "idx": 4,
+   "name": "ind__G0__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     4,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 5,
+   "name": "ind__G0__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     5,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-S",
+   "H": 0.5,
+   "n": 500,
+   "idx": 6,
+   "name": "ind__HT-S__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     6,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-S",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 7,
+   "name": "ind__HT-S__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     7,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-S",
+   "H": 0.7,
+   "n": 500,
+   "idx": 8,
+   "name": "ind__HT-S__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     8,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-S",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 9,
+   "name": "ind__HT-S__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     9,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-S",
+   "H": 0.8,
+   "n": 500,
+   "idx": 10,
+   "name": "ind__HT-S__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     10,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-S",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 11,
+   "name": "ind__HT-S__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     11,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-L",
+   "H": 0.5,
+   "n": 500,
+   "idx": 12,
+   "name": "ind__HT-L__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     12,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-L",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 13,
+   "name": "ind__HT-L__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     13,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-L",
+   "H": 0.7,
+   "n": 500,
+   "idx": 14,
+   "name": "ind__HT-L__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     14,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-L",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 15,
+   "name": "ind__HT-L__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     15,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-L",
+   "H": 0.8,
+   "n": 500,
+   "idx": 16,
+   "name": "ind__HT-L__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     16,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "HT-L",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 17,
+   "name": "ind__HT-L__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     17,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-SV",
+   "H": 0.5,
+   "n": 500,
+   "idx": 18,
+   "name": "ind__NL-SV__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     18,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-SV",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 19,
+   "name": "ind__NL-SV__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     19,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-SV",
+   "H": 0.7,
+   "n": 500,
+   "idx": 20,
+   "name": "ind__NL-SV__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     20,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-SV",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 21,
+   "name": "ind__NL-SV__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     21,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-SV",
+   "H": 0.8,
+   "n": 500,
+   "idx": 22,
+   "name": "ind__NL-SV__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     22,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-SV",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 23,
+   "name": "ind__NL-SV__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     23,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-TAR",
+   "H": 0.5,
+   "n": 500,
+   "idx": 24,
+   "name": "ind__NL-TAR__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     24,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-TAR",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 25,
+   "name": "ind__NL-TAR__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     25,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-TAR",
+   "H": 0.7,
+   "n": 500,
+   "idx": 26,
+   "name": "ind__NL-TAR__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     26,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-TAR",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 27,
+   "name": "ind__NL-TAR__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     27,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-TAR",
+   "H": 0.8,
+   "n": 500,
+   "idx": 28,
+   "name": "ind__NL-TAR__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     28,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "NL-TAR",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 29,
+   "name": "ind__NL-TAR__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     29,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M",
+   "H": 0.5,
+   "n": 500,
+   "idx": 30,
+   "name": "ind__SEAS-M__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     30,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 31,
+   "name": "ind__SEAS-M__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     31,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M",
+   "H": 0.7,
+   "n": 500,
+   "idx": 32,
+   "name": "ind__SEAS-M__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     32,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 33,
+   "name": "ind__SEAS-M__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     33,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M",
+   "H": 0.8,
+   "n": 500,
+   "idx": 34,
+   "name": "ind__SEAS-M__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     34,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 35,
+   "name": "ind__SEAS-M__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     35,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "H": 0.5,
+   "n": 500,
+   "idx": 36,
+   "name": "ind__SEAS-V__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     36,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 37,
+   "name": "ind__SEAS-V__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     37,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "H": 0.7,
+   "n": 500,
+   "idx": 38,
+   "name": "ind__SEAS-V__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     38,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 39,
+   "name": "ind__SEAS-V__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     39,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "H": 0.8,
+   "n": 500,
+   "idx": 40,
+   "name": "ind__SEAS-V__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     40,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 41,
+   "name": "ind__SEAS-V__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     41,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M-shared",
+   "H": 0.5,
+   "n": 500,
+   "idx": 42,
+   "name": "ind__SEAS-M-shared__H0.5__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     42,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M-shared",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 43,
+   "name": "ind__SEAS-M-shared__H0.5__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     43,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M-shared",
+   "H": 0.7,
+   "n": 500,
+   "idx": 44,
+   "name": "ind__SEAS-M-shared__H0.7__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     44,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M-shared",
+   "H": 0.7,
+   "n": 2000,
+   "idx": 45,
+   "name": "ind__SEAS-M-shared__H0.7__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     45,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M-shared",
+   "H": 0.8,
+   "n": 500,
+   "idx": 46,
+   "name": "ind__SEAS-M-shared__H0.8__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     46,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-M-shared",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 47,
+   "name": "ind__SEAS-M-shared__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102332,
+    "spawn_key": [
+     47,
+     "rep"
+    ]
+   }
+  }
+ ]
+}

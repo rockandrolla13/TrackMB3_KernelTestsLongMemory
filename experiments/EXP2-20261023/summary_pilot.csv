@@ -1,0 +1,463 @@
+family,gen,subordinated,H,n,rule,rejections,valid_reps,errors,rate,wilson_lo,wilson_hi,cell_cpu_s
+ind,G0,yes (rank 1),0.5,500,hsic_wild,10,100,0,0.1,0.05523,0.17437,13.2
+ind,G0,yes (rank 1),0.5,500,hsic_shift,7,100,0,0.07,0.03432,0.1375,13.2
+ind,G0,yes (rank 1),0.5,500,hsic_sub,8,100,0,0.08,0.04109,0.14998,13.2
+ind,G0,yes (rank 1),0.5,500,dcov_wild,9,100,0,0.09,0.04807,0.16226,13.2
+ind,G0,yes (rank 1),0.5,500,dcov_sub,10,100,0,0.1,0.05523,0.17437,13.2
+ind,G0,yes (rank 1),0.5,500,pearson_nw,6,100,0,0.06,0.02779,0.12477,13.2
+ind,G0,yes (rank 1),0.5,500,pearson_ewc,6,100,0,0.06,0.02779,0.12477,13.2
+ind,G0,yes (rank 1),0.5,2000,hsic_wild,9,100,0,0.09,0.04807,0.16226,191.0
+ind,G0,yes (rank 1),0.5,2000,hsic_shift,5,100,0,0.05,0.02154,0.11175,191.0
+ind,G0,yes (rank 1),0.5,2000,hsic_sub,6,100,0,0.06,0.02779,0.12477,191.0
+ind,G0,yes (rank 1),0.5,2000,dcov_wild,8,100,0,0.08,0.04109,0.14998,191.0
+ind,G0,yes (rank 1),0.5,2000,dcov_sub,5,100,0,0.05,0.02154,0.11175,191.0
+ind,G0,yes (rank 1),0.5,2000,pearson_nw,3,100,0,0.03,0.01025,0.08452,191.0
+ind,G0,yes (rank 1),0.5,2000,pearson_ewc,3,100,0,0.03,0.01025,0.08452,191.0
+ind,G0,yes (rank 1),0.7,500,hsic_wild,4,100,0,0.04,0.01566,0.09837,11.7
+ind,G0,yes (rank 1),0.7,500,hsic_shift,4,100,0,0.04,0.01566,0.09837,11.7
+ind,G0,yes (rank 1),0.7,500,hsic_sub,7,100,0,0.07,0.03432,0.1375,11.7
+ind,G0,yes (rank 1),0.7,500,dcov_wild,4,100,0,0.04,0.01566,0.09837,11.7
+ind,G0,yes (rank 1),0.7,500,dcov_sub,8,100,0,0.08,0.04109,0.14998,11.7
+ind,G0,yes (rank 1),0.7,500,pearson_nw,5,100,0,0.05,0.02154,0.11175,11.7
+ind,G0,yes (rank 1),0.7,500,pearson_ewc,3,100,0,0.03,0.01025,0.08452,11.7
+ind,G0,yes (rank 1),0.7,2000,hsic_wild,6,100,0,0.06,0.02779,0.12477,187.0
+ind,G0,yes (rank 1),0.7,2000,hsic_shift,6,100,0,0.06,0.02779,0.12477,187.0
+ind,G0,yes (rank 1),0.7,2000,hsic_sub,8,100,0,0.08,0.04109,0.14998,187.0
+ind,G0,yes (rank 1),0.7,2000,dcov_wild,6,100,0,0.06,0.02779,0.12477,187.0
+ind,G0,yes (rank 1),0.7,2000,dcov_sub,7,100,0,0.07,0.03432,0.1375,187.0
+ind,G0,yes (rank 1),0.7,2000,pearson_nw,8,100,0,0.08,0.04109,0.14998,187.0
+ind,G0,yes (rank 1),0.7,2000,pearson_ewc,2,100,0,0.02,0.0055,0.07001,187.0
+ind,G0,yes (rank 1),0.8,500,hsic_wild,11,100,0,0.11,0.06254,0.18631,10.6
+ind,G0,yes (rank 1),0.8,500,hsic_shift,5,100,0,0.05,0.02154,0.11175,10.6
+ind,G0,yes (rank 1),0.8,500,hsic_sub,19,100,0,0.19,0.12515,0.27779,10.6
+ind,G0,yes (rank 1),0.8,500,dcov_wild,14,100,0,0.14,0.08526,0.22137,10.6
+ind,G0,yes (rank 1),0.8,500,dcov_sub,21,100,0,0.21,0.14166,0.2998,10.6
+ind,G0,yes (rank 1),0.8,500,pearson_nw,16,100,0,0.16,0.10095,0.2442,10.6
+ind,G0,yes (rank 1),0.8,500,pearson_ewc,9,100,0,0.09,0.04807,0.16226,10.6
+ind,G0,yes (rank 1),0.8,2000,hsic_wild,9,100,0,0.09,0.04807,0.16226,188.9
+ind,G0,yes (rank 1),0.8,2000,hsic_shift,1,100,0,0.01,0.00177,0.05449,188.9
+ind,G0,yes (rank 1),0.8,2000,hsic_sub,17,100,0,0.17,0.10894,0.25548,188.9
+ind,G0,yes (rank 1),0.8,2000,dcov_wild,12,100,0,0.12,0.06999,0.19812,188.9
+ind,G0,yes (rank 1),0.8,2000,dcov_sub,22,100,0,0.22,0.15001,0.3107,188.9
+ind,G0,yes (rank 1),0.8,2000,pearson_nw,17,100,0,0.17,0.10894,0.25548,188.9
+ind,G0,yes (rank 1),0.8,2000,pearson_ewc,11,100,0,0.11,0.06254,0.18631,188.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,500,hsic_wild,7,100,0,0.07,0.03432,0.1375,11.1
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,500,hsic_shift,3,100,0,0.03,0.01025,0.08452,11.1
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,500,hsic_sub,4,100,0,0.04,0.01566,0.09837,11.1
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,500,dcov_wild,5,100,0,0.05,0.02154,0.11175,11.1
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,500,dcov_sub,1,100,0,0.01,0.00177,0.05449,11.1
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,500,pearson_nw,4,100,0,0.04,0.01566,0.09837,11.1
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,500,pearson_ewc,6,100,0,0.06,0.02779,0.12477,11.1
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,2000,hsic_wild,6,100,0,0.06,0.02779,0.12477,191.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,2000,hsic_shift,4,100,0,0.04,0.01566,0.09837,191.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,2000,hsic_sub,5,100,0,0.05,0.02154,0.11175,191.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,2000,dcov_wild,3,100,0,0.03,0.01025,0.08452,191.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,2000,dcov_sub,3,100,0,0.03,0.01025,0.08452,191.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,2000,pearson_nw,5,100,0,0.05,0.02154,0.11175,191.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.5,2000,pearson_ewc,5,100,0,0.05,0.02154,0.11175,191.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,500,hsic_wild,7,100,0,0.07,0.03432,0.1375,13.6
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,500,hsic_shift,1,100,0,0.01,0.00177,0.05449,13.6
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,500,hsic_sub,9,100,0,0.09,0.04807,0.16226,13.6
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,500,dcov_wild,11,100,0,0.11,0.06254,0.18631,13.6
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,500,dcov_sub,9,100,0,0.09,0.04807,0.16226,13.6
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,500,pearson_nw,8,100,0,0.08,0.04109,0.14998,13.6
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,500,pearson_ewc,7,100,0,0.07,0.03432,0.1375,13.6
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,2000,hsic_wild,9,100,0,0.09,0.04807,0.16226,198.7
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,2000,hsic_shift,7,100,0,0.07,0.03432,0.1375,198.7
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,2000,hsic_sub,11,100,0,0.11,0.06254,0.18631,198.7
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,2000,dcov_wild,13,100,0,0.13,0.07757,0.2098,198.7
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,2000,dcov_sub,12,100,0,0.12,0.06999,0.19812,198.7
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,2000,pearson_nw,7,100,0,0.07,0.03432,0.1375,198.7
+ind,HT-L,"no (linear filter, t3 innovations)",0.7,2000,pearson_ewc,5,100,0,0.05,0.02154,0.11175,198.7
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,500,hsic_wild,7,100,0,0.07,0.03432,0.1375,10.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,500,hsic_shift,2,100,0,0.02,0.0055,0.07001,10.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,500,hsic_sub,21,100,0,0.21,0.14166,0.2998,10.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,500,dcov_wild,9,100,0,0.09,0.04807,0.16226,10.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,500,dcov_sub,18,100,0,0.18,0.117,0.26667,10.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,500,pearson_nw,11,100,0,0.11,0.06254,0.18631,10.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,500,pearson_ewc,3,100,0,0.03,0.01025,0.08452,10.9
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,2000,hsic_wild,13,100,0,0.13,0.07757,0.2098,194.8
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,2000,hsic_shift,8,100,0,0.08,0.04109,0.14998,194.8
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,2000,hsic_sub,36,100,0,0.36,0.27271,0.45765,194.8
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,2000,dcov_wild,14,100,0,0.14,0.08526,0.22137,194.8
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,2000,dcov_sub,32,100,0,0.32,0.23669,0.41663,194.8
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,2000,pearson_nw,18,100,0,0.18,0.117,0.26667,194.8
+ind,HT-L,"no (linear filter, t3 innovations)",0.8,2000,pearson_ewc,10,100,0,0.1,0.05523,0.17437,194.8
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,500,hsic_wild,5,100,0,0.05,0.02154,0.11175,12.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,500,hsic_shift,3,100,0,0.03,0.01025,0.08452,12.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,500,hsic_sub,3,100,0,0.03,0.01025,0.08452,12.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,500,dcov_wild,11,100,0,0.11,0.06254,0.18631,12.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,500,dcov_sub,2,100,0,0.02,0.0055,0.07001,12.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,500,pearson_nw,8,100,0,0.08,0.04109,0.14998,12.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,500,pearson_ewc,7,100,0,0.07,0.03432,0.1375,12.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,2000,hsic_wild,7,100,0,0.07,0.03432,0.1375,194.6
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,2000,hsic_shift,8,100,0,0.08,0.04109,0.14998,194.6
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,2000,hsic_sub,8,100,0,0.08,0.04109,0.14998,194.6
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,2000,dcov_wild,5,100,0,0.05,0.02154,0.11175,194.6
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,2000,dcov_sub,4,100,0,0.04,0.01566,0.09837,194.6
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,2000,pearson_nw,1,100,0,0.01,0.00177,0.05449,194.6
+ind,HT-S,"yes (instantaneous, rank 1)",0.5,2000,pearson_ewc,2,100,0,0.02,0.0055,0.07001,194.6
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,500,hsic_wild,2,100,0,0.02,0.0055,0.07001,13.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,500,hsic_shift,0,100,0,0.0,0.0,0.03699,13.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,500,hsic_sub,1,100,0,0.01,0.00177,0.05449,13.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,500,dcov_wild,3,100,0,0.03,0.01025,0.08452,13.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,500,dcov_sub,2,100,0,0.02,0.0055,0.07001,13.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,500,pearson_nw,1,100,0,0.01,0.00177,0.05449,13.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,500,pearson_ewc,2,100,0,0.02,0.0055,0.07001,13.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,2000,hsic_wild,6,100,0,0.06,0.02779,0.12477,179.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,2000,hsic_shift,1,100,0,0.01,0.00177,0.05449,179.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,2000,hsic_sub,7,100,0,0.07,0.03432,0.1375,179.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,2000,dcov_wild,8,100,0,0.08,0.04109,0.14998,179.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,2000,dcov_sub,7,100,0,0.07,0.03432,0.1375,179.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,2000,pearson_nw,9,100,0,0.09,0.04807,0.16226,179.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.7,2000,pearson_ewc,4,100,0,0.04,0.01566,0.09837,179.9
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,500,hsic_wild,8,100,0,0.08,0.04109,0.14998,12.8
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,500,hsic_shift,5,100,0,0.05,0.02154,0.11175,12.8
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,500,hsic_sub,14,100,0,0.14,0.08526,0.22137,12.8
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,500,dcov_wild,10,100,0,0.1,0.05523,0.17437,12.8
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,500,dcov_sub,13,100,0,0.13,0.07757,0.2098,12.8
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,500,pearson_nw,13,100,0,0.13,0.07757,0.2098,12.8
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,500,pearson_ewc,10,100,0,0.1,0.05523,0.17437,12.8
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,2000,hsic_wild,5,100,0,0.05,0.02154,0.11175,188.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,2000,hsic_shift,1,100,0,0.01,0.00177,0.05449,188.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,2000,hsic_sub,12,100,0,0.12,0.06999,0.19812,188.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,2000,dcov_wild,4,100,0,0.04,0.01566,0.09837,188.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,2000,dcov_sub,16,100,0,0.16,0.10095,0.2442,188.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,2000,pearson_nw,7,100,0,0.07,0.03432,0.1375,188.0
+ind,HT-S,"yes (instantaneous, rank 1)",0.8,2000,pearson_ewc,2,100,0,0.02,0.0055,0.07001,188.0
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,500,hsic_wild,6,100,0,0.06,0.02779,0.12477,14.7
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,500,hsic_shift,3,100,0,0.03,0.01025,0.08452,14.7
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,500,hsic_sub,4,100,0,0.04,0.01566,0.09837,14.7
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,500,dcov_wild,11,100,0,0.11,0.06254,0.18631,14.7
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,500,dcov_sub,3,100,0,0.03,0.01025,0.08452,14.7
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,500,pearson_nw,6,100,0,0.06,0.02779,0.12477,14.7
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,500,pearson_ewc,4,100,0,0.04,0.01566,0.09837,14.7
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,2000,hsic_wild,8,100,0,0.08,0.04109,0.14998,187.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,2000,hsic_shift,4,100,0,0.04,0.01566,0.09837,187.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,2000,hsic_sub,1,100,0,0.01,0.00177,0.05449,187.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,2000,dcov_wild,4,100,0,0.04,0.01566,0.09837,187.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,2000,dcov_sub,2,100,0,0.02,0.0055,0.07001,187.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,2000,pearson_nw,4,100,0,0.04,0.01566,0.09837,187.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.5,2000,pearson_ewc,5,100,0,0.05,0.02154,0.11175,187.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,500,hsic_wild,7,100,0,0.07,0.03432,0.1375,11.4
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,500,hsic_shift,4,100,0,0.04,0.01566,0.09837,11.4
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,500,hsic_sub,7,100,0,0.07,0.03432,0.1375,11.4
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,500,dcov_wild,5,100,0,0.05,0.02154,0.11175,11.4
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,500,dcov_sub,2,100,0,0.02,0.0055,0.07001,11.4
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,500,pearson_nw,5,100,0,0.05,0.02154,0.11175,11.4
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,500,pearson_ewc,4,100,0,0.04,0.01566,0.09837,11.4
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,2000,hsic_wild,5,100,0,0.05,0.02154,0.11175,195.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,2000,hsic_shift,3,100,0,0.03,0.01025,0.08452,195.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,2000,hsic_sub,5,100,0,0.05,0.02154,0.11175,195.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,2000,dcov_wild,4,100,0,0.04,0.01566,0.09837,195.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,2000,dcov_sub,0,100,0,0.0,0.0,0.03699,195.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,2000,pearson_nw,4,100,0,0.04,0.01566,0.09837,195.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.7,2000,pearson_ewc,2,100,0,0.02,0.0055,0.07001,195.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,500,hsic_wild,12,100,0,0.12,0.06999,0.19812,11.6
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,500,hsic_shift,5,100,0,0.05,0.02154,0.11175,11.6
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,500,hsic_sub,10,100,0,0.1,0.05523,0.17437,11.6
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,500,dcov_wild,6,100,0,0.06,0.02779,0.12477,11.6
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,500,dcov_sub,3,100,0,0.03,0.01025,0.08452,11.6
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,500,pearson_nw,7,100,0,0.07,0.03432,0.1375,11.6
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,500,pearson_ewc,3,100,0,0.03,0.01025,0.08452,11.6
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,2000,hsic_wild,10,100,0,0.1,0.05523,0.17437,199.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,2000,hsic_shift,8,100,0,0.08,0.04109,0.14998,199.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,2000,hsic_sub,11,100,0,0.11,0.06254,0.18631,199.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,2000,dcov_wild,7,100,0,0.07,0.03432,0.1375,199.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,2000,dcov_sub,2,100,0,0.02,0.0055,0.07001,199.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,2000,pearson_nw,2,100,0,0.02,0.0055,0.07001,199.8
+ind,NL-SV,multivariate only (function of two Gaussian processes),0.8,2000,pearson_ewc,1,100,0,0.01,0.00177,0.05449,199.8
+ind,NL-TAR,no (nonlinear path functional),0.5,500,hsic_wild,14,100,0,0.14,0.08526,0.22137,11.6
+ind,NL-TAR,no (nonlinear path functional),0.5,500,hsic_shift,7,100,0,0.07,0.03432,0.1375,11.6
+ind,NL-TAR,no (nonlinear path functional),0.5,500,hsic_sub,14,100,0,0.14,0.08526,0.22137,11.6
+ind,NL-TAR,no (nonlinear path functional),0.5,500,dcov_wild,10,100,0,0.1,0.05523,0.17437,11.6
+ind,NL-TAR,no (nonlinear path functional),0.5,500,dcov_sub,13,100,0,0.13,0.07757,0.2098,11.6
+ind,NL-TAR,no (nonlinear path functional),0.5,500,pearson_nw,5,100,0,0.05,0.02154,0.11175,11.6
+ind,NL-TAR,no (nonlinear path functional),0.5,500,pearson_ewc,3,100,0,0.03,0.01025,0.08452,11.6
+ind,NL-TAR,no (nonlinear path functional),0.5,2000,hsic_wild,5,100,0,0.05,0.02154,0.11175,196.3
+ind,NL-TAR,no (nonlinear path functional),0.5,2000,hsic_shift,4,100,0,0.04,0.01566,0.09837,196.3
+ind,NL-TAR,no (nonlinear path functional),0.5,2000,hsic_sub,6,100,0,0.06,0.02779,0.12477,196.3
+ind,NL-TAR,no (nonlinear path functional),0.5,2000,dcov_wild,7,100,0,0.07,0.03432,0.1375,196.3
+ind,NL-TAR,no (nonlinear path functional),0.5,2000,dcov_sub,5,100,0,0.05,0.02154,0.11175,196.3
+ind,NL-TAR,no (nonlinear path functional),0.5,2000,pearson_nw,5,100,0,0.05,0.02154,0.11175,196.3
+ind,NL-TAR,no (nonlinear path functional),0.5,2000,pearson_ewc,5,100,0,0.05,0.02154,0.11175,196.3
+ind,NL-TAR,no (nonlinear path functional),0.7,500,hsic_wild,15,100,0,0.15,0.09306,0.23284,13.2
+ind,NL-TAR,no (nonlinear path functional),0.7,500,hsic_shift,7,100,0,0.07,0.03432,0.1375,13.2
+ind,NL-TAR,no (nonlinear path functional),0.7,500,hsic_sub,23,100,0,0.23,0.15843,0.32154,13.2
+ind,NL-TAR,no (nonlinear path functional),0.7,500,dcov_wild,14,100,0,0.14,0.08526,0.22137,13.2
+ind,NL-TAR,no (nonlinear path functional),0.7,500,dcov_sub,27,100,0,0.27,0.1927,0.36432,13.2
+ind,NL-TAR,no (nonlinear path functional),0.7,500,pearson_nw,13,100,0,0.13,0.07757,0.2098,13.2
+ind,NL-TAR,no (nonlinear path functional),0.7,500,pearson_ewc,7,100,0,0.07,0.03432,0.1375,13.2
+ind,NL-TAR,no (nonlinear path functional),0.7,2000,hsic_wild,8,100,0,0.08,0.04109,0.14998,198.4
+ind,NL-TAR,no (nonlinear path functional),0.7,2000,hsic_shift,3,100,0,0.03,0.01025,0.08452,198.4
+ind,NL-TAR,no (nonlinear path functional),0.7,2000,hsic_sub,15,100,0,0.15,0.09306,0.23284,198.4
+ind,NL-TAR,no (nonlinear path functional),0.7,2000,dcov_wild,6,100,0,0.06,0.02779,0.12477,198.4
+ind,NL-TAR,no (nonlinear path functional),0.7,2000,dcov_sub,15,100,0,0.15,0.09306,0.23284,198.4
+ind,NL-TAR,no (nonlinear path functional),0.7,2000,pearson_nw,8,100,0,0.08,0.04109,0.14998,198.4
+ind,NL-TAR,no (nonlinear path functional),0.7,2000,pearson_ewc,7,100,0,0.07,0.03432,0.1375,198.4
+ind,NL-TAR,no (nonlinear path functional),0.8,500,hsic_wild,11,100,0,0.11,0.06254,0.18631,14.8
+ind,NL-TAR,no (nonlinear path functional),0.8,500,hsic_shift,6,100,0,0.06,0.02779,0.12477,14.8
+ind,NL-TAR,no (nonlinear path functional),0.8,500,hsic_sub,29,100,0,0.29,0.21015,0.38539,14.8
+ind,NL-TAR,no (nonlinear path functional),0.8,500,dcov_wild,9,100,0,0.09,0.04807,0.16226,14.8
+ind,NL-TAR,no (nonlinear path functional),0.8,500,dcov_sub,37,100,0,0.37,0.28182,0.46779,14.8
+ind,NL-TAR,no (nonlinear path functional),0.8,500,pearson_nw,9,100,0,0.09,0.04807,0.16226,14.8
+ind,NL-TAR,no (nonlinear path functional),0.8,500,pearson_ewc,7,100,0,0.07,0.03432,0.1375,14.8
+ind,NL-TAR,no (nonlinear path functional),0.8,2000,hsic_wild,14,100,0,0.14,0.08526,0.22137,204.4
+ind,NL-TAR,no (nonlinear path functional),0.8,2000,hsic_shift,9,100,0,0.09,0.04807,0.16226,204.4
+ind,NL-TAR,no (nonlinear path functional),0.8,2000,hsic_sub,27,100,0,0.27,0.1927,0.36432,204.4
+ind,NL-TAR,no (nonlinear path functional),0.8,2000,dcov_wild,13,100,0,0.13,0.07757,0.2098,204.4
+ind,NL-TAR,no (nonlinear path functional),0.8,2000,dcov_sub,32,100,0,0.32,0.23669,0.41663,204.4
+ind,NL-TAR,no (nonlinear path functional),0.8,2000,pearson_nw,12,100,0,0.12,0.06999,0.19812,204.4
+ind,NL-TAR,no (nonlinear path functional),0.8,2000,pearson_ewc,9,100,0,0.09,0.04807,0.16226,204.4
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,500,hsic_wild,84,100,0,0.84,0.7558,0.89905,12.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,500,hsic_shift,9,100,0,0.09,0.04807,0.16226,12.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,500,hsic_sub,84,100,0,0.84,0.7558,0.89905,12.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,500,dcov_wild,83,100,0,0.83,0.74452,0.89106,12.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,500,dcov_sub,84,100,0,0.84,0.7558,0.89905,12.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,500,pearson_nw,83,100,0,0.83,0.74452,0.89106,12.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,500,pearson_ewc,82,100,0,0.82,0.73333,0.883,12.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,2000,hsic_wild,89,100,0,0.89,0.81369,0.93746,204.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,2000,hsic_shift,1,100,0,0.01,0.00177,0.05449,204.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,2000,hsic_sub,90,100,0,0.9,0.82563,0.94477,204.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,2000,dcov_wild,92,100,0,0.92,0.85002,0.95891,204.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,2000,dcov_sub,91,100,0,0.91,0.83774,0.95193,204.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,2000,pearson_nw,92,100,0,0.92,0.85002,0.95891,204.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,2000,pearson_ewc,91,100,0,0.91,0.83774,0.95193,204.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,500,hsic_wild,71,100,0,0.71,0.61461,0.78985,11.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,500,hsic_shift,5,100,0,0.05,0.02154,0.11175,11.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,500,hsic_sub,72,100,0,0.72,0.62512,0.7986,11.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,500,dcov_wild,71,100,0,0.71,0.61461,0.78985,11.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,500,dcov_sub,74,100,0,0.74,0.64629,0.81595,11.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,500,pearson_nw,71,100,0,0.71,0.61461,0.78985,11.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,500,pearson_ewc,70,100,0,0.7,0.60415,0.78105,11.7
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,2000,hsic_wild,92,100,0,0.92,0.85002,0.95891,210.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,2000,hsic_shift,4,100,0,0.04,0.01566,0.09837,210.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,2000,hsic_sub,93,100,0,0.93,0.8625,0.96568,210.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,2000,dcov_wild,93,100,0,0.93,0.8625,0.96568,210.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,2000,dcov_sub,92,100,0,0.92,0.85002,0.95891,210.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,2000,pearson_nw,91,100,0,0.91,0.83774,0.95193,210.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,2000,pearson_ewc,92,100,0,0.92,0.85002,0.95891,210.1
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,500,hsic_wild,71,100,0,0.71,0.61461,0.78985,12.4
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,500,hsic_shift,1,100,0,0.01,0.00177,0.05449,12.4
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,500,hsic_sub,78,100,0,0.78,0.6893,0.84999,12.4
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,500,dcov_wild,70,100,0,0.7,0.60415,0.78105,12.4
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,500,dcov_sub,78,100,0,0.78,0.6893,0.84999,12.4
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,500,pearson_nw,71,100,0,0.71,0.61461,0.78985,12.4
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,500,pearson_ewc,66,100,0,0.66,0.56278,0.74538,12.4
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,2000,hsic_wild,87,100,0,0.87,0.7902,0.92243,194.9
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,2000,hsic_shift,2,100,0,0.02,0.0055,0.07001,194.9
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,2000,hsic_sub,87,100,0,0.87,0.7902,0.92243,194.9
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,2000,dcov_wild,88,100,0,0.88,0.80188,0.93001,194.9
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,2000,dcov_sub,88,100,0,0.88,0.80188,0.93001,194.9
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,2000,pearson_nw,89,100,0,0.89,0.81369,0.93746,194.9
+ind,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,2000,pearson_ewc,89,100,0,0.89,0.81369,0.93746,194.9
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,500,hsic_wild,100,100,0,1.0,0.96301,1.0,11.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,500,hsic_shift,18,100,0,0.18,0.117,0.26667,11.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,500,hsic_sub,100,100,0,1.0,0.96301,1.0,11.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,500,dcov_wild,100,100,0,1.0,0.96301,1.0,11.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,500,dcov_sub,100,100,0,1.0,0.96301,1.0,11.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,500,pearson_nw,100,100,0,1.0,0.96301,1.0,11.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,500,pearson_ewc,100,100,0,1.0,0.96301,1.0,11.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,2000,hsic_wild,100,100,0,1.0,0.96301,1.0,199.2
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,2000,hsic_shift,38,100,0,0.38,0.29098,0.4779,199.2
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,2000,hsic_sub,100,100,0,1.0,0.96301,1.0,199.2
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,2000,dcov_wild,100,100,0,1.0,0.96301,1.0,199.2
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,2000,dcov_sub,100,100,0,1.0,0.96301,1.0,199.2
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,2000,pearson_nw,100,100,0,1.0,0.96301,1.0,199.2
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.5,2000,pearson_ewc,100,100,0,1.0,0.96301,1.0,199.2
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,500,hsic_wild,100,100,0,1.0,0.96301,1.0,11.7
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,500,hsic_shift,16,100,0,0.16,0.10095,0.2442,11.7
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,500,hsic_sub,100,100,0,1.0,0.96301,1.0,11.7
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,500,dcov_wild,100,100,0,1.0,0.96301,1.0,11.7
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,500,dcov_sub,100,100,0,1.0,0.96301,1.0,11.7
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,500,pearson_nw,100,100,0,1.0,0.96301,1.0,11.7
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,500,pearson_ewc,100,100,0,1.0,0.96301,1.0,11.7
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,2000,hsic_wild,100,100,0,1.0,0.96301,1.0,204.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,2000,hsic_shift,35,100,0,0.35,0.26364,0.44746,204.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,2000,hsic_sub,100,100,0,1.0,0.96301,1.0,204.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,2000,dcov_wild,100,100,0,1.0,0.96301,1.0,204.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,2000,dcov_sub,100,100,0,1.0,0.96301,1.0,204.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,2000,pearson_nw,100,100,0,1.0,0.96301,1.0,204.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.7,2000,pearson_ewc,100,100,0,1.0,0.96301,1.0,204.6
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,500,hsic_wild,100,100,0,1.0,0.96301,1.0,10.9
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,500,hsic_shift,21,100,0,0.21,0.14166,0.2998,10.9
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,500,hsic_sub,100,100,0,1.0,0.96301,1.0,10.9
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,500,dcov_wild,100,100,0,1.0,0.96301,1.0,10.9
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,500,dcov_sub,100,100,0,1.0,0.96301,1.0,10.9
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,500,pearson_nw,100,100,0,1.0,0.96301,1.0,10.9
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,500,pearson_ewc,100,100,0,1.0,0.96301,1.0,10.9
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,2000,hsic_wild,100,100,0,1.0,0.96301,1.0,195.0
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,2000,hsic_shift,19,100,0,0.19,0.12515,0.27779,195.0
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,2000,hsic_sub,100,100,0,1.0,0.96301,1.0,195.0
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,2000,dcov_wild,100,100,0,1.0,0.96301,1.0,195.0
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,2000,dcov_sub,100,100,0,1.0,0.96301,1.0,195.0
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,2000,pearson_nw,100,100,0,1.0,0.96301,1.0,195.0
+ind,SEAS-M-shared,no (fixed common phase; diagnostic),0.8,2000,pearson_ewc,100,100,0,1.0,0.96301,1.0,195.0
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,500,hsic_wild,45,100,0,0.45,0.35615,0.54755,15.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,500,hsic_shift,3,100,0,0.03,0.01025,0.08452,15.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,500,hsic_sub,37,100,0,0.37,0.28182,0.46779,15.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,500,dcov_wild,18,100,0,0.18,0.117,0.26667,15.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,500,dcov_sub,8,100,0,0.08,0.04109,0.14998,15.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,500,pearson_nw,5,100,0,0.05,0.02154,0.11175,15.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,500,pearson_ewc,3,100,0,0.03,0.01025,0.08452,15.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,2000,hsic_wild,77,100,0,0.77,0.67846,0.84157,203.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,2000,hsic_shift,4,100,0,0.04,0.01566,0.09837,203.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,2000,hsic_sub,75,100,0,0.75,0.65696,0.82455,203.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,2000,dcov_wild,52,100,0,0.52,0.42317,0.61535,203.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,2000,dcov_sub,45,100,0,0.45,0.35615,0.54755,203.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,2000,pearson_nw,6,100,0,0.06,0.02779,0.12477,203.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,2000,pearson_ewc,8,100,0,0.08,0.04109,0.14998,203.2
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,500,hsic_wild,43,100,0,0.43,0.33733,0.52785,12.0
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,500,hsic_shift,10,100,0,0.1,0.05523,0.17437,12.0
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,500,hsic_sub,39,100,0,0.39,0.30017,0.48797,12.0
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,500,dcov_wild,20,100,0,0.2,0.13337,0.28883,12.0
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,500,dcov_sub,22,100,0,0.22,0.15001,0.3107,12.0
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,500,pearson_nw,8,100,0,0.08,0.04109,0.14998,12.0
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,500,pearson_ewc,6,100,0,0.06,0.02779,0.12477,12.0
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,2000,hsic_wild,72,100,0,0.72,0.62512,0.7986,193.6
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,2000,hsic_shift,5,100,0,0.05,0.02154,0.11175,193.6
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,2000,hsic_sub,72,100,0,0.72,0.62512,0.7986,193.6
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,2000,dcov_wild,45,100,0,0.45,0.35615,0.54755,193.6
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,2000,dcov_sub,46,100,0,0.46,0.36561,0.55735,193.6
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,2000,pearson_nw,5,100,0,0.05,0.02154,0.11175,193.6
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,2000,pearson_ewc,4,100,0,0.04,0.01566,0.09837,193.6
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,500,hsic_wild,31,100,0,0.31,0.2278,0.40626,10.7
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,500,hsic_shift,8,100,0,0.08,0.04109,0.14998,10.7
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,500,hsic_sub,46,100,0,0.46,0.36561,0.55735,10.7
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,500,dcov_wild,18,100,0,0.18,0.117,0.26667,10.7
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,500,dcov_sub,30,100,0,0.3,0.21895,0.39585,10.7
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,500,pearson_nw,16,100,0,0.16,0.10095,0.2442,10.7
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,500,pearson_ewc,9,100,0,0.09,0.04807,0.16226,10.7
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,2000,hsic_wild,66,100,0,0.66,0.56278,0.74538,205.9
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,2000,hsic_shift,6,100,0,0.06,0.02779,0.12477,205.9
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,2000,hsic_sub,70,100,0,0.7,0.60415,0.78105,205.9
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,2000,dcov_wild,40,100,0,0.4,0.3094,0.498,205.9
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,2000,dcov_sub,52,100,0,0.52,0.42317,0.61535,205.9
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,2000,pearson_nw,21,100,0,0.21,0.14166,0.2998,205.9
+ind,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,2000,pearson_ewc,14,100,0,0.14,0.08526,0.22137,205.9
+mmd,G0,yes (rank 1),0.5,500,mmd_unc_wild,6,100,0,0.06,0.02779,0.12477,15.5
+mmd,G0,yes (rank 1),0.5,500,mmd_sub_sqrt,5,100,0,0.05,0.02154,0.11175,15.5
+mmd,G0,yes (rank 1),0.5,500,mmd_sn_block,5,100,0,0.05,0.02154,0.11175,15.5
+mmd,G0,yes (rank 1),0.5,2000,mmd_unc_wild,3,100,0,0.03,0.01025,0.08452,238.1
+mmd,G0,yes (rank 1),0.5,2000,mmd_sub_sqrt,8,100,0,0.08,0.04109,0.14998,238.1
+mmd,G0,yes (rank 1),0.5,2000,mmd_sn_block,5,100,0,0.05,0.02154,0.11175,238.1
+mmd,G0,yes (rank 1),0.7,500,mmd_unc_wild,23,100,0,0.23,0.15843,0.32154,18.6
+mmd,G0,yes (rank 1),0.7,500,mmd_sub_sqrt,29,100,0,0.29,0.21015,0.38539,18.6
+mmd,G0,yes (rank 1),0.7,500,mmd_sn_block,12,100,0,0.12,0.06999,0.19812,18.6
+mmd,G0,yes (rank 1),0.7,2000,mmd_unc_wild,15,100,0,0.15,0.09306,0.23284,247.3
+mmd,G0,yes (rank 1),0.7,2000,mmd_sub_sqrt,31,100,0,0.31,0.2278,0.40626,247.3
+mmd,G0,yes (rank 1),0.7,2000,mmd_sn_block,7,100,0,0.07,0.03432,0.1375,247.3
+mmd,G0,yes (rank 1),0.8,500,mmd_unc_wild,16,100,0,0.16,0.10095,0.2442,13.2
+mmd,G0,yes (rank 1),0.8,500,mmd_sub_sqrt,39,100,0,0.39,0.30017,0.48797,13.2
+mmd,G0,yes (rank 1),0.8,500,mmd_sn_block,5,100,0,0.05,0.02154,0.11175,13.2
+mmd,G0,yes (rank 1),0.8,2000,mmd_unc_wild,25,100,0,0.25,0.17545,0.34304,221.9
+mmd,G0,yes (rank 1),0.8,2000,mmd_sub_sqrt,51,100,0,0.51,0.41348,0.60578,221.9
+mmd,G0,yes (rank 1),0.8,2000,mmd_sn_block,6,100,0,0.06,0.02779,0.12477,221.9
+mmd,HT-L,"no (linear filter, t3 innovations)",0.5,500,mmd_unc_wild,5,100,0,0.05,0.02154,0.11175,13.5
+mmd,HT-L,"no (linear filter, t3 innovations)",0.5,500,mmd_sub_sqrt,6,100,0,0.06,0.02779,0.12477,13.5
+mmd,HT-L,"no (linear filter, t3 innovations)",0.5,500,mmd_sn_block,6,100,0,0.06,0.02779,0.12477,13.5
+mmd,HT-L,"no (linear filter, t3 innovations)",0.5,2000,mmd_unc_wild,5,100,0,0.05,0.02154,0.11175,213.8
+mmd,HT-L,"no (linear filter, t3 innovations)",0.5,2000,mmd_sub_sqrt,4,100,0,0.04,0.01566,0.09837,213.8
+mmd,HT-L,"no (linear filter, t3 innovations)",0.5,2000,mmd_sn_block,4,100,0,0.04,0.01566,0.09837,213.8
+mmd,HT-L,"no (linear filter, t3 innovations)",0.7,500,mmd_unc_wild,16,100,0,0.16,0.10095,0.2442,14.7
+mmd,HT-L,"no (linear filter, t3 innovations)",0.7,500,mmd_sub_sqrt,28,100,0,0.28,0.2014,0.37488,14.7
+mmd,HT-L,"no (linear filter, t3 innovations)",0.7,500,mmd_sn_block,5,100,0,0.05,0.02154,0.11175,14.7
+mmd,HT-L,"no (linear filter, t3 innovations)",0.7,2000,mmd_unc_wild,16,100,0,0.16,0.10095,0.2442,229.6
+mmd,HT-L,"no (linear filter, t3 innovations)",0.7,2000,mmd_sub_sqrt,43,100,0,0.43,0.33733,0.52785,229.6
+mmd,HT-L,"no (linear filter, t3 innovations)",0.7,2000,mmd_sn_block,7,100,0,0.07,0.03432,0.1375,229.6
+mmd,HT-L,"no (linear filter, t3 innovations)",0.8,500,mmd_unc_wild,24,100,0,0.24,0.16691,0.33232,15.6
+mmd,HT-L,"no (linear filter, t3 innovations)",0.8,500,mmd_sub_sqrt,49,100,0,0.49,0.39422,0.58652,15.6
+mmd,HT-L,"no (linear filter, t3 innovations)",0.8,500,mmd_sn_block,8,100,0,0.08,0.04109,0.14998,15.6
+mmd,HT-L,"no (linear filter, t3 innovations)",0.8,2000,mmd_unc_wild,41,100,0,0.41,0.31867,0.50799,235.0
+mmd,HT-L,"no (linear filter, t3 innovations)",0.8,2000,mmd_sub_sqrt,58,100,0,0.58,0.48206,0.67202,235.0
+mmd,HT-L,"no (linear filter, t3 innovations)",0.8,2000,mmd_sn_block,14,100,0,0.14,0.08526,0.22137,235.0
+mmd,HT-S,"yes (instantaneous, rank 1)",0.5,500,mmd_unc_wild,6,100,0,0.06,0.02779,0.12477,15.9
+mmd,HT-S,"yes (instantaneous, rank 1)",0.5,500,mmd_sub_sqrt,8,100,0,0.08,0.04109,0.14998,15.9
+mmd,HT-S,"yes (instantaneous, rank 1)",0.5,500,mmd_sn_block,8,100,0,0.08,0.04109,0.14998,15.9
+mmd,HT-S,"yes (instantaneous, rank 1)",0.5,2000,mmd_unc_wild,6,100,0,0.06,0.02779,0.12477,203.9
+mmd,HT-S,"yes (instantaneous, rank 1)",0.5,2000,mmd_sub_sqrt,5,100,0,0.05,0.02154,0.11175,203.9
+mmd,HT-S,"yes (instantaneous, rank 1)",0.5,2000,mmd_sn_block,7,100,0,0.07,0.03432,0.1375,203.9
+mmd,HT-S,"yes (instantaneous, rank 1)",0.7,500,mmd_unc_wild,12,100,0,0.12,0.06999,0.19812,15.7
+mmd,HT-S,"yes (instantaneous, rank 1)",0.7,500,mmd_sub_sqrt,20,100,0,0.2,0.13337,0.28883,15.7
+mmd,HT-S,"yes (instantaneous, rank 1)",0.7,500,mmd_sn_block,8,100,0,0.08,0.04109,0.14998,15.7
+mmd,HT-S,"yes (instantaneous, rank 1)",0.7,2000,mmd_unc_wild,15,100,0,0.15,0.09306,0.23284,228.7
+mmd,HT-S,"yes (instantaneous, rank 1)",0.7,2000,mmd_sub_sqrt,31,100,0,0.31,0.2278,0.40626,228.7
+mmd,HT-S,"yes (instantaneous, rank 1)",0.7,2000,mmd_sn_block,9,100,0,0.09,0.04807,0.16226,228.7
+mmd,HT-S,"yes (instantaneous, rank 1)",0.8,500,mmd_unc_wild,21,100,0,0.21,0.14166,0.2998,13.0
+mmd,HT-S,"yes (instantaneous, rank 1)",0.8,500,mmd_sub_sqrt,37,100,0,0.37,0.28182,0.46779,13.0
+mmd,HT-S,"yes (instantaneous, rank 1)",0.8,500,mmd_sn_block,6,100,0,0.06,0.02779,0.12477,13.0
+mmd,HT-S,"yes (instantaneous, rank 1)",0.8,2000,mmd_unc_wild,31,100,0,0.31,0.2278,0.40626,240.0
+mmd,HT-S,"yes (instantaneous, rank 1)",0.8,2000,mmd_sub_sqrt,59,100,0,0.59,0.49201,0.68133,240.0
+mmd,HT-S,"yes (instantaneous, rank 1)",0.8,2000,mmd_sn_block,16,100,0,0.16,0.10095,0.2442,240.0
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.5,500,mmd_unc_wild,7,100,0,0.07,0.03432,0.1375,12.4
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.5,500,mmd_sub_sqrt,17,100,0,0.17,0.10894,0.25548,12.4
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.5,500,mmd_sn_block,4,100,0,0.04,0.01566,0.09837,12.4
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.5,2000,mmd_unc_wild,11,100,0,0.11,0.06254,0.18631,234.3
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.5,2000,mmd_sub_sqrt,19,100,0,0.19,0.12515,0.27779,234.3
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.5,2000,mmd_sn_block,7,100,0,0.07,0.03432,0.1375,234.3
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.7,500,mmd_unc_wild,17,100,0,0.17,0.10894,0.25548,13.9
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.7,500,mmd_sub_sqrt,35,100,0,0.35,0.26364,0.44746,13.9
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.7,500,mmd_sn_block,12,100,0,0.12,0.06999,0.19812,13.9
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.7,2000,mmd_unc_wild,18,100,0,0.18,0.117,0.26667,236.4
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.7,2000,mmd_sub_sqrt,43,100,0,0.43,0.33733,0.52785,236.4
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.7,2000,mmd_sn_block,11,100,0,0.11,0.06254,0.18631,236.4
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.8,500,mmd_unc_wild,23,100,0,0.23,0.15843,0.32154,14.8
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.8,500,mmd_sub_sqrt,50,100,0,0.5,0.40383,0.59617,14.8
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.8,500,mmd_sn_block,17,100,0,0.17,0.10894,0.25548,14.8
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.8,2000,mmd_unc_wild,22,100,0,0.22,0.15001,0.3107,222.3
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.8,2000,mmd_sub_sqrt,45,100,0,0.45,0.35615,0.54755,222.3
+mmd,NL-SV,multivariate only (function of two Gaussian processes),0.8,2000,mmd_sn_block,12,100,0,0.12,0.06999,0.19812,222.3
+mmd,NL-TAR,no (nonlinear path functional),0.5,500,mmd_unc_wild,10,100,0,0.1,0.05523,0.17437,13.4
+mmd,NL-TAR,no (nonlinear path functional),0.5,500,mmd_sub_sqrt,10,100,0,0.1,0.05523,0.17437,13.4
+mmd,NL-TAR,no (nonlinear path functional),0.5,500,mmd_sn_block,0,100,0,0.0,0.0,0.03699,13.4
+mmd,NL-TAR,no (nonlinear path functional),0.5,2000,mmd_unc_wild,11,100,0,0.11,0.06254,0.18631,219.2
+mmd,NL-TAR,no (nonlinear path functional),0.5,2000,mmd_sub_sqrt,11,100,0,0.11,0.06254,0.18631,219.2
+mmd,NL-TAR,no (nonlinear path functional),0.5,2000,mmd_sn_block,6,100,0,0.06,0.02779,0.12477,219.2
+mmd,NL-TAR,no (nonlinear path functional),0.7,500,mmd_unc_wild,19,100,0,0.19,0.12515,0.27779,13.5
+mmd,NL-TAR,no (nonlinear path functional),0.7,500,mmd_sub_sqrt,36,100,0,0.36,0.27271,0.45765,13.5
+mmd,NL-TAR,no (nonlinear path functional),0.7,500,mmd_sn_block,3,100,0,0.03,0.01025,0.08452,13.5
+mmd,NL-TAR,no (nonlinear path functional),0.7,2000,mmd_unc_wild,18,100,0,0.18,0.117,0.26667,258.2
+mmd,NL-TAR,no (nonlinear path functional),0.7,2000,mmd_sub_sqrt,33,100,0,0.33,0.24563,0.42695,258.2
+mmd,NL-TAR,no (nonlinear path functional),0.7,2000,mmd_sn_block,5,100,0,0.05,0.02154,0.11175,258.2
+mmd,NL-TAR,no (nonlinear path functional),0.8,500,mmd_unc_wild,19,100,0,0.19,0.12515,0.27779,14.2
+mmd,NL-TAR,no (nonlinear path functional),0.8,500,mmd_sub_sqrt,44,100,0,0.44,0.34672,0.53772,14.2
+mmd,NL-TAR,no (nonlinear path functional),0.8,500,mmd_sn_block,3,100,0,0.03,0.01025,0.08452,14.2
+mmd,NL-TAR,no (nonlinear path functional),0.8,2000,mmd_unc_wild,22,100,0,0.22,0.15001,0.3107,249.2
+mmd,NL-TAR,no (nonlinear path functional),0.8,2000,mmd_sub_sqrt,38,100,0,0.38,0.29098,0.4779,249.2
+mmd,NL-TAR,no (nonlinear path functional),0.8,2000,mmd_sn_block,0,100,0,0.0,0.0,0.03699,249.2
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,500,mmd_unc_wild,1,100,0,0.01,0.00177,0.05449,13.6
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,500,mmd_sub_sqrt,1,100,0,0.01,0.00177,0.05449,13.6
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,500,mmd_sn_block,0,100,0,0.0,0.0,0.03699,13.6
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,2000,mmd_unc_wild,0,100,0,0.0,0.0,0.03699,232.3
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,2000,mmd_sub_sqrt,0,100,0,0.0,0.0,0.03699,232.3
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.5,2000,mmd_sn_block,0,100,0,0.0,0.0,0.03699,232.3
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,500,mmd_unc_wild,2,100,0,0.02,0.0055,0.07001,17.4
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,500,mmd_sub_sqrt,7,100,0,0.07,0.03432,0.1375,17.4
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,500,mmd_sn_block,0,100,0,0.0,0.0,0.03699,17.4
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,2000,mmd_unc_wild,17,100,0,0.17,0.10894,0.25548,220.8
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,2000,mmd_sub_sqrt,3,100,0,0.03,0.01025,0.08452,220.8
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.7,2000,mmd_sn_block,0,100,0,0.0,0.0,0.03699,220.8
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,500,mmd_unc_wild,12,100,0,0.12,0.06999,0.19812,13.1
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,500,mmd_sub_sqrt,17,100,0,0.17,0.10894,0.25548,13.1
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,500,mmd_sn_block,3,100,0,0.03,0.01025,0.08452,13.1
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,2000,mmd_unc_wild,23,100,0,0.23,0.15843,0.32154,214.6
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,2000,mmd_sub_sqrt,19,100,0,0.19,0.12515,0.27779,214.6
+mmd,SEAS-M,"no (deterministic periodic mean, random phase)",0.8,2000,mmd_sn_block,0,100,0,0.0,0.0,0.03699,214.6
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,500,mmd_unc_wild,2,100,0,0.02,0.0055,0.07001,15.6
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,500,mmd_sub_sqrt,1,100,0,0.01,0.00177,0.05449,15.6
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,500,mmd_sn_block,2,100,0,0.02,0.0055,0.07001,15.6
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,2000,mmd_unc_wild,3,100,0,0.03,0.01025,0.08452,242.4
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,2000,mmd_sub_sqrt,0,100,0,0.0,0.0,0.03699,242.4
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.5,2000,mmd_sn_block,0,100,0,0.0,0.0,0.03699,242.4
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,500,mmd_unc_wild,9,100,0,0.09,0.04807,0.16226,13.2
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,500,mmd_sub_sqrt,15,100,0,0.15,0.09306,0.23284,13.2
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,500,mmd_sn_block,4,100,0,0.04,0.01566,0.09837,13.2
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,2000,mmd_unc_wild,15,100,0,0.15,0.09306,0.23284,196.9
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,2000,mmd_sub_sqrt,26,100,0,0.26,0.18405,0.35371,196.9
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.7,2000,mmd_sn_block,2,100,0,0.02,0.0055,0.07001,196.9
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,500,mmd_unc_wild,20,100,0,0.2,0.13337,0.28883,15.9
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,500,mmd_sub_sqrt,34,100,0,0.34,0.25462,0.43722,15.9
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,500,mmd_sn_block,7,100,0,0.07,0.03432,0.1375,15.9
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,2000,mmd_unc_wild,24,100,0,0.24,0.16691,0.33232,182.7
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,2000,mmd_sub_sqrt,39,100,0,0.39,0.30017,0.48797,182.7
+mmd,SEAS-V,"no (deterministic periodic scale, random phase)",0.8,2000,mmd_sn_block,3,100,0,0.03,0.01025,0.08452,182.7
