@@ -1,0 +1,525 @@
+{
+ "mode": "pilot",
+ "master": 2026102541,
+ "seed_rule": "data: SeedSequence(master, spawn_key=(cell_idx, rep, 0)); tests: fresh rng on (cell_idx, rep, 1) per adjustment",
+ "B_wild": 500,
+ "period_true": 50,
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 5,
+ "argv": [
+  "run_exp4.py",
+  "--mode",
+  "pilot",
+  "--reps",
+  "100",
+  "--out",
+  "pilot",
+  "--workers",
+  "5",
+  "--only",
+  "n500,G0__H0.5__n2000,G0__H0.8__n2000,SEAS-M__H0.5__n2000,SEAS-M__H0.8__n2000,SEAS-V__H0.5__n2000,SEAS-V__H0.8__n2000",
+  "--adj2000",
+  "A1,A2,A3"
+ ],
+ "cells": [
+  {
+   "gen": "G0",
+   "H": 0.5,
+   "n": 500,
+   "idx": 0,
+   "name": "ind__G0__H0.5__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     0,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     0,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "G0",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 1,
+   "name": "ind__G0__H0.5__n2000",
+   "reps": 100,
+   "adjustments": [
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     1,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     1,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "G0",
+   "H": 0.7,
+   "n": 500,
+   "idx": 2,
+   "name": "ind__G0__H0.7__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     2,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     2,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "G0",
+   "H": 0.8,
+   "n": 500,
+   "idx": 4,
+   "name": "ind__G0__H0.8__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     4,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     4,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "G0",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 5,
+   "name": "ind__G0__H0.8__n2000",
+   "reps": 100,
+   "adjustments": [
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     5,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     5,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-M",
+   "H": 0.5,
+   "n": 500,
+   "idx": 6,
+   "name": "ind__SEAS-M__H0.5__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     6,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     6,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-M",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 7,
+   "name": "ind__SEAS-M__H0.5__n2000",
+   "reps": 100,
+   "adjustments": [
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     7,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     7,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-M",
+   "H": 0.7,
+   "n": 500,
+   "idx": 8,
+   "name": "ind__SEAS-M__H0.7__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     8,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     8,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-M",
+   "H": 0.8,
+   "n": 500,
+   "idx": 10,
+   "name": "ind__SEAS-M__H0.8__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     10,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     10,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-M",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 11,
+   "name": "ind__SEAS-M__H0.8__n2000",
+   "reps": 100,
+   "adjustments": [
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     11,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     11,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V",
+   "H": 0.5,
+   "n": 500,
+   "idx": 12,
+   "name": "ind__SEAS-V__H0.5__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     12,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     12,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 13,
+   "name": "ind__SEAS-V__H0.5__n2000",
+   "reps": 100,
+   "adjustments": [
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     13,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     13,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V",
+   "H": 0.7,
+   "n": 500,
+   "idx": 14,
+   "name": "ind__SEAS-V__H0.7__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     14,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     14,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V",
+   "H": 0.8,
+   "n": 500,
+   "idx": 16,
+   "name": "ind__SEAS-V__H0.8__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     16,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     16,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 17,
+   "name": "ind__SEAS-V__H0.8__n2000",
+   "reps": 100,
+   "adjustments": [
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     17,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     17,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-M-shared",
+   "H": 0.5,
+   "n": 500,
+   "idx": 18,
+   "name": "ind__SEAS-M-shared__H0.5__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     18,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     18,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-M-shared",
+   "H": 0.7,
+   "n": 500,
+   "idx": 20,
+   "name": "ind__SEAS-M-shared__H0.7__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     20,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     20,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-M-shared",
+   "H": 0.8,
+   "n": 500,
+   "idx": 22,
+   "name": "ind__SEAS-M-shared__H0.8__n500",
+   "reps": 100,
+   "adjustments": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key_data": [
+     22,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     22,
+     "rep",
+     1
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,135 @@
+{
+ "mode": "main",
+ "master": 2026102542,
+ "seed_rule": "data: SeedSequence(master, spawn_key=(cell_idx, rep, 0)); tests: fresh rng on (cell_idx, rep, 1) per adjustment",
+ "B_wild": 500,
+ "period_true": 50,
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 5,
+ "argv": [
+  "run_exp4.py",
+  "--mode",
+  "main",
+  "--reps",
+  "1000",
+  "--out",
+  "main",
+  "--workers",
+  "5",
+  "--only",
+  "G0__H0.5__n2000,G0__H0.8__n2000,SEAS-V__H0.5__n2000,SEAS-V__H0.8__n2000",
+  "--adj2000",
+  "A1,A2,A3"
+ ],
+ "cells": [
+  {
+   "gen": "G0",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 1,
+   "name": "ind__G0__H0.5__n2000",
+   "reps": 1000,
+   "adjustments": [
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key_data": [
+     1,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     1,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "G0",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 5,
+   "name": "ind__G0__H0.8__n2000",
+   "reps": 1000,
+   "adjustments": [
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key_data": [
+     5,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     5,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V",
+   "H": 0.5,
+   "n": 2000,
+   "idx": 13,
+   "name": "ind__SEAS-V__H0.5__n2000",
+   "reps": 1000,
+   "adjustments": [
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key_data": [
+     13,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     13,
+     "rep",
+     1
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V",
+   "H": 0.8,
+   "n": 2000,
+   "idx": 17,
+   "name": "ind__SEAS-V__H0.8__n2000",
+   "reps": 1000,
+   "adjustments": [
+    "A1",
+    "A2",
+    "A3"
+   ],
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key_data": [
+     17,
+     "rep",
+     0
+    ],
+    "spawn_key_test": [
+     17,
+     "rep",
+     1
+    ]
+   }
+  }
+ ]
+}
