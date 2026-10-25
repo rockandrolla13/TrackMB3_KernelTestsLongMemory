@@ -1,0 +1,68 @@
+{
+  "n": 2000,
+  "segments": 8,
+  "windows": 4000,
+  "by_adjustment": {
+    "D0": {
+      "median_abs_slope": 0.09889252968483533,
+      "median_abs_slope_permuted": 0.037549112725611636,
+      "share_exceeding_permuted_95pct": 0.4565,
+      "median_seg_var_max_over_min": 1.3536054263190749
+    },
+    "D1": {
+      "median_abs_slope": 0.09901041214465042,
+      "median_abs_slope_permuted": 0.037394454251508016,
+      "share_exceeding_permuted_95pct": 0.454,
+      "median_seg_var_max_over_min": 1.354003262922517
+    },
+    "D2": {
+      "median_abs_slope": 0.09516309527762948,
+      "median_abs_slope_permuted": 0.03737199005263451,
+      "share_exceeding_permuted_95pct": 0.437,
+      "median_seg_var_max_over_min": 1.348758142132576
+    }
+  },
+  "d3_spot_check": {
+    "pairs": 20,
+    "cell": "AAPL-MSFT n=500",
+    "max_abs_pvalue_difference_vs_D2": 4.440892098500626e-16
+  },
+  "d0_regression_mismatched_rows": {
+    "AAPL-MSFT_n2000.csv": 0,
+    "AAPL-NVDA_n2000.csv": 0,
+    "MSFT-NVDA_n2000.csv": 0,
+    "AAPL-AAPL_n2000.csv": 0
+  },
+  "cpu_seconds_by_adjustment": {
+    "D0": 3793.8231,
+    "D1": 3939.0054,
+    "D2": 3844.3315
+  },
+  "rejection_by_trend_count_D2_n2000": {
+    "0_windows_trending": {
+      "pairs": 689,
+      "HSIC wild": 6.2,
+      "HSIC shift": 3.6,
+      "HSIC sub": 7.5,
+      "dCov sub": 7.3,
+      "Pearson NW": 4.6
+    },
+    "1_windows_trending": {
+      "pairs": 966,
+      "HSIC wild": 6.5,
+      "HSIC shift": 5.4,
+      "HSIC sub": 8.8,
+      "dCov sub": 8.6,
+      "Pearson NW": 6.5
+    },
+    "2_windows_trending": {
+      "pairs": 345,
+      "HSIC wild": 7.2,
+      "HSIC shift": 4.3,
+      "HSIC sub": 11.0,
+      "dCov sub": 10.1,
+      "Pearson NW": 6.4
+    }
+  },
+  "trend_cut_abs_slope": 0.11838627163194236
+}

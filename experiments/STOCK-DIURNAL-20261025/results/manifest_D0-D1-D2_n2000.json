@@ -1,0 +1,38 @@
+{
+  "source": "experiments/STOCK-20261023 cache plus data/raw/stock_diurnal_cache_2024",
+  "seed": 2026102301,
+  "min_gap_trading_days": 20,
+  "pairs_per_cell": 500,
+  "wild_draws": 500,
+  "adjustments": [
+    "D0",
+    "D1",
+    "D2"
+  ],
+  "cells": [
+    {
+      "a": "AAPL",
+      "b": "MSFT",
+      "n": 2000,
+      "index": 2
+    },
+    {
+      "a": "AAPL",
+      "b": "NVDA",
+      "n": 2000,
+      "index": 5
+    },
+    {
+      "a": "MSFT",
+      "b": "NVDA",
+      "n": 2000,
+      "index": 8
+    },
+    {
+      "a": "AAPL",
+      "b": "AAPL",
+      "n": 2000,
+      "index": 11
+    }
+  ]
+}
