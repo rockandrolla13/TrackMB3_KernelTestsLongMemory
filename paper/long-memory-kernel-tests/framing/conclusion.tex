@@ -1,0 +1,12 @@
+% Replacement for the body of Section 7 (Conclusion), paper.tex line 364.
+% The "Data and code availability" and "Ethics" paragraphs that follow it stay unchanged.
+% Needs \newcommand{\todo}[1]{\textbf{[TODO: #1]}}.
+
+\section{Conclusion}
+For independence tests on persistent series, we recommend one rule. Remove the seasonal mean and the seasonal scale from each series. Then test with HSIC and circular shifts. In our simulations at $n=2000$, this rule rejected $3.4\%$--$7.0\%$ of true nulls across the memory grid and the process features. At matched size it lost at most $4.9$ points of power to the best other HSIC rule in 18 cells. Its good size therefore does not come from rarely rejecting.
+
+The rule has three limits. First, no long-memory theory covers circular shifts, and the evidence stops at $n=2000$. \todo{N4000: one sentence on the n=4000 null rates}. Second, a slow scale drift that a window sees only once defeats it. Such a drift raised circular shifts to $9.7\%$ at $n=2000$, and no per-window adjustment removed it. Third, seasonal adjustment costs size under memory. At $H=0.8$ it raised HSIC subsampling from $17.5\%$ to $23.8\%$. \todo{BW result: one sentence on bandwidth sensitivity of the rule}.
+
+Two findings lie behind the rule. The first is that the critical-value rule and the feature rank set the false-alarm rate. Rank-one split MMD over-rejects at weaker memory than the even rank-two transforms. For independent pairs, HSIC and distance-covariance rejection depends strongly on the rule, even below a memory sum of $1.5$. Hermite rank explains why these patterns differ, but it does not supply a valid cutoff. \todo{PROP-B: one sentence}. The second finding is that a seasonal scale shared by two independent series misleads kernel tests without any memory. Pearson correlation is unaffected. \todo{PROP-A: one sentence}. Removing only the seasonal mean leaves this failure in place.
+
+Split MMD has no comparable rule. No tested critical-value rule held its size under memory. Memory also removed most of its power against a fixed mean shift, because the two half-means spread apart under the null. \todo{MMD-SCALED: one sentence on power at a scaled shift}. The stock-duration fractions show how the rules behave on market data. Without a known independence null, they remain descriptive. \todo{STOCK-D2: one sentence on the rates after the smooth diurnal factor}.

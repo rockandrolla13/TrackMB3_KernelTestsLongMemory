@@ -1,0 +1,22 @@
+% "Practical guidance" box. Recommended place: end of Section 1 (after the stock paragraph, paper.tex line 43).
+% Alternative place: first item of Section 5 (Discussion). If moved, change "Box" references in intro.tex.
+% Uses only packages already loaded in paper.tex (enumitem). No tcolorbox needed.
+% Needs \newcommand{\todo}[1]{\textbf{[TODO: #1]}}.
+% Proposed new bib keys (not yet in refs.bib): engle1998acd, wu2012intraday. Full references in NOTES.md.
+% All rates are descriptive comparisons on the simulated grid. They are not Holm-corrected.
+
+\begin{figure}[H]
+\centering
+\fbox{\begin{minipage}{0.94\linewidth}
+\textbf{Box~1. Practical guidance for independence tests on persistent series.}
+\smallskip
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+\item \textbf{Remove the seasonal mean and the seasonal scale from each series separately.} Removing the mean alone is not enough. Under a seasonal scale it leaves HSIC with wild multipliers at $75.6\%$, against $6.4\%$ after scale adjustment (Section~\ref{sec:deseason}). A periodogram estimate of the period worked as well as the true period. For intraday data, use a smooth diurnal factor \citep{engle1998acd,wu2012intraday}. \todo{STOCK-D2: stock rates after the smooth factor}. Adjust before testing, because no shift can break a pattern that both series share in fixed phase. In that diagnostic, circular shifts reject $28\%$--$34\%$.
+\item \textbf{Test with HSIC and circular shifts.} At $n=2000$, this rule rejected $3.4\%$--$7.0\%$ of true nulls in every simulated null arm. The two exceptions are the slow drift in item 3 and the shared-phase diagnostic in item 1. Subsampling reached $19.7\%$ at $H_X=H_Y=0.8$, and wild multipliers reached $73.3\%$ under a seasonal scale. At matched size, shifts stayed within $4.9$ points of the best other HSIC rule in all 18 power cells (Section~\ref{sec:power}). \todo{BW result: does this hold at 0.5x and 2x the median bandwidth?}
+\item \textbf{Expect residual risk from slow drift.} A seasonal scale with period $4n$ shows each window only a quarter cycle, so adjustment cannot remove it. Without memory it raised circular shifts to $9.7\%$ at $n=2000$, against $6.2\%$ at $n=500$. The excess grew with the window. We have no correction for this case. Treat a rejection as weak evidence when a window covers less than one cycle of a known pattern.
+\item \textbf{Know what the rule does not promise.} No long-memory theory covers circular shifts. The evidence stops at $n=2000$. \todo{N4000: shift null rates at sum 1.4 and 1.6}. Adjustment also costs size under memory. At $H=0.8$ it raised HSIC subsampling from $17.5\%$ to $23.8\%$, and circular shifts from $5.3\%$ to $6.4\%$.
+\item \textbf{For split MMD, no tested rule held size under memory.} Self-normalized blocks came closest, at $6.0\%$--$8.5\%$ on fGn. Memory also removes power against a fixed mean shift, because the half-mean difference spreads out. Its null standard deviation grows from $0.045$ at $H=0.5$ to $0.25$ at $H=0.8$. \todo{PROP-B}. \todo{MMD-SCALED: power at a shift scaled to null-SD units}. Read a split-MMD rejection on a persistent series as a prompt to look further, not as evidence of change.
+\end{enumerate}
+\end{minipage}}
+\end{figure}

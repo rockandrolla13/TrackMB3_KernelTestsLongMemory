@@ -1,0 +1,174 @@
+% =====================================================================
+% propositions.tex -- two formal results for paper.tex
+%
+% PREAMBLE LINES NEEDED (paper.tex loads amsmath, amssymb only):
+%   \usepackage{amsthm}
+%   \newtheorem{proposition}{Proposition}
+%   \newtheorem{lemma}{Lemma}
+%   \theoremstyle{remark}
+%   \newtheorem{remark}{Remark}
+%   \newcommand{\Var}{\operatorname{Var}}
+%   \newcommand{\vc}{\textsuperscript{\,[verify citation]}}   % set to {} once checked
+% The paper already defines \E, \Cov, \HSIC, \MMD, \one.
+% New bib keys are in theory/refs-additions.bib. Every one is marked \vc.
+%
+% Suggested placement (see theory/NOTES.md):
+%   Statements: new Section 2.4 "Two exact results", after "Independence
+%   statistics" and before Table 1 (tab:scope). Add two rows to Table 1.
+%   Proofs and lemmas: new appendix "Proofs of Propositions 1 and 2".
+%   Cross-references: Section 4.3 (first finding, SEAS-M) and Section 4.4
+%   (third pattern, split-MMD mean shift).
+% =====================================================================
+
+% ---------------------------------------------------------------------
+% PART 1. STATEMENTS (for Section 2.4)
+% ---------------------------------------------------------------------
+
+\subsection{Two exact results}\label{sec:props}
+Two of the empirical findings follow from exact calculations. The first explains why a seasonal mean with a random phase misleads single-path tests. The second explains why memory removes the power of split MMD against a mean shift.
+
+Throughout, $\xi$ and $\zeta$ are independent unit-variance fGn sequences with Hurst parameter $H\in(0,1)$. A \emph{single-path test} is a test whose decision is a measurable function of one observed pair $(X_t,Y_t)_{t=1}^n$, possibly with auxiliary randomness such as multiplier draws. All its reference values are computed from that same pair. The size of such a test is its rejection probability under the joint law of the phases and the noise. This is the quantity that EXP2 estimates.
+
+\paragraph{Seasonal mean with a random phase.}
+Fix an amplitude $a>0$ and an integer period $P\ge3$. Let $U$ and $V$ be independent and uniform on $\{0,\ldots,P-1\}$, and independent of $(\xi,\zeta)$. Set
+\begin{equation}\label{eq:seasm}
+X_t=\xi_t+a\sin\{2\pi(t+U)/P\},\qquad Y_t=\zeta_t+a\sin\{2\pi(t+V)/P\}.
+\end{equation}
+The processes $X$ and $Y$ are independent. EXP2 uses $a=1$ and $P=50$. Let $D=(U-V)\bmod P$ be the phase gap. It is uniform on $\{0,\ldots,P-1\}$. Define
+\begin{equation}\label{eq:climit}
+c(d)=\frac{(a^2/2)\cos(2\pi d/P)}{1+a^2/2}.
+\end{equation}
+Let $r_n$ be the sample Pearson correlation and $\hat C_n=n^{-1}\sum_t(X_t-\bar X)(Y_t-\bar Y)$ the sample covariance.
+
+\begin{proposition}[Seasonal mean]\label{prop:seasm}
+Under \eqref{eq:seasm}, the following hold.
+\begin{enumerate}[label=(\roman*),nosep]
+\item $r_n\to c(D)$ almost surely. The limit is random and has mean zero. Moreover $\Pr\{c(D)=0\}=2/P$ if $4$ divides $P$, and $0$ otherwise.
+\item Consider any test that rejects when $|\hat C_n|>z_n(\hat v_n/n)^{1/2}$, where $z_n$ is bounded and $\hat v_n\ge0$ satisfies $\hat v_n/n\to0$ in probability. Its size satisfies $\liminf_n\Pr(\text{reject})\ge\Pr\{c(D)\neq0\}$, which equals $1$ for $P=50$. The Newey--West Bartlett rule with bandwidth $S_n=o_p(n)$ and the equal-weighted cosine rule with $\nu_n\to\infty$ projections belong to this class. So do the implementations used here.
+\item Let $T_n=nV_n$ be the Gaussian-kernel HSIC statistic of Section~\ref{sec:methods}, with median-distance bandwidths, and let $P\ge5$. Then $V_n\to h(D)$ almost surely for a function $h$ with $\min_d h(d)>0$. Any test that rejects when $T_n>\kappa_n$, with $\kappa_n/n\to0$ in probability, therefore has size tending to $1$. The window-subsampling rule with window length $\ell_n=o(n)$ belongs to this class. The block-Markov wild rule with $\ell_n=o(n)$ and a fixed number $B\ge\alpha^{-1}-1$ of draws, centred or raw, also has size tending to $1$.
+\end{enumerate}
+\end{proposition}
+
+The proposition does not say that every single-path test fails. It covers tests whose critical value is of smaller order than the statistic's seasonal component. For Pearson that means a critical value for $r_n$ that tends to zero. For HSIC it means a critical value for $T_n$ of order $o(n)$. The circular-shift rule is not in this class, because its reference values are themselves of order $n$ (Remark~\ref{rem:shift}).
+
+The limit also explains the finite-sample rate. With $a=1$ and $P=50$, the gaps $d\in\{12,13,37,38\}$ give $|c(d)|=0.021$, and every other gap gives $|c(d)|\ge0.06$. At $n=2000$, $\sqrt n\,|c(d)|\approx0.9$ at those four gaps, so a $5\%$ test rarely rejects there. Those gaps carry probability $4/50$, which predicts a rejection rate near $92\%$. EXP2 records $91.4\%$ for Pearson NW. The HSIC limit $h(d)$ is also smallest at these gaps.
+
+\paragraph{Split-sample mean shift.}
+Let $n=2m$ and $Z_t=\mu+\xi_t+\delta\,\one\{t>m\}$, with $\mu$ unknown. Write $\Gamma$ for the $n\times n$ fGn covariance matrix, $\one$ for the vector of ones, and $c=(0,\ldots,0,1,\ldots,1)^\top$ for the second-half indicator. Let $z_q$ be the standard normal $q$-quantile and $\Phi$ its distribution function.
+
+\begin{proposition}[Half-mean spread]\label{prop:halfmean}
+\begin{enumerate}[label=(\roman*),nosep]
+\item Let $\Delta_m=m^{-1}\sum_{t\le m}\xi_t-m^{-1}\sum_{t>m}\xi_t$. Then, exactly for every $m$,
+\begin{equation}\label{eq:halfvar}
+\Var(\Delta_m)=\frac{4m^{2H}-(2m)^{2H}}{m^2}=(4-2^{2H})\,m^{2H-2}.
+\end{equation}
+Hence the half-mean contrast has signal-to-spread ratio $R_m=\delta\,m^{1-H}/(4-2^{2H})^{1/2}$.
+\item The two-sided level-$\alpha$ test that rejects when the observed half-mean difference $|\bar Z_{1:m}-\bar Z_{m+1:2m}|=|\Delta_m-\delta|$ exceeds $z_{1-\alpha/2}\Var(\Delta_m)^{1/2}$ has power $\Phi(R_m-z_{1-\alpha/2})+\Phi(-R_m-z_{1-\alpha/2})$.
+\item Let $\phi$ be any test, possibly randomized, that is invariant under $Z\mapsto Z+b\one$ for every real $b$, and has level $\alpha$ when $\delta=0$. Then its power at $\delta>0$ is at most $1-\Phi(z_{1-\alpha}-\delta I_n^{1/2})$, where
+\begin{equation}\label{eq:info}
+I_n=c^\top\Gamma^{-1}c-\frac{(\one^\top\Gamma^{-1}c)^2}{\one^\top\Gamma^{-1}\one}
+\end{equation}
+is the inverse variance of the generalized-least-squares estimator of $\delta$. The matrix $\Gamma$ is invertible because the fGn spectral density is positive.
+\end{enumerate}
+\end{proposition}
+
+At $n=2000$ and $\delta=0.1$, part (i) gives $R_m=2.24$ at $H=0.5$, $0.68$ at $H=0.7$, and $0.40$ at $H=0.8$. Part (ii) then gives a power of $61\%$, $10.5\%$, and $7\%$ for the linear half-mean test at $5\%$. A direct Toeplitz solve gives $\delta I_n^{1/2}=2.24$, $0.71$, and $0.46$. Part (iii) therefore caps the power of every location-invariant $5\%$ test at $72\%$, $18\%$, and $12\%$. Gaussian-kernel split MMD is location-invariant. Its kernel and median bandwidth depend on the data only through differences $Z_s-Z_t$. The wild, subsampling, and self-normalized rules are built from the same kernel values, and the size-adjusted cutoff is a constant. Every MMD rule in Table~\ref{tab:power} is therefore bound by part (iii), up to Monte Carlo error in the size adjustment. The observed $6.4$--$7.5\%$ at $H=0.8$ lies under the $12\%$ cap, and the $7$--$9\%$ at $H=0.7$ lies under the $18\%$ cap. The loss of power is a loss of information in the data, not a failure of a kernel rule.
+
+Part (iii) is a bound, not a description of the Gaussian kernel. A heuristic links the two. The rank-one Hermite coefficient of the feature map is $a_1=\E\{\xi_0\phi(\xi_0)\}$. By Stein's identity it equals the derivative of the mean embedding of $\xi_0+\delta$ at $\delta=0$. To first order in $\delta$, the shift therefore moves the embedding along $a_1$, and the rank-one noise along $a_1$ is $\Delta_m a_1$. Along this direction the signal-to-spread ratio is $R_m$. A Hermite term of rank $r$ adds noise of variance order $m^{\max\{r(2H-2),-1\}}$, up to a logarithm at equality, in other directions. At $H=0.5$ they have the same order as the rank-one term, which may explain why oracle MMD ($45.7\%$) falls short of the linear test ($61\%$). At $H=0.8$ the rank-one term dominates and the two agree ($6.4\%$ against $7\%$). We have not proved this expansion for the RKHS-valued statistic.
+
+% ---------------------------------------------------------------------
+% PART 2. PROOFS (for a new appendix)
+% ---------------------------------------------------------------------
+
+\section{Proofs of Propositions~\ref{prop:seasm} and~\ref{prop:halfmean}}\label{sec:proofs}
+
+\subsection{Ergodic averages with periodic weights}
+Write $W_t=(\xi_t,\zeta_t)$. Let $\gamma(k)=\tfrac12(|k+1|^{2H}-2|k|^{2H}+|k-1|^{2H})$ be the fGn autocovariance. For $H\ne1/2$, $\gamma(k)\sim H(2H-1)k^{2H-2}$, and for $H=1/2$, $\gamma(k)=0$ when $k\ne0$. In both cases $\gamma(k)\to0$ because $H<1$.
+
+\begin{lemma}\label{lem:ergodic}
+Fix $L\ge0$ and $P\ge1$. Let $f_0,\ldots,f_{P-1}$ be measurable functions of $(W_t,\ldots,W_{t-L})$ with $\E|f_j(W_L,\ldots,W_0)|<\infty$. Then, almost surely,
+\[
+\frac1n\sum_{t=L}^{n+L-1}f_{t\bmod P}(W_t,\ldots,W_{t-L})\longrightarrow\frac1P\sum_{j=0}^{P-1}\E f_j(W_L,\ldots,W_0).
+\]
+\end{lemma}
+
+\begin{proof}
+A stationary Gaussian sequence whose covariance tends to zero is mixing under the shift \citep{maruyama1949harmonic}\vc. See also \citet[Chapter~14]{cornfeld1982ergodic}\vc. So the shifts of $\xi$ and of $\zeta$ are mixing. The two sequences are independent, and the direct product of two mixing systems is mixing \citep[Section~1.7]{walters1982introduction}\vc. Hence the shift $S$ of $W$ is mixing. Then $S^P$ is mixing, because $\Pr(S^{-Pk}A\cap B)\to\Pr(A)\Pr(B)$ is a subsequence of the mixing limit for $S$. A mixing transformation is ergodic. For each residue $j$, Birkhoff's theorem applied to $S^P$ and to $f_j$ evaluated at the window ending at time $j+L$ gives $K^{-1}\sum_{k<K}f_j(W_{j+L+kP},\ldots,W_{j+kP})\to\E f_j$ almost surely. The sum in the lemma splits into these $P$ residue classes. Each class holds $n/P+O(1)$ terms. Averaging the $P$ limits with weights tending to $1/P$ gives the claim.
+\end{proof}
+
+Two special cases are used repeatedly. Taking $f_j(w)=g_j\,f(w)$ gives $n^{-1}\sum_t g_t f(W_t)\to\bar g\,\E f(W_0)$ for a $P$-periodic sequence $g$ with mean $\bar g$. Taking $f_j(w)=h\{w+(s_j,q_j)\}$ gives limits of empirical averages of a periodically shifted sequence.
+
+\subsection{Proof of Proposition~\ref{prop:seasm}(i)}
+The phases $(U,V)$ are independent of $W$ and take finitely many values. It is therefore enough to prove almost-sure convergence for each fixed pair $(u,v)$. Write $s_t=a\sin\{2\pi(t+u)/P\}$ and $q_t=a\sin\{2\pi(t+v)/P\}$. For $P\ge3$ the trigonometric sums give
+\[
+\frac1P\sum_{j=0}^{P-1}s_j=0,\qquad\frac1P\sum_{j=0}^{P-1}s_j^2=\frac{a^2}2,\qquad\frac1P\sum_{j=0}^{P-1}s_jq_j=\frac{a^2}2\cos\frac{2\pi(u-v)}P.
+\]
+The last identity uses $\sin\alpha\sin\beta=\tfrac12\{\cos(\alpha-\beta)-\cos(\alpha+\beta)\}$. The sum of $\cos(\alpha_j+\beta_j)$ vanishes because $e^{4\pi i/P}\ne1$ for $P\ge3$. Lemma~\ref{lem:ergodic} with $L=0$ gives, almost surely, $\bar X\to0$ and $\bar Y\to0$. It also gives
+\[
+\frac1n\sum_tX_t^2=\frac1n\sum_t\xi_t^2+\frac2n\sum_ts_t\xi_t+\frac1n\sum_ts_t^2\to1+0+\frac{a^2}2.
+\]
+The same holds for $Y$. For the cross moment, $n^{-1}\sum_t\xi_t\zeta_t\to\E\xi_0\zeta_0=0$, and the terms $n^{-1}\sum_ts_t\zeta_t$ and $n^{-1}\sum_tq_t\xi_t$ tend to $0$. Hence $\hat C_n\to(a^2/2)\cos\{2\pi(u-v)/P\}$ and $r_n\to c(u-v)$.
+
+The gap $D=(U-V)\bmod P$ is uniform because $U$ is uniform and independent of $V$. So $\E\cos(2\pi D/P)=P^{-1}\sum_d\cos(2\pi d/P)=0$. Finally, for $0\le d<P$, $\cos(2\pi d/P)=0$ exactly when $d=P/4$ or $d=3P/4$. Such integers exist only when $4$ divides $P$. \qed
+
+\subsection{Proof of Proposition~\ref{prop:seasm}(ii)}
+Let $C(D)=(a^2/2)\cos(2\pi D/P)$, so $\hat C_n\to C(D)$ almost surely by part (i). The variable $D$ takes finitely many values. Choose $\eta>0$ below $\tfrac12\min\{|C(d)|:C(d)\ne0\}$. On $\{C(D)\ne0\}$, the test fails to reject only if $|\hat C_n|\le2\eta$ or $z_n(\hat v_n/n)^{1/2}\geq 2\eta$. The first event has probability tending to zero by almost-sure convergence. The second has probability tending to zero because $z_n$ is bounded and $\hat v_n/n\to0$ in probability. Hence $\Pr(\text{no rejection},\,C(D)\ne0)\to0$. Since $c(D)\ne0$ exactly when $C(D)\ne0$, this gives the bound.
+
+It remains to place the two long-run variance rules in the class. Let $u_t=(X_t-\bar X)(Y_t-\bar Y)$, let $\tilde u_t=u_t-\bar u$, and let $\hat\gamma(j)=n^{-1}\sum_{t}\tilde u_{t+j}\tilde u_t$. By Cauchy--Schwarz, $|\hat\gamma(j)|\le\hat\gamma(0)$. Expanding $u_t^2$ as a polynomial in $\bar X$, $\bar Y$, $\xi_t$, $\zeta_t$, $s_t$, $q_t$ and applying Lemma~\ref{lem:ergodic} shows that $\hat\gamma(0)$ converges almost surely to a finite limit.
+
+\emph{Newey--West.} The Bartlett estimate is $\hat v_n=\hat\gamma(0)+2\sum_{1\le j<S_n}(1-j/S_n)\hat\gamma(j)$. It is nonnegative, because the Bartlett weights form a positive-definite sequence. Its weights lie in $[0,1]$, so $\hat v_n\le(2S_n+1)\hat\gamma(0)$. Thus $\hat v_n/n\to0$ whenever $S_n=o_p(n)$. The implemented bandwidth is the \citet{andrews1991hac} AR(1) plug-in $S_n=1.1447(\hat\alpha_n n)^{1/3}$, with $\hat\alpha_n=4\hat\rho_n^2/\{(1-\hat\rho_n)^2(1+\hat\rho_n)^2\}$ and $\hat\rho_n=\sum_t\tilde u_t\tilde u_{t-1}/\sum_t\tilde u_{t-1}^2$. By Lemma~\ref{lem:ergodic} with $L=1$, $\hat\rho_n\to\rho^*$ almost surely. Suppose $|\rho^*|=1$. Then $n^{-1}\sum_t(\tilde u_t\mp\tilde u_{t-1})^2\to0$. By Lemma~\ref{lem:ergodic} this limit equals $P^{-1}\sum_j\E F_j^2$, where $F_j=(\xi_1+s_j)(\zeta_1+q_j)\mp(\xi_0+s_{j-1})(\zeta_0+q_{j-1})+\kappa$ for a constant $\kappa$ that comes from centring. The vector $(\xi_0,\xi_1,\zeta_0,\zeta_1)$ is nondegenerate Gaussian, because $|\gamma(1)|=|2^{2H-1}-1|<1$. $F_j$ is a nonconstant polynomial in it, since it contains $\xi_1\zeta_1$ with coefficient one. So $\E F_j^2>0$, a contradiction. Hence $|\rho^*|<1$, $\hat\alpha_n$ converges to a finite limit, and $S_n=O(n^{1/3})$ almost surely.
+
+\emph{Equal-weighted cosine.} The estimate is $\hat v_n=\nu_n^{-1}\sum_{j=1}^{\nu_n}\Lambda_j^2$ with $\Lambda_j=(2/n)^{1/2}\sum_t\cos\{\pi j(t-1/2)/n\}\tilde u_t$. These cosine vectors, together with $n^{-1/2}\one$, form the orthonormal DCT-II basis of $\mathbb R^n$. So $\sum_{j\le\nu_n}\Lambda_j^2\le\|\tilde u\|^2=n\hat\gamma(0)$ and $\hat v_n/n\le\hat\gamma(0)/\nu_n\to0$ when $\nu_n\to\infty$. The implementation uses $\nu_n=\lfloor0.4n^{2/3}\rfloor$. Its Student-$t$ critical value is bounded by the $\nu=1$ value. \qed
+
+\subsection{Proof of Proposition~\ref{prop:seasm}(iii)}
+Fix $(u,v)$ as before. Let $\mu_n=n^{-1}\sum_t\delta_{(X_t,Y_t)}$ be the empirical measure, and define the Gaussian mixture
+\[
+\mu_{u,v}=\frac1P\sum_{j=0}^{P-1}N\big((s_j,q_j)^\top,\,I_2\big).
+\]
+
+\emph{Step 1: $\mu_n\to\mu_{u,v}$ weakly, almost surely.} For fixed $\tau\in\mathbb R^2$, Lemma~\ref{lem:ergodic} with $f_j(w)=\exp\{i\tau^\top(w+(s_j,q_j))\}$ gives convergence of the characteristic function of $\mu_n$ at $\tau$. Intersecting over rational $\tau$ gives one almost-sure event. On it, $n^{-1}\sum_t(X_t^2+Y_t^2)$ also converges, so $(\mu_n)$ is tight. Every subsequential weak limit then has the characteristic function of $\mu_{u,v}$ on a dense set, hence everywhere by continuity. So every subsequential limit equals $\mu_{u,v}$.
+
+\emph{Step 2: the bandwidths converge.} The $X$-marginal of $\mu_{u,v}$ is $\mu^X=P^{-1}\sum_jN(s_j,1)$. As a multiset, $\{s_j\}$ does not depend on $u$, and it equals $\{q_j\}$. Let $G$ be the law of $|X-X'|$ for $X,X'$ independent with law $\mu^X$. It has a continuous, strictly increasing distribution function on $[0,\infty)$, so its median $\sigma^*>0$ is unique. The empirical law of the off-diagonal distances $|X_s-X_t|$, $s\ne t$, is the image of $\mu_n^X\otimes\mu_n^X$ under $(x,x')\mapsto|x-x'|$, minus a diagonal mass $1/n$, renormalized. By Step 1 and the continuous mapping theorem, it converges weakly to $G$. Because $G$ is continuous, the convergence is uniform in the argument, so the median-distance bandwidth $\hat\sigma_n\to\sigma^*$. The positive-distance fallback is eventually inactive. The same holds for $\hat\tau_n$, with the same limit $\sigma^*$.
+
+\emph{Step 3: $V_n\to h(u-v)$.} For bandwidths $(\sigma,\tau)$ and a probability $\nu$ on $\mathbb R^2$, write $k_\sigma(x,x')=\exp\{-(x-x')^2/(2\sigma^2)\}$ and
+\[
+\HSIC_{\sigma,\tau}(\nu)=\E\,k_\sigma(X_1,X_2)l_\tau(Y_1,Y_2)-2\,\E\,k_\sigma(X_1,X_2)l_\tau(Y_1,Y_3)+\E\,k_\sigma(X_1,X_2)\,\E\,l_\tau(Y_3,Y_4),
+\]
+with $(X_i,Y_i)$ independent draws from $\nu$ and $l_\tau=k_\tau$. The statistic of Section~\ref{sec:methods} satisfies $V_n=n^{-2}\operatorname{tr}(K^cL^c)=\HSIC_{\hat\sigma_n,\hat\tau_n}(\mu_n)$, the standard identity for the biased estimator \citep{gretton2005measuring}\vc. Each term is an integral of a bounded continuous function against $\nu^{\otimes r}$ with $r\le4$. Weak convergence of $\mu_n$ implies weak convergence of $\mu_n^{\otimes r}$ \citep[Theorem~2.8]{billingsley1999convergence}\vc. So $\HSIC_{\sigma^*,\sigma^*}(\mu_n)\to\HSIC_{\sigma^*,\sigma^*}(\mu_{u,v})$. Next, $|\partial_\sigma k_\sigma|\le(2/e)/\sigma$ uniformly in the arguments. Kernels are bounded by one, so $|\HSIC_{\sigma,\tau}(\nu)-\HSIC_{\sigma',\tau'}(\nu)|\le4(\|k_\sigma-k_{\sigma'}\|_\infty+\|k_\tau-k_{\tau'}\|_\infty)$ for every $\nu$. With Step 2 this gives $V_n\to h(u-v):=\HSIC_{\sigma^*,\sigma^*}(\mu_{u,v})$. The value depends on $(u,v)$ only through $u-v$, by a shift of the index $j$.
+
+\emph{Step 4: $h(d)>0$ for every $d$ when $P\ge5$.} The product $k_\sigma\otimes k_\tau$ is a Gaussian kernel on $\mathbb R^2$. It is characteristic \citep{sriperumbudur2010hilbert}\vc. $\HSIC_{\sigma,\tau}(\nu)$ is the squared MMD between $\nu$ and $\nu^X\otimes\nu^Y$ for this kernel \citep{gretton2005measuring}\vc. So $h(d)=0$ only if $\mu_{u,v}$ equals the product of its marginals. Let $\pi$ be the law of $(s_J,q_J)$ with $J$ uniform on $\{0,\ldots,P-1\}$. Then $\mu_{u,v}=\pi*N(0,I_2)$ and $\mu^X\otimes\mu^Y=(\pi^X\otimes\pi^Y)*N(0,I_2)$. The Gaussian characteristic function has no zeros, so the two are equal only if $\pi=\pi^X\otimes\pi^Y$. Suppose this holds. Let $x^*=\max_js_j$. The equation $a\sin\theta=x^*$ has at most two solutions $\theta\in[0,2\pi)$, so at most two indices $j$ have $s_j=x^*$. Under $\pi$, the point $x^*$ is paired with at most two values of $q$. Under a product measure it is paired with every point of the support of $\pi^Y$. So that support has at most two points. But $q_j$ takes at least $\lceil P/2\rceil\ge3$ distinct values, since each value is taken at most twice. This is a contradiction. Hence $h(d)>0$ for every $d$, and $\min_dh(d)>0$ since $d$ ranges over a finite set.
+
+\emph{Step 5: the rules.} On every path, $T_n/n=V_n\to h(D)>0$ almost surely. If $\kappa_n/n\to0$ in probability, then $\Pr(T_n\le\kappa_n)\le\Pr\{V_n\le h(D)/2\}+\Pr\{\kappa_n/n\geq h(D)/2\}\to0$, using $h(D)\ge\min_dh(d)>0$.
+
+Double-centred Gaussian Gram entries satisfy $|K^c_{ij}|\le2$. So $M=K^c\circ L^c$ has entries bounded by $4$, and it is positive semidefinite by the Schur product theorem.
+
+\emph{Subsampling.} Each window statistic is $T_\ell=\ell^{-1}\sum_{i,j\le\ell}K^c_{ij}L^c_{ij}\le4\ell$. This holds for any bandwidth, including the full-sample bandwidth that the rule reuses. Its $95\%$ quantile is at most $4\ell_n=o(n)$.
+
+\emph{Wild multipliers.} Let $w$ be block-Markov Rademacher with $\Cov(w_s,w_t)=R_{st}=e^{-|s-t|/\ell_n}$, and $\tilde w=Cw$ with $C=I-n^{-1}\one\one^\top$, or $\tilde w=w$ for the raw rule. Given the data, $T^*=n^{-1}\tilde w^\top M\tilde w\ge0$, and
+\[
+\E_wT^*=n^{-1}\operatorname{tr}(CMC\,R)\le n^{-1}\lambda_{\max}(R)\operatorname{tr}(CMC)\le n^{-1}(1+2\ell_n)\operatorname{tr}(M)\le4(1+2\ell_n).
+\]
+Here $\lambda_{\max}(R)\le\max_s\sum_tR_{st}\le1+2\ell_n$, $\operatorname{tr}(CMC)\le\operatorname{tr}(M)$ because $\one^\top M\one\ge0$, and $M_{ii}\le4$. With $B$ draws, the rule rejects when $(1+\#\{b:T^*_b\ge T_n\})/(B+1)\le\alpha$, that is, when at most $k_B=\lfloor\alpha(B+1)\rfloor-1$ draws satisfy $T^*_b\ge T_n$. We assume $\alpha(B+1)\ge1$, so $k_B\ge0$. For $B=500$ and $\alpha=0.05$, $k_B=24$. By Markov's inequality each draw exceeds $T_n$ with conditional probability $p_n\le4(1+2\ell_n)/T_n$. So the conditional probability of no rejection is at most $Bp_n$. Since $T_n/\ell_n\to\infty$ almost surely when $\ell_n=o(n)$, dominated convergence gives $\Pr(\text{reject})\to1$. The implementation uses $\ell_n=\lfloor n^{1/2}\rfloor$ for both rules. \qed
+
+\begin{remark}[Circular shifts, proof sketch]\label{rem:shift}
+The shift rule compares $T_n$ with $T_n(s)=n\HSIC(\mu_n^{(s)})$, where $\mu_n^{(s)}$ is the empirical measure of $(X_t,Y_{t+s\bmod n})$, for $s$ in a range $S_n$ of about $0.8n$ offsets. When $P$ divides $n$, as for $n=2000$ and $P=50$, the shifted seasonal component of $Y$ is exactly a sinusoid with phase $V+s$. The shifted pair is then a SEAS-M pair with gap $D-s$, and its statistic is also of order $n$. Suppose that $T_n(s)/n\to h(D-s)$ uniformly over $s\in S_n$. Then the leading term of the $p$-value is the fraction of offsets with $h(D-s)\ge h(D)$. That fraction tends to $\pi(D)=P^{-1}\#\{d:h(d)\ge h(D)\}$, because $S_n$ covers each residue class modulo $P$ about equally often. Since $D$ is uniform, $\Pr\{\pi(D)\le\alpha\}\le\alpha$. So the phase gap does not drive the size to one, as it does in part (iii). Two steps are missing. First, uniform convergence over $S_n$ is not proved. Each offset also re-pairs the noise, and the shifted noise has one wrap-around break. Second, $h$ has ties. For even $P$, $h(d)=h(P/2-d)$, because the two limit measures differ by the reflection $y\mapsto-y$. Among offsets in a tied class, the decision is settled by lower-order terms, where the long-memory noise matters. The sketch therefore explains why the size is near $\alpha$ rather than near one. It does not prove that the size equals $\alpha$.
+\end{remark}
+
+\begin{remark}[Distance covariance]
+The same steps apply to distance covariance with subsampling, with two changes. The distance kernel is unbounded, so Step 3 needs uniform integrability of $|X_s-X_t|$ under $\mu_n^{\otimes2}$. This follows from almost-sure convergence of $n^{-1}\sum_tX_t^2$. The window bound $T_\ell\le4\ell$ becomes a bound by $\ell$ times the largest window second moment. That moment grows at most logarithmically for Gaussian noise. We have not written out these two steps, so this case is stated without proof.
+\end{remark}
+
+\subsection{Proof of Proposition~\ref{prop:halfmean}}
+\emph{(i)} Let $S_k=\sum_{t\le k}\xi_t$. Unit-variance fGn has $\Var(S_k)=k^{2H}$ exactly. Write $A=S_m$ and $B=S_{2m}-S_m$, so $\Var(A)=\Var(B)=m^{2H}$ by stationarity. From $\Var(A+B)=(2m)^{2H}$ we get $2\Cov(A,B)=(2m)^{2H}-2m^{2H}$. Hence
+\[
+\Var(A-B)=2m^{2H}-2\Cov(A,B)=4m^{2H}-(2m)^{2H},
+\]
+and $\Delta_m=(A-B)/m$ gives \eqref{eq:halfvar}. The ratio $R_m$ is $\delta/\Var(\Delta_m)^{1/2}$.
+
+\emph{(ii)} The first-half mean minus the second-half mean of $Z$ equals $\Delta_m-\delta$. It is Gaussian with mean $-\delta$ and variance $\Var(\Delta_m)$, and $\mu$ cancels. The power formula is the two-sided normal tail at noncentrality $R_m$.
+
+\emph{(iii)} Let $L$ be any $(n-1)\times n$ matrix of rank $n-1$ with $L\one=0$. The statistic $LZ$ is a maximal invariant under $Z\mapsto Z+b\one$. So every invariant test is a function of $LZ$ \citep[Theorem~6.2.1]{lehmann2005testing}\vc. Its law is $N(\delta Lc,\Sigma)$ with $\Sigma=L\Gamma L^\top$, which does not involve $\mu$. By the Neyman--Pearson lemma, the most powerful level-$\alpha$ test of $\delta=0$ against a fixed $\delta>0$ in this family rejects for large $(Lc)^\top\Sigma^{-1}LZ$. Its power is $1-\Phi\{z_{1-\alpha}-\delta(c^\top L^\top\Sigma^{-1}Lc)^{1/2}\}$. Any invariant level-$\alpha$ test has at most this power.
+
+It remains to show $L^\top(L\Gamma L^\top)^{-1}L=\Gamma^{-1}-\Gamma^{-1}\one(\one^\top\Gamma^{-1}\one)^{-1}\one^\top\Gamma^{-1}$. Multiply the left side by $\Gamma^{1/2}$ on both sides. The result is the orthogonal projection onto the range of $\Gamma^{1/2}L^\top$. That range has dimension $n-1$ and is orthogonal to $\Gamma^{-1/2}\one$, since $L\Gamma^{1/2}\Gamma^{-1/2}\one=L\one=0$. So the projection equals $I-\Gamma^{-1/2}\one\one^\top\Gamma^{-1/2}/(\one^\top\Gamma^{-1}\one)$. Multiplying back by $\Gamma^{-1/2}$ on both sides gives the identity, and hence $c^\top L^\top\Sigma^{-1}Lc=I_n$. By the Gauss--Markov theorem for the regression of $Z$ on $(\one,c)$ with covariance $\Gamma$, $I_n^{-1}$ is the variance of the generalized-least-squares estimator of $\delta$. \qed
+
+Since that estimator is the best linear unbiased one, $I_n\ge1/\Var(\Delta_m)$, and the cap in (iii) is never below the power in (ii). Part (iii) assumes that $H$ and the unit variance are known. A test that controls size over a range of $H$ is also level $\alpha$ at each $H$ in the range, so the cap applies to it too.
