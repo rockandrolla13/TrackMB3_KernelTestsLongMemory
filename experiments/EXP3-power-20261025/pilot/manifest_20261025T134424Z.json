@@ -1,0 +1,242 @@
+{
+ "mode": "pilot",
+ "master": 2026102541,
+ "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
+ "B_wild": 500,
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 10,
+ "argv": [
+  "run_exp3.py",
+  "--mode",
+  "pilot",
+  "--reps",
+  "100",
+  "--out",
+  "pilot",
+  "--workers",
+  "10"
+ ],
+ "cells": [
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.04,
+   "param_n2000": 0.04,
+   "idx": 0,
+   "name": "ind__G0__lin0.04__H0.5__n2000",
+   "reps": 100,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key": [
+     0,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.06,
+   "param_n2000": 0.06,
+   "idx": 1,
+   "name": "ind__G0__lin0.06__H0.5__n2000",
+   "reps": 100,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key": [
+     1,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.08,
+   "param_n2000": 0.08,
+   "idx": 2,
+   "name": "ind__G0__lin0.08__H0.5__n2000",
+   "reps": 100,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key": [
+     2,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "sq",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.06,
+   "param_n2000": 0.06,
+   "idx": 3,
+   "name": "ind__G0__sq0.06__H0.5__n2000",
+   "reps": 100,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key": [
+     3,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "sq",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.09,
+   "param_n2000": 0.09,
+   "idx": 4,
+   "name": "ind__G0__sq0.09__H0.5__n2000",
+   "reps": 100,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key": [
+     4,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "sq",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.12,
+   "param_n2000": 0.12,
+   "idx": 5,
+   "name": "ind__G0__sq0.12__H0.5__n2000",
+   "reps": 100,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key": [
+     5,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "shift",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.08,
+   "param_n2000": 0.08,
+   "idx": 6,
+   "name": "mmd__G0__shift0.08__H0.5__n2000",
+   "reps": 100,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key": [
+     6,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "shift",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.12,
+   "param_n2000": 0.12,
+   "idx": 7,
+   "name": "mmd__G0__shift0.12__H0.5__n2000",
+   "reps": 100,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key": [
+     7,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "gen": "G0",
+   "alt": "shift",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.16,
+   "param_n2000": 0.16,
+   "idx": 8,
+   "name": "mmd__G0__shift0.16__H0.5__n2000",
+   "reps": 100,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key": [
+     8,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "SEAS-V",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.06,
+   "param_n2000": 0.06,
+   "idx": 9,
+   "name": "ind__SEAS-V__lin0.06__H0.5__n2000",
+   "reps": 100,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key": [
+     9,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "ind",
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 500,
+   "param": 0.12,
+   "param_n2000": 0.06,
+   "idx": 10,
+   "name": "ind__G0__lin0.12__H0.5__n500",
+   "reps": 100,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102541,
+    "spawn_key": [
+     10,
+     "rep"
+    ]
+   }
+  }
+ ]
+}
