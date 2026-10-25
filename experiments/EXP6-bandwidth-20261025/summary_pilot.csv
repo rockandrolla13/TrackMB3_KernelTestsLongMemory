@@ -1,0 +1,151 @@
+cell,rule,kappa,kind,value,lo,hi,m,note
+G0__null__H0.5__n2000,hsic_wild,0.5,size,0.0,0.0,0.32440756488388023,8,valid; McNemar p vs k1 = 1
+G0__null__H0.5__n2000,hsic_wild,1.0,size,0.0,0.0,0.32440756488388023,8,valid
+G0__null__H0.5__n2000,hsic_wild,2.0,size,0.0,0.0,0.32440756488388023,8,valid; McNemar p vs k1 = 1
+G0__null__H0.5__n2000,hsic_wild,4.0,size,0.0,0.0,0.32440756488388023,8,valid; McNemar p vs k1 = 1
+G0__null__H0.5__n2000,hsic_shift,0.5,size,0.0,0.0,0.32440756488388023,8,valid; McNemar p vs k1 = 1
+G0__null__H0.5__n2000,hsic_shift,1.0,size,0.0,0.0,0.32440756488388023,8,valid
+G0__null__H0.5__n2000,hsic_shift,2.0,size,0.0,0.0,0.32440756488388023,8,valid; McNemar p vs k1 = 1
+G0__null__H0.5__n2000,hsic_shift,4.0,size,0.0,0.0,0.32440756488388023,8,valid; McNemar p vs k1 = 1
+G0__null__H0.5__n2000,hsic_sub,0.5,size,0.0,0.0,0.32440756488388023,8,valid; McNemar p vs k1 = 1
+G0__null__H0.5__n2000,hsic_sub,1.0,size,0.0,0.0,0.32440756488388023,8,valid
+G0__null__H0.5__n2000,hsic_sub,2.0,size,0.0,0.0,0.32440756488388023,8,valid; McNemar p vs k1 = 1
+G0__null__H0.5__n2000,hsic_sub,4.0,size,0.0,0.0,0.32440756488388023,8,valid; McNemar p vs k1 = 1
+G0__null__H0.5__n2000,dcov_wild,,size,0.0,0.0,0.32440756488388023,8,valid
+G0__null__H0.5__n2000,dcov_sub,,size,0.0,0.0,0.32440756488388023,8,valid
+G0__null__H0.5__n2000,pearson_nw,,size,0.0,0.0,0.32440756488388023,8,valid
+G0__null__H0.5__n2000,pearson_ewc,,size,0.0,0.0,0.32440756488388023,8,valid
+G0__null__H0.8__n2000,hsic_wild,0.5,size,0.375,0.13684428582359742,0.6942576053973727,8,over; McNemar p vs k1 = 1
+G0__null__H0.8__n2000,hsic_wild,1.0,size,0.25,0.071479212752109,0.5907245696898311,8,over
+G0__null__H0.8__n2000,hsic_wild,2.0,size,0.25,0.071479212752109,0.5907245696898311,8,over; McNemar p vs k1 = 1
+G0__null__H0.8__n2000,hsic_wild,4.0,size,0.25,0.071479212752109,0.5907245696898311,8,over; McNemar p vs k1 = 1
+G0__null__H0.8__n2000,hsic_shift,0.5,size,0.125,0.02241749145005667,0.4708881822128535,8,valid; McNemar p vs k1 = 1
+G0__null__H0.8__n2000,hsic_shift,1.0,size,0.25,0.071479212752109,0.5907245696898311,8,over
+G0__null__H0.8__n2000,hsic_shift,2.0,size,0.25,0.071479212752109,0.5907245696898311,8,over; McNemar p vs k1 = 1
+G0__null__H0.8__n2000,hsic_shift,4.0,size,0.25,0.071479212752109,0.5907245696898311,8,over; McNemar p vs k1 = 1
+G0__null__H0.8__n2000,hsic_sub,0.5,size,0.375,0.13684428582359742,0.6942576053973727,8,over; McNemar p vs k1 = 1
+G0__null__H0.8__n2000,hsic_sub,1.0,size,0.375,0.13684428582359742,0.6942576053973727,8,over
+G0__null__H0.8__n2000,hsic_sub,2.0,size,0.625,0.30574239460262737,0.8631557141764026,8,over; McNemar p vs k1 = 0.625
+G0__null__H0.8__n2000,hsic_sub,4.0,size,0.5,0.21521606221387757,0.7847839377861224,8,over; McNemar p vs k1 = 1
+G0__null__H0.8__n2000,dcov_wild,,size,0.25,0.071479212752109,0.5907245696898311,8,over
+G0__null__H0.8__n2000,dcov_sub,,size,0.375,0.13684428582359742,0.6942576053973727,8,over
+G0__null__H0.8__n2000,pearson_nw,,size,0.25,0.071479212752109,0.5907245696898311,8,over
+G0__null__H0.8__n2000,pearson_ewc,,size,0.25,0.071479212752109,0.5907245696898311,8,over
+SEAS-V__null__H0.5__n2000,hsic_wild,0.5,size,0.75,0.40927543031016883,0.9285207872478909,8,over; McNemar p vs k1 = 1
+SEAS-V__null__H0.5__n2000,hsic_wild,1.0,size,0.75,0.40927543031016883,0.9285207872478909,8,over
+SEAS-V__null__H0.5__n2000,hsic_wild,2.0,size,0.625,0.30574239460262737,0.8631557141764026,8,over; McNemar p vs k1 = 1
+SEAS-V__null__H0.5__n2000,hsic_wild,4.0,size,0.125,0.02241749145005667,0.4708881822128535,8,valid; McNemar p vs k1 = 0.0625
+SEAS-V__null__H0.5__n2000,hsic_shift,0.5,size,0.125,0.02241749145005667,0.4708881822128535,8,valid; McNemar p vs k1 = 1
+SEAS-V__null__H0.5__n2000,hsic_shift,1.0,size,0.0,0.0,0.32440756488388023,8,valid
+SEAS-V__null__H0.5__n2000,hsic_shift,2.0,size,0.125,0.02241749145005667,0.4708881822128535,8,valid; McNemar p vs k1 = 1
+SEAS-V__null__H0.5__n2000,hsic_shift,4.0,size,0.125,0.02241749145005667,0.4708881822128535,8,valid; McNemar p vs k1 = 1
+SEAS-V__null__H0.5__n2000,hsic_sub,0.5,size,0.75,0.40927543031016883,0.9285207872478909,8,over; McNemar p vs k1 = 1
+SEAS-V__null__H0.5__n2000,hsic_sub,1.0,size,0.75,0.40927543031016883,0.9285207872478909,8,over
+SEAS-V__null__H0.5__n2000,hsic_sub,2.0,size,0.375,0.13684428582359742,0.6942576053973727,8,over; McNemar p vs k1 = 0.25
+SEAS-V__null__H0.5__n2000,hsic_sub,4.0,size,0.125,0.02241749145005667,0.4708881822128535,8,valid; McNemar p vs k1 = 0.0625
+SEAS-V__null__H0.5__n2000,dcov_wild,,size,0.625,0.30574239460262737,0.8631557141764026,8,over
+SEAS-V__null__H0.5__n2000,dcov_sub,,size,0.375,0.13684428582359742,0.6942576053973727,8,over
+SEAS-V__null__H0.5__n2000,pearson_nw,,size,0.0,0.0,0.32440756488388023,8,valid
+SEAS-V__null__H0.5__n2000,pearson_ewc,,size,0.0,0.0,0.32440756488388023,8,valid
+G0__lin0.065__H0.5__n2000,hsic_wild,0.5,adj_power,0.25,0.0,0.625,8,"raw 0.250; Wilson [0.071, 0.591]; c* 0.92"
+G0__lin0.065__H0.5__n2000,hsic_wild,1.0,adj_power,0.5,0.25,0.875,8,"raw 0.500; Wilson [0.215, 0.785]; c* 0.9436"
+G0__lin0.065__H0.5__n2000,hsic_wild,2.0,adj_power,0.875,0.625,1.0,8,"raw 0.750; Wilson [0.529, 0.978]; c* 0.4346"
+G0__lin0.065__H0.5__n2000,hsic_wild,4.0,adj_power,0.875,0.625,1.0,8,"raw 0.750; Wilson [0.529, 0.978]; c* 0.4674"
+G0__lin0.065__H0.5__n2000,hsic_shift,0.5,adj_power,0.25,0.0,0.625,8,"raw 0.250; Wilson [0.071, 0.591]; c* 0.9196"
+G0__lin0.065__H0.5__n2000,hsic_shift,1.0,adj_power,0.5,0.25,0.875,8,"raw 0.500; Wilson [0.215, 0.785]; c* 0.8997"
+G0__lin0.065__H0.5__n2000,hsic_shift,2.0,adj_power,0.75,0.5,1.0,8,"raw 0.750; Wilson [0.409, 0.929]; c* 0.4161"
+G0__lin0.065__H0.5__n2000,hsic_shift,4.0,adj_power,0.875,0.625,1.0,8,"raw 0.750; Wilson [0.529, 0.978]; c* 0.5734"
+G0__lin0.065__H0.5__n2000,hsic_sub,0.5,adj_power,0.25,0.0,0.625,8,"raw 0.250; Wilson [0.071, 0.591]; c* 0.8492"
+G0__lin0.065__H0.5__n2000,hsic_sub,1.0,adj_power,0.5,0.125,0.875,8,"raw 0.500; Wilson [0.215, 0.785]; c* 0.686"
+G0__lin0.065__H0.5__n2000,hsic_sub,2.0,adj_power,0.75,0.375,1.0,8,"raw 0.625; Wilson [0.409, 0.929]; c* 0.3566"
+G0__lin0.065__H0.5__n2000,hsic_sub,4.0,adj_power,0.875,0.625,1.0,8,"raw 0.625; Wilson [0.529, 0.978]; c* 0.4413"
+G0__lin0.065__H0.5__n2000,oracle_hsic,0.5,adj_power,0.25,0.0,0.625,8,"raw nan; Wilson [0.071, 0.591]; c* 0.689"
+G0__lin0.065__H0.5__n2000,oracle_hsic,1.0,adj_power,0.5,0.25,0.875,8,"raw nan; Wilson [0.215, 0.785]; c* 0.368"
+G0__lin0.065__H0.5__n2000,oracle_hsic,2.0,adj_power,0.875,0.625,1.0,8,"raw nan; Wilson [0.529, 0.978]; c* 0.04324"
+G0__lin0.065__H0.5__n2000,oracle_hsic,4.0,adj_power,0.875,0.625,1.0,8,"raw nan; Wilson [0.529, 0.978]; c* 0.007244"
+G0__lin0.065__H0.5__n2000,dcov_wild,,adj_power,0.75,0.5,1.0,8,"raw 0.750; Wilson [0.409, 0.929]; c* 0.7182"
+G0__lin0.065__H0.5__n2000,dcov_sub,,adj_power,0.75,0.375,1.0,8,"raw 0.500; Wilson [0.409, 0.929]; c* 0.5294"
+G0__lin0.065__H0.5__n2000,pearson_nw,,adj_power,0.75,0.5,1.0,8,"raw 0.750; Wilson [0.409, 0.929]; c* 0.8073"
+G0__lin0.065__H0.5__n2000,pearson_ewc,,adj_power,0.875,0.625,1.0,8,"raw 0.750; Wilson [0.529, 0.978]; c* 0.6637"
+G0__lin0.065__H0.5__n2000,oracle_dcov,,adj_power,0.75,0.375,1.0,8,"raw nan; Wilson [0.409, 0.929]; c* 1.593"
+G0__lin0.065__H0.5__n2000,oracle_pearson,,adj_power,0.875,0.625,1.0,8,"raw nan; Wilson [0.529, 0.978]; c* 0.03516"
+G0__lin0.065__H0.5__n2000,hsic_wild,0.5,gain_vs_k1,-0.25,-0.625,0.0,8,small/unclear
+G0__lin0.065__H0.5__n2000,hsic_wild,2.0,gain_vs_k1,0.375,0.0,0.625,8,small/unclear
+G0__lin0.065__H0.5__n2000,hsic_wild,4.0,gain_vs_k1,0.375,0.0,0.625,8,small/unclear
+G0__lin0.065__H0.5__n2000,hsic_shift,0.5,gain_vs_k1,-0.25,-0.625,0.0,8,small/unclear
+G0__lin0.065__H0.5__n2000,hsic_shift,2.0,gain_vs_k1,0.25,0.0,0.625,8,small/unclear
+G0__lin0.065__H0.5__n2000,hsic_shift,4.0,gain_vs_k1,0.375,0.0,0.625,8,small/unclear
+G0__lin0.065__H0.5__n2000,hsic_sub,0.5,gain_vs_k1,-0.25,-0.625,0.0,8,small/unclear
+G0__lin0.065__H0.5__n2000,hsic_sub,2.0,gain_vs_k1,0.25,0.0,0.625,8,small/unclear
+G0__lin0.065__H0.5__n2000,hsic_sub,4.0,gain_vs_k1,0.375,0.0,0.75,8,small/unclear
+G0__lin0.065__H0.5__n2000,oracle_hsic,0.5,gain_vs_k1,-0.25,-0.625,0.0,8,small/unclear
+G0__lin0.065__H0.5__n2000,oracle_hsic,2.0,gain_vs_k1,0.375,0.0,0.625,8,small/unclear
+G0__lin0.065__H0.5__n2000,oracle_hsic,4.0,gain_vs_k1,0.375,0.0,0.625,8,small/unclear
+G0__sq0.075__H0.5__n2000,hsic_wild,0.5,adj_power,0.5,0.125,0.875,8,"raw 0.250; Wilson [0.215, 0.785]; c* 0.92"
+G0__sq0.075__H0.5__n2000,hsic_wild,1.0,adj_power,0.75,0.4968750000000002,1.0,8,"raw 0.375; Wilson [0.409, 0.929]; c* 0.9436"
+G0__sq0.075__H0.5__n2000,hsic_wild,2.0,adj_power,0.875,0.625,1.0,8,"raw 0.625; Wilson [0.529, 0.978]; c* 0.4346"
+G0__sq0.075__H0.5__n2000,hsic_wild,4.0,adj_power,0.625,0.25,1.0,8,"raw 0.250; Wilson [0.306, 0.863]; c* 0.4674"
+G0__sq0.075__H0.5__n2000,hsic_shift,0.5,adj_power,0.25,0.0,0.75,8,"raw 0.250; Wilson [0.071, 0.591]; c* 0.9196"
+G0__sq0.075__H0.5__n2000,hsic_shift,1.0,adj_power,0.375,0.125,1.0,8,"raw 0.375; Wilson [0.137, 0.694]; c* 0.8997"
+G0__sq0.075__H0.5__n2000,hsic_shift,2.0,adj_power,0.875,0.625,1.0,8,"raw 0.625; Wilson [0.529, 0.978]; c* 0.4161"
+G0__sq0.075__H0.5__n2000,hsic_shift,4.0,adj_power,0.625,0.25,1.0,8,"raw 0.250; Wilson [0.306, 0.863]; c* 0.5734"
+G0__sq0.075__H0.5__n2000,hsic_sub,0.5,adj_power,0.25,0.0,0.75,8,"raw 0.250; Wilson [0.071, 0.591]; c* 0.8492"
+G0__sq0.075__H0.5__n2000,hsic_sub,1.0,adj_power,0.75,0.375,1.0,8,"raw 0.375; Wilson [0.409, 0.929]; c* 0.686"
+G0__sq0.075__H0.5__n2000,hsic_sub,2.0,adj_power,0.875,0.625,1.0,8,"raw 0.625; Wilson [0.529, 0.978]; c* 0.3566"
+G0__sq0.075__H0.5__n2000,hsic_sub,4.0,adj_power,0.625,0.25,1.0,8,"raw 0.250; Wilson [0.306, 0.863]; c* 0.4413"
+G0__sq0.075__H0.5__n2000,oracle_hsic,0.5,adj_power,0.25,0.0,0.625,8,"raw nan; Wilson [0.071, 0.591]; c* 0.689"
+G0__sq0.075__H0.5__n2000,oracle_hsic,1.0,adj_power,0.375,0.125,1.0,8,"raw nan; Wilson [0.137, 0.694]; c* 0.368"
+G0__sq0.075__H0.5__n2000,oracle_hsic,2.0,adj_power,0.875,0.625,1.0,8,"raw nan; Wilson [0.529, 0.978]; c* 0.04324"
+G0__sq0.075__H0.5__n2000,oracle_hsic,4.0,adj_power,0.625,0.25,1.0,8,"raw nan; Wilson [0.306, 0.863]; c* 0.007244"
+G0__sq0.075__H0.5__n2000,dcov_wild,,adj_power,0.75,0.5,1.0,8,"raw 0.625; Wilson [0.409, 0.929]; c* 0.7182"
+G0__sq0.075__H0.5__n2000,dcov_sub,,adj_power,0.875,0.625,1.0,8,"raw 0.625; Wilson [0.529, 0.978]; c* 0.5294"
+G0__sq0.075__H0.5__n2000,pearson_nw,,adj_power,0.25,0.0,0.875,8,"raw 0.250; Wilson [0.071, 0.591]; c* 0.8073"
+G0__sq0.075__H0.5__n2000,pearson_ewc,,adj_power,0.25,0.0,0.75,8,"raw 0.250; Wilson [0.071, 0.591]; c* 0.6637"
+G0__sq0.075__H0.5__n2000,oracle_dcov,,adj_power,0.75,0.5,1.0,8,"raw nan; Wilson [0.409, 0.929]; c* 1.593"
+G0__sq0.075__H0.5__n2000,oracle_pearson,,adj_power,0.25,0.0,0.875,8,"raw nan; Wilson [0.071, 0.591]; c* 0.03516"
+G0__sq0.075__H0.5__n2000,hsic_wild,0.5,gain_vs_k1,-0.25,-0.625,0.0,8,small/unclear
+G0__sq0.075__H0.5__n2000,hsic_wild,2.0,gain_vs_k1,0.125,0.0,0.5,8,small/unclear
+G0__sq0.075__H0.5__n2000,hsic_wild,4.0,gain_vs_k1,-0.125,-0.375,0.375,8,small/unclear
+G0__sq0.075__H0.5__n2000,hsic_shift,0.5,gain_vs_k1,-0.125,-0.625,0.0,8,small/unclear
+G0__sq0.075__H0.5__n2000,hsic_shift,2.0,gain_vs_k1,0.5,0.0,0.875,8,small/unclear
+G0__sq0.075__H0.5__n2000,hsic_shift,4.0,gain_vs_k1,0.25,-0.375,0.75,8,small/unclear
+G0__sq0.075__H0.5__n2000,hsic_sub,0.5,gain_vs_k1,-0.5,-0.75,0.0,8,small/unclear
+G0__sq0.075__H0.5__n2000,hsic_sub,2.0,gain_vs_k1,0.125,0.0,0.375,8,small/unclear
+G0__sq0.075__H0.5__n2000,hsic_sub,4.0,gain_vs_k1,-0.125,-0.375,0.25,8,small/unclear
+G0__sq0.075__H0.5__n2000,oracle_hsic,0.5,gain_vs_k1,-0.125,-0.75,0.0,8,small/unclear
+G0__sq0.075__H0.5__n2000,oracle_hsic,2.0,gain_vs_k1,0.5,0.0,0.875,8,small/unclear
+G0__sq0.075__H0.5__n2000,oracle_hsic,4.0,gain_vs_k1,0.25,-0.375,0.75,8,small/unclear
+SEAS-V__lin0.065__H0.5__n2000,hsic_wild,0.5,adj_power,0.125,0.0,0.5,8,"raw 0.875; Wilson [0.022, 0.471]; c* 3.026"
+SEAS-V__lin0.065__H0.5__n2000,hsic_wild,1.0,adj_power,0.125,0.0,0.5,8,"raw 1.000; Wilson [0.022, 0.471]; c* 4.3"
+SEAS-V__lin0.065__H0.5__n2000,hsic_wild,2.0,adj_power,0.75,0.5,1.0,8,"raw 1.000; Wilson [0.409, 0.929]; c* 2.466"
+SEAS-V__lin0.065__H0.5__n2000,hsic_wild,4.0,adj_power,0.75,0.5,1.0,8,"raw 0.875; Wilson [0.409, 0.929]; c* 1.198"
+SEAS-V__lin0.065__H0.5__n2000,hsic_shift,0.5,adj_power,0.125,0.0,0.375,8,"raw 0.125; Wilson [0.022, 0.471]; c* 1.053"
+SEAS-V__lin0.065__H0.5__n2000,hsic_shift,1.0,adj_power,0.125,0.0,0.5,8,"raw 0.125; Wilson [0.022, 0.471]; c* 0.9896"
+SEAS-V__lin0.065__H0.5__n2000,hsic_shift,2.0,adj_power,0.375,0.125,1.0,8,"raw 0.625; Wilson [0.137, 0.694]; c* 1.174"
+SEAS-V__lin0.065__H0.5__n2000,hsic_shift,4.0,adj_power,0.5,0.25,1.0,8,"raw 0.750; Wilson [0.215, 0.785]; c* 1.412"
+SEAS-V__lin0.065__H0.5__n2000,hsic_sub,0.5,adj_power,0.125,0.0,0.5,8,"raw 0.875; Wilson [0.022, 0.471]; c* 2.818"
+SEAS-V__lin0.065__H0.5__n2000,hsic_sub,1.0,adj_power,0.25,0.0,0.75,8,"raw 1.000; Wilson [0.071, 0.591]; c* 3.468"
+SEAS-V__lin0.065__H0.5__n2000,hsic_sub,2.0,adj_power,0.625,0.375,1.0,8,"raw 1.000; Wilson [0.306, 0.863]; c* 2.167"
+SEAS-V__lin0.065__H0.5__n2000,hsic_sub,4.0,adj_power,0.625,0.375,1.0,8,"raw 0.875; Wilson [0.306, 0.863]; c* 1.549"
+SEAS-V__lin0.065__H0.5__n2000,oracle_hsic,0.5,adj_power,0.125,0.0,0.5,8,"raw nan; Wilson [0.022, 0.471]; c* 2.129"
+SEAS-V__lin0.065__H0.5__n2000,oracle_hsic,1.0,adj_power,0.125,0.0,0.5,8,"raw nan; Wilson [0.022, 0.471]; c* 1.629"
+SEAS-V__lin0.065__H0.5__n2000,oracle_hsic,2.0,adj_power,0.25,0.0,1.0,8,"raw nan; Wilson [0.071, 0.591]; c* 0.317"
+SEAS-V__lin0.065__H0.5__n2000,oracle_hsic,4.0,adj_power,0.5,0.25,1.0,8,"raw nan; Wilson [0.215, 0.785]; c* 0.02457"
+SEAS-V__lin0.065__H0.5__n2000,dcov_wild,,adj_power,0.5,0.25,1.0,8,"raw 1.000; Wilson [0.215, 0.785]; c* 2.18"
+SEAS-V__lin0.065__H0.5__n2000,dcov_sub,,adj_power,0.375,0.125,1.0,8,"raw 1.000; Wilson [0.137, 0.694]; c* 2.066"
+SEAS-V__lin0.065__H0.5__n2000,pearson_nw,,adj_power,0.75,0.5,1.0,8,"raw 0.750; Wilson [0.409, 0.929]; c* 0.8655"
+SEAS-V__lin0.065__H0.5__n2000,pearson_ewc,,adj_power,0.75,0.5,1.0,8,"raw 0.750; Wilson [0.409, 0.929]; c* 0.8799"
+SEAS-V__lin0.065__H0.5__n2000,oracle_dcov,,adj_power,0.25,0.0,1.0,8,"raw nan; Wilson [0.071, 0.591]; c* 5.561"
+SEAS-V__lin0.065__H0.5__n2000,oracle_pearson,,adj_power,0.625,0.375,1.0,8,"raw nan; Wilson [0.306, 0.863]; c* 0.04524"
+SEAS-V__lin0.065__H0.5__n2000,hsic_wild,0.5,gain_vs_k1,0.0,0.0,0.0,8,small/unclear
+SEAS-V__lin0.065__H0.5__n2000,hsic_wild,2.0,gain_vs_k1,0.625,0.25,1.0,8,full recovery (within 5 pp of dCov wild)
+SEAS-V__lin0.065__H0.5__n2000,hsic_wild,4.0,gain_vs_k1,0.625,0.125,1.0,8,full recovery (within 5 pp of dCov wild)
+SEAS-V__lin0.065__H0.5__n2000,hsic_shift,0.5,gain_vs_k1,0.0,-0.25,0.0,8,small/unclear
+SEAS-V__lin0.065__H0.5__n2000,hsic_shift,2.0,gain_vs_k1,0.25,-0.125,0.875,8,small/unclear
+SEAS-V__lin0.065__H0.5__n2000,hsic_shift,4.0,gain_vs_k1,0.375,-0.125,1.0,8,small/unclear
+SEAS-V__lin0.065__H0.5__n2000,hsic_sub,0.5,gain_vs_k1,-0.125,-0.5,0.0,8,small/unclear
+SEAS-V__lin0.065__H0.5__n2000,hsic_sub,2.0,gain_vs_k1,0.375,0.0,0.875,8,small/unclear
+SEAS-V__lin0.065__H0.5__n2000,hsic_sub,4.0,gain_vs_k1,0.375,-0.125,0.875,8,small/unclear
+SEAS-V__lin0.065__H0.5__n2000,oracle_hsic,0.5,gain_vs_k1,0.0,0.0,0.0,8,small/unclear
+SEAS-V__lin0.065__H0.5__n2000,oracle_hsic,2.0,gain_vs_k1,0.125,-0.25,0.875,8,small/unclear
+SEAS-V__lin0.065__H0.5__n2000,oracle_hsic,4.0,gain_vs_k1,0.375,-0.125,1.0,8,small/unclear

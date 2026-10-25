@@ -1,0 +1,137 @@
+{
+ "mode": "regress",
+ "master": 2026102542,
+ "kappas": [
+  0.5,
+  1.0,
+  2.0
+ ],
+ "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
+ "B_wild": 500,
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 2,
+ "argv": [
+  "run_exp6.py",
+  "--mode",
+  "regress",
+  "--reps",
+  "5",
+  "--out",
+  "regress",
+  "--workers",
+  "2",
+  "--kappas",
+  "0.5,1,2"
+ ],
+ "cells": [
+  {
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.0,
+   "idx": 0,
+   "name": "ind__G0__null0__H0.5__n2000",
+   "reps": 5,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     0,
+     "rep"
+    ]
+   }
+  },
+  {
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.8,
+   "n": 2000,
+   "param": 0.0,
+   "idx": 2,
+   "name": "ind__G0__null0__H0.8__n2000",
+   "reps": 5,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     2,
+     "rep"
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V",
+   "alt": "null",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.0,
+   "idx": 6,
+   "name": "ind__SEAS-V__null0__H0.5__n2000",
+   "reps": 5,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     6,
+     "rep"
+    ]
+   }
+  },
+  {
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.065,
+   "idx": 18,
+   "name": "ind__G0__lin0.065__H0.5__n2000",
+   "reps": 5,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     18,
+     "rep"
+    ]
+   }
+  },
+  {
+   "gen": "G0",
+   "alt": "sq",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.075,
+   "idx": 24,
+   "name": "ind__G0__sq0.075__H0.5__n2000",
+   "reps": 5,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     24,
+     "rep"
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.065,
+   "idx": 30,
+   "name": "ind__SEAS-V__lin0.065__H0.5__n2000",
+   "reps": 5,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102542,
+    "spawn_key": [
+     30,
+     "rep"
+    ]
+   }
+  }
+ ]
+}

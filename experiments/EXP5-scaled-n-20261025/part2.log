@@ -1,0 +1,161 @@
+== 2026-10-25T19:18:15Z stage reps=125 workers=3 only=ind__G4__H0.7__n4000,ind__G4__H0.8__n4000
+20261025T191818Z 126 chunks, 250 replications
+10/126 chunks, 102s wall
+20/126 chunks, 189s wall
+30/126 chunks, 272s wall
+40/126 chunks, 387s wall
+50/126 chunks, 455s wall
+60/126 chunks, 545s wall
+70/126 chunks, 640s wall
+80/126 chunks, 717s wall
+90/126 chunks, 790s wall
+100/126 chunks, 861s wall
+110/126 chunks, 936s wall
+120/126 chunks, 1009s wall
+126/126 chunks, 1033s wall
+DONE 1033s wall
+== 2026-10-25T19:35:31Z stage reps=250 workers=3 only=ind__G4__H0.7__n4000,ind__G4__H0.8__n4000
+20261025T193534Z 126 chunks, 250 replications
+10/126 chunks, 74s wall
+20/126 chunks, 148s wall
+30/126 chunks, 243s wall
+40/126 chunks, 339s wall
+50/126 chunks, 415s wall
+60/126 chunks, 483s wall
+70/126 chunks, 582s wall
+80/126 chunks, 698s wall
+90/126 chunks, 801s wall
+100/126 chunks, 934s wall
+110/126 chunks, 1053s wall
+120/126 chunks, 1154s wall
+126/126 chunks, 1235s wall
+DONE 1235s wall
+== 2026-10-25T19:56:12Z stage reps=375 workers=3 only=ind__G4__H0.7__n4000,ind__G4__H0.8__n4000
+20261025T195619Z 126 chunks, 250 replications
+10/126 chunks, 145s wall
+20/126 chunks, 247s wall
+30/126 chunks, 362s wall
+40/126 chunks, 477s wall
+50/126 chunks, 571s wall
+60/126 chunks, 671s wall
+70/126 chunks, 744s wall
+80/126 chunks, 807s wall
+90/126 chunks, 872s wall
+100/126 chunks, 958s wall
+110/126 chunks, 1043s wall
+120/126 chunks, 1138s wall
+126/126 chunks, 1167s wall
+DONE 1167s wall
+== 2026-10-25T20:15:46Z stage reps=500 workers=6 only=ind__G4__H0.7__n4000,ind__G4__H0.8__n4000
+20261025T201548Z 126 chunks, 250 replications
+10/126 chunks, 37s wall
+20/126 chunks, 64s wall
+30/126 chunks, 91s wall
+40/126 chunks, 129s wall
+50/126 chunks, 161s wall
+60/126 chunks, 186s wall
+70/126 chunks, 222s wall
+80/126 chunks, 249s wall
+90/126 chunks, 277s wall
+100/126 chunks, 311s wall
+110/126 chunks, 341s wall
+120/126 chunks, 373s wall
+126/126 chunks, 388s wall
+DONE 388s wall
+== 2026-10-25T20:22:16Z stage reps=625 workers=6 only=ind__G4__H0.7__n4000,ind__G4__H0.8__n4000
+20261025T202218Z 126 chunks, 250 replications
+10/126 chunks, 34s wall
+20/126 chunks, 63s wall
+30/126 chunks, 85s wall
+40/126 chunks, 112s wall
+50/126 chunks, 136s wall
+60/126 chunks, 161s wall
+70/126 chunks, 189s wall
+80/126 chunks, 218s wall
+90/126 chunks, 258s wall
+100/126 chunks, 292s wall
+110/126 chunks, 319s wall
+120/126 chunks, 347s wall
+126/126 chunks, 364s wall
+DONE 364s wall
+== 2026-10-25T20:28:22Z stage reps=750 workers=6 only=ind__G4__H0.7__n4000,ind__G4__H0.8__n4000
+20261025T202827Z 126 chunks, 250 replications
+10/126 chunks, 49s wall
+20/126 chunks, 88s wall
+30/126 chunks, 125s wall
+40/126 chunks, 166s wall
+50/126 chunks, 210s wall
+60/126 chunks, 234s wall
+70/126 chunks, 272s wall
+80/126 chunks, 317s wall
+90/126 chunks, 343s wall
+100/126 chunks, 374s wall
+110/126 chunks, 403s wall
+120/126 chunks, 437s wall
+126/126 chunks, 448s wall
+DONE 448s wall
+== 2026-10-25T20:35:56Z stage reps=875 workers=6 only=ind__G4__H0.7__n4000,ind__G4__H0.8__n4000
+20261025T203557Z 126 chunks, 250 replications
+10/126 chunks, 35s wall
+20/126 chunks, 62s wall
+30/126 chunks, 100s wall
+40/126 chunks, 128s wall
+50/126 chunks, 159s wall
+60/126 chunks, 191s wall
+70/126 chunks, 228s wall
+80/126 chunks, 262s wall
+90/126 chunks, 290s wall
+100/126 chunks, 326s wall
+110/126 chunks, 365s wall
+120/126 chunks, 395s wall
+126/126 chunks, 411s wall
+DONE 411s wall
+== 2026-10-25T20:42:49Z stage reps=1000 workers=6 only=ind__G4__H0.7__n4000,ind__G4__H0.8__n4000
+20261025T204250Z 126 chunks, 250 replications
+10/126 chunks, 30s wall
+20/126 chunks, 68s wall
+30/126 chunks, 99s wall
+40/126 chunks, 124s wall
+50/126 chunks, 161s wall
+60/126 chunks, 193s wall
+70/126 chunks, 225s wall
+80/126 chunks, 260s wall
+90/126 chunks, 295s wall
+100/126 chunks, 324s wall
+110/126 chunks, 357s wall
+120/126 chunks, 391s wall
+126/126 chunks, 400s wall
+DONE 400s wall
+== 2026-10-25T20:49:31Z stage reps=250 workers=6 only=ind__G4__H0.5__n4000
+20261025T204932Z 125 chunks, 250 replications
+10/125 chunks, 46s wall
+20/125 chunks, 79s wall
+30/125 chunks, 110s wall
+40/125 chunks, 147s wall
+50/125 chunks, 181s wall
+60/125 chunks, 215s wall
+70/125 chunks, 256s wall
+80/125 chunks, 296s wall
+90/125 chunks, 328s wall
+100/125 chunks, 368s wall
+110/125 chunks, 396s wall
+120/125 chunks, 432s wall
+125/125 chunks, 443s wall
+DONE 443s wall
+== 2026-10-25T20:56:55Z stage reps=500 workers=6 only=ind__G4__H0.5__n4000
+20261025T205659Z 125 chunks, 250 replications
+10/125 chunks, 40s wall
+20/125 chunks, 69s wall
+30/125 chunks, 106s wall
+40/125 chunks, 132s wall
+50/125 chunks, 160s wall
+60/125 chunks, 179s wall
+70/125 chunks, 200s wall
+80/125 chunks, 220s wall
+90/125 chunks, 242s wall
+100/125 chunks, 265s wall
+110/125 chunks, 292s wall
+120/125 chunks, 312s wall
+125/125 chunks, 326s wall
+DONE 326s wall
+PART2DONE

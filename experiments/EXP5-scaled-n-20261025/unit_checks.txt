@@ -1,0 +1,9 @@
+sd_half H=0.5 n=500: closed 0.08944272 exact 0.08944272 diff -1.39e-17
+sd_half H=0.5 n=2000: closed 0.04472136 exact 0.04472136 diff 4.16e-17
+sd_half H=0.7 n=500: closed 0.22260993 exact 0.22260993 diff 5.55e-17
+sd_half H=0.7 n=2000: closed 0.14686778 exact 0.14686778 diff -2.78e-17
+sd_half H=0.8 n=500: closed 0.32619463 exact 0.32619463 diff 0.00e+00
+sd_half H=0.8 n=2000: closed 0.24720930 exact 0.24720930 diff -2.78e-17
+mmd_ext vs EXP3 power_core.mmd_ext: 9 reps, worst abs diff over shared fields 0.000e+00
+ind_rep vs EXP1 mbcore E3 path: 2 reps n=400, worst abs diff 0.000e+00
+ALL PASS

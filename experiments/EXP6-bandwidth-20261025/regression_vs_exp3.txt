@@ -1,0 +1,19 @@
+kappa = 1 rates vs EXP3 main (independent seeds). Exact per-row check: unit_checks.txt
+size G0 hsic_wild: EXP6 0.078 (m=500) EXP3 0.066 (m=1000) z=+0.86
+size G0 hsic_shift: EXP6 0.054 (m=500) EXP3 0.050 (m=1000) z=+0.33
+size G0 hsic_sub: EXP6 0.066 (m=500) EXP3 0.058 (m=1000) z=+0.61
+size SEAS-V hsic_wild: EXP6 0.744 (m=500) EXP3 0.731 (m=1000) z=+0.54
+size SEAS-V hsic_shift: EXP6 0.056 (m=500) EXP3 0.049 (m=1000) z=+0.58
+size SEAS-V hsic_sub: EXP6 0.736 (m=500) EXP3 0.709 (m=1000) z=+1.10
+adj G0-lin hsic_wild: EXP6 0.538 [0.488,0.606] EXP3 0.560 inside
+adj G0-lin hsic_shift: EXP6 0.550 [0.452,0.618] EXP3 0.572 inside
+adj G0-lin hsic_sub: EXP6 0.544 [0.460,0.604] EXP3 0.544 inside
+adj G0-lin oracle_hsic: EXP6 0.550 [0.444,0.618] EXP3 0.557 inside
+adj G0-sq hsic_wild: EXP6 0.372 [0.318,0.452] EXP3 0.430 inside
+adj G0-sq hsic_shift: EXP6 0.398 [0.282,0.486] EXP3 0.440 inside
+adj G0-sq hsic_sub: EXP6 0.388 [0.292,0.490] EXP3 0.409 inside
+adj G0-sq oracle_hsic: EXP6 0.390 [0.284,0.486] EXP3 0.424 inside
+adj SEAS-V-lin hsic_wild: EXP6 0.156 [0.120,0.192] EXP3 0.138 inside
+adj SEAS-V-lin hsic_shift: EXP6 0.150 [0.098,0.200] EXP3 0.152 inside
+adj SEAS-V-lin hsic_sub: EXP6 0.110 [0.080,0.230] EXP3 0.146 inside
+adj SEAS-V-lin oracle_hsic: EXP6 0.138 [0.100,0.182] EXP3 0.135 inside
