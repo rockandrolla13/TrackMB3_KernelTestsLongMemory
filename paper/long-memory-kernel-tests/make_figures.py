@@ -54,7 +54,7 @@ def mmd_figure(rows: list[dict[str, str]]) -> None:
     ax.legend(loc="upper left", fontsize=8, frameon=False)
     ax.grid(axis="y", alpha=0.2)
     fig.tight_layout()
-    fig.savefig(FIGURES / "mmd_size.pdf")
+    fig.savefig(FIGURES / "mmd_size.png", dpi=300)
     plt.close(fig)
 
 
@@ -88,7 +88,7 @@ def independence_figure(rows: list[dict[str, str]]) -> None:
         ax.legend(loc="upper left", fontsize=7, frameon=False)
     left.set_ylabel("Null rejection (%)")
     fig.tight_layout()
-    fig.savefig(FIGURES / "independence_size.pdf")
+    fig.savefig(FIGURES / "independence_size.png", dpi=300)
     plt.close(fig)
 
 
@@ -150,7 +150,7 @@ def slope_figure(mmd_rows: list[dict[str, str]], ind_rows: list[dict[str, str]])
     right.set(title="HSIC, equal-memory pairs", xlabel=r"Midpoint $H_X+H_Y$",
               ylabel="Change in rejection (pp per 0.1 sum)")
     fig.tight_layout()
-    fig.savefig(FIGURES / "size_slopes.pdf")
+    fig.savefig(FIGURES / "size_slopes.png", dpi=300)
     plt.close(fig)
 
 
@@ -169,7 +169,7 @@ def main() -> None:
         },
         "outputs": {
             name: hashlib.sha256((FIGURES / name).read_bytes()).hexdigest()
-            for name in ("mmd_size.pdf", "independence_size.pdf", "size_slopes.pdf")
+            for name in ("mmd_size.png", "independence_size.png", "size_slopes.png")
         },
     }
     (FIGURES / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")

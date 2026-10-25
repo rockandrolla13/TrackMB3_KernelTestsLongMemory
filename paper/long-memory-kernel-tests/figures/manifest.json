@@ -5,8 +5,8 @@
     "e3_summary.csv": "8ed1e34bdbea50e736e53b3a40a93fd44f974ba616ddac4f9858b124f296c300"
   },
   "outputs": {
-    "mmd_size.pdf": "116617a5b8789157d72815a0c7ce51319055e70cb92c0c16155ccdaf7d5e6e89",
-    "independence_size.pdf": "a9aaa88e7303d8e628277dd5a6cff22818e4ffec863f0a5101d97c4464acb0db",
-    "size_slopes.pdf": "a35d85c26675951378a36881d1fc0962c38fd290031dec80942877b03fc4be06"
+    "mmd_size.png": "30aeb710d0ebde34c6d119fbf096846c3fba09844b40281791be7cd80c53bd65",
+    "independence_size.png": "9d88df9f0fe2c9556a45b0af58d0b0f763aa03a7e6d83a1711ece16beda6c154",
+    "size_slopes.png": "7db59ae8b613b0ef5d0dd311ee97694aa2b00c225444461d8ba0da248bf7cc2e"
   }
 }
