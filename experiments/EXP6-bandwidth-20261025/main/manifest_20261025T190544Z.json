@@ -1,0 +1,144 @@
+{
+ "mode": "main",
+ "master": 2026102562,
+ "kappas": [
+  0.5,
+  1.0,
+  2.0,
+  4.0
+ ],
+ "oracle_kappas": [
+  0.25,
+  8.0
+ ],
+ "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
+ "B_wild": 500,
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 5,
+ "argv": [
+  "run_exp6.py",
+  "--mode",
+  "main",
+  "--reps",
+  "500",
+  "--out",
+  "main",
+  "--workers",
+  "5",
+  "--kappas",
+  "0.5,1,2,4",
+  "--oracle-kappas",
+  "0.25,8"
+ ],
+ "cells": [
+  {
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.0,
+   "idx": 0,
+   "name": "ind__G0__null0__H0.5__n2000",
+   "reps": 500,
+   "already_done": 12,
+   "seed": {
+    "entropy": 2026102562,
+    "spawn_key": [
+     0,
+     "rep"
+    ]
+   }
+  },
+  {
+   "gen": "G0",
+   "alt": "null",
+   "H": 0.8,
+   "n": 2000,
+   "param": 0.0,
+   "idx": 1,
+   "name": "ind__G0__null0__H0.8__n2000",
+   "reps": 500,
+   "already_done": 12,
+   "seed": {
+    "entropy": 2026102562,
+    "spawn_key": [
+     1,
+     "rep"
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V",
+   "alt": "null",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.0,
+   "idx": 2,
+   "name": "ind__SEAS-V__null0__H0.5__n2000",
+   "reps": 500,
+   "already_done": 12,
+   "seed": {
+    "entropy": 2026102562,
+    "spawn_key": [
+     2,
+     "rep"
+    ]
+   }
+  },
+  {
+   "gen": "G0",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.065,
+   "idx": 3,
+   "name": "ind__G0__lin0.065__H0.5__n2000",
+   "reps": 500,
+   "already_done": 12,
+   "seed": {
+    "entropy": 2026102562,
+    "spawn_key": [
+     3,
+     "rep"
+    ]
+   }
+  },
+  {
+   "gen": "G0",
+   "alt": "sq",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.075,
+   "idx": 4,
+   "name": "ind__G0__sq0.075__H0.5__n2000",
+   "reps": 500,
+   "already_done": 8,
+   "seed": {
+    "entropy": 2026102562,
+    "spawn_key": [
+     4,
+     "rep"
+    ]
+   }
+  },
+  {
+   "gen": "SEAS-V",
+   "alt": "lin",
+   "H": 0.5,
+   "n": 2000,
+   "param": 0.065,
+   "idx": 5,
+   "name": "ind__SEAS-V__lin0.065__H0.5__n2000",
+   "reps": 500,
+   "already_done": 8,
+   "seed": {
+    "entropy": 2026102562,
+    "spawn_key": [
+     5,
+     "rep"
+    ]
+   }
+  }
+ ]
+}

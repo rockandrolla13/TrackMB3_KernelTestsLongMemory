@@ -84,16 +84,16 @@ Rejection % at nominal 5% [Wilson 95%]. A0-EXP2 = unadjusted EXP2 main run (inde
 | generator | adj | hsic_wild | hsic_shift | hsic_sub | dcov_wild | dcov_sub | pearson_nw | pearson_ewc | reps |
 |---|---|---|---|---|---|---|---|---|---|
 | G0 | A0-EXP2 | 6.8 [5.4, 8.5] | 5.3 [4.1, 6.9] | 5.8 [4.5, 7.4] | 6.7 [5.3, 8.4] | 6.8 [5.4, 8.5] | 5.0 [3.8, 6.5] | 5.3 [4.1, 6.9] | 1000 |
-| G0 | A1 | 6.0 [4.2, 8.4] | 5.0 [3.4, 7.3] | 5.8 [4.1, 8.2] | 7.8 [5.8, 10.5] | 6.2 [4.4, 8.7] | 5.8 [4.1, 8.2] | 6.0 [4.2, 8.4] | 500 |
-| G0 | A2 | 7.2 [5.2, 9.8] | 5.2 [3.6, 7.5] | 5.8 [4.1, 8.2] | 8.4 [6.3, 11.2] | 5.6 [3.9, 8.0] | 6.0 [4.2, 8.4] | 6.0 [4.2, 8.4] | 500 |
-| G0 | A3 | 7.0 [5.1, 9.6] | 6.0 [4.2, 8.4] | 6.0 [4.2, 8.4] | 7.8 [5.8, 10.5] | 6.8 [4.9, 9.4] | 5.4 [3.7, 7.7] | 6.4 [4.6, 8.9] | 500 |
+| G0 | A1 | 6.0 [4.7, 7.6] | 4.4 [3.3, 5.9] | 5.6 [4.3, 7.2] | 7.2 [5.8, 9.0] | 6.2 [4.9, 7.9] | 5.5 [4.2, 7.1] | 5.5 [4.2, 7.1] | 1000 |
+| G0 | A2 | 6.3 [5.0, 8.0] | 5.1 [3.9, 6.6] | 5.6 [4.3, 7.2] | 7.4 [5.9, 9.2] | 5.9 [4.6, 7.5] | 5.8 [4.5, 7.4] | 5.5 [4.2, 7.1] | 1000 |
+| G0 | A3 | 7.0 [5.6, 8.8] | 5.9 [4.6, 7.5] | 6.3 [5.0, 8.0] | 7.1 [5.7, 8.9] | 6.3 [5.0, 8.0] | 5.8 [4.5, 7.4] | 5.8 [4.5, 7.4] | 1000 |
 | SEAS-M | A0-EXP2 | 91.2 [89.3, 92.8] | 5.8 [4.5, 7.4] | 90.9 [89.0, 92.5] | 91.7 [89.8, 93.3] | 91.3 [89.4, 92.9] | 91.4 [89.5, 93.0] | 91.7 [89.8, 93.3] | 1000 |
 | SEAS-V | A0-EXP2 | 73.3 [70.5, 75.9] | 5.0 [3.8, 6.5] | 71.5 [68.6, 74.2] | 51.7 [48.6, 54.8] | 45.6 [42.5, 48.7] | 4.7 [3.6, 6.2] | 4.5 [3.4, 6.0] | 1000 |
-| SEAS-V | A1 | 75.6 [71.6, 79.2] | 3.6 [2.3, 5.6] | 73.8 [69.8, 77.5] | 52.4 [48.0, 56.7] | 47.4 [43.1, 51.8] | 6.4 [4.6, 8.9] | 5.8 [4.1, 8.2] | 500 |
-| SEAS-V | A2 | 6.4 [4.6, 8.9] | 5.0 [3.4, 7.3] | 6.0 [4.2, 8.4] | 7.4 [5.4, 10.0] | 6.0 [4.2, 8.4] | 5.4 [3.7, 7.7] | 5.4 [3.7, 7.7] | 500 |
-| SEAS-V | A3 | 6.4 [4.6, 8.9] | 5.0 [3.4, 7.3] | 6.0 [4.2, 8.4] | 7.4 [5.4, 10.0] | 6.0 [4.2, 8.4] | 5.4 [3.7, 7.7] | 5.4 [3.7, 7.7] | 500 |
+| SEAS-V | A1 | 73.8 [71.0, 76.4] | 4.3 [3.2, 5.7] | 71.7 [68.8, 74.4] | 53.8 [50.7, 56.9] | 46.8 [43.7, 49.9] | 6.0 [4.7, 7.6] | 5.5 [4.2, 7.1] | 1000 |
+| SEAS-V | A2 | 7.2 [5.8, 9.0] | 5.0 [3.8, 6.5] | 6.3 [5.0, 8.0] | 6.7 [5.3, 8.4] | 5.8 [4.5, 7.4] | 5.8 [4.5, 7.4] | 5.3 [4.1, 6.9] | 1000 |
+| SEAS-V | A3 | 7.2 [5.8, 9.0] | 5.0 [3.8, 6.5] | 6.3 [5.0, 8.0] | 6.7 [5.3, 8.4] | 5.8 [4.5, 7.4] | 5.8 [4.5, 7.4] | 5.3 [4.1, 6.9] | 1000 |
 | SEAS-M-shared | A0-EXP2 | 100.0 [99.6, 100.0] | 34.3 [31.4, 37.3] | 100.0 [99.6, 100.0] | 100.0 [99.6, 100.0] | 100.0 [99.6, 100.0] | 100.0 [99.6, 100.0] | 100.0 [99.6, 100.0] | 1000 |
-| SEAS-V-slow | A0 | 17.0 [13.2, 21.7] | 9.7 [6.8, 13.5] | 12.3 [9.1, 16.5] | 9.3 [6.5, 13.2] | 5.7 [3.6, 8.9] | 4.7 [2.8, 7.7] | 4.7 [2.8, 7.7] | 300 |
+| SEAS-V-slow | A0 | 16.8 [14.6, 19.2] | 10.1 [8.4, 12.1] | 13.4 [11.4, 15.7] | 9.7 [8.0, 11.7] | 6.4 [5.0, 8.1] | 5.1 [3.9, 6.6] | 5.1 [3.9, 6.6] | 1000 |
 
 ## n = 2000, H = 0.7
 
@@ -109,26 +109,26 @@ Rejection % at nominal 5% [Wilson 95%]. A0-EXP2 = unadjusted EXP2 main run (inde
 | generator | adj | hsic_wild | hsic_shift | hsic_sub | dcov_wild | dcov_sub | pearson_nw | pearson_ewc | reps |
 |---|---|---|---|---|---|---|---|---|---|
 | G0 | A0-EXP2 | 8.1 [6.6, 10.0] | 5.3 [4.1, 6.9] | 17.5 [15.3, 20.0] | 9.1 [7.5, 11.0] | 22.8 [20.3, 25.5] | 14.1 [12.1, 16.4] | 8.5 [6.9, 10.4] | 1000 |
-| G0 | A1 | 11.8 [9.3, 14.9] | 6.2 [4.4, 8.7] | 24.4 [20.8, 28.4] | 10.8 [8.4, 13.8] | 27.0 [23.3, 31.1] | 16.4 [13.4, 19.9] | 10.8 [8.4, 13.8] | 500 |
-| G0 | A2 | 11.8 [9.3, 14.9] | 6.4 [4.6, 8.9] | 23.8 [20.3, 27.7] | 11.2 [8.7, 14.3] | 27.8 [24.1, 31.9] | 17.4 [14.3, 21.0] | 10.4 [8.0, 13.4] | 500 |
-| G0 | A3 | 10.0 [7.7, 12.9] | 7.0 [5.1, 9.6] | 22.8 [19.3, 26.7] | 10.6 [8.2, 13.6] | 26.0 [22.3, 30.0] | 14.2 [11.4, 17.5] | 9.8 [7.5, 12.7] | 500 |
+| G0 | A1 | 11.1 [9.3, 13.2] | 6.5 [5.1, 8.2] | 23.3 [20.8, 26.0] | 10.5 [8.7, 12.6] | 25.8 [23.2, 28.6] | 14.8 [12.7, 17.1] | 10.2 [8.5, 12.2] | 1000 |
+| G0 | A2 | 11.5 [9.7, 13.6] | 6.8 [5.4, 8.5] | 23.9 [21.4, 26.6] | 10.7 [8.9, 12.8] | 26.2 [23.6, 29.0] | 15.8 [13.7, 18.2] | 10.1 [8.4, 12.1] | 1000 |
+| G0 | A3 | 10.5 [8.7, 12.6] | 7.2 [5.8, 9.0] | 22.6 [20.1, 25.3] | 11.0 [9.2, 13.1] | 25.7 [23.1, 28.5] | 15.0 [12.9, 17.3] | 10.3 [8.6, 12.3] | 1000 |
 | SEAS-M | A0-EXP2 | 85.2 [82.9, 87.3] | 5.9 [4.6, 7.5] | 85.4 [83.1, 87.5] | 86.1 [83.8, 88.1] | 86.6 [84.3, 88.6] | 84.5 [82.1, 86.6] | 85.1 [82.8, 87.2] | 1000 |
 | SEAS-V | A0-EXP2 | 68.0 [65.0, 70.8] | 5.1 [3.9, 6.6] | 73.0 [70.2, 75.7] | 34.2 [31.3, 37.2] | 53.3 [50.2, 56.4] | 13.4 [11.4, 15.7] | 8.7 [7.1, 10.6] | 1000 |
-| SEAS-V | A1 | 63.6 [59.3, 67.7] | 3.4 [2.1, 5.4] | 68.0 [63.8, 71.9] | 25.8 [22.2, 29.8] | 45.0 [40.7, 49.4] | 14.8 [12.0, 18.2] | 8.0 [5.9, 10.7] | 500 |
-| SEAS-V | A2 | 9.2 [7.0, 12.1] | 4.6 [3.1, 6.8] | 21.2 [17.8, 25.0] | 9.4 [7.1, 12.3] | 25.8 [22.2, 29.8] | 14.6 [11.8, 18.0] | 8.4 [6.3, 11.2] | 500 |
-| SEAS-V | A3 | 9.2 [7.0, 12.1] | 4.6 [3.1, 6.8] | 21.2 [17.8, 25.0] | 9.4 [7.1, 12.3] | 25.8 [22.2, 29.8] | 14.6 [11.8, 18.0] | 8.4 [6.3, 11.2] | 500 |
+| SEAS-V | A1 | 63.2 [60.2, 66.1] | 5.2 [4.0, 6.8] | 69.3 [66.4, 72.1] | 25.8 [23.2, 28.6] | 46.3 [43.2, 49.4] | 14.8 [12.7, 17.1] | 9.4 [7.7, 11.4] | 1000 |
+| SEAS-V | A2 | 9.7 [8.0, 11.7] | 4.7 [3.6, 6.2] | 21.9 [19.4, 24.6] | 10.5 [8.7, 12.6] | 26.4 [23.8, 29.2] | 15.3 [13.2, 17.7] | 9.3 [7.7, 11.3] | 1000 |
+| SEAS-V | A3 | 9.7 [8.0, 11.7] | 4.7 [3.6, 6.2] | 21.9 [19.4, 24.6] | 10.5 [8.7, 12.6] | 26.4 [23.8, 29.2] | 15.3 [13.2, 17.7] | 9.3 [7.7, 11.3] | 1000 |
 | SEAS-M-shared | A0-EXP2 | 100.0 [99.6, 100.0] | 27.9 [25.2, 30.8] | 100.0 [99.6, 100.0] | 100.0 [99.6, 100.0] | 100.0 [99.6, 100.0] | 100.0 [99.6, 100.0] | 100.0 [99.6, 100.0] | 1000 |
-| SEAS-V-slow | A0 | 23.7 [19.2, 28.8] | 10.3 [7.4, 14.3] | 39.7 [34.3, 45.3] | 15.0 [11.4, 19.5] | 34.0 [28.9, 39.5] | 16.0 [12.3, 20.6] | 7.3 [4.9, 10.9] | 300 |
+| SEAS-V-slow | A0 | 21.4 [19.0, 24.0] | 10.2 [8.5, 12.2] | 39.1 [36.1, 42.2] | 13.8 [11.8, 16.1] | 35.2 [32.3, 38.2] | 16.2 [14.0, 18.6] | 9.0 [7.4, 10.9] | 1000 |
 
 # A3 period recovery
 
 | generator | H | n | series with P̂ = 50 | pairs with both = 50 | won by x² | median P̂ |
 |---|---|---|---|---|---|---|
 | G0 | 0.5 | 500 | 13/2000 | 0/1000 | 947/2000 | 4 |
-| G0 | 0.5 | 2000 | 1/1000 | 0/500 | 476/1000 | 4 |
+| G0 | 0.5 | 2000 | 2/2000 | 0/1000 | 936/2000 | 4 |
 | G0 | 0.7 | 500 | 105/2000 | 4/1000 | 432/2000 | 20 |
 | G0 | 0.8 | 500 | 174/2000 | 8/1000 | 243/2000 | 29 |
-| G0 | 0.8 | 2000 | 4/1000 | 0/500 | 16/1000 | 118 |
+| G0 | 0.8 | 2000 | 7/2000 | 0/1000 | 34/2000 | 118 |
 | SEAS-M | 0.5 | 500 | 2000/2000 | 1000/1000 | 0/2000 | 50 |
 | SEAS-M | 0.7 | 500 | 2000/2000 | 1000/1000 | 0/2000 | 50 |
 | SEAS-M | 0.8 | 500 | 2000/2000 | 1000/1000 | 0/2000 | 50 |
@@ -136,10 +136,10 @@ Rejection % at nominal 5% [Wilson 95%]. A0-EXP2 = unadjusted EXP2 main run (inde
 | SEAS-M-shared | 0.7 | 500 | 2000/2000 | 1000/1000 | 0/2000 | 50 |
 | SEAS-M-shared | 0.8 | 500 | 2000/2000 | 1000/1000 | 0/2000 | 50 |
 | SEAS-V | 0.5 | 500 | 2000/2000 | 1000/1000 | 2000/2000 | 50 |
-| SEAS-V | 0.5 | 2000 | 1000/1000 | 500/500 | 1000/1000 | 50 |
+| SEAS-V | 0.5 | 2000 | 2000/2000 | 1000/1000 | 2000/2000 | 50 |
 | SEAS-V | 0.7 | 500 | 2000/2000 | 1000/1000 | 1999/2000 | 50 |
 | SEAS-V | 0.8 | 500 | 2000/2000 | 1000/1000 | 1970/2000 | 50 |
-| SEAS-V | 0.8 | 2000 | 1000/1000 | 500/500 | 1000/1000 | 50 |
+| SEAS-V | 0.8 | 2000 | 2000/2000 | 1000/1000 | 1999/2000 | 50 |
 
 # Reading rule 1-2: does adjustment k restore the adjusted-G0 rate?
 
@@ -157,12 +157,12 @@ diff = rate(g, A_k) − rate(G0, A_k) in pp. 'fixed' if diff ≤ 2 pp or interva
 | 500 | 0.5 | SEAS-V | A1 | +31.2 NOT | +1.8 fixed | +24.8 NOT | +7.9 NOT | +2.3 fixed | +0.9 fixed | +0.3 fixed |
 | 500 | 0.5 | SEAS-V | A2 | +0.3 fixed | +3.0 NOT | +1.3 fixed | +1.5 fixed | +0.9 fixed | +0.7 fixed | +0.8 fixed |
 | 500 | 0.5 | SEAS-V | A3 | +2.9 fixed | +2.8 NOT | +3.5 NOT | +3.5 NOT | +4.6 NOT | +3.1 NOT | +2.6 fixed |
-| 500 | 0.5 | SEAS-M-shared | A0 | +92.6 NOT | +21.2 NOT | +93.6 NOT | +93.2 NOT | +95.4 NOT | +96.0 NOT | +96.2 NOT |
-| 500 | 0.5 | SEAS-M-shared | A0-EXP2 | +91.8 NOT | +17.9 NOT | +93.9 NOT | +91.9 NOT | +94.6 NOT | +94.8 NOT | +94.5 NOT |
-| 500 | 0.5 | SEAS-M-shared | A1 | +1.3 fixed | +1.5 fixed | +1.0 fixed | +0.2 fixed | +0.4 fixed | -0.2 fixed | -0.9 fixed |
-| 500 | 0.5 | SEAS-M-shared | A2 | +0.0 fixed | +1.6 fixed | +0.3 fixed | +1.0 fixed | +0.6 fixed | +0.3 fixed | -0.3 fixed |
-| 500 | 0.5 | SEAS-M-shared | A3 | +2.6 fixed | +1.4 fixed | +2.5 fixed | +3.0 fixed | +4.3 NOT | +2.7 NOT | +1.5 fixed |
-| 500 | 0.5 | SEAS-V-slow | A0 | +1.4 fixed | +2.5 fixed | +1.0 fixed | +1.2 fixed | +0.9 fixed | +1.1 fixed | +0.9 fixed |
+| 500 | 0.5 | SEAS-M-shared (diagnostic) | A0 | +92.6 NOT | +21.2 NOT | +93.6 NOT | +93.2 NOT | +95.4 NOT | +96.0 NOT | +96.2 NOT |
+| 500 | 0.5 | SEAS-M-shared (diagnostic) | A0-EXP2 | +91.8 NOT | +17.9 NOT | +93.9 NOT | +91.9 NOT | +94.6 NOT | +94.8 NOT | +94.5 NOT |
+| 500 | 0.5 | SEAS-M-shared (diagnostic) | A1 | +1.3 fixed | +1.5 fixed | +1.0 fixed | +0.2 fixed | +0.4 fixed | -0.2 fixed | -0.9 fixed |
+| 500 | 0.5 | SEAS-M-shared (diagnostic) | A2 | +0.0 fixed | +1.6 fixed | +0.3 fixed | +1.0 fixed | +0.6 fixed | +0.3 fixed | -0.3 fixed |
+| 500 | 0.5 | SEAS-M-shared (diagnostic) | A3 | +2.6 fixed | +1.4 fixed | +2.5 fixed | +3.0 fixed | +4.3 NOT | +2.7 NOT | +1.5 fixed |
+| 500 | 0.5 | SEAS-V-slow (diagnostic) | A0 | +1.4 fixed | +2.5 fixed | +1.0 fixed | +1.2 fixed | +0.9 fixed | +1.1 fixed | +0.9 fixed |
 | 500 | 0.7 | SEAS-M | A0 | +67.9 NOT | -0.9 fixed | +68.6 NOT | +69.3 NOT | +69.0 NOT | +69.2 NOT | +69.8 NOT |
 | 500 | 0.7 | SEAS-M | A0-EXP2 | +69.4 NOT | -0.3 fixed | +69.1 NOT | +71.2 NOT | +70.9 NOT | +71.3 NOT | +70.6 NOT |
 | 500 | 0.7 | SEAS-M | A1 | +0.9 fixed | +1.5 fixed | -0.2 fixed | +1.3 fixed | +0.0 fixed | -1.0 fixed | +0.1 fixed |
@@ -173,11 +173,11 @@ diff = rate(g, A_k) − rate(G0, A_k) in pp. 'fixed' if diff ≤ 2 pp or interva
 | 500 | 0.7 | SEAS-V | A1 | +23.4 NOT | +0.4 fixed | +21.3 NOT | +6.0 NOT | +1.0 fixed | -0.6 fixed | +0.0 fixed |
 | 500 | 0.7 | SEAS-V | A2 | +0.6 fixed | +0.5 fixed | -1.0 fixed | -0.3 fixed | +0.8 fixed | +0.4 fixed | +1.2 fixed |
 | 500 | 0.7 | SEAS-V | A3 | +1.6 fixed | +1.3 fixed | +1.9 fixed | +1.2 fixed | +2.1 fixed | +1.2 fixed | +1.9 fixed |
-| 500 | 0.7 | SEAS-M-shared | A0 | +90.5 NOT | +15.3 NOT | +89.6 NOT | +90.9 NOT | +88.7 NOT | +91.8 NOT | +94.3 NOT |
-| 500 | 0.7 | SEAS-M-shared | A0-EXP2 | +92.3 NOT | +15.0 NOT | +89.5 NOT | +92.0 NOT | +88.9 NOT | +92.7 NOT | +94.9 NOT |
-| 500 | 0.7 | SEAS-M-shared | A1 | +0.9 fixed | +0.1 fixed | +0.1 fixed | +1.3 fixed | +2.1 fixed | +1.1 fixed | +0.8 fixed |
-| 500 | 0.7 | SEAS-M-shared | A2 | +1.9 fixed | +0.2 fixed | +1.6 fixed | +1.8 fixed | +2.3 fixed | +0.7 fixed | +1.7 fixed |
-| 500 | 0.7 | SEAS-M-shared | A3 | +2.9 fixed | +1.0 fixed | +4.5 NOT | +3.3 fixed | +3.6 fixed | +1.5 fixed | +2.4 fixed |
+| 500 | 0.7 | SEAS-M-shared (diagnostic) | A0 | +90.5 NOT | +15.3 NOT | +89.6 NOT | +90.9 NOT | +88.7 NOT | +91.8 NOT | +94.3 NOT |
+| 500 | 0.7 | SEAS-M-shared (diagnostic) | A0-EXP2 | +92.3 NOT | +15.0 NOT | +89.5 NOT | +92.0 NOT | +88.9 NOT | +92.7 NOT | +94.9 NOT |
+| 500 | 0.7 | SEAS-M-shared (diagnostic) | A1 | +0.9 fixed | +0.1 fixed | +0.1 fixed | +1.3 fixed | +2.1 fixed | +1.1 fixed | +0.8 fixed |
+| 500 | 0.7 | SEAS-M-shared (diagnostic) | A2 | +1.9 fixed | +0.2 fixed | +1.6 fixed | +1.8 fixed | +2.3 fixed | +0.7 fixed | +1.7 fixed |
+| 500 | 0.7 | SEAS-M-shared (diagnostic) | A3 | +2.9 fixed | +1.0 fixed | +4.5 NOT | +3.3 fixed | +3.6 fixed | +1.5 fixed | +2.4 fixed |
 | 500 | 0.8 | SEAS-M | A0 | +64.5 NOT | -0.6 fixed | +57.0 NOT | +63.6 NOT | +54.7 NOT | +60.3 NOT | +62.9 NOT |
 | 500 | 0.8 | SEAS-M | A0-EXP2 | +62.1 NOT | -3.3 fixed | +58.0 NOT | +63.3 NOT | +56.4 NOT | +59.5 NOT | +62.3 NOT |
 | 500 | 0.8 | SEAS-M | A1 | +1.3 fixed | +0.3 fixed | -2.1 fixed | +1.1 fixed | +0.5 fixed | -0.6 fixed | +1.0 fixed |
@@ -188,27 +188,29 @@ diff = rate(g, A_k) − rate(G0, A_k) in pp. 'fixed' if diff ≤ 2 pp or interva
 | 500 | 0.8 | SEAS-V | A1 | +19.2 NOT | -2.4 fixed | +17.0 NOT | +0.4 fixed | -1.7 fixed | -2.7 fixed | -0.7 fixed |
 | 500 | 0.8 | SEAS-V | A2 | +0.7 fixed | -0.4 fixed | -1.2 fixed | -0.3 fixed | +0.5 fixed | -1.9 fixed | +0.3 fixed |
 | 500 | 0.8 | SEAS-V | A3 | +2.9 fixed | +0.3 fixed | +1.0 fixed | +2.2 fixed | -0.4 fixed | -0.2 fixed | +2.5 fixed |
-| 500 | 0.8 | SEAS-M-shared | A0 | +89.7 NOT | +15.4 NOT | +77.9 NOT | +88.1 NOT | +73.3 NOT | +86.0 NOT | +92.2 NOT |
-| 500 | 0.8 | SEAS-M-shared | A0-EXP2 | +87.4 NOT | +12.6 NOT | +79.0 NOT | +87.8 NOT | +74.5 NOT | +85.2 NOT | +91.3 NOT |
-| 500 | 0.8 | SEAS-M-shared | A1 | -0.5 fixed | -1.8 fixed | -4.8 fixed | -3.6 fixed | -2.6 fixed | -4.7 fixed | -2.5 fixed |
-| 500 | 0.8 | SEAS-M-shared | A2 | -1.5 fixed | -1.0 fixed | -4.7 fixed | -2.4 fixed | -2.4 fixed | -4.1 fixed | -3.6 fixed |
-| 500 | 0.8 | SEAS-M-shared | A3 | +0.7 fixed | -0.3 fixed | -2.5 fixed | +0.1 fixed | -3.3 fixed | -2.4 fixed | -1.4 fixed |
-| 500 | 0.8 | SEAS-V-slow | A0 | +4.7 NOT | +1.1 fixed | +6.1 NOT | +0.6 fixed | +0.2 fixed | -1.5 fixed | -0.8 fixed |
+| 500 | 0.8 | SEAS-M-shared (diagnostic) | A0 | +89.7 NOT | +15.4 NOT | +77.9 NOT | +88.1 NOT | +73.3 NOT | +86.0 NOT | +92.2 NOT |
+| 500 | 0.8 | SEAS-M-shared (diagnostic) | A0-EXP2 | +87.4 NOT | +12.6 NOT | +79.0 NOT | +87.8 NOT | +74.5 NOT | +85.2 NOT | +91.3 NOT |
+| 500 | 0.8 | SEAS-M-shared (diagnostic) | A1 | -0.5 fixed | -1.8 fixed | -4.8 fixed | -3.6 fixed | -2.6 fixed | -4.7 fixed | -2.5 fixed |
+| 500 | 0.8 | SEAS-M-shared (diagnostic) | A2 | -1.5 fixed | -1.0 fixed | -4.7 fixed | -2.4 fixed | -2.4 fixed | -4.1 fixed | -3.6 fixed |
+| 500 | 0.8 | SEAS-M-shared (diagnostic) | A3 | +0.7 fixed | -0.3 fixed | -2.5 fixed | +0.1 fixed | -3.3 fixed | -2.4 fixed | -1.4 fixed |
+| 500 | 0.8 | SEAS-V-slow (diagnostic) | A0 | +4.7 NOT | +1.1 fixed | +6.1 NOT | +0.6 fixed | +0.2 fixed | -1.5 fixed | -0.8 fixed |
 | 2000 | 0.5 | SEAS-M | A0-EXP2 | +84.4 NOT | +0.5 fixed | +85.1 NOT | +85.0 NOT | +84.5 NOT | +86.4 NOT | +86.4 NOT |
 | 2000 | 0.5 | SEAS-V | A0-EXP2 | +66.5 NOT | -0.3 fixed | +65.7 NOT | +45.0 NOT | +38.8 NOT | -0.3 fixed | -0.8 fixed |
-| 2000 | 0.5 | SEAS-V | A1 | +69.6 NOT | -1.4 fixed | +68.0 NOT | +44.6 NOT | +41.2 NOT | +0.6 fixed | -0.2 fixed |
-| 2000 | 0.5 | SEAS-V | A2 | -0.8 fixed | -0.2 fixed | +0.2 fixed | -1.0 fixed | +0.4 fixed | -0.6 fixed | -0.6 fixed |
-| 2000 | 0.5 | SEAS-V | A3 | -0.6 fixed | -1.0 fixed | +0.0 fixed | -0.4 fixed | -0.8 fixed | +0.0 fixed | -1.0 fixed |
-| 2000 | 0.5 | SEAS-M-shared | A0-EXP2 | +93.2 NOT | +29.0 NOT | +94.2 NOT | +93.3 NOT | +93.2 NOT | +95.0 NOT | +94.7 NOT |
+| 2000 | 0.5 | SEAS-V | A1 | +67.8 NOT | -0.1 fixed | +66.1 NOT | +46.6 NOT | +40.6 NOT | +0.5 fixed | +0.0 fixed |
+| 2000 | 0.5 | SEAS-V | A2 | +0.9 fixed | -0.1 fixed | +0.7 fixed | -0.7 fixed | -0.1 fixed | +0.0 fixed | -0.2 fixed |
+| 2000 | 0.5 | SEAS-V | A3 | +0.2 fixed | -0.9 fixed | +0.0 fixed | -0.4 fixed | -0.5 fixed | +0.0 fixed | -0.5 fixed |
+| 2000 | 0.5 | SEAS-M-shared (diagnostic) | A0-EXP2 | +93.2 NOT | +29.0 NOT | +94.2 NOT | +93.3 NOT | +93.2 NOT | +95.0 NOT | +94.7 NOT |
+| 2000 | 0.5 | SEAS-V-slow (diagnostic) | A0 vs G0 A0-EXP2 | +10.0 NOT | +4.8 NOT | +7.6 NOT | +3.0 fixed | -0.4 fixed | +0.1 fixed | -0.2 fixed |
 | 2000 | 0.7 | SEAS-M | A0-EXP2 | +82.9 NOT | +0.1 fixed | +81.5 NOT | +81.7 NOT | +78.8 NOT | +80.8 NOT | +82.9 NOT |
 | 2000 | 0.7 | SEAS-V | A0-EXP2 | +65.0 NOT | +0.8 fixed | +63.2 NOT | +35.8 NOT | +35.5 NOT | -0.7 fixed | -0.4 fixed |
-| 2000 | 0.7 | SEAS-M-shared | A0-EXP2 | +92.6 NOT | +24.9 NOT | +91.8 NOT | +91.1 NOT | +89.1 NOT | +90.9 NOT | +93.1 NOT |
+| 2000 | 0.7 | SEAS-M-shared (diagnostic) | A0-EXP2 | +92.6 NOT | +24.9 NOT | +91.8 NOT | +91.1 NOT | +89.1 NOT | +90.9 NOT | +93.1 NOT |
 | 2000 | 0.8 | SEAS-M | A0-EXP2 | +77.1 NOT | +0.6 fixed | +67.9 NOT | +77.0 NOT | +63.8 NOT | +70.4 NOT | +76.6 NOT |
 | 2000 | 0.8 | SEAS-V | A0-EXP2 | +59.9 NOT | -0.2 fixed | +55.5 NOT | +25.1 NOT | +30.5 NOT | -0.7 fixed | +0.2 fixed |
-| 2000 | 0.8 | SEAS-V | A1 | +51.8 NOT | -2.8 fixed | +43.6 NOT | +15.0 NOT | +18.0 NOT | -1.6 fixed | -2.8 fixed |
-| 2000 | 0.8 | SEAS-V | A2 | -2.6 fixed | -1.8 fixed | -2.6 fixed | -1.8 fixed | -2.0 fixed | -2.8 fixed | -2.0 fixed |
-| 2000 | 0.8 | SEAS-V | A3 | -0.8 fixed | -2.4 fixed | -1.6 fixed | -1.2 fixed | -0.2 fixed | +0.4 fixed | -1.4 fixed |
-| 2000 | 0.8 | SEAS-M-shared | A0-EXP2 | +91.9 NOT | +22.6 NOT | +82.5 NOT | +90.9 NOT | +77.2 NOT | +85.9 NOT | +91.5 NOT |
+| 2000 | 0.8 | SEAS-V | A1 | +52.1 NOT | -1.3 fixed | +46.0 NOT | +15.3 NOT | +20.5 NOT | +0.0 fixed | -0.8 fixed |
+| 2000 | 0.8 | SEAS-V | A2 | -1.8 fixed | -2.1 fixed | -2.0 fixed | -0.2 fixed | +0.2 fixed | -0.5 fixed | -0.8 fixed |
+| 2000 | 0.8 | SEAS-V | A3 | -0.8 fixed | -2.5 fixed | -0.7 fixed | -0.5 fixed | +0.7 fixed | +0.3 fixed | -1.0 fixed |
+| 2000 | 0.8 | SEAS-M-shared (diagnostic) | A0-EXP2 | +91.9 NOT | +22.6 NOT | +82.5 NOT | +90.9 NOT | +77.2 NOT | +85.9 NOT | +91.5 NOT |
+| 2000 | 0.8 | SEAS-V-slow (diagnostic) | A0 vs G0 A0-EXP2 | +13.3 NOT | +4.9 NOT | +21.6 NOT | +4.7 NOT | +12.4 NOT | +2.1 fixed | +0.5 fixed |
 
 # Reading rule 3: does adjustment change G0 size?
 
@@ -280,47 +282,75 @@ n = 2000: against EXP2 G0 (independent samples), two-sample z.
 | 500 | 0.8 | A3 | dcov_sub | 30.2 | 26.7 | +3.5 | (78, 43) z=+3.2 | FLAG |
 | 500 | 0.8 | A3 | pearson_nw | 15.1 | 14.0 | +1.1 | (43, 32) z=+1.3 |  |
 | 500 | 0.8 | A3 | pearson_ewc | 7.8 | 7.6 | +0.2 | (28, 26) z=+0.3 |  |
-| 2000 | 0.5 | A1 | hsic_wild | 6.0 | 6.8 | -0.8 | z=-0.6 |  |
-| 2000 | 0.5 | A1 | hsic_shift | 5.0 | 5.3 | -0.3 | z=-0.2 |  |
-| 2000 | 0.5 | A1 | hsic_sub | 5.8 | 5.8 | +0.0 | z=+0.0 |  |
-| 2000 | 0.5 | A1 | dcov_wild | 7.8 | 6.7 | +1.1 | z=+0.8 |  |
-| 2000 | 0.5 | A1 | dcov_sub | 6.2 | 6.8 | -0.6 | z=-0.4 |  |
-| 2000 | 0.5 | A1 | pearson_nw | 5.8 | 5.0 | +0.8 | z=+0.7 |  |
-| 2000 | 0.5 | A1 | pearson_ewc | 6.0 | 5.3 | +0.7 | z=+0.6 |  |
-| 2000 | 0.5 | A2 | hsic_wild | 7.2 | 6.8 | +0.4 | z=+0.3 |  |
-| 2000 | 0.5 | A2 | hsic_shift | 5.2 | 5.3 | -0.1 | z=-0.1 |  |
-| 2000 | 0.5 | A2 | hsic_sub | 5.8 | 5.8 | +0.0 | z=+0.0 |  |
-| 2000 | 0.5 | A2 | dcov_wild | 8.4 | 6.7 | +1.7 | z=+1.2 |  |
-| 2000 | 0.5 | A2 | dcov_sub | 5.6 | 6.8 | -1.2 | z=-0.9 |  |
-| 2000 | 0.5 | A2 | pearson_nw | 6.0 | 5.0 | +1.0 | z=+0.8 |  |
-| 2000 | 0.5 | A2 | pearson_ewc | 6.0 | 5.3 | +0.7 | z=+0.6 |  |
-| 2000 | 0.5 | A3 | hsic_wild | 7.0 | 6.8 | +0.2 | z=+0.1 |  |
-| 2000 | 0.5 | A3 | hsic_shift | 6.0 | 5.3 | +0.7 | z=+0.6 |  |
-| 2000 | 0.5 | A3 | hsic_sub | 6.0 | 5.8 | +0.2 | z=+0.2 |  |
-| 2000 | 0.5 | A3 | dcov_wild | 7.8 | 6.7 | +1.1 | z=+0.8 |  |
-| 2000 | 0.5 | A3 | dcov_sub | 6.8 | 6.8 | +0.0 | z=+0.0 |  |
-| 2000 | 0.5 | A3 | pearson_nw | 5.4 | 5.0 | +0.4 | z=+0.3 |  |
-| 2000 | 0.5 | A3 | pearson_ewc | 6.4 | 5.3 | +1.1 | z=+0.9 |  |
-| 2000 | 0.8 | A1 | hsic_wild | 11.8 | 8.1 | +3.7 | z=+2.3 | FLAG |
-| 2000 | 0.8 | A1 | hsic_shift | 6.2 | 5.3 | +0.9 | z=+0.7 |  |
-| 2000 | 0.8 | A1 | hsic_sub | 24.4 | 17.5 | +6.9 | z=+3.2 | FLAG |
-| 2000 | 0.8 | A1 | dcov_wild | 10.8 | 9.1 | +1.7 | z=+1.1 |  |
-| 2000 | 0.8 | A1 | dcov_sub | 27.0 | 22.8 | +4.2 | z=+1.8 |  |
-| 2000 | 0.8 | A1 | pearson_nw | 16.4 | 14.1 | +2.3 | z=+1.2 |  |
-| 2000 | 0.8 | A1 | pearson_ewc | 10.8 | 8.5 | +2.3 | z=+1.4 |  |
-| 2000 | 0.8 | A2 | hsic_wild | 11.8 | 8.1 | +3.7 | z=+2.3 | FLAG |
-| 2000 | 0.8 | A2 | hsic_shift | 6.4 | 5.3 | +1.1 | z=+0.9 |  |
-| 2000 | 0.8 | A2 | hsic_sub | 23.8 | 17.5 | +6.3 | z=+2.9 | FLAG |
-| 2000 | 0.8 | A2 | dcov_wild | 11.2 | 9.1 | +2.1 | z=+1.3 |  |
-| 2000 | 0.8 | A2 | dcov_sub | 27.8 | 22.8 | +5.0 | z=+2.1 | FLAG |
-| 2000 | 0.8 | A2 | pearson_nw | 17.4 | 14.1 | +3.3 | z=+1.7 |  |
-| 2000 | 0.8 | A2 | pearson_ewc | 10.4 | 8.5 | +1.9 | z=+1.2 |  |
-| 2000 | 0.8 | A3 | hsic_wild | 10.0 | 8.1 | +1.9 | z=+1.2 |  |
-| 2000 | 0.8 | A3 | hsic_shift | 7.0 | 5.3 | +1.7 | z=+1.3 |  |
-| 2000 | 0.8 | A3 | hsic_sub | 22.8 | 17.5 | +5.3 | z=+2.5 | FLAG |
-| 2000 | 0.8 | A3 | dcov_wild | 10.6 | 9.1 | +1.5 | z=+0.9 |  |
-| 2000 | 0.8 | A3 | dcov_sub | 26.0 | 22.8 | +3.2 | z=+1.4 |  |
-| 2000 | 0.8 | A3 | pearson_nw | 14.2 | 14.1 | +0.1 | z=+0.1 |  |
-| 2000 | 0.8 | A3 | pearson_ewc | 9.8 | 8.5 | +1.3 | z=+0.8 |  |
+| 2000 | 0.5 | A1 | hsic_wild | 6.0 | 6.8 | -0.8 | z=-0.7 |  |
+| 2000 | 0.5 | A1 | hsic_shift | 4.4 | 5.3 | -0.9 | z=-0.9 |  |
+| 2000 | 0.5 | A1 | hsic_sub | 5.6 | 5.8 | -0.2 | z=-0.2 |  |
+| 2000 | 0.5 | A1 | dcov_wild | 7.2 | 6.7 | +0.5 | z=+0.4 |  |
+| 2000 | 0.5 | A1 | dcov_sub | 6.2 | 6.8 | -0.6 | z=-0.5 |  |
+| 2000 | 0.5 | A1 | pearson_nw | 5.5 | 5.0 | +0.5 | z=+0.5 |  |
+| 2000 | 0.5 | A1 | pearson_ewc | 5.5 | 5.3 | +0.2 | z=+0.2 |  |
+| 2000 | 0.5 | A2 | hsic_wild | 6.3 | 6.8 | -0.5 | z=-0.5 |  |
+| 2000 | 0.5 | A2 | hsic_shift | 5.1 | 5.3 | -0.2 | z=-0.2 |  |
+| 2000 | 0.5 | A2 | hsic_sub | 5.6 | 5.8 | -0.2 | z=-0.2 |  |
+| 2000 | 0.5 | A2 | dcov_wild | 7.4 | 6.7 | +0.7 | z=+0.6 |  |
+| 2000 | 0.5 | A2 | dcov_sub | 5.9 | 6.8 | -0.9 | z=-0.8 |  |
+| 2000 | 0.5 | A2 | pearson_nw | 5.8 | 5.0 | +0.8 | z=+0.8 |  |
+| 2000 | 0.5 | A2 | pearson_ewc | 5.5 | 5.3 | +0.2 | z=+0.2 |  |
+| 2000 | 0.5 | A3 | hsic_wild | 7.0 | 6.8 | +0.2 | z=+0.2 |  |
+| 2000 | 0.5 | A3 | hsic_shift | 5.9 | 5.3 | +0.6 | z=+0.6 |  |
+| 2000 | 0.5 | A3 | hsic_sub | 6.3 | 5.8 | +0.5 | z=+0.5 |  |
+| 2000 | 0.5 | A3 | dcov_wild | 7.1 | 6.7 | +0.4 | z=+0.4 |  |
+| 2000 | 0.5 | A3 | dcov_sub | 6.3 | 6.8 | -0.5 | z=-0.5 |  |
+| 2000 | 0.5 | A3 | pearson_nw | 5.8 | 5.0 | +0.8 | z=+0.8 |  |
+| 2000 | 0.5 | A3 | pearson_ewc | 5.8 | 5.3 | +0.5 | z=+0.5 |  |
+| 2000 | 0.8 | A1 | hsic_wild | 11.1 | 8.1 | +3.0 | z=+2.3 | FLAG |
+| 2000 | 0.8 | A1 | hsic_shift | 6.5 | 5.3 | +1.2 | z=+1.1 |  |
+| 2000 | 0.8 | A1 | hsic_sub | 23.3 | 17.5 | +5.8 | z=+3.2 | FLAG |
+| 2000 | 0.8 | A1 | dcov_wild | 10.5 | 9.1 | +1.4 | z=+1.1 |  |
+| 2000 | 0.8 | A1 | dcov_sub | 25.8 | 22.8 | +3.0 | z=+1.6 |  |
+| 2000 | 0.8 | A1 | pearson_nw | 14.8 | 14.1 | +0.7 | z=+0.4 |  |
+| 2000 | 0.8 | A1 | pearson_ewc | 10.2 | 8.5 | +1.7 | z=+1.3 |  |
+| 2000 | 0.8 | A2 | hsic_wild | 11.5 | 8.1 | +3.4 | z=+2.6 | FLAG |
+| 2000 | 0.8 | A2 | hsic_shift | 6.8 | 5.3 | +1.5 | z=+1.4 |  |
+| 2000 | 0.8 | A2 | hsic_sub | 23.9 | 17.5 | +6.4 | z=+3.5 | FLAG |
+| 2000 | 0.8 | A2 | dcov_wild | 10.7 | 9.1 | +1.6 | z=+1.2 |  |
+| 2000 | 0.8 | A2 | dcov_sub | 26.2 | 22.8 | +3.4 | z=+1.8 |  |
+| 2000 | 0.8 | A2 | pearson_nw | 15.8 | 14.1 | +1.7 | z=+1.1 |  |
+| 2000 | 0.8 | A2 | pearson_ewc | 10.1 | 8.5 | +1.6 | z=+1.2 |  |
+| 2000 | 0.8 | A3 | hsic_wild | 10.5 | 8.1 | +2.4 | z=+1.8 |  |
+| 2000 | 0.8 | A3 | hsic_shift | 7.2 | 5.3 | +1.9 | z=+1.8 |  |
+| 2000 | 0.8 | A3 | hsic_sub | 22.6 | 17.5 | +5.1 | z=+2.8 | FLAG |
+| 2000 | 0.8 | A3 | dcov_wild | 11.0 | 9.1 | +1.9 | z=+1.4 |  |
+| 2000 | 0.8 | A3 | dcov_sub | 25.7 | 22.8 | +2.9 | z=+1.5 |  |
+| 2000 | 0.8 | A3 | pearson_nw | 15.0 | 14.1 | +0.9 | z=+0.6 |  |
+| 2000 | 0.8 | A3 | pearson_ewc | 10.3 | 8.5 | +1.8 | z=+1.4 |  |
 
-Cells: 20. Error rows (summed over adjustments): 0. CPU-hours (row sum): 4.45.
+# Reading rule 6: suspicion check
+
+Flag: adjusted G0 more than 2 pp below its unadjusted rate, or an adjusted seasonal cell
+more than 2 pp below the adjusted G0 rate.
+
+| n | H | generator | adj | rule | rate | reference | diff pp |
+|---|---|---|---|---|---|---|---|
+| 500 | 0.8 | SEAS-M | A1 | hsic_sub | 23.6 | G0 A1 | -2.1 |
+| 500 | 0.8 | SEAS-V | A1 | hsic_shift | 4.7 | G0 A1 | -2.4 |
+| 500 | 0.8 | SEAS-V | A1 | pearson_nw | 14.5 | G0 A1 | -2.7 |
+| 500 | 0.8 | SEAS-M-shared | A1 | hsic_sub | 20.9 | G0 A1 | -4.8 |
+| 500 | 0.8 | SEAS-M-shared | A1 | dcov_wild | 10.7 | G0 A1 | -3.6 |
+| 500 | 0.8 | SEAS-M-shared | A1 | dcov_sub | 25.6 | G0 A1 | -2.6 |
+| 500 | 0.8 | SEAS-M-shared | A1 | pearson_nw | 12.5 | G0 A1 | -4.7 |
+| 500 | 0.8 | SEAS-M-shared | A1 | pearson_ewc | 6.9 | G0 A1 | -2.5 |
+| 500 | 0.8 | SEAS-M-shared | A2 | hsic_sub | 22.9 | G0 A2 | -4.7 |
+| 500 | 0.8 | SEAS-M-shared | A2 | dcov_wild | 11.6 | G0 A2 | -2.4 |
+| 500 | 0.8 | SEAS-M-shared | A2 | dcov_sub | 26.9 | G0 A2 | -2.4 |
+| 500 | 0.8 | SEAS-M-shared | A2 | pearson_nw | 12.7 | G0 A2 | -4.1 |
+| 500 | 0.8 | SEAS-M-shared | A2 | pearson_ewc | 6.4 | G0 A2 | -3.6 |
+| 500 | 0.8 | SEAS-M-shared | A3 | hsic_sub | 22.9 | G0 A3 | -2.5 |
+| 500 | 0.8 | SEAS-M-shared | A3 | dcov_sub | 26.9 | G0 A3 | -3.3 |
+| 500 | 0.8 | SEAS-M-shared | A3 | pearson_nw | 12.7 | G0 A3 | -2.4 |
+| 2000 | 0.8 | SEAS-V | A2 | hsic_shift | 4.7 | G0 A2 | -2.1 |
+| 2000 | 0.8 | SEAS-V | A3 | hsic_shift | 4.7 | G0 A3 | -2.5 |
+
+Suspicion flags: 18.
+
+Cells: 20. Unrecovered (replication, adjustment) errors: 0. CPU-hours (row sum): 8.81.

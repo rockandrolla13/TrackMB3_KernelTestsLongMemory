@@ -1,0 +1,49 @@
+== 2026-10-25T21:02:37Z stage reps=48 workers=6 only=ind__G4__H0.8__n8000
+20261025T210238Z 48 chunks, 48 replications
+10/48 chunks, 44s wall
+20/48 chunks, 87s wall
+30/48 chunks, 131s wall
+40/48 chunks, 171s wall
+48/48 chunks, 214s wall
+DONE 214s wall
+== 2026-10-25T21:06:12Z stage reps=96 workers=6 only=ind__G4__H0.8__n8000
+20261025T210613Z 48 chunks, 48 replications
+10/48 chunks, 42s wall
+20/48 chunks, 79s wall
+30/48 chunks, 109s wall
+40/48 chunks, 157s wall
+48/48 chunks, 180s wall
+DONE 180s wall
+== 2026-10-25T21:09:13Z stage reps=144 workers=6 only=ind__G4__H0.8__n8000
+20261025T210914Z 48 chunks, 48 replications
+10/48 chunks, 42s wall
+20/48 chunks, 80s wall
+30/48 chunks, 115s wall
+40/48 chunks, 155s wall
+48/48 chunks, 175s wall
+DONE 175s wall
+== 2026-10-25T21:12:08Z stage reps=48 workers=6 only=ind__G4__H0.7__n8000
+20261025T211209Z 48 chunks, 48 replications
+10/48 chunks, 42s wall
+20/48 chunks, 78s wall
+30/48 chunks, 124s wall
+40/48 chunks, 164s wall
+48/48 chunks, 184s wall
+DONE 184s wall
+== 2026-10-25T21:15:13Z stage reps=96 workers=6 only=ind__G4__H0.7__n8000
+20261025T211514Z 48 chunks, 48 replications
+10/48 chunks, 41s wall
+20/48 chunks, 78s wall
+30/48 chunks, 110s wall
+40/48 chunks, 148s wall
+48/48 chunks, 175s wall
+DONE 175s wall
+== 2026-10-25T21:18:10Z stage reps=144 workers=6 only=ind__G4__H0.7__n8000
+20261025T211811Z 48 chunks, 48 replications
+10/48 chunks, 42s wall
+20/48 chunks, 102s wall
+30/48 chunks, 160s wall
+40/48 chunks, 197s wall
+48/48 chunks, 234s wall
+DONE 234s wall
+PART3DONE

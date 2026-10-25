@@ -23,6 +23,7 @@ GENS = ("G0", "SEAS-M", "SEAS-V", "SEAS-M-shared", "SEAS-V-slow")
 H_GRID = (0.5, 0.7, 0.8)
 N_GRID = (500, 2000)
 ADJ = ("A0", "A0-EXP2", "A1", "A2", "A3")
+DIAGNOSTIC = ("SEAS-M-shared", "SEAS-V-slow")  # DESIGN.md rule 5 and amendment 3: not used in rules 1-3
 RULES = {"hsic_wild": lambda r: float(r["p_hsic_wb"]) <= ALPHA,
          "hsic_shift": lambda r: float(r["p_hsic_shift"]) <= ALPHA,
          "hsic_sub": lambda r: int(float(r["rej_hsic_sub"])) == 1,
@@ -45,16 +46,21 @@ def load(indir):
                 p = os.path.join(HERE, indir, f"ind__{g}__H{h}__n{n}.csv")
                 if not os.path.exists(p):
                     continue
-                by = defaultdict(list)
-                errs = 0
+                ok, failed = {}, defaultdict(set)
                 for r in csv.DictReader(open(p)):
+                    if None in r.values():  # truncated row from a crash mid-write
+                        continue
                     cpu[(g, h, n)] += float(r["cpu_s"] or 0)
                     if r["status"] != "ok":
-                        errs += 1
+                        failed[r["adj"]].add(r["rep"])
                         continue
-                    by[r["adj"]].append(r)
+                    ok.setdefault((r["adj"], r["rep"]), r)  # resume never writes a second ok row
+                by = defaultdict(list)
+                for (adj, _), r in ok.items():
+                    by[adj].append(r)
                 for a, rows in by.items():
-                    rec = {"errors": errs}
+                    # an error that was retried successfully is not an error
+                    rec = {"errors": len(failed[a] - {r["rep"] for r in rows})}
                     for rule, f in RULES.items():
                         v = [f(r) for r in rows if not (rule == "pearson_nw" and r["rej_nw"] == "-1")]
                         rec[rule] = rate(int(sum(v)), len(v))
@@ -132,6 +138,9 @@ def main():
             for g in GENS[1:]:
                 for adj in ("A0", "A0-EXP2", "A1", "A2", "A3"):
                     f_, b_ = d.get((g, h, n, adj)), d.get(("G0", h, n, adj))
+                    base = adj
+                    if f_ and not b_ and adj == "A0":  # e.g. SEAS-V-slow at n = 2000: G0 A0 exists only in EXP2
+                        b_, base = d.get(("G0", h, n, "A0-EXP2")), "A0-EXP2"
                     if not f_ or not b_:
                         continue
                     cells = []
@@ -139,9 +148,12 @@ def main():
                         x, y = f_[r], b_[r]
                         diff = 100 * (x["p"] - y["p"])
                         ok = diff <= 2 or x["lo"] <= y["hi"]
-                        verd[f"{g}|{h}|{n}|{adj}|{r}"] = {"diff_pp": round(diff, 2), "fixed": ok}
+                        verd[f"{g}|{h}|{n}|{adj}|{r}"] = {"diff_pp": round(diff, 2), "fixed": ok,
+                                                          "diagnostic": g in DIAGNOSTIC, "baseline": base}
                         cells.append(f"{diff:+.1f} {'fixed' if ok else 'NOT'}")
-                    L.append(f"| {n} | {h} | {g} | {adj} | " + " | ".join(cells) + " |")
+                    label = g + (" (diagnostic)" if g in DIAGNOSTIC else "")
+                    vs = "" if base == adj else f" vs G0 {base}"
+                    L.append(f"| {n} | {h} | {label} | {adj}{vs} | " + " | ".join(cells) + " |")
     L.append("")
     L += ["# Reading rule 3: does adjustment change G0 size?", "",
           "n = 500: paired against A0 on the same draws (discordant counts b = adj-only, c = A0-only).",
@@ -171,9 +183,31 @@ def main():
                     verd[f"size|G0|{h}|{n}|{adj}|{r}"] = {"diff_pp": round(diff, 2), "z": round(zz, 2), "flag": bool(flag)}
                     L.append(f"| {n} | {h} | {adj} | {r} | {100 * x['p']:.1f} | {100 * y['p']:.1f} | {diff:+.1f} | {stat} | {flag} |")
     L.append("")
+    L += ["# Reading rule 6: suspicion check", "",
+          "Flag: adjusted G0 more than 2 pp below its unadjusted rate, or an adjusted seasonal cell",
+          "more than 2 pp below the adjusted G0 rate.", "",
+          "| n | H | generator | adj | rule | rate | reference | diff pp |", "|---|---|---|---|---|---|---|---|"]
+    nflag = 0
+    for n in N_GRID:
+        base0 = "A0" if n == 500 else "A0-EXP2"
+        for h in H_GRID:
+            for g in GENS:
+                for adj in ("A1", "A2", "A3"):
+                    f_ = d.get((g, h, n, adj))
+                    ref = d.get(("G0", h, n, base0 if g == "G0" else adj))
+                    if not f_ or not ref:
+                        continue
+                    for r in RULES:
+                        diff = 100 * (f_[r]["p"] - ref[r]["p"])
+                        if diff < -2:
+                            nflag += 1
+                            refname = f"G0 {base0 if g == 'G0' else adj}"
+                            verd[f"suspicion|{g}|{h}|{n}|{adj}|{r}"] = {"diff_pp": round(diff, 2), "reference": refname}
+                            L.append(f"| {n} | {h} | {g} | {adj} | {r} | {100 * f_[r]['p']:.1f} | {refname} | {diff:+.1f} |")
+    L += ["", f"Suspicion flags: {nflag}.", ""]
     tot = sum(cpu.values())
     errs = sum(rec["errors"] for k, rec in d.items() if k[3] != "A0-EXP2")
-    L += [f"Cells: {len(cpu)}. Error rows (summed over adjustments): {errs}. CPU-hours (row sum): {tot / 3600:.2f}."]
+    L += [f"Cells: {len(cpu)}. Unrecovered (replication, adjustment) errors: {errs}. CPU-hours (row sum): {tot / 3600:.2f}."]
     open(os.path.join(HERE, f"tables_{a.tag}.md"), "w").write("\n".join(L) + "\n")
     json.dump({"verdicts": verd, "period": {f"{k[0]}|{k[1]}|{k[2]}": v for k, v in period.items()},
                "cpu_h": tot / 3600}, open(os.path.join(HERE, f"verdicts_{a.tag}.json"), "w"), indent=1)

@@ -1,0 +1,19 @@
+PASS ind_pair G0 null maxdiff=0.0
+PASS ind_pair G0 lin maxdiff=0.0
+PASS ind_pair G0 sq maxdiff=0.0
+PASS ind_pair SEAS-V null maxdiff=0.0
+PASS ind_pair SEAS-V lin maxdiff=0.0
+PASS kappa=1 vs kind_ext n=300 G0 lin maxdiff=0.0
+PASS bandwidth scaling n=300 
+PASS kappa=1 vs kind_ext n=300 SEAS-V null maxdiff=0.0
+PASS bandwidth scaling n=300 
+PASS kappa=1 vs kind_ext n=2000 SEAS-V lin maxdiff=0.0
+PASS bandwidth scaling n=2000 
+PASS oracle-only kappa=2 equals full path rel diff=6.6e-14
+PASS regress ind__G0__null0__H0.5__n2000 (5 reps, 130 values) max rel diff=0.00e+00 (CSV round-trip)
+PASS regress ind__G0__null0__H0.8__n2000 (5 reps, 130 values) max rel diff=0.00e+00 (CSV round-trip)
+PASS regress ind__SEAS-V__null0__H0.5__n2000 (5 reps, 130 values) max rel diff=0.00e+00 (CSV round-trip)
+PASS regress ind__G0__lin0.065__H0.5__n2000 (5 reps, 130 values) max rel diff=0.00e+00 (CSV round-trip)
+PASS regress ind__G0__sq0.075__H0.5__n2000 (5 reps, 130 values) max rel diff=0.00e+00 (CSV round-trip)
+PASS regress ind__SEAS-V__lin0.065__H0.5__n2000 (5 reps, 130 values) max rel diff=0.00e+00 (CSV round-trip)
+ALL PASS

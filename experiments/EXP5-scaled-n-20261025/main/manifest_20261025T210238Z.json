@@ -1,0 +1,42 @@
+{
+ "mode": "main",
+ "master": 2026102552,
+ "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
+ "B_wild": 500,
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 6,
+ "argv": [
+  "run_exp5.py",
+  "--mode",
+  "main",
+  "--reps",
+  "48",
+  "--out",
+  "main",
+  "--workers",
+  "6",
+  "--only",
+  "ind__G4__H0.8__n8000"
+ ],
+ "cells": [
+  {
+   "family": "ind",
+   "alt": "null",
+   "H": 0.8,
+   "n": 8000,
+   "sumH": 1.6,
+   "idx": 105,
+   "name": "ind__G4__H0.8__n8000",
+   "reps": 48,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     105,
+     "rep"
+    ]
+   }
+  }
+ ]
+}

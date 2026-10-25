@@ -1,0 +1,366 @@
+{
+ "mode": "main",
+ "master": 2026102552,
+ "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
+ "B_wild": 500,
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 3,
+ "argv": [
+  "run_exp5.py",
+  "--mode",
+  "main",
+  "--reps",
+  "500",
+  "--out",
+  "main",
+  "--workers",
+  "3",
+  "--only",
+  "mmd__"
+ ],
+ "cells": [
+  {
+   "family": "mmd",
+   "alt": "null",
+   "c": 0.0,
+   "H": 0.5,
+   "n": 2000,
+   "delta": 0.0,
+   "idx": 0,
+   "name": "mmd__G0__null__H0.5__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     0,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "null",
+   "c": 0.0,
+   "H": 0.7,
+   "n": 2000,
+   "delta": 0.0,
+   "idx": 1,
+   "name": "mmd__G0__null__H0.7__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     1,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "null",
+   "c": 0.0,
+   "H": 0.8,
+   "n": 2000,
+   "delta": 0.0,
+   "idx": 2,
+   "name": "mmd__G0__null__H0.8__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     2,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "null",
+   "c": 0.0,
+   "H": 0.5,
+   "n": 500,
+   "delta": 0.0,
+   "idx": 3,
+   "name": "mmd__G0__null__H0.5__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     3,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "null",
+   "c": 0.0,
+   "H": 0.7,
+   "n": 500,
+   "delta": 0.0,
+   "idx": 4,
+   "name": "mmd__G0__null__H0.7__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     4,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "null",
+   "c": 0.0,
+   "H": 0.8,
+   "n": 500,
+   "delta": 0.0,
+   "idx": 5,
+   "name": "mmd__G0__null__H0.8__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     5,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 2.2361,
+   "H": 0.5,
+   "n": 2000,
+   "delta": 0.1,
+   "idx": 6,
+   "name": "mmd__G0__shiftc2.2361__H0.5__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     6,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 2.2361,
+   "H": 0.7,
+   "n": 2000,
+   "delta": 0.328406,
+   "idx": 7,
+   "name": "mmd__G0__shiftc2.2361__H0.7__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     7,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 2.2361,
+   "H": 0.8,
+   "n": 2000,
+   "delta": 0.552777,
+   "idx": 8,
+   "name": "mmd__G0__shiftc2.2361__H0.8__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     8,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 2.2361,
+   "H": 0.5,
+   "n": 500,
+   "delta": 0.2,
+   "idx": 9,
+   "name": "mmd__G0__shiftc2.2361__H0.5__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     9,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 2.2361,
+   "H": 0.7,
+   "n": 500,
+   "delta": 0.497771,
+   "idx": 10,
+   "name": "mmd__G0__shiftc2.2361__H0.7__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     10,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 2.2361,
+   "H": 0.8,
+   "n": 500,
+   "delta": 0.729393,
+   "idx": 11,
+   "name": "mmd__G0__shiftc2.2361__H0.8__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     11,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 1.5,
+   "H": 0.5,
+   "n": 2000,
+   "delta": 0.067082,
+   "idx": 12,
+   "name": "mmd__G0__shiftc1.5__H0.5__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     12,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 1.5,
+   "H": 0.7,
+   "n": 2000,
+   "delta": 0.220302,
+   "idx": 13,
+   "name": "mmd__G0__shiftc1.5__H0.7__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     13,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 1.5,
+   "H": 0.8,
+   "n": 2000,
+   "delta": 0.370814,
+   "idx": 14,
+   "name": "mmd__G0__shiftc1.5__H0.8__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     14,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 1.5,
+   "H": 0.5,
+   "n": 500,
+   "delta": 0.134164,
+   "idx": 15,
+   "name": "mmd__G0__shiftc1.5__H0.5__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     15,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 1.5,
+   "H": 0.7,
+   "n": 500,
+   "delta": 0.333915,
+   "idx": 16,
+   "name": "mmd__G0__shiftc1.5__H0.7__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     16,
+     "rep"
+    ]
+   }
+  },
+  {
+   "family": "mmd",
+   "alt": "shift",
+   "c": 1.5,
+   "H": 0.8,
+   "n": 500,
+   "delta": 0.489292,
+   "idx": 17,
+   "name": "mmd__G0__shiftc1.5__H0.8__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102552,
+    "spawn_key": [
+     17,
+     "rep"
+    ]
+   }
+  }
+ ]
+}

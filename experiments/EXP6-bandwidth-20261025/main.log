@@ -1,0 +1,34 @@
+20261025T185928Z 750 chunks, 3000 replications, kappas (0.5, 1.0, 2.0, 4.0)
+RESTART with 5 workers at 19:05:41Z: EXP4 finished (DESIGN.md A1 item 4)
+20261025T190544Z 734 chunks, 2936 replications, kappas (0.5, 1.0, 2.0, 4.0)
+25/734 chunks, 167s wall
+50/734 chunks, 372s wall
+75/734 chunks, 574s wall
+100/734 chunks, 770s wall
+125/734 chunks, 952s wall
+150/734 chunks, 1163s wall
+175/734 chunks, 1340s wall
+200/734 chunks, 1509s wall
+225/734 chunks, 1673s wall
+250/734 chunks, 1799s wall
+275/734 chunks, 1981s wall
+300/734 chunks, 2155s wall
+325/734 chunks, 2320s wall
+350/734 chunks, 2587s wall
+375/734 chunks, 2867s wall
+400/734 chunks, 3139s wall
+425/734 chunks, 3384s wall
+450/734 chunks, 3606s wall
+475/734 chunks, 3777s wall
+500/734 chunks, 3918s wall
+525/734 chunks, 4118s wall
+550/734 chunks, 4267s wall
+575/734 chunks, 4388s wall
+600/734 chunks, 4499s wall
+625/734 chunks, 4650s wall
+650/734 chunks, 4778s wall
+675/734 chunks, 4908s wall
+700/734 chunks, 5029s wall
+725/734 chunks, 5195s wall
+734/734 chunks, 5246s wall
+DONE 5246s wall

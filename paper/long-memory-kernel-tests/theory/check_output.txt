@@ -1,0 +1,76 @@
+========================================================================
+Proposition A (i): sample Pearson r_n versus the limit c(U-V)
+P=50, a=1.0; u=0 fixed, v=-d so that U-V=d; 20 noise paths per cell
+========================================================================
+   H      n   d     c(d)  mean r_n   sd r_n  max|r-c|
+ 0.5   2000   0   0.3333    0.3370   0.0193    0.0403
+ 0.5   2000   5   0.2697    0.2685   0.0149    0.0286
+ 0.5   2000  12   0.0209    0.0215   0.0216    0.0431
+ 0.5   2000  20  -0.2697   -0.2777   0.0172    0.0553
+ 0.5   2000  25  -0.3333   -0.3299   0.0187    0.0367
+ 0.5  20000   0   0.3333    0.3336   0.0045    0.0108
+ 0.5  20000   5   0.2697    0.2683   0.0093    0.0169
+ 0.5  20000  12   0.0209    0.0231   0.0084    0.0164
+ 0.5  20000  20  -0.2697   -0.2701   0.0075    0.0182
+ 0.5  20000  25  -0.3333   -0.3334   0.0057    0.0115
+ 0.8   2000   0   0.3333    0.3408   0.0346    0.0691
+ 0.8   2000   5   0.2697    0.2760   0.0370    0.0631
+ 0.8   2000  12   0.0209    0.0215   0.0419    0.0883
+ 0.8   2000  20  -0.2697   -0.2788   0.0395    0.0837
+ 0.8   2000  25  -0.3333   -0.3344   0.0430    0.1170
+ 0.8  20000   0   0.3333    0.3347   0.0140    0.0294
+ 0.8  20000   5   0.2697    0.2759   0.0101    0.0247
+ 0.8  20000  12   0.0209    0.0250   0.0109    0.0266
+ 0.8  20000  20  -0.2697   -0.2748   0.0147    0.0372
+ 0.8  20000  25  -0.3333   -0.3320   0.0133    0.0230
+[24s]
+
+P(c(U-V) = 0) for P=50:  0.0
+smallest |c(d)| over d: 0.0209 at d = [12, 13, 37, 38]
+
+========================================================================
+Proposition A (ii): Pearson NW and EWC rejection by phase gap (paper's lind_tests)
+H=0.5; n=2000 with 10 paths per gap d=0..49; n=20000 with 2 paths per gap
+========================================================================
+n=2000: NW rejection averaged over uniform gap = 0.918; EWC = 0.924; gaps with NW rate < 1: [11, 12, 13, 14, 36, 37, 38, 39]
+n=20000: NW rejection averaged over uniform gap = 0.980; EWC = 0.990; gaps with NW rate < 1: [13, 37]
+[134s]
+
+========================================================================
+Proposition A (iii): HSIC V-statistic T_n/n under SEAS-M with fixed gap
+H=0.5 and 0.8, gap d=12 (smallest |c|) and d=0; 3 paths per cell
+Wild and subsampling critical values are O(sqrt n); T_n = n V_n grows like n
+========================================================================
+H=0.5 d=12  n=1000: V_n=0.00017 (T_n=   0.17, 4*floor(sqrt n)=124) | n=2000: V_n=0.00008 (T_n=   0.16, 4*floor(sqrt n)=176) | n=4000: V_n=0.00006 (T_n=   0.26, 4*floor(sqrt n)=252)
+H=0.5 d= 0  n=1000: V_n=0.00766 (T_n=   7.66, 4*floor(sqrt n)=124) | n=2000: V_n=0.00615 (T_n=  12.30, 4*floor(sqrt n)=176) | n=4000: V_n=0.00554 (T_n=  22.15, 4*floor(sqrt n)=252)
+H=0.8 d=12  n=1000: V_n=0.00083 (T_n=   0.83, 4*floor(sqrt n)=124) | n=2000: V_n=0.00016 (T_n=   0.32, 4*floor(sqrt n)=176) | n=4000: V_n=0.00008 (T_n=   0.33, 4*floor(sqrt n)=252)
+H=0.8 d= 0  n=1000: V_n=0.00580 (T_n=   5.80, 4*floor(sqrt n)=124) | n=2000: V_n=0.00566 (T_n=  11.32, 4*floor(sqrt n)=176) | n=4000: V_n=0.00628 (T_n=  25.11, 4*floor(sqrt n)=252)
+no season, H=0.5, n=2000: V_n=0.00008
+no season, H=0.8, n=2000: V_n=0.00013
+[174s]
+
+Limit HSIC h(d) of Proposition A (iii), closed form for the Gaussian-mixture limit
+  d= 0: h(d) = 0.005869   n*h(d) at n=2000:   11.74   |c(d)| = 0.3333
+  d= 5: h(d) = 0.003819   n*h(d) at n=2000:    7.64   |c(d)| = 0.2697
+  d=10: h(d) = 0.000565   n*h(d) at n=2000:    1.13   |c(d)| = 0.1030
+  d=11: h(d) = 0.000218   n*h(d) at n=2000:    0.44   |c(d)| = 0.0625
+  d=12: h(d) = 0.000039   n*h(d) at n=2000:    0.08   |c(d)| = 0.0209
+  d=13: h(d) = 0.000039   n*h(d) at n=2000:    0.08   |c(d)| = 0.0209
+  d=20: h(d) = 0.003819   n*h(d) at n=2000:    7.64   |c(d)| = 0.2697
+  d=25: h(d) = 0.005869   n*h(d) at n=2000:   11.74   |c(d)| = 0.3333
+  min_d h(d) = 0.000039 at d = 13; all positive: True
+[174s]
+
+========================================================================
+Proposition B:Var(mean of first half - mean of second half), n = 2m
+========================================================================
+H=0.5: Var formula=0.002000  MC=0.001947 (+-0.000028)  sd=0.0447
+       delta/sd = 2.236 (closed form 2.236);  GLS ratio delta*sqrt(I) = 2.236
+       two-sided half-mean z-test power = 0.609;  NP bound (one-sided, any location-invariant level-5% test) = 0.723
+H=0.7: Var formula=0.021570  MC=0.021579 (+-0.000305)  sd=0.1469
+       delta/sd = 0.681 (closed form 0.681);  GLS ratio delta*sqrt(I) = 0.713
+       two-sided half-mean z-test power = 0.105;  NP bound (one-sided, any location-invariant level-5% test) = 0.176
+H=0.8: Var formula=0.061112  MC=0.061998 (+-0.000877)  sd=0.2472
+       delta/sd = 0.405 (closed form 0.405);  GLS ratio delta*sqrt(I) = 0.457
+       two-sided half-mean z-test power = 0.069;  NP bound (one-sided, any location-invariant level-5% test) = 0.117
+[202s total]

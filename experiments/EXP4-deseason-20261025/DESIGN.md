@@ -149,3 +149,16 @@ run uses 10 workers). Each worker got about 60% of a core, and stage 1 projected
 wall. Applied cut (3): the four n = 2000 cells run 500 replications instead of 1,000. The run was
 stopped after 322 complete G0 H = 0.5 replications (no partial rows) and resumed with --reps 500.
 Monte Carlo SE at n = 2000 is therefore about 1.0 pp at 5% and 2.2 pp at 50%.
+
+(5) 2026-10-25, 18:45, after the main run and code review. **Fixes and top-up run.**
+Code fixes: (i) `run_exp4.py` resumes per (replication, adjustment) and counts only complete
+status-ok rows as done, so error rows are retried and a new adjustment is not skipped (before, a
+replication counted as done whatever its adjustment). (ii) `analyze_exp4.py` counts errors per
+adjustment instead of copying the file total to every adjustment, skips truncated rows, labels
+SEAS-M-shared and SEAS-V-slow as diagnostics, compares SEAS-V-slow at n = 2000 against EXP2 G0,
+and adds the rule 6 suspicion check, which was specified but not coded. A dry run with the old
+targets gave 0 chunks, so the resume logic matches the rows on disk. No existing row changed.
+Top-up: the machine is now idle (EXP3 finished), so the worker cap rises to 16 and cut (3) of
+amendment (4) is reversed. The four n = 2000 cells go from 500 to 1,000 replications and the two
+SEAS-V-slow n = 2000 cells from 300 to 1,000. Replications 0–499 (and 0–299) are unchanged, and
+the new ones use the same seed rule, so the result is the same as an uninterrupted 1,000-rep run.

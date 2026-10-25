@@ -1,0 +1,458 @@
+{
+ "part1_cells_loaded": 4,
+ "errors": 0,
+ "cpu_hours_part1": 0.06,
+ "cpu_hours_part2": 0.05,
+ "nboot": 2000,
+ "seed": 42,
+ "lin_exact_power": {
+  "2.23607": 0.6087794846454567,
+  "1.5": 0.32304115977680503
+ },
+ "part1_verdicts_H05_vs_H08": {
+  "c2.2361|n2000|mmd_unc_wild": {
+   "p_H0.5": 62.0,
+   "p_H0.8": 56.0,
+   "drop_pp": 6.0,
+   "drop_boot_pp": [
+    -28.0,
+    30.0
+   ],
+   "verdict": "flat"
+  },
+  "c2.2361|n2000|mmd_sub_sqrt": {
+   "p_H0.5": 62.0,
+   "p_H0.8": 64.0,
+   "drop_pp": -2.0,
+   "drop_boot_pp": [
+    -26.0,
+    50.0
+   ],
+   "verdict": "flat"
+  },
+  "c2.2361|n2000|mmd_sn_block": {
+   "p_H0.5": 46.0,
+   "p_H0.8": 52.0,
+   "drop_pp": -6.0,
+   "drop_boot_pp": [
+    -28.0,
+    30.0
+   ],
+   "verdict": "flat"
+  },
+  "c2.2361|n2000|oracle_mmd": {
+   "p_H0.5": 66.0,
+   "p_H0.8": 66.0,
+   "drop_pp": 0.0,
+   "drop_boot_pp": [
+    -26.0,
+    46.0
+   ],
+   "verdict": "flat"
+  },
+  "c2.2361|n2000|lin_oracle": {
+   "p_H0.5": 60.0,
+   "p_H0.8": 76.0,
+   "drop_pp": -16.0,
+   "drop_boot_pp": [
+    -44.0,
+    46.0
+   ],
+   "verdict": "unclear"
+  },
+  "c2.2361|n2000|lin_t": {
+   "p_H0.5": 60.0,
+   "p_H0.8": 68.0,
+   "drop_pp": -8.0,
+   "drop_boot_pp": [
+    -40.0,
+    46.0
+   ],
+   "verdict": "flat"
+  }
+ },
+ "part2_reads": {
+  "sum1.0|hsic_wb": {
+   "rates": {
+    "500": 8.1,
+    "1000": 7.55,
+    "2000": 6.45,
+    "4000": 0.0
+   },
+   "z_4000_vs_2000": -11.74,
+   "diff_4000_vs_2000_pp": -6.45,
+   "excess_4000_over5_z": NaN,
+   "slope_pp_per_doubling": -0.83,
+   "slope_se_pp": 0.41,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.0|hsic_shift": {
+   "rates": {
+    "500": 4.8,
+    "1000": 5.4,
+    "2000": 5.0,
+    "4000": 0.0
+   },
+   "z_4000_vs_2000": -10.26,
+   "diff_4000_vs_2000_pp": -5.0,
+   "excess_4000_over5_z": NaN,
+   "slope_pp_per_doubling": 0.1,
+   "slope_se_pp": 0.34,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.0|hsic_sub": {
+   "rates": {
+    "500": 6.55,
+    "1000": 6.0,
+    "2000": 5.55,
+    "4000": 0.0
+   },
+   "z_4000_vs_2000": -10.84,
+   "diff_4000_vs_2000_pp": -5.55,
+   "excess_4000_over5_z": NaN,
+   "slope_pp_per_doubling": -0.5,
+   "slope_se_pp": 0.38,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.0|dcov_wb": {
+   "rates": {
+    "500": 8.05,
+    "1000": 8.15,
+    "2000": 6.55,
+    "4000": 0.0
+   },
+   "z_4000_vs_2000": -11.84,
+   "diff_4000_vs_2000_pp": -6.55,
+   "excess_4000_over5_z": NaN,
+   "slope_pp_per_doubling": -0.78,
+   "slope_se_pp": 0.41,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.0|dcov_sub": {
+   "rates": {
+    "500": 5.55,
+    "1000": 5.85,
+    "2000": 5.25,
+    "4000": 0.0
+   },
+   "z_4000_vs_2000": -10.53,
+   "diff_4000_vs_2000_pp": -5.25,
+   "excess_4000_over5_z": NaN,
+   "slope_pp_per_doubling": -0.15,
+   "slope_se_pp": 0.36,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.0|pearson_nw": {
+   "rates": {
+    "500": 4.5,
+    "2000": 5.8,
+    "4000": 0.0,
+    "8000": 4.2
+   },
+   "z_4000_vs_2000": -11.1,
+   "diff_4000_vs_2000_pp": -5.8,
+   "excess_4000_over5_z": NaN,
+   "slope_pp_per_doubling": -0.08,
+   "slope_se_pp": 0.16,
+   "slope_ns": [
+    500,
+    2000,
+    8000
+   ]
+  },
+  "sum1.0|pearson_ewc": {
+   "rates": {
+    "500": 4.95,
+    "2000": 6.05,
+    "4000": 0.0,
+    "8000": 4.25
+   },
+   "z_4000_vs_2000": -11.35,
+   "diff_4000_vs_2000_pp": -6.05,
+   "excess_4000_over5_z": NaN,
+   "slope_pp_per_doubling": -0.19,
+   "slope_se_pp": 0.17,
+   "slope_ns": [
+    500,
+    2000,
+    8000
+   ]
+  },
+  "sum1.4|hsic_wb": {
+   "rates": {
+    "500": 7.45,
+    "1000": 7.3,
+    "2000": 7.35
+   },
+   "slope_pp_per_doubling": -0.05,
+   "slope_se_pp": 0.41,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.4|hsic_shift": {
+   "rates": {
+    "500": 3.75,
+    "1000": 4.9,
+    "2000": 5.45
+   },
+   "slope_pp_per_doubling": 0.87,
+   "slope_se_pp": 0.33,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.4|hsic_sub": {
+   "rates": {
+    "500": 9.1,
+    "1000": 9.15,
+    "2000": 9.2
+   },
+   "slope_pp_per_doubling": 0.05,
+   "slope_se_pp": 0.46,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.4|dcov_wb": {
+   "rates": {
+    "500": 8.4,
+    "1000": 8.35,
+    "2000": 7.05
+   },
+   "slope_pp_per_doubling": -0.69,
+   "slope_se_pp": 0.42,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.4|dcov_sub": {
+   "rates": {
+    "500": 11.05,
+    "1000": 10.85,
+    "2000": 10.6
+   },
+   "slope_pp_per_doubling": -0.23,
+   "slope_se_pp": 0.49,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.4|pearson_nw": {
+   "rates": {
+    "500": 8.0,
+    "1000": 8.7,
+    "2000": 8.15
+   },
+   "slope_pp_per_doubling": 0.08,
+   "slope_se_pp": 0.43,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.4|pearson_ewc": {
+   "rates": {
+    "500": 5.25,
+    "1000": 6.25,
+    "2000": 5.95
+   },
+   "slope_pp_per_doubling": 0.36,
+   "slope_se_pp": 0.36,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.6|hsic_wb": {
+   "rates": {
+    "500": 11.2,
+    "1000": 10.15,
+    "2000": 8.85,
+    "4000": 0.0,
+    "8000": 0.0
+   },
+   "z_4000_vs_2000": -13.94,
+   "diff_4000_vs_2000_pp": -8.85,
+   "excess_4000_over5_z": NaN,
+   "z_8000_vs_2000": -13.94,
+   "diff_8000_vs_2000_pp": -8.85,
+   "excess_8000_over5_z": NaN,
+   "slope_pp_per_doubling": -1.18,
+   "slope_se_pp": 0.47,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.6|hsic_shift": {
+   "rates": {
+    "500": 5.95,
+    "1000": 5.9,
+    "2000": 5.7,
+    "4000": 0.0,
+    "8000": 0.0
+   },
+   "z_4000_vs_2000": -11.0,
+   "diff_4000_vs_2000_pp": -5.7,
+   "excess_4000_over5_z": NaN,
+   "z_8000_vs_2000": -11.0,
+   "diff_8000_vs_2000_pp": -5.7,
+   "excess_8000_over5_z": NaN,
+   "slope_pp_per_doubling": -0.13,
+   "slope_se_pp": 0.37,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.6|hsic_sub": {
+   "rates": {
+    "500": 21.85,
+    "1000": 20.0,
+    "2000": 19.65,
+    "4000": 50.0,
+    "8000": 0.0
+   },
+   "z_4000_vs_2000": 1.21,
+   "diff_4000_vs_2000_pp": 30.35,
+   "excess_4000_over5_z": 1.8,
+   "z_8000_vs_2000": -22.12,
+   "diff_8000_vs_2000_pp": -19.65,
+   "excess_8000_over5_z": NaN,
+   "slope_pp_per_doubling": -1.05,
+   "slope_se_pp": 0.64,
+   "slope_ns": [
+    500,
+    1000,
+    2000,
+    4000
+   ]
+  },
+  "sum1.6|dcov_wb": {
+   "rates": {
+    "500": 11.7,
+    "1000": 10.85,
+    "2000": 9.55,
+    "4000": 0.0,
+    "8000": 0.0
+   },
+   "z_4000_vs_2000": -14.53,
+   "diff_4000_vs_2000_pp": -9.55,
+   "excess_4000_over5_z": NaN,
+   "z_8000_vs_2000": -14.53,
+   "diff_8000_vs_2000_pp": -9.55,
+   "excess_8000_over5_z": NaN,
+   "slope_pp_per_doubling": -1.08,
+   "slope_se_pp": 0.49,
+   "slope_ns": [
+    500,
+    1000,
+    2000
+   ]
+  },
+  "sum1.6|dcov_sub": {
+   "rates": {
+    "500": 25.1,
+    "1000": 23.0,
+    "2000": 22.95,
+    "4000": 50.0,
+    "8000": 0.0
+   },
+   "z_4000_vs_2000": 1.08,
+   "diff_4000_vs_2000_pp": 27.05,
+   "excess_4000_over5_z": 1.8,
+   "z_8000_vs_2000": -24.41,
+   "diff_8000_vs_2000_pp": -22.95,
+   "excess_8000_over5_z": NaN,
+   "slope_pp_per_doubling": -1.02,
+   "slope_se_pp": 0.67,
+   "slope_ns": [
+    500,
+    1000,
+    2000,
+    4000
+   ]
+  },
+  "sum1.6|pearson_nw": {
+   "rates": {
+    "500": 13.55,
+    "1000": 14.2,
+    "2000": 13.25,
+    "4000": 50.0,
+    "8000": 0.0
+   },
+   "z_4000_vs_2000": 1.47,
+   "diff_4000_vs_2000_pp": 36.75,
+   "excess_4000_over5_z": 1.8,
+   "z_8000_vs_2000": -17.48,
+   "diff_8000_vs_2000_pp": -13.25,
+   "excess_8000_over5_z": NaN,
+   "slope_pp_per_doubling": -0.12,
+   "slope_se_pp": 0.54,
+   "slope_ns": [
+    500,
+    1000,
+    2000,
+    4000
+   ]
+  },
+  "sum1.6|pearson_ewc": {
+   "rates": {
+    "500": 7.65,
+    "1000": 8.7,
+    "2000": 8.45,
+    "4000": 25.0,
+    "8000": 0.0
+   },
+   "z_4000_vs_2000": 0.76,
+   "diff_4000_vs_2000_pp": 16.55,
+   "excess_4000_over5_z": 0.92,
+   "z_8000_vs_2000": -13.59,
+   "diff_8000_vs_2000_pp": -8.45,
+   "excess_8000_over5_z": NaN,
+   "slope_pp_per_doubling": 0.42,
+   "slope_se_pp": 0.43,
+   "slope_ns": [
+    500,
+    1000,
+    2000,
+    4000
+   ]
+  }
+ }
+}

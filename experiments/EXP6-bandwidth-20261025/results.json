@@ -1,0 +1,27 @@
+{
+ "experiment": "EXP6-bandwidth-20261025",
+ "type": "simulation (no trading strategy)",
+ "canonical_metrics": "not applicable: OOS Sharpe, t-stat, max drawdown and IR are trading metrics; EXP6 has no strategy or temporal split",
+ "headline": {
+  "seasV_lin_adj_power_hsic_wild": {
+   "0.5": 0.102,
+   "1.0": 0.156,
+   "2.0": 0.426,
+   "4.0": 0.728
+  },
+  "seasV_lin_adj_power_dcov_wild": 0.482,
+  "seasV_lin_adj_power_pearson_nw": 0.752,
+  "g0_sq_adj_power_hsic_wild": {
+   "0.5": 0.22,
+   "1.0": 0.372,
+   "2.0": 0.41,
+   "4.0": 0.072
+  }
+ },
+ "reps_per_cell": 500,
+ "seed_master": 2026102562,
+ "cpu_hours_main": 4.337281138888889,
+ "errors": 0,
+ "oos_better_than_is_flag": "not applicable",
+ "full_results": "results_main.json"
+}
