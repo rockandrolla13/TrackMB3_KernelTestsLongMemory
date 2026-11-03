@@ -1,4 +1,4 @@
-"""Unit tests for kmem.memory_kernels and the EXP7 fast paths.
+"""Unit tests for kmem.memory_kernels and the fast paths moved from EXP7 into kmem.
 
 Run: PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -I -m pytest tests/test_memory_kernels.py
 """
@@ -11,7 +11,9 @@ import sys
 import numpy as np
 import pytest
 
+from kmem import bandwidth, features, layers, rules
 from kmem import memory_kernels as mk
+from kmem.calibration import harris, selfnorm, shift, subsample, wild
 from kmem.legacy import mbcore as mb
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -208,25 +210,25 @@ def test_median_bw_fast_equals_full() -> None:
     for n in (240, 241):
         x = series(14, 0.7, n)
         full = mb.median_bandwidth(np.abs(x[:, None] - x[None, :]))
-        assert abs(K.median_bw_fast(x) - full) <= 1e-11 * full
+        assert abs(bandwidth.median_bw_fast(x) - full) <= 1e-11 * full
 
 
 def test_wild_prefix_equals_mbcore() -> None:
     x, y = series(15), series(16)
     w = mb.markov_rademacher(N, 200, math.floor(N ** 0.5), rng(17))
     m = mk.double_center(np.abs(x[:, None] - x[None, :])) * mk.double_center(np.abs(y[:, None] - y[None, :]))
-    a, b = mb.wild_boot_stats(m, w), K.wild_prefix(m, w)
+    a, b = mb.wild_boot_stats(m, w), wild.wild_prefix(m, w)
     assert np.abs(a - b).max() < 1e-10 * max(np.abs(a).max(), 1.0)
     v = w[:N - 7] - w[:N - 7].mean(axis=0, keepdims=True)
     m2 = m[:N - 7, :N - 7]
-    assert np.abs(mb.wild_boot_stats(m2, v) - K.wild_prefix(m2, v)).max() < 1e-10
+    assert np.abs(mb.wild_boot_stats(m2, v) - wild.wild_prefix(m2, v)).max() < 1e-10
 
 
 @pytest.mark.parametrize("n", [240, 241])
 def test_shift_stats_sym_equals_mbcore(n: int) -> None:
     a = mk.double_center(np.abs(series(18, 0.8, n)[:, None] - series(18, 0.8, n)[None, :]))
     b = mk.double_center(np.abs(series(19, 0.8, n)[:, None] - series(19, 0.8, n)[None, :]))
-    assert np.abs(mb.shift_stats(a, b) - K.shift_stats_sym(a, b)).max() < 1e-11
+    assert np.abs(mb.shift_stats(a, b) - shift.shift_stats_sym(a, b)).max() < 1e-11
 
 
 @pytest.mark.parametrize("kernel", ["raw", "inc1", "inc50", "herm1", "herm2", "hp10", "frac_oracle", "sym", "datadiff"])
@@ -234,19 +236,19 @@ def test_fast_rules_equal_full_rules(kernel: str) -> None:
     n = 600
     H = 0.8
     x, y = mb.fgn(H, n, rng(20)), mb.fgn(H, n, rng(21))
-    sx, sy = K.median_bw_fast(x), K.median_bw_fast(y)
-    mult = K.Multipliers(n, 200, rng(22))
+    sx, sy = bandwidth.median_bw_fast(x), bandwidth.median_bw_fast(y)
+    mult = wild.Multipliers(n, 200, rng(22))
     kc, lc = K.gram_full(kernel, x, sx, H), K.gram_full(kernel, y, sy, H)
     if kernel in ("sym", "datadiff"):
         ux, uy = K.own_series(kernel, x), K.own_series(kernel, y)
-        fx = K.gauss_features(ux, K.median_bw_fast(ux))
-        fy = K.gauss_features(uy, K.median_bw_fast(uy))
+        fx = features.gauss_features(ux, bandwidth.median_bw_fast(ux))
+        fy = features.gauss_features(uy, bandwidth.median_bw_fast(uy))
     else:
-        fx = K.transform_features(kernel, K.gauss_features(x, sx), x, H)
-        fy = K.transform_features(kernel, K.gauss_features(y, sy), y, H)
+        fx = K.transform_features(kernel, features.gauss_features(x, sx), x, H)
+        fy = K.transform_features(kernel, features.gauss_features(y, sy), y, H)
     w = mult.get(kc.shape[0])
-    full = K.rules_full(kc, lc, w)
-    fast = K.rules_fast(K.compress(fx), K.compress(fy), w)
+    full = rules.rules_full(kc, lc, w)
+    fast = rules.rules_fast(features.compress(fx), features.compress(fy), w)
     assert abs(fast["t"] / full["t"] - 1.0) < 2e-5
     assert fast["p_wb"] == full["p_wb"]
     assert fast["p_shift"] == full["p_shift"]
@@ -261,8 +263,8 @@ def test_rules_distance_equals_rules_full() -> None:
     n = 500
     x, y = mb.fgn(0.8, n, rng(23)), mb.fgn(0.8, n, rng(24))
     ka, la = mk.increment(mk.distance_kernel(x), 1), mk.increment(mk.distance_kernel(y), 1)
-    mult = K.Multipliers(n, 200, rng(25))
-    a, b = K.rules_full(ka, la, mult.get(n - 1)), K.rules_distance(ka, la, mult.get(n - 1))
+    mult = wild.Multipliers(n, 200, rng(25))
+    a, b = rules.rules_full(ka, la, mult.get(n - 1)), rules.rules_distance(ka, la, mult.get(n - 1))
     for key in ("p_wb", "p_shift"):
         assert a[key] == b[key]
     for key in ("t", "r_wb", "r_shift"):
@@ -285,13 +287,13 @@ def _window_stats(gx: np.ndarray, gy: np.ndarray, l: int, dn: int) -> np.ndarray
 def test_sub_fast_equals_brute_force_windows(kernel: str) -> None:
     n = 400
     x, y = mb.fgn(0.8, n, rng(26)), mb.fgn(0.8, n, rng(27))
-    fx = K.transform_features(kernel, K.gauss_features(x, K.median_bw_fast(x)), x, 0.8)
-    fy = K.transform_features(kernel, K.gauss_features(y, K.median_bw_fast(y)), y, 0.8)
-    (px, lx), (py, ly) = K.compress(fx), K.compress(fy)
-    i, j = K.select_pairs(lx, ly)
+    fx = K.transform_features(kernel, features.gauss_features(x, bandwidth.median_bw_fast(x)), x, 0.8)
+    fy = K.transform_features(kernel, features.gauss_features(y, bandwidth.median_bw_fast(y)), y, 0.8)
+    (px, lx), (py, ly) = features.compress(fx), features.compress(fy)
+    i, j = features.select_pairs(lx, ly)
     m = px.shape[0]
     l, dn = math.floor(m ** 0.5), math.floor(0.1 * m)
-    fast = K.sub_fast(px, py, i, j, l, dn)
+    fast = subsample.sub_fast(px, py, i, j, l, dn)
     brute = _window_stats(fx, fy, l, dn)
     assert fast.size == m - l - dn
     assert np.abs(fast - brute).max() < 1e-4 * brute.max()
@@ -300,21 +302,21 @@ def test_sub_fast_equals_brute_force_windows(kernel: str) -> None:
 def test_raw_sub_fast_equals_mbcore_subsample() -> None:
     n = 500
     x, y = mb.fgn(0.8, n, rng(28)), mb.fgn(0.8, n, rng(29))
-    sx, sy = K.median_bw_fast(x), K.median_bw_fast(y)
-    (px, lx), (py, ly) = K.compress(K.gauss_features(x, sx)), K.compress(K.gauss_features(y, sy))
-    i, j = K.select_pairs(lx, ly)
+    sx, sy = bandwidth.median_bw_fast(x), bandwidth.median_bw_fast(y)
+    (px, lx), (py, ly) = features.compress(features.gauss_features(x, sx)), features.compress(features.gauss_features(y, sy))
+    i, j = features.select_pairs(lx, ly)
     l, dn = math.floor(n ** 0.5), math.floor(0.1 * n)
     legacy = mb.subsample_stats(x, y, l, dn, "hsic", sx, sy)
-    assert np.abs(K.sub_fast(px, py, i, j, l, dn) - legacy).max() < 1e-4 * legacy.max()
+    assert np.abs(subsample.sub_fast(px, py, i, j, l, dn) - legacy).max() < 1e-4 * legacy.max()
 
 
 def test_multipliers_share_one_chain() -> None:
-    mult = K.Multipliers(2000, 50, rng(30))
+    mult = wild.Multipliers(2000, 50, rng(30))
     w = mult.get(1999)
     assert np.allclose(w.mean(axis=0), 0.0)
     assert np.allclose(w[1:] - w[:-1], mult.w[1:1999] - mult.w[:1998], atol=1e-12)
     assert mult.w_long is mult.w
-    assert K.Multipliers(500, 50, rng(31)).ln_long == 21
+    assert wild.Multipliers(500, 50, rng(31)).ln_long == 21
 
 
 # ---------------------------------------------------------------- self-normalised statistics of hsplit
@@ -325,26 +327,26 @@ def test_sn_split_stat_is_betken_statistic_as_written() -> None:
     num = v[:k].sum() - k / v.size * v.sum()
     s1, s2 = np.cumsum(v[:k] - v[:k].mean()), np.cumsum(v[k:] - v[k:].mean())
     g = abs(num) / math.sqrt(((s1 * s1).sum() + (s2 * s2).sum()) / v.size)
-    assert abs(math.sqrt(K.sn_split_stat(v, k)) - g) < 1e-10
+    assert abs(math.sqrt(selfnorm.sn_split_stat(v, k)) - g) < 1e-10
 
 
 def test_sn_mean_stat_is_invariant_to_scale() -> None:
     u = rng(33).standard_normal(300)
-    assert abs(K.sn_mean_stat(3.7 * u) - K.sn_mean_stat(u)) < 1e-8
+    assert abs(selfnorm.sn_mean_stat(3.7 * u) - selfnorm.sn_mean_stat(u)) < 1e-8
 
 
 def test_sn_windows_equal_direct_computation() -> None:
     v = rng(34).standard_normal(300)
     for l in (20, 21):
-        direct = np.array([K.sn_split_stat(v[k:k + l]) for k in range(300 - l + 1)])
-        assert np.abs(K.sn_split_windows(v, l) / direct - 1.0).max() < 1e-6
-        direct = np.array([K.sn_mean_stat(v[k:k + l]) for k in range(300 - l + 1)])
-        assert np.abs(K.sn_mean_windows(v, l) / direct - 1.0).max() < 1e-6
+        direct = np.array([selfnorm.sn_split_stat(v[k:k + l]) for k in range(300 - l + 1)])
+        assert np.abs(selfnorm.sn_split_windows(v, l) / direct - 1.0).max() < 1e-6
+        direct = np.array([selfnorm.sn_mean_stat(v[k:k + l]) for k in range(300 - l + 1)])
+        assert np.abs(selfnorm.sn_mean_windows(v, l) / direct - 1.0).max() < 1e-6
 
 
 def test_hermite_layers_are_centred_and_match_the_design() -> None:
     x = series(35)
-    v = K.hermite_layers(x)
+    v = layers.hermite_layers(x)
     z = mk.normal_scores(x)
     assert np.abs(v.mean(axis=0)).max() < 1e-12
     assert np.allclose(v[:, 0], z - z.mean())
@@ -358,9 +360,9 @@ def test_hermite_layers_are_centred_and_match_the_design() -> None:
 def test_harris_shifts_equal_brute_force(kernel: str, big_n: int) -> None:
     n = 400
     x, y = mb.fgn(0.8, n, rng(36)), mb.fgn(0.8, n, rng(37))
-    sx, sy = K.median_bw_fast(x), K.median_bw_fast(y)
-    fx = K.transform_features(kernel, K.gauss_features(x, sx), x, 0.8)
-    fy = K.transform_features(kernel, K.gauss_features(y, sy), y, 0.8)
+    sx, sy = bandwidth.median_bw_fast(x), bandwidth.median_bw_fast(y)
+    fx = K.transform_features(kernel, features.gauss_features(x, sx), x, 0.8)
+    fy = K.transform_features(kernel, features.gauss_features(y, sy), y, 0.8)
     kx, ky = fx @ fx.T, fy @ fy.T
     m = kx.shape[0]
     d = m - 2 * big_n
@@ -369,7 +371,7 @@ def test_harris_shifts_equal_brute_force(kernel: str, big_n: int) -> None:
     for s in range(-big_n, big_n + 1):
         b = mk.double_center(ky[s + big_n:s + m - big_n, s + big_n:s + m - big_n])
         brute[s + big_n] = (a * b).sum() / d
-    fast = K.harris_shifts(K.compress(fx), K.compress(fy), big_n)
+    fast = harris.harris_shifts(features.compress(fx), features.compress(fy), big_n)
     assert np.abs(fast / brute - 1.0).max() < 1e-4
 
 
@@ -379,7 +381,7 @@ def test_harris_ratio_matches_the_counting_rule() -> None:
         for _ in range(200):
             v = r.standard_normal(2 * big_n + 1) ** 2
             m = int(np.sum(np.delete(v, big_n) >= v[big_n]))
-            assert (K.harris_ratio(v, big_n, limit) > 1) == (m < limit)
+            assert (harris.harris_ratio(v, big_n, limit) > 1) == (m < limit)
 
 
 def test_harris_lemma_counts_local_maxima() -> None:
@@ -392,15 +394,15 @@ def test_harris_lemma_counts_local_maxima() -> None:
 
 
 def test_harris_big_n_gives_whole_number_limit() -> None:
-    assert [K.harris_big_n(n) for n in (500, 2000, 4000)] == [19, 99, 199]
+    assert [harris.harris_big_n(n) for n in (500, 2000, 4000)] == [19, 99, 199]
     for n in (500, 2000, 4000):
-        assert abs(0.05 * (K.harris_big_n(n) + 1) - round(0.05 * (K.harris_big_n(n) + 1))) < 1e-9
+        assert abs(0.05 * (harris.harris_big_n(n) + 1) - round(0.05 * (harris.harris_big_n(n) + 1))) < 1e-9
 
 
 def test_harris_strict_form_is_close_to_the_sliding_form() -> None:
     n = 500
     x, y = mb.fgn(0.7, n, rng(40)), mb.fgn(0.7, n, rng(41))
-    fx, fy = K.gauss_features(x, K.median_bw_fast(x)), K.gauss_features(y, K.median_bw_fast(y))
-    strict = K.harris_strict19(x, y)
-    a = K.harris_rules(K.compress(fx), K.compress(fy), n)
+    fx, fy = features.gauss_features(x, bandwidth.median_bw_fast(x)), features.gauss_features(y, bandwidth.median_bw_fast(y))
+    strict = harris.harris_strict19(x, y)
+    a = harris.harris_rules(features.compress(fx), features.compress(fy), n)
     assert abs(a["rh19"] / strict["xh19_raw"] - 1.0) < 0.1
