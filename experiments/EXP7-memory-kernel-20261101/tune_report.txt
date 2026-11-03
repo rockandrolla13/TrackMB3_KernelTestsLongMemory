@@ -1,0 +1,23 @@
+EXP7 tuning report: size-adjusted power at G0, H = 0.5, n = 2000, 200 replications per candidate.
+
+errors: 0
+scale coupling (matched SCALE-null with the same gamma):
+  gamma 0.05: oracle raw 0.085  oracle inc1 0.070
+  gamma 0.1: oracle raw 0.295  oracle inc1 0.235
+  gamma 0.15: oracle raw 0.895  oracle inc1 0.695
+  gamma 0.2: oracle raw 0.975  oracle inc1 0.860
+  gamma 0.3: oracle raw 1.000  oracle inc1 1.000
+lag rho 0.13: oracle raw 0.085  oracle inc1 0.470
+flat rho 0.13: oracle raw 0.735  oracle inc1 0.055
+split MMD scale:
+  1.05: raw 0.215  herm1 0.275  herm2 0.090  sym 0.245  datadiff 0.210
+  1.1: raw 0.460  herm1 0.710  herm2 0.070  sym 0.640  datadiff 0.590
+  1.15: raw 0.880  herm1 0.990  herm2 0.055  sym 0.950  datadiff 0.900
+  1.2: raw 0.995  herm1 1.000  herm2 0.055  sym 0.995  datadiff 0.985
+  1.3: raw 1.000  herm1 1.000  herm2 0.060  sym 1.000  datadiff 1.000
+split MMD shape:
+  0.1: raw 0.405  herm1 0.685  herm2 0.890  sym 0.035  datadiff 0.045
+  0.15: raw 0.800  herm1 0.985  herm2 1.000  sym 0.115  datadiff 0.060
+  0.2: raw 0.990  herm1 1.000  herm2 1.000  sym 0.375  datadiff 0.135
+  0.3: raw 1.000  herm1 1.000  herm2 1.000  sym 0.995  datadiff 0.515
+  0.4: raw 1.000  herm1 1.000  herm2 1.000  sym 1.000  datadiff 0.945
