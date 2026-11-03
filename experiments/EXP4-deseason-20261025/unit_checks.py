@@ -7,6 +7,9 @@ So those adjusted rows equal adjusted G0 in law. Output: unit_checks.txt.
 import os
 import sys
 
+for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):  # tests/conftest.py rule
+    os.environ[_v] = "1"
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np  # noqa: E402
 
