@@ -1,6 +1,8 @@
-"""kmem: shared simulation core for the kernel-tests-under-long-memory track.
+"""kmem: kernel tests under long memory, shared by the experiments of this track.
 
-Phase 1 holds only `kmem.legacy`, the EXP2 core moved verbatim. New code must pass
-tests/test_reference_exp2.py, which pins it to the saved EXP2 replication rows.
+kmem.legacy is the validated EXP2 core, frozen (tests/legacy.sha256). The rest is built on it:
+generators, kernels, calibration rules, the HSIC/dCov/MMD bundles and the analysis helpers.
+Every change must keep the saved EXP2-EXP7 rows reproducing exactly (tests/repro, experiments/REPRODUCIBILITY.md).
+Run from the repo root: `python -m kmem --help`.
 """
-__version__ = "0.1.0"
+__version__ = "0.2.0"

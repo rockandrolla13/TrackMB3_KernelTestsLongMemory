@@ -15,9 +15,9 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))  # kmem (D7: not installed)
 import numpy as np  # noqa: E402
 
-import exp5_core as P  # noqa: E402
 import run_exp5 as R  # noqa: E402
 from kmem.legacy import common as C  # noqa: E402
 from kmem.analysis import boot_power, cstar  # noqa: E402,F401
