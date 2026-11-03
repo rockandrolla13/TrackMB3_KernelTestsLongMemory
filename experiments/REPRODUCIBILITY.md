@@ -22,6 +22,17 @@ value (`float(saved) == float(new)`, or both NaN, or equal text), after EXP7's 1
 skips only machine measurements (`cpu_s`, `wall_s`, `maxrss_mb`), the `error` text, and EXP4's `reused`
 flag, which depends on how a run was chunked.
 
+## The analysis gate (G-analysis)
+
+`python -I tools/analysis_gate.py --check` reruns all 18 saved analysis jobs of EXP2 to EXP7 in a scratch copy
+(about 3 minutes on 8 cores) and compares the 50 files they write with `tests/analysis_baseline.json`.
+At the baseline (2026-11-03), 46 of the 50 regenerate byte for byte equal to the saved files. The four that do not:
+
+- EXP4 `tables_pilot.md` and `verdicts_pilot.json`, and EXP7 `growth_q95_pilot.png`: stable, but the saved
+  copies came from an earlier code or input version. The gate checks them against the regenerated hash.
+- EXP7 `bandwidth_check.csv` (`review_checks.py`): unstable. Its simulation stacks chunks in completion
+  order, so means differ in the last bits. The gate only checks that it is written.
+
 ## EXP1 is outside the gate (decision D5)
 
 `EXP1-20261016/manifest.json` records `run_e1.py` with sha256 `ef5f7e5c9e1ca06cce8ffcf8eef464270ae3b6452392bcbcfa98dfc61028f6fa`.

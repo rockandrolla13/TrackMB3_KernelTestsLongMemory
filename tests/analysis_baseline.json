@@ -1,0 +1,302 @@
+{
+ "experiments/EXP2-20261023/multiple_testing/mt_claims.csv": {
+  "matches_saved": true,
+  "regen": "ac6d78705f5ba3d5a8e88942d64f11d7dd8be221cf5ec808f0d1b8dd6f41b2af",
+  "saved": "ac6d78705f5ba3d5a8e88942d64f11d7dd8be221cf5ec808f0d1b8dd6f41b2af",
+  "stable": true
+ },
+ "experiments/EXP2-20261023/multiple_testing/mt_results.csv": {
+  "matches_saved": true,
+  "regen": "9dda1ecfd99ec39ab6dc3d57e986217141f3a2ccd221235065465bcec494636b",
+  "saved": "9dda1ecfd99ec39ab6dc3d57e986217141f3a2ccd221235065465bcec494636b",
+  "stable": true
+ },
+ "experiments/EXP2-20261023/multiple_testing/mt_summary.json": {
+  "matches_saved": true,
+  "regen": "62792bf41d608fbcb570832258a6009f6426fefacd5426b96d468524e4c1266d",
+  "saved": "62792bf41d608fbcb570832258a6009f6426fefacd5426b96d468524e4c1266d",
+  "stable": true
+ },
+ "experiments/EXP2-20261023/summary_main.csv": {
+  "matches_saved": true,
+  "regen": "c4e1877fa99fe2c0904802f7b688a518fc0a3e5383d796f910341d7e463807d0",
+  "saved": "c4e1877fa99fe2c0904802f7b688a518fc0a3e5383d796f910341d7e463807d0",
+  "stable": true
+ },
+ "experiments/EXP2-20261023/summary_pilot.csv": {
+  "matches_saved": true,
+  "regen": "da85be47ee493d8ac1a28c14e14884db43e51b46d7aaad7b83a37fe7b9c4ac4e",
+  "saved": "da85be47ee493d8ac1a28c14e14884db43e51b46d7aaad7b83a37fe7b9c4ac4e",
+  "stable": true
+ },
+ "experiments/EXP2-20261023/tables_main.md": {
+  "matches_saved": true,
+  "regen": "e452c8c9bfb1216f296df37d29662c238c2ffcb179d125f1f70333cc5aa4702d",
+  "saved": "e452c8c9bfb1216f296df37d29662c238c2ffcb179d125f1f70333cc5aa4702d",
+  "stable": true
+ },
+ "experiments/EXP2-20261023/tables_pilot.md": {
+  "matches_saved": true,
+  "regen": "22d35525e08259bf8566d0d309c902f156704a1a96b54ef94b944efbd7ccb547",
+  "saved": "22d35525e08259bf8566d0d309c902f156704a1a96b54ef94b944efbd7ccb547",
+  "stable": true
+ },
+ "experiments/EXP2-20261023/verdicts_main.json": {
+  "matches_saved": true,
+  "regen": "e50e574cda877c86fb8d6bf2e144ba868ea5eae9b7282e96d99fff2613355451",
+  "saved": "e50e574cda877c86fb8d6bf2e144ba868ea5eae9b7282e96d99fff2613355451",
+  "stable": true
+ },
+ "experiments/EXP2-20261023/verdicts_pilot.json": {
+  "matches_saved": true,
+  "regen": "314ff65f6345fdccda12f4df235f9ea5f5044b2662832801558af29c43b245ad",
+  "saved": "314ff65f6345fdccda12f4df235f9ea5f5044b2662832801558af29c43b245ad",
+  "stable": true
+ },
+ "experiments/EXP3-power-20261025/null_regression_main.csv": {
+  "matches_saved": true,
+  "regen": "cbbeb11f3d6c6ce5650b6ce9e27417bf8e394688e85c0b0bfa9ae43ad384faf6",
+  "saved": "cbbeb11f3d6c6ce5650b6ce9e27417bf8e394688e85c0b0bfa9ae43ad384faf6",
+  "stable": true
+ },
+ "experiments/EXP3-power-20261025/results_main.json": {
+  "matches_saved": true,
+  "regen": "ffc337124bbd49e1075f7d6c91322097226cf0a3c6e105517c37c374001a97ad",
+  "saved": "ffc337124bbd49e1075f7d6c91322097226cf0a3c6e105517c37c374001a97ad",
+  "stable": true
+ },
+ "experiments/EXP3-power-20261025/summary_main.csv": {
+  "matches_saved": true,
+  "regen": "54736914fef80bb31afc7953690efb0b8b05b10ec84867669221e2f9d50bc5bd",
+  "saved": "54736914fef80bb31afc7953690efb0b8b05b10ec84867669221e2f9d50bc5bd",
+  "stable": true
+ },
+ "experiments/EXP3-power-20261025/tables_main.md": {
+  "matches_saved": true,
+  "regen": "0c198a740cbd4cf137d0e716d332a06b403fbfadf071ca4b61b9716593f1fb6b",
+  "saved": "0c198a740cbd4cf137d0e716d332a06b403fbfadf071ca4b61b9716593f1fb6b",
+  "stable": true
+ },
+ "experiments/EXP4-deseason-20261025/summary_main.csv": {
+  "matches_saved": true,
+  "regen": "a5dc9ce1570fc6ca76ca29c8ae69f3445f36066c2e24ba22cf439681697a3931",
+  "saved": "a5dc9ce1570fc6ca76ca29c8ae69f3445f36066c2e24ba22cf439681697a3931",
+  "stable": true
+ },
+ "experiments/EXP4-deseason-20261025/summary_pilot.csv": {
+  "matches_saved": true,
+  "regen": "39981bf70d98ea1aca3f47154f437f8bb49c1f1cb5937c77bd071b837fbd673a",
+  "saved": "39981bf70d98ea1aca3f47154f437f8bb49c1f1cb5937c77bd071b837fbd673a",
+  "stable": true
+ },
+ "experiments/EXP4-deseason-20261025/tables_main.md": {
+  "matches_saved": true,
+  "regen": "bdc8dabdd04a0142136a9858e40e577bb64deb80339aee733dc826fe664d6e98",
+  "saved": "bdc8dabdd04a0142136a9858e40e577bb64deb80339aee733dc826fe664d6e98",
+  "stable": true
+ },
+ "experiments/EXP4-deseason-20261025/tables_pilot.md": {
+  "matches_saved": false,
+  "regen": "9bab047fa13bc65c0e0a8db95901d9dbf67943855a84525074998cc7514c5628",
+  "saved": "98ecc09c0b4ffe95f7281044adcceb1c700472f694d20322038e879b661415c6",
+  "stable": true
+ },
+ "experiments/EXP4-deseason-20261025/verdicts_main.json": {
+  "matches_saved": true,
+  "regen": "6e11ec6db90c913cb3914ea36bcfef87ff2dab2367a7f4212c8cebe786b3f3b1",
+  "saved": "6e11ec6db90c913cb3914ea36bcfef87ff2dab2367a7f4212c8cebe786b3f3b1",
+  "stable": true
+ },
+ "experiments/EXP4-deseason-20261025/verdicts_pilot.json": {
+  "matches_saved": false,
+  "regen": "ef190cf54735c55897e07553d336ec04f72cb85cc68f9c750d857cf81bc41130",
+  "saved": "351b744f18b2c0175cc5927792eb533577fa533bda125359dc900061cd74428a",
+  "stable": true
+ },
+ "experiments/EXP5-scaled-n-20261025/null_regression_main.csv": {
+  "matches_saved": true,
+  "regen": "56af95dbd98d2fe9df6f8b3c96974fc19004e7223dbfdcbbd2f0056b7597f6f7",
+  "saved": "56af95dbd98d2fe9df6f8b3c96974fc19004e7223dbfdcbbd2f0056b7597f6f7",
+  "stable": true
+ },
+ "experiments/EXP5-scaled-n-20261025/null_regression_pilot.csv": {
+  "matches_saved": true,
+  "regen": "d973e7498213284d82192b25a8e17664e1802a6942a0da68dc2fc08994750619",
+  "saved": "d973e7498213284d82192b25a8e17664e1802a6942a0da68dc2fc08994750619",
+  "stable": true
+ },
+ "experiments/EXP5-scaled-n-20261025/results_main.json": {
+  "matches_saved": true,
+  "regen": "d67bb5af7a05412f2180eabcabbb5423464e76f7dcb158e219eea1197825832c",
+  "saved": "d67bb5af7a05412f2180eabcabbb5423464e76f7dcb158e219eea1197825832c",
+  "stable": true
+ },
+ "experiments/EXP5-scaled-n-20261025/results_pilot.json": {
+  "matches_saved": true,
+  "regen": "1e88aa1c5c977dd261c446e5caad82428fe8614f4969879dd865ac19de1e6d5d",
+  "saved": "1e88aa1c5c977dd261c446e5caad82428fe8614f4969879dd865ac19de1e6d5d",
+  "stable": true
+ },
+ "experiments/EXP5-scaled-n-20261025/summary_ind_main.csv": {
+  "matches_saved": true,
+  "regen": "5e8afbebcea4dd6181e74fca3d8064229c76dcb2386527525e2d96a43b076ec4",
+  "saved": "5e8afbebcea4dd6181e74fca3d8064229c76dcb2386527525e2d96a43b076ec4",
+  "stable": true
+ },
+ "experiments/EXP5-scaled-n-20261025/summary_ind_pilot.csv": {
+  "matches_saved": true,
+  "regen": "8355e0d2ec11ab4c8d43cd8679a31980697435008ca7f53db1e67c2bcb6b72e7",
+  "saved": "8355e0d2ec11ab4c8d43cd8679a31980697435008ca7f53db1e67c2bcb6b72e7",
+  "stable": true
+ },
+ "experiments/EXP5-scaled-n-20261025/summary_main.csv": {
+  "matches_saved": true,
+  "regen": "f4c6a0c35fc580b2a4475e64d8939a1532803f0f5782e17a78542a00c4aaafaa",
+  "saved": "f4c6a0c35fc580b2a4475e64d8939a1532803f0f5782e17a78542a00c4aaafaa",
+  "stable": true
+ },
+ "experiments/EXP5-scaled-n-20261025/summary_pilot.csv": {
+  "matches_saved": true,
+  "regen": "d3e79068978bab5d95bf7a8cb5c86397036353cfe3ffb14f725766965f29524f",
+  "saved": "d3e79068978bab5d95bf7a8cb5c86397036353cfe3ffb14f725766965f29524f",
+  "stable": true
+ },
+ "experiments/EXP5-scaled-n-20261025/tables_main.md": {
+  "matches_saved": true,
+  "regen": "562e73133e635890a8f61e78ad6ee3005005ade532716d61edbcc97789404bdf",
+  "saved": "562e73133e635890a8f61e78ad6ee3005005ade532716d61edbcc97789404bdf",
+  "stable": true
+ },
+ "experiments/EXP5-scaled-n-20261025/tables_pilot.md": {
+  "matches_saved": true,
+  "regen": "59c85370eb4c94615b552253c0735e2d31810b0c2c3aac5c11696cc09b7c4b18",
+  "saved": "59c85370eb4c94615b552253c0735e2d31810b0c2c3aac5c11696cc09b7c4b18",
+  "stable": true
+ },
+ "experiments/EXP6-bandwidth-20261025/results_main.json": {
+  "matches_saved": true,
+  "regen": "65d50f35bad17b163d88ac80aa17642eedcd00d83acfa2b3c5d8cd5bcb5e664d",
+  "saved": "65d50f35bad17b163d88ac80aa17642eedcd00d83acfa2b3c5d8cd5bcb5e664d",
+  "stable": true
+ },
+ "experiments/EXP6-bandwidth-20261025/results_pilot.json": {
+  "matches_saved": true,
+  "regen": "8dc052b307f3ec5c85bbda063f88f836bbf04299784fe118205f786a7ce5020d",
+  "saved": "8dc052b307f3ec5c85bbda063f88f836bbf04299784fe118205f786a7ce5020d",
+  "stable": true
+ },
+ "experiments/EXP6-bandwidth-20261025/summary_main.csv": {
+  "matches_saved": true,
+  "regen": "6b90f77b152cfa60f7cb008467838e94028d459797aeb57e9e5cdddb9b21e470",
+  "saved": "6b90f77b152cfa60f7cb008467838e94028d459797aeb57e9e5cdddb9b21e470",
+  "stable": true
+ },
+ "experiments/EXP6-bandwidth-20261025/summary_pilot.csv": {
+  "matches_saved": true,
+  "regen": "97bcc5a38cfab7291a1330eefc88067b1e5cada5c482c238c061def89b0ae417",
+  "saved": "97bcc5a38cfab7291a1330eefc88067b1e5cada5c482c238c061def89b0ae417",
+  "stable": true
+ },
+ "experiments/EXP6-bandwidth-20261025/tables_main.md": {
+  "matches_saved": true,
+  "regen": "3588c3aa83fafeaa45031813e3de5b928d922e6952648d57904426e2928cdb66",
+  "saved": "3588c3aa83fafeaa45031813e3de5b928d922e6952648d57904426e2928cdb66",
+  "stable": true
+ },
+ "experiments/EXP6-bandwidth-20261025/tables_pilot.md": {
+  "matches_saved": true,
+  "regen": "03c4c216fbe7d9aca15e755be2647fc0b1a96415f5434464a1e96120c36c6903",
+  "saved": "03c4c216fbe7d9aca15e755be2647fc0b1a96415f5434464a1e96120c36c6903",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/bandwidth_check.csv": {
+  "matches_saved": false,
+  "regen": "bcac5d0545da18dfd5f68662de1dcabd6870770e1e40375eaab99ed14921ff9c",
+  "saved": "bcac5d0545da18dfd5f68662de1dcabd6870770e1e40375eaab99ed14921ff9c",
+  "stable": false
+ },
+ "experiments/EXP7-memory-kernel-20261101/binomial_valid.csv": {
+  "matches_saved": true,
+  "regen": "2b4b20621bcc13cecc74b7f8c7b501860879bba9e299dcde9287e20c226bb994",
+  "saved": "2b4b20621bcc13cecc74b7f8c7b501860879bba9e299dcde9287e20c226bb994",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/growth_bandwidth.csv": {
+  "matches_saved": true,
+  "regen": "5cd72833c477122083418c337d427e43b4f5714ebceab9de118b9a4e051e808b",
+  "saved": "5cd72833c477122083418c337d427e43b4f5714ebceab9de118b9a4e051e808b",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/growth_q95_main.png": {
+  "matches_saved": true,
+  "regen": "0dd6be3865af0f8d25e30e1d7483b673beeca10ec4c1924fe7668c0bf17f7966",
+  "saved": "0dd6be3865af0f8d25e30e1d7483b673beeca10ec4c1924fe7668c0bf17f7966",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/growth_q95_pilot.png": {
+  "matches_saved": false,
+  "regen": "04c3946b1ff4759ec4acbb955c96dfbee3e208d390b7b00c687ac9b68943ab3f",
+  "saved": "1288a96a05357ec05e7983b9f6f614fd5ba49af0c81f4ac5c7e1f30382f3e301",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/results_main.json": {
+  "matches_saved": true,
+  "regen": "7726f9b6843a8591198151254c16d7c393c189a56fdb578c91d4a957a15d2fbd",
+  "saved": "7726f9b6843a8591198151254c16d7c393c189a56fdb578c91d4a957a15d2fbd",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/results_pilot.json": {
+  "matches_saved": true,
+  "regen": "22b33b54c47d67e9ff1d78c501402fe9b0a7c2ab7d93f68bef4d8f88f4413ae5",
+  "saved": "22b33b54c47d67e9ff1d78c501402fe9b0a7c2ab7d93f68bef4d8f88f4413ae5",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/results_tables_main.md": {
+  "matches_saved": true,
+  "regen": "54a5aaf76c9aaa28cd3ad5c92ac37c4276a6cd589ca02f40d374579175299650",
+  "saved": "54a5aaf76c9aaa28cd3ad5c92ac37c4276a6cd589ca02f40d374579175299650",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/results_tables_pilot.md": {
+  "matches_saved": true,
+  "regen": "0c5eaeeadf4a140a49e56910825e47a7db345cae5b6688a15a796fc72192ae12",
+  "saved": "0c5eaeeadf4a140a49e56910825e47a7db345cae5b6688a15a796fc72192ae12",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/summary_main.csv": {
+  "matches_saved": true,
+  "regen": "78c21ac3aad5b40c280911a4a7eec6defab6b688a7541389ba9aa1943a3467d1",
+  "saved": "78c21ac3aad5b40c280911a4a7eec6defab6b688a7541389ba9aa1943a3467d1",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/summary_pilot.csv": {
+  "matches_saved": true,
+  "regen": "a1cad07daf09a157041bf03cdf7136699466e60962f3b029bc75e11a5f2d4d37",
+  "saved": "a1cad07daf09a157041bf03cdf7136699466e60962f3b029bc75e11a5f2d4d37",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/tables_main.md": {
+  "matches_saved": true,
+  "regen": "9290db334db6f2d7cbaeaf4c15d7718b2808af9fc0a6c8faf1418e755d10c81c",
+  "saved": "9290db334db6f2d7cbaeaf4c15d7718b2808af9fc0a6c8faf1418e755d10c81c",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/tables_pilot.md": {
+  "matches_saved": true,
+  "regen": "4b121a5fe7cdb8a42ad87eb07ddfc643b85258eb0eb299c5d4cc661645159b23",
+  "saved": "4b121a5fe7cdb8a42ad87eb07ddfc643b85258eb0eb299c5d4cc661645159b23",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/trend_main.csv": {
+  "matches_saved": true,
+  "regen": "bdff0dce062e9956f0ae28f9b499233b7a8f048750441636575f9967bf7a1106",
+  "saved": "bdff0dce062e9956f0ae28f9b499233b7a8f048750441636575f9967bf7a1106",
+  "stable": true
+ },
+ "experiments/EXP7-memory-kernel-20261101/tune_report.txt": {
+  "matches_saved": true,
+  "regen": "feadc3d010f4ed629adb816f753fbfe537754e959a94c3b5e299fe0f28d60275",
+  "saved": "feadc3d010f4ed629adb816f753fbfe537754e959a94c3b5e299fe0f28d60275",
+  "stable": true
+ }
+}
