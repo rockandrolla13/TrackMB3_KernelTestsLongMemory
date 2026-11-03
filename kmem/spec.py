@@ -63,6 +63,39 @@ class Prerequisite(BaseModel):
             return hashlib.sha256(f.read()).hexdigest() == self.sha256
 
 
+def digest(path: str) -> str:
+    """sha256 of a file, or of a folder's CSVs (each file's sha256 and name, sorted by name)."""
+    full = os.path.join(REPO, path)
+    if os.path.isdir(full):
+        h = hashlib.sha256()
+        for name in sorted(n for n in os.listdir(full) if n.endswith(".csv")):
+            with open(os.path.join(full, name), "rb") as f:
+                h.update(f"{hashlib.sha256(f.read()).hexdigest()}  {name}\n".encode())
+        return h.hexdigest()
+    with open(full, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
+class Input(BaseModel):
+    """A file or folder of another experiment that this experiment's analysis reads (code review CR-009)."""
+    model_config = ConfigDict(frozen=True, extra="forbid")
+
+    path: str  # relative to the repo root
+    sha256: str
+    used_by: str
+
+    def verify(self) -> bool:
+        return os.path.exists(os.path.join(REPO, self.path)) and digest(self.path) == self.sha256
+
+
+class Consumer(BaseModel):
+    """A script outside the experiment folder that reads its outputs."""
+    model_config = ConfigDict(frozen=True, extra="forbid")
+
+    path: str
+    reads: list[str]
+
+
 class ExperimentSpec(BaseModel):
     model_config = ConfigDict(frozen=True, extra="forbid")
 
@@ -79,6 +112,8 @@ class ExperimentSpec(BaseModel):
     max_workers: int
     cells: list[Cell]
     prerequisites: list[Prerequisite] = Field(default_factory=list)
+    inputs: list[Input] = Field(default_factory=list)
+    consumers: list[Consumer] = Field(default_factory=list)
     source_manifests: list[str]
 
     @model_validator(mode="after")

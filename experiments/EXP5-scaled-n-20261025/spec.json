@@ -418,6 +418,24 @@
   }
  ],
  "prerequisites": [],
+ "inputs": [
+  {
+   "path": "experiments/EXP3-power-20261025/main",
+   "sha256": "eaed0bbc8942ac32925a5c6225c18767b30587821258632396cf880d98b45903",
+   "used_by": "analyze_exp5.py: null regression against EXP3"
+  },
+  {
+   "path": "experiments/EXP1-20261016/e3_summary.csv",
+   "sha256": "8ed1e34bdbea50e736e53b3a40a93fd44f974ba616ddac4f9858b124f296c300",
+   "used_by": "analyze_exp5.py: E3 baseline (Part 2)"
+  },
+  {
+   "path": "experiments/JOB-NEW-MEMORY-BOUNDARY-SIM-20261015_kernel-linear/cells/cell_summary.csv",
+   "sha256": "b43c5659fa0867a66f1cc6cfc611d022ed9ad96435f0e9d31ae2c498086a785c",
+   "used_by": "analyze_exp5.py: KL baseline"
+  }
+ ],
+ "consumers": [],
  "source_manifests": [
   "experiments/EXP5-scaled-n-20261025/main/manifest_20261025T185744Z.json",
   "experiments/EXP5-scaled-n-20261025/main/manifest_20261025T191818Z.json",

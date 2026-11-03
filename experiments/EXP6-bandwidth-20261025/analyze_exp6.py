@@ -72,17 +72,12 @@ def fmt(p, lo=None, hi=None):
     return f"{100 * p:.1f} [{100 * lo:.1f}, {100 * hi:.1f}]"
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--in", dest="indir", required=True)
-    ap.add_argument("--tag", required=True)
-    ap.add_argument("--n", default="2000,500")
-    a = ap.parse_args()
-    n_grid = tuple(int(v) for v in a.n.split(","))
+def load_cells(indir: str, n_grid: tuple) -> tuple[dict, list, list]:
+    """Saved cells by (gen, alt, H, n), and the kappas and oracle-only kappas that every cell has."""
     cells = R.cells_for("main", n_grid)
     data, kappas, okap = {}, None, None
     for c in cells:
-        p = os.path.join(HERE, a.indir, c["name"] + ".csv")
+        p = os.path.join(HERE, indir, c["name"] + ".csv")
         if os.path.exists(p):
             data[(c["gen"], c["alt"], c["H"], c["n"])] = (c, *load(p))
             hdr = open(p).readline().strip().split(",")
@@ -91,7 +86,11 @@ def main():
             ok = sorted({kv(h) for h in hdr if h.startswith("hsic_stat_k")} - set(ks))
             kappas = ks if kappas is None else [k for k in kappas if k in ks]
             okap = ok if okap is None else [k for k in okap if k in ok]
-    # stop rule (DESIGN.md A1): keep replication indices 0..m-1 complete in every cell
+    return data, kappas, okap
+
+
+def common_prefix(data: dict) -> tuple[dict, int]:
+    """Stop rule (DESIGN.md A1): keep only replications 0..m-1, the prefix complete in every cell."""
     def prefix(rows):
         have = {int(r["rep"]) for r in rows}
         m = 0
@@ -102,13 +101,11 @@ def main():
     for key, (c, rows, err, cpu_) in list(data.items()):
         data[key] = (c, [r for r in rows if int(r["rep"]) < m_common], err, cpu_)
     print(f"common replication prefix m = {m_common}")
-    rules = rule_list(kappas, okap)
-    allk = sorted(kappas + okap)
-    rng = np.random.default_rng(SEED)
-    summary, res = [], {"kappas": kappas, "size": {}, "power": {}, "gaps": {}, "mechanism": {}}
-    cpu = sum(v[3] for v in data.values())
-    errs = sum(v[2] for v in data.values())
-    # ------------------------------------------------ size
+    return data, m_common
+
+
+def size_block(data: dict, rules: list, res: dict, summary: list) -> None:
+    """Null rejection rates, size classes and McNemar tests against kappa = 1."""
     for (g, alt, h, n), (c, rows, err, _) in data.items():
         if alt != "null":
             continue
@@ -133,7 +130,11 @@ def main():
             summary.append({"cell": f"{g}__null__H{h}__n{n}", "rule": rule, "kappa": k, "kind": "size",
                             "value": ent["rate"], "lo": lo, "hi": hi, "m": len(rr),
                             "note": ent["class"] + (f"; McNemar p vs k1 = {ent['mcnemar_p_vs_k1']:.3g}" if "mcnemar_p_vs_k1" in ent else "")})
-    # ------------------------------------------------ size-adjusted power, paired kappa gaps
+
+
+def power_block(data: dict, rules: list, kappas: list, allk: list, rng: np.random.Generator, res: dict,
+                summary: list) -> None:
+    """Size-adjusted power and paired kappa gaps. rng is the analysis's one bootstrap stream (decision D12)."""
     for (g, alt, h, n), (c, rows, err, _) in data.items():
         if alt == "null":
             continue
@@ -178,7 +179,10 @@ def main():
                 res["gaps"][key][f"{rule}|{k}"] = {"gain": gain, "lo": lo, "hi": hi, "verdict": verdict}
                 summary.append({"cell": key, "rule": rule, "kappa": k, "kind": "gain_vs_k1", "value": gain,
                                 "lo": lo, "hi": hi, "m": len(rows), "note": verdict})
-    # ------------------------------------------------ mechanism diagnostics (null cells)
+
+
+def mechanism_block(data: dict, allk: list, res: dict) -> None:
+    """How much of the HSIC statistic n r^2 and n corr_sq^2 explain, per null cell."""
     for (g, alt, h, n), (c, rows, err, _) in data.items():
         key = f"{g}__{alt}__H{h}__n{n}"
         r2 = col(rows, "pearson_r") ** 2
@@ -197,6 +201,25 @@ def main():
             ent[f"r2_fit|{k}"] = float(1 - np.sum((t - fit) ** 2) / np.sum((t - t.mean()) ** 2))
             ent[f"mean_hsic|{k}"] = float(np.mean(t))
         res["mechanism"][key] = ent
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--in", dest="indir", required=True)
+    ap.add_argument("--tag", required=True)
+    ap.add_argument("--n", default="2000,500")
+    a = ap.parse_args()
+    data, kappas, okap = load_cells(a.indir, tuple(int(v) for v in a.n.split(",")))
+    data, m_common = common_prefix(data)
+    rules = rule_list(kappas, okap)
+    allk = sorted(kappas + okap)
+    rng = np.random.default_rng(SEED)
+    summary, res = [], {"kappas": kappas, "size": {}, "power": {}, "gaps": {}, "mechanism": {}}
+    cpu = sum(v[3] for v in data.values())
+    errs = sum(v[2] for v in data.values())
+    size_block(data, rules, res, summary)
+    power_block(data, rules, kappas, allk, rng, res, summary)
+    mechanism_block(data, allk, res)
     res["cpu_hours"] = cpu / 3600
     res["errors"] = errs
     res["m_common"] = m_common

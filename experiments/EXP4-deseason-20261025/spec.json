@@ -409,6 +409,14 @@
   }
  ],
  "prerequisites": [],
+ "inputs": [
+  {
+   "path": "experiments/EXP2-20261023/summary_main.csv",
+   "sha256": "c4e1877fa99fe2c0904802f7b688a518fc0a3e5383d796f910341d7e463807d0",
+   "used_by": "analyze_exp4.py: unadjusted A0-EXP2 rows"
+  }
+ ],
+ "consumers": [],
  "source_manifests": [
   "experiments/EXP4-deseason-20261025/main/manifest_20261025T135916Z.json",
   "experiments/EXP4-deseason-20261025/main/manifest_20261025T141009Z.json",

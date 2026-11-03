@@ -784,6 +784,14 @@
   }
  ],
  "prerequisites": [],
+ "inputs": [
+  {
+   "path": "experiments/EXP2-20261023/main",
+   "sha256": "6657787e311641d89e3021e505b43493f7ac922b0b39084e23a3483af4a43ebd",
+   "used_by": "analyze.py: null regression against EXP2"
+  }
+ ],
+ "consumers": [],
  "source_manifests": [
   "experiments/EXP3-power-20261025/main/manifest_20261025T134812Z.json",
   "experiments/EXP3-power-20261025/main/manifest_20261025T171718Z.json"

@@ -107,3 +107,31 @@ def test_prerequisites_are_intact() -> None:
     for e in EXPS:
         for p in S.load(e).prerequisites:
             assert p.verify(), p.path
+
+
+def test_declared_inputs_exist_and_match() -> None:
+    for e in EXPS:
+        for i in S.load(e).inputs:
+            if not os.path.exists(os.path.join(S.REPO, i.path)):
+                pytest.skip(f"{i.path} is not on this machine")
+            assert i.verify(), f"{e}: input {i.path} changed since the spec was built"
+
+
+def test_a_missing_declared_input_is_a_clear_error(tmp_path) -> None:
+    """EXP4's analysis in a scratch copy without EXP2's summary must stop and name the file (CR-009)."""
+    import shutil
+    import subprocess
+    import sys
+
+    sp = S.load("EXP4")
+    work = tmp_path / "experiments" / os.path.basename(sp.folder)
+    work.mkdir(parents=True)
+    for n in os.listdir(os.path.join(S.REPO, sp.folder)):
+        if n.endswith(".py"):
+            shutil.copy(os.path.join(S.REPO, sp.folder, n), work / n)
+    os.symlink(os.path.join(S.REPO, sp.folder, "main"), work / "main")
+    shutil.copytree(os.path.join(S.REPO, "kmem"), tmp_path / "kmem", ignore=shutil.ignore_patterns("__pycache__"))
+    p = subprocess.run([sys.executable, "-I", "analyze_exp4.py", "--in", "main", "--tag", "scratch"], cwd=work,
+                       capture_output=True, text=True)
+    assert p.returncode != 0
+    assert "declared input missing" in p.stderr and "EXP2-20261023/summary_main.csv" in p.stderr

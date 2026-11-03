@@ -3,8 +3,11 @@
 Usage:
   python -I run_exp7.py --mode tune  --out tune  --workers 12
   python -I run_exp7.py --mode pilot --out pilot --workers 12
-  python -I run_exp7.py --mode pilot --out pilot_hsplit --extras-only --workers 12
+  python -I run_exp7.py --mode pilot --out pilot_extras --extras-only --workers 12
   python -I run_exp7.py --mode main  --out main  --workers 16
+
+The main run from the repo root, with the saved seeds: python -m kmem run EXP7 --out <folder> --workers 8.
+sn_table.json must exist first (python -I sn_tables.py; the spec pins its sha256).
 
 One CSV per cell in --out, one row per replication, appended as chunks finish. Re-running resumes:
 a replication counts as done only with a complete status-ok row, so error rows are retried.

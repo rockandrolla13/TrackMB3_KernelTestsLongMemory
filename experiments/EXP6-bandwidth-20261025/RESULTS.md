@@ -105,3 +105,9 @@ over-reject under SEAS-V at κ ≤ 2 and stop over-rejecting at κ = 4.
 - κ is applied to the median heuristic. Other bandwidth rules (for example, power-maximising
   choices on held-out data) were not tested.
 - 500 replications per cell, not 1,000. Size intervals are about ±2 pp at 5%.
+
+## Files without a writing script (added 2026-11-03, refactor decision D11)
+
+`results.json` and `regression_vs_exp3.txt` were written by hand from the analysis output; no script in this
+folder writes them. They are records, not regenerable outputs, and `tools/analysis_gate.py` does not check them.
+Their hashes are pinned in `experiments/OUTPUTS.sha256`.

@@ -2,9 +2,11 @@
 
 Usage:
   python -I run_exp6.py --mode pilot   --reps 40   --out pilot   --workers 2
-  python -I run_exp6.py --mode main    --reps 1000 --out main    --workers 5
+  python -I run_exp6.py --mode main    --reps 500  --out main    --workers 5 --kappas 0.5,1,2,4 --oracle-kappas 0.25,8
   python -I run_exp6.py --mode regress --reps 5    --out regress --workers 2
 
+The main line is the command the saved main run used (its manifest argv; DESIGN.md:146-150). The same run
+from the repo root, with the saved seeds: python -m kmem run EXP6 --out <folder> --workers 5.
 One CSV per cell in --out, one row per replication, appended as chunks finish. Re-running resumes.
 Seeds: SeedSequence(entropy=MASTER[mode], spawn_key=(cell_idx, rep)); one default_rng per rep.
 Regress mode uses the EXP3 main master and EXP3 cell indices, for the kappa = 1 check only.

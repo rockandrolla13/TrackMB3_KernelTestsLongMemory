@@ -22,6 +22,24 @@ value (`float(saved) == float(new)`, or both NaN, or equal text), after EXP7's 1
 skips only machine measurements (`cpu_s`, `wall_s`, `maxrss_mb`), the `error` text, and EXP4's `reused`
 flag, which depends on how a run was chunked.
 
+## Rerunning a past experiment
+
+From the repo root (kmem is not installed in the shared environment):
+
+    python -m kmem reproduce EXP5                    # the committed sample, through the spec (minutes)
+    python -m kmem reproduce EXP6 --full --dry-run   # list the rows a full rerun writes
+    python -m kmem reproduce EXP6 --full --out <folder> --workers 5   # full rerun, resumable, then compared
+    python -m kmem run EXP7 --out <folder> --workers 8                # just run, with the saved seeds
+
+Each `experiments/EXPn/spec.json` holds the final replications per cell that ended up on disk, so a full
+rerun needs none of the staged scripts the original runs used: EXP4's `run_main.sh` and `run_topup.sh`, and
+EXP5's `run_main.sh`, `run_part1b.sh`, `run_part2.sh` and `run_part3.sh`. Those stay as records of how the
+saved outputs were made. EXP5's `run_part3.sh` ran its n = 8000 stages only before 21:25 or 21:35 UTC, so
+rerunning it at another hour writes no n = 8000 rows; `kmem reproduce EXP5 --full` has no such dependence.
+EXP7 needs `sn_table.json` first; its sha256 is in the spec and is checked before every run.
+
+Full reruns cost (CPU-hours): EXP2 26.4, EXP3 9.9, EXP4 8.8, EXP5 8.4, EXP6 4.3, EXP7 43.8.
+
 ## The analysis gate (G-analysis)
 
 `python -I tools/analysis_gate.py --check` reruns all 18 saved analysis jobs of EXP2 to EXP7 in a scratch copy

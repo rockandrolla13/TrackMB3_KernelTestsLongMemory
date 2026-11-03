@@ -5,6 +5,7 @@ The numerics are those every EXP3 to EXP7 analysis used, so their saved outputs 
 from __future__ import annotations
 
 import math
+import os
 
 import numpy as np
 
@@ -13,6 +14,14 @@ from kmem.calibration.common import ALPHA, NORMAL_975
 Z = NORMAL_975
 NBOOT = 2000  # bootstrap resamples of replications
 SEED = 42  # the bootstrap seed every saved analysis used
+
+
+def require_input(path: str, what: str) -> str:
+    """A declared input from another experiment (experiments/EXPn/spec.json, inputs). Missing is an error,
+    never a silent skip (code review CR-009)."""
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"declared input missing: {os.path.normpath(path)} ({what})")
+    return path
 
 
 def wilson(k: int, m: int, z: float = Z) -> tuple[float, float]:
@@ -39,6 +48,16 @@ def cstar(v: np.ndarray) -> float:
     """Size-adjusted cut-off: the order statistic with floor(0.05 m) null values above it (no ties)."""
     v = np.sort(v)
     return float(v[v.size - int(math.floor(ALPHA * v.size)) - 1])
+
+
+def cell_rng(seed_index: int, seed: int = SEED) -> np.random.Generator:
+    """Bootstrap stream of one cell, for new analyses (decision D12): SeedSequence(seed, spawn_key=(seed_index,)).
+
+    The saved EXP3, EXP6 and EXP7 analyses drew every cell's bootstrap from one default_rng(SEED) in cell order,
+    so adding or removing a cell shifted every later interval (AR-PAR-001, CR-010). They keep that stream, so
+    their saved intervals still reproduce. With cell_rng, a cell's intervals depend on that cell alone.
+    """
+    return np.random.default_rng(np.random.SeedSequence(entropy=seed, spawn_key=(seed_index,)))
 
 
 def boot_idx(m: int, rng: np.random.Generator, nboot: int = NBOOT) -> np.ndarray:

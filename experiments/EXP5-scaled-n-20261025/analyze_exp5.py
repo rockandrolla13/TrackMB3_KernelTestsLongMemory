@@ -20,7 +20,7 @@ import numpy as np  # noqa: E402
 
 import run_exp5 as R  # noqa: E402
 from kmem.legacy import common as C  # noqa: E402
-from kmem.analysis import boot_power, cstar  # noqa: E402,F401
+from kmem.analysis import boot_power, cstar, require_input  # noqa: E402,F401
 
 EXPS = os.path.join(HERE, "..")
 EXP3_MAIN = os.path.join(EXPS, "EXP3-power-20261025", "main")
@@ -83,7 +83,7 @@ def part1(indir, cells, rng):
         if alt != "null":
             continue
         p3 = os.path.join(EXP3_MAIN, f"mmd__G0__null0__H{h}__n{n}.csv")
-        old = [r for r in csv.DictReader(open(p3)) if r["status"] == "ok"] if os.path.exists(p3) else []
+        old = [r for r in csv.DictReader(open(require_input(p3, "EXP3 main run, null regression"))) if r["status"] == "ok"]
         for rule, (rc, raw) in MMD_RULES.items():
             k1, m1 = sum(raw(r) for r in ok), len(ok)
             rec = {"H": h, "n": n, "rule": rule, "exp5_size": k1 / m1, "exp5_m": m1,
@@ -176,13 +176,13 @@ def part2(indir, cells):
                         "R": m, "size": k / m, "ci_lo": lo, "ci_hi": hi,
                         "cpu_s_rep": cp / max(1, len(ok) + err)})
     prior = []
-    for r in csv.DictReader(open(E3_SUMMARY)):
+    for r in csv.DictReader(open(require_input(E3_SUMMARY, "EXP1 E3 summary"))):
         if r["HX"] == r["HY"] and r["HX"] in ("0.7", "0.8"):
             prior.append({"source": "E3", "sumH": float(r["sumH"]), "H": float(r["HX"]), "n": int(r["n"]),
                           "test": r["test"], "rej": int(r["rej"]), "R": int(r["R"]), "size": float(r["size"]),
                           "ci_lo": float(r["ci_lo"]), "ci_hi": float(r["ci_hi"])})
     seen = set()
-    for r in csv.DictReader(open(KL_SUMMARY)):
+    for r in csv.DictReader(open(require_input(KL_SUMMARY, "kernel-linear job, KL baseline"))):
         if r["proc"] == "G1" and r["HX"] == "0.5" and r["HY"] == "0.5" and float(r["r"] or 0) == 0:
             key = (int(r["n"]), r["test"])
             if key in seen or r["test"] not in IND_RULES:
