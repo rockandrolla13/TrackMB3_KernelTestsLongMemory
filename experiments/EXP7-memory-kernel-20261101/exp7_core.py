@@ -40,9 +40,12 @@ from kmem.calibration.selfnorm import (SN_GRID, SN_LEVELS, SNTable, betken_sup, 
 from kmem.calibration.shift import shift_stats_sym  # noqa: F401
 from kmem.calibration.subsample import sub_fast  # noqa: F401
 from kmem.calibration.wild import INC_LONG, Multipliers, wild_prefix  # noqa: F401
+from kmem.generators.independence import pair as ind_pair  # noqa: F401
+from kmem.generators.seasonal import seas_scale, seas_v_slow  # noqa: F401
+from kmem.generators.split import split_series as mmd_series  # noqa: F401
+from kmem.generators.stress import FACTOR_PHI, FACTOR_VAR, factor, flat_ma_norm, scale_norm  # noqa: F401
 from kmem.features import TOL_CHOL, TOL_PAIR, compress, gauss_features, select_pairs, window_sum  # noqa: F401
 from kmem.layers import hermite_layers, layer_memory  # noqa: F401
-from kmem.legacy import gens
 from kmem.legacy import mbcore as mb
 from kmem.legacy import mmdcal as M
 from kmem.rules import rules_distance, rules_fast, rules_full  # noqa: F401
@@ -64,115 +67,6 @@ _SN = SNTable(SN_TABLE_PATH)
 # Harris (2020) non-circular shift test (DESIGN.md A3)
 HARRIS_KERNELS = ("raw", "inc1")
 HARRIS_STRICT_REPS = {500: 40, 2000: 40, 4000: 10}
-
-# Stress alternatives
-FACTOR_PHI = 0.99
-FACTOR_VAR = 3.0 / 7.0  # corr(X, Y) = v / (v + 1) = 0.3 with unit-variance noise
-
-
-# ---------------------------------------------------------------- generators
-
-def seas_scale(n: int, rng: np.random.Generator) -> np.ndarray:
-    u = int(rng.integers(gens.PERIOD))
-    return 1.0 + gens.SEAS_B * gens.season(n, u)
-
-
-def seas_v_slow(H: float, n: int, rng: np.random.Generator) -> np.ndarray:
-    """EXP4 SEAS-V-slow, same draw order as gens_exp4.generate: period 4n, phase independent per series."""
-    p = 4 * n
-    u = int(rng.integers(p))
-    return (1.0 + gens.SEAS_B * np.sin(2.0 * np.pi * (np.arange(n) + u) / p)) * mb.fgn(H, n, rng)
-
-
-def factor(n: int, rng: np.random.Generator) -> np.ndarray:
-    """Stationary AR(1), coefficient 0.99, variance FACTOR_VAR, Gaussian iid innovations."""
-    e = rng.standard_normal(n)
-    out = np.empty(n)
-    prev = e[0]
-    for t in range(n):
-        if t:
-            prev = FACTOR_PHI * prev + math.sqrt(1.0 - FACTOR_PHI ** 2) * e[t]
-        out[t] = prev
-    return math.sqrt(FACTOR_VAR) * out
-
-
-def scale_norm(gamma: float) -> float:
-    """sd of exp(gamma |xi|) Z with xi, Z independent standard normal: E exp(2 gamma |xi|) = 2 e^{2 gamma^2} Phi(2 gamma)."""
-    return math.sqrt(2.0 * math.exp(2.0 * gamma * gamma) * float(mb.norm_cdf(np.array(2.0 * gamma))))
-
-
-def flat_ma_norm(H: float) -> float:
-    """sd of xi_{t-1} + xi_t + xi_{t+1} for unit fGn(H)."""
-    g = mb.fgn_acov(H, 3)
-    return math.sqrt(3.0 + 4.0 * g[1] + 2.0 * g[2])
-
-
-def ind_pair(gen: str, alt: str, HX: float, HY: float, n: int, par: float, rng: np.random.Generator):
-    """Independence-arm pair. Null generators and lin/sq follow EXP2 and EXP3 draw orders."""
-    if alt == "null":
-        if gen == "G0":
-            x = mb.fgn(HX, n, rng)
-            return x, mb.fgn(HY, n, rng)
-        if gen == "SEAS-V-slow":
-            x = seas_v_slow(HX, n, rng)
-            return x, seas_v_slow(HY, n, rng)
-        if gen == "FACTOR":  # matched null of the common slow factor: two independent factors
-            x = factor(n, rng) + mb.fgn(HX, n, rng)
-            return x, factor(n, rng) + mb.fgn(HY, n, rng)
-        if gen == "SCALE":  # matched null of the scale coupling: Y's scale comes from an independent copy
-            x = mb.fgn(HX, n, rng)
-            xp = mb.fgn(HX, n, rng)
-            return x, np.exp(par * np.abs(xp)) * mb.fgn(HY, n, rng) / scale_norm(par)
-        if HX != HY:
-            raise ValueError("process arms use equal H")
-        return gens.pair(gen, HX, n, rng)
-    if HX != HY:
-        raise ValueError("alternatives use equal H")
-    H = HX
-    if alt == "lin":  # EXP3
-        xi = mb.fgn(H, n, rng)
-        w = mb.fgn(H, n, rng)
-        return xi, par * xi + math.sqrt(1.0 - par * par) * w
-    if alt == "sq":  # EXP3
-        xi = mb.fgn(H, n, rng)
-        w = mb.fgn(H, n, rng)
-        return xi, par * (xi * xi - 1.0) / math.sqrt(2.0) + math.sqrt(1.0 - par * par) * w
-    if alt == "lag":  # Y_t = rho X_{t-1} + noise
-        xi = mb.fgn(H, n + 1, rng)
-        w = mb.fgn(H, n, rng)
-        return xi[1:], par * xi[:-1] + math.sqrt(1.0 - par * par) * w
-    if alt == "flat":  # Y_t = rho (X_{t-1} + X_t + X_{t+1}) / sd + noise
-        xi = mb.fgn(H, n + 2, rng)
-        w = mb.fgn(H, n, rng)
-        ma = (xi[:-2] + xi[1:-1] + xi[2:]) / flat_ma_norm(H)
-        return xi[1:-1], par * ma + math.sqrt(1.0 - par * par) * w
-    if alt == "factor":  # X = m + e, Y = m + u, corr 0.3
-        m = factor(n, rng)
-        return m + mb.fgn(H, n, rng), m + mb.fgn(H, n, rng)
-    if alt == "scale":  # Y = exp(gamma |X|) Z / sd
-        xi = mb.fgn(H, n, rng)
-        return xi, np.exp(par * np.abs(xi)) * mb.fgn(H, n, rng) / scale_norm(par)
-    raise ValueError(alt)
-
-
-def mmd_series(gen: str, alt: str, H: float, n: int, par: float, rng: np.random.Generator) -> np.ndarray:
-    """Split-MMD series. mean: add delta to the second half (EXP3 'shift'). scale: multiply the second
-    half by par. shape: second half becomes sqrt(1 - a^2) xi + a (xi^2 - 1)/sqrt(2), same mean and variance."""
-    x = gens.generate(gen, H, n, rng)
-    if alt == "null":
-        return x
-    x = x.copy()
-    h = n // 2
-    if alt == "mean":
-        x[h:] += par
-    elif alt == "scale":
-        x[h:] *= par
-    elif alt == "shape":
-        xi = x[h:]
-        x[h:] = math.sqrt(1.0 - par * par) * xi + par * (xi * xi - 1.0) / math.sqrt(2.0)
-    else:
-        raise ValueError(alt)
-    return x
 
 
 # ---------------------------------------------------------------- kernel feature maps (fast path)

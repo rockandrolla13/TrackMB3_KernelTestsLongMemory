@@ -20,7 +20,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 
-from kmem.legacy import gens  # noqa: E402
+from kmem.generators.split import split_series  # noqa: E402
 from kmem.legacy import mbcore as mb  # noqa: E402
 from kmem.legacy import mmdcal as M  # noqa: E402
 
@@ -55,11 +55,7 @@ def sd_half_exact(H: float, n: int) -> float:
 
 def mmd_series(H: float, n: int, delta: float, rng: np.random.Generator) -> np.ndarray:
     """G0 fGn (EXP2/EXP3 generator); delta added to the second half (delta = 0 is the null)."""
-    x = gens.generate("G0", H, n, rng)
-    if delta != 0.0:
-        x = x.copy()
-        x[n // 2:] += delta
-    return x
+    return split_series("G0", "mean" if delta != 0.0 else "null", H, n, delta, rng)
 
 
 def mmd_ext(x: np.ndarray, rng: np.random.Generator, B: int = M.B_WILD) -> dict:

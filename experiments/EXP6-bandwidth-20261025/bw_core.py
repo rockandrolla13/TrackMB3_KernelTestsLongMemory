@@ -12,7 +12,8 @@ import math
 
 import numpy as np
 
-from kmem.legacy import gens
+from kmem.generators.independence import pair
+from kmem.generators.seasonal import seas_scale  # noqa: F401  (re-exported)
 from kmem.legacy import mbcore as mb
 
 ALPHA = 0.05
@@ -31,34 +32,11 @@ def ktag(k: float) -> str:
     return f"k{k:g}".replace(".", "p")
 
 
-# ---------------------------------------------------------------- generators (EXP3 copy)
-
-def seas_scale(n: int, rng: np.random.Generator) -> np.ndarray:
-    u = int(rng.integers(gens.PERIOD))
-    return 1.0 + gens.SEAS_B * gens.season(n, u)
-
+# ---------------------------------------------------------------- generators (moved to kmem.generators)
 
 def ind_pair(gen: str, alt: str, H: float, n: int, rho: float, rng: np.random.Generator):
-    """EXP3 power_core.ind_pair, verbatim logic. alt in {null, lin, sq}; gen in {G0, SEAS-V}."""
-    if alt == "null":
-        return gens.pair(gen, H, n, rng)
-    if gen == "SEAS-V":
-        sx = seas_scale(n, rng)
-    xi = mb.fgn(H, n, rng)
-    if gen == "SEAS-V":
-        sy = seas_scale(n, rng)
-    w = mb.fgn(H, n, rng)
-    if alt == "lin":
-        eta = rho * xi + math.sqrt(1.0 - rho * rho) * w
-    elif alt == "sq":
-        eta = rho * (xi * xi - 1.0) / math.sqrt(2.0) + math.sqrt(1.0 - rho * rho) * w
-    else:
-        raise ValueError(alt)
-    if gen == "G0":
-        return xi, eta
-    if gen == "SEAS-V":
-        return sx * xi, sy * eta
-    raise ValueError(gen)
+    """EXP3 power_core.ind_pair: kmem.generators.independence.pair at equal memory. alt null, lin, sq; gen G0, SEAS-V."""
+    return pair(gen, alt, H, H, n, rho, rng)
 
 
 # ---------------------------------------------------------------- bundle
