@@ -96,13 +96,9 @@ def z2(a, b):
     return (a["p"] - b["p"]) / se if se > 0 else 0.0
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--in", dest="indir", required=True)
-    ap.add_argument("--tag", required=True)
-    a = ap.parse_args()
-    d, flags, period, cpu = load(a.indir)
-    with open(os.path.join(HERE, f"summary_{a.tag}.csv"), "w", newline="") as f:
+def write_summary(d: dict, path: str) -> None:
+    """One row per (generator, H, n, adjustment, rule): rejections, valid replications, rate, Wilson interval."""
+    with open(path, "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["gen", "H", "n", "adj", "rule", "rejections", "valid_reps", "errors", "rate", "wilson_lo", "wilson_hi"])
         for (g, h, n, adj), rec in sorted(d.items()):
@@ -111,7 +107,11 @@ def main():
                     c = rec[rule]
                     w.writerow([g, h, n, adj, rule, c["k"], c["m"], rec["errors"], round(c["p"], 5),
                                 round(c["lo"], 5), round(c["hi"], 5)])
-    L = [f"# EXP4 tables ({a.tag})", "",
+
+
+def report(tag: str, d: dict, flags: dict, period: dict, cpu: dict) -> tuple[str, dict, int, float]:
+    """The tables, with the reading-rule verdicts computed alongside: (markdown, verdicts, errors, CPU seconds)."""
+    L = [f"# EXP4 tables ({tag})", "",
          "Rejection % at nominal 5% [Wilson 95%]. A0-EXP2 = unadjusted EXP2 main run (independent seeds).", ""]
     for n in N_GRID:
         for h in H_GRID:
@@ -210,7 +210,18 @@ def main():
     tot = sum(cpu.values())
     errs = sum(rec["errors"] for k, rec in d.items() if k[3] != "A0-EXP2")
     L += [f"Cells: {len(cpu)}. Unrecovered (replication, adjustment) errors: {errs}. CPU-hours (row sum): {tot / 3600:.2f}."]
-    open(os.path.join(HERE, f"tables_{a.tag}.md"), "w").write("\n".join(L) + "\n")
+    return "\n".join(L) + "\n", verd, errs, tot
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--in", dest="indir", required=True)
+    ap.add_argument("--tag", required=True)
+    a = ap.parse_args()
+    d, flags, period, cpu = load(a.indir)
+    write_summary(d, os.path.join(HERE, f"summary_{a.tag}.csv"))
+    text, verd, errs, tot = report(a.tag, d, flags, period, cpu)
+    open(os.path.join(HERE, f"tables_{a.tag}.md"), "w").write(text)
     json.dump({"verdicts": verd, "period": {f"{k[0]}|{k[1]}|{k[2]}": v for k, v in period.items()},
                "cpu_h": tot / 3600}, open(os.path.join(HERE, f"verdicts_{a.tag}.json"), "w"), indent=1)
     print(f"cells {len(cpu)}, error rows {errs}, cpu_h {tot / 3600:.2f}")

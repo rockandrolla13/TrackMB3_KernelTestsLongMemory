@@ -77,26 +77,22 @@ def fmt(p, lo, hi):
     return f"{100 * p:.1f} [{100 * lo:.1f}, {100 * hi:.1f}]"
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--in", dest="indir", required=True)
-    ap.add_argument("--tag", required=True)
-    a = ap.parse_args()
+def load_cells(indir: str) -> tuple[dict, dict]:
+    """Saved cells by (family, gen, alt, H, n), and their (ok rows, errors, CPU seconds) where a CSV exists."""
     cells = R.main_cells()
     for c in cells:
         c["name"] = R.name_of(c)
     by = {(c["family"], c["gen"], c["alt"], c["H"], c["n"]): c for c in cells}
     data = {}
     for key, c in by.items():
-        p = os.path.join(HERE, a.indir, c["name"] + ".csv")
+        p = os.path.join(HERE, indir, c["name"] + ".csv")
         if os.path.exists(p):
             data[key] = load(p)
-    rng = np.random.default_rng(SEED)
-    out_rows, res, cpu_total, err_total = [], {}, 0.0, 0
-    for k, (rows, err, cpu) in data.items():
-        cpu_total += cpu
-        err_total += err
-    # ------------------------------------------------ null regression against EXP2
+    return by, data
+
+
+def null_regression(data: dict) -> list[dict]:
+    """Fresh EXP3 null raw size against the EXP2 main run, same generator and rule."""
     reg = []
     for (fam, g, alt, h, n), (rows, err, cpu) in data.items():
         if alt != "null":
@@ -120,11 +116,14 @@ def main():
                 k2 = m2 = z = float("nan")
             reg.append({"family": fam, "gen": g, "H": h, "n": n, "rule": rule, "exp3_rate": k1 / m1, "exp3_m": m1,
                         "exp2_rate": (k2 / m2) if old else float("nan"), "exp2_m": m2, "z": z})
-    with open(os.path.join(HERE, f"null_regression_{a.tag}.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(reg[0].keys()) if reg else ["none"])
-        w.writeheader()
-        w.writerows(reg)
-    # ------------------------------------------------ power
+    return reg
+
+
+def power(data: dict, by: dict, rng: np.random.Generator) -> tuple[list[dict], dict]:
+    """Raw and size-adjusted power per alternative cell, and the shift-vs-best-other-HSIC reading rule.
+
+    rng is the one bootstrap stream of the saved analysis (decision D12), drawn in sorted cell order."""
+    out_rows, res = [], {}
     for (fam, g, alt, h, n), (rows, err, cpu) in sorted(data.items(), key=lambda t: str(t[0])):
         if alt == "null":
             continue
@@ -199,20 +198,12 @@ def main():
                 "shift_minus_oracle_hsic_pp": round(100 * og, 1),
                 "shift_minus_oracle_boot_pp": [round(100 * float(np.quantile(ob, 0.025)), 1),
                                                round(100 * float(np.quantile(ob, 0.975)), 1)]}
-    fields = []
-    for r in out_rows:
-        for k in r:
-            if k not in fields:
-                fields.append(k)
-    with open(os.path.join(HERE, f"summary_{a.tag}.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
-        w.writeheader()
-        w.writerows(out_rows)
-    with open(os.path.join(HERE, f"results_{a.tag}.json"), "w") as f:
-        json.dump({"cells_loaded": len(data), "errors": err_total, "cpu_hours": round(cpu_total / 3600, 2),
-                   "nboot": NBOOT, "seed": SEED, "verdicts_shift_vs_best_other_hsic": res}, f, indent=1)
-    # ------------------------------------------------ tables
-    L = [f"# EXP3 tables ({a.tag})", "",
+    return out_rows, res
+
+
+def tables(tag: str, data: dict, out_rows: list[dict], res: dict, reg: list[dict], err_total: int,
+           cpu_total: float) -> str:
+    L = [f"# EXP3 tables ({tag})", "",
          "Percent. `adj` = size-adjusted power [bootstrap 95% interval incl. threshold error];",
          "`raw` = nominal-5% power; `size` = raw null rejection on the matched fresh null cell.",
          "Oracle rows size-adjust the bare statistic (no critical-value rule).", ""]
@@ -251,8 +242,39 @@ def main():
         L.append(f"| {r['family']} {r['gen']} H{r['H']} n{r['n']} | {r['rule']} | {100 * r['exp3_rate']:.1f} | "
                  f"{100 * r['exp2_rate']:.1f} | {r['z']:.2f} |")
     L += ["", f"Cells loaded: {len(data)}. Errors: {err_total}. CPU: {cpu_total / 3600:.2f} h."]
+    return "\n".join(L) + "\n"
+
+
+def write_csv(path: str, rows: list[dict], fields: list[str]) -> None:
+    with open(path, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=fields)
+        w.writeheader()
+        w.writerows(rows)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--in", dest="indir", required=True)
+    ap.add_argument("--tag", required=True)
+    a = ap.parse_args()
+    by, data = load_cells(a.indir)
+    rng = np.random.default_rng(SEED)
+    cpu_total = sum(cpu for _, _, cpu in data.values())
+    err_total = sum(err for _, err, _ in data.values())
+    reg = null_regression(data)
+    write_csv(os.path.join(HERE, f"null_regression_{a.tag}.csv"), reg, list(reg[0].keys()) if reg else ["none"])
+    out_rows, res = power(data, by, rng)
+    fields = []
+    for r in out_rows:
+        for k in r:
+            if k not in fields:
+                fields.append(k)
+    write_csv(os.path.join(HERE, f"summary_{a.tag}.csv"), out_rows, fields)
+    with open(os.path.join(HERE, f"results_{a.tag}.json"), "w") as f:
+        json.dump({"cells_loaded": len(data), "errors": err_total, "cpu_hours": round(cpu_total / 3600, 2),
+                   "nboot": NBOOT, "seed": SEED, "verdicts_shift_vs_best_other_hsic": res}, f, indent=1)
     with open(os.path.join(HERE, f"tables_{a.tag}.md"), "w") as f:
-        f.write("\n".join(L) + "\n")
+        f.write(tables(a.tag, data, out_rows, res, reg, err_total, cpu_total))
     print(f"cells {len(data)}, errors {err_total}, cpu {cpu_total / 3600:.2f} h")
 
 

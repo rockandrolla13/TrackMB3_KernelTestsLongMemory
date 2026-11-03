@@ -50,6 +50,16 @@ def cstar(v: np.ndarray) -> float:
     return float(v[v.size - int(math.floor(ALPHA * v.size)) - 1])
 
 
+def cell_rng(seed_index: int, seed: int = SEED) -> np.random.Generator:
+    """Bootstrap stream of one cell, for new analyses (decision D12): SeedSequence(seed, spawn_key=(seed_index,)).
+
+    The saved EXP3, EXP6 and EXP7 analyses drew every cell's bootstrap from one default_rng(SEED) in cell order,
+    so adding or removing a cell shifted every later interval (AR-PAR-001, CR-010). They keep that stream, so
+    their saved intervals still reproduce. With cell_rng, a cell's intervals depend on that cell alone.
+    """
+    return np.random.default_rng(np.random.SeedSequence(entropy=seed, spawn_key=(seed_index,)))
+
+
 def boot_idx(m: int, rng: np.random.Generator, nboot: int = NBOOT) -> np.ndarray:
     return rng.integers(0, m, size=(nboot, m))
 
