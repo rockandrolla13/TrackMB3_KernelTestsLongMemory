@@ -26,6 +26,7 @@ import sys  # noqa: E402
 import time  # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))  # kmem (D7: not installed)
 import numpy as np  # noqa: E402
 
 import exp5_core as P  # noqa: E402

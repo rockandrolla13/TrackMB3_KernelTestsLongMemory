@@ -28,11 +28,12 @@ import time  # noqa: E402
 from collections import defaultdict  # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))  # kmem (D7: not installed)
 import numpy as np  # noqa: E402
 
 import deseason as D  # noqa: E402
 import gens_exp4  # noqa: E402
-import mbcore as mb  # noqa: E402
+from kmem.legacy import mbcore as mb  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MASTER = {"pilot": 2026102541, "main": 2026102542}

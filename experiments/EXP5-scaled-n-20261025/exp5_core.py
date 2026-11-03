@@ -11,20 +11,14 @@ Exploratory simulation; not evidence for any accepted claim.
 from __future__ import annotations
 
 import math
-import os
-import sys
 
 import numpy as np
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
-if ROOT not in sys.path:
-    sys.path.insert(0, ROOT)
-
-from kmem.calibration.common import ALPHA, pboot, q95  # noqa: E402,F401  (re-exported)
-from kmem.generators.split import split_series  # noqa: E402
-from kmem.legacy import mbcore as mb  # noqa: E402
-from kmem.legacy import mmdcal as M  # noqa: E402
-from kmem.mmd import split_mmd_ext  # noqa: E402
+from kmem.calibration.common import ALPHA, pboot, q95  # noqa: F401  (re-exported)
+from kmem.generators.split import split_series
+from kmem.legacy import mbcore as mb
+from kmem.legacy import mmdcal as M
+from kmem.mmd import split_mmd_ext
 
 
 def sd_half(H: float, n: int) -> float:

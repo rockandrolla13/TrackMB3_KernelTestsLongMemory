@@ -13,9 +13,10 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))  # kmem (D7: not installed)
 import numpy as np  # noqa: E402
 
-import common as C  # noqa: E402
+from kmem.legacy import common as C  # noqa: E402
 import run_exp3 as R  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))

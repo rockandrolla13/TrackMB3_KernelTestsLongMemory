@@ -13,10 +13,11 @@ import math  # noqa: E402
 import sys  # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))  # kmem (D7: not installed)
 import numpy as np  # noqa: E402
 
-import gens  # noqa: E402
-import mmdcal as M  # noqa: E402
+from kmem.legacy import gens  # noqa: E402
+from kmem.legacy import mmdcal as M  # noqa: E402
 
 SEED = 2026102301
 N = 2000

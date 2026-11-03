@@ -8,16 +8,12 @@ from __future__ import annotations
 
 import numpy as np
 
-import gens
-import mbcore as mb
+from kmem.generators.registry import get_process
 
 
 def generate(gen: str, H: float, n: int, rng: np.random.Generator) -> np.ndarray:
-    if gen == "SEAS-V-slow":
-        p = 4 * n
-        u = int(rng.integers(p))
-        return (1.0 + gens.SEAS_B * np.sin(2.0 * np.pi * (np.arange(n) + u) / p)) * mb.fgn(H, n, rng)
-    return gens.generate(gen, H, n, rng)
+    """One series; SEAS-V-slow and the EXP2 generators come from kmem.generators.registry (same draws)."""
+    return get_process(gen)(H, n, rng)
 
 
 def pair(gen: str, H: float, n: int, rng: np.random.Generator) -> tuple[np.ndarray, np.ndarray]:

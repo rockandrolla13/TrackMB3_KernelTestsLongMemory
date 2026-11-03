@@ -11,11 +11,12 @@ for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):  # tes
     os.environ[_v] = "1"
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))  # kmem (D7: not installed)
 import numpy as np  # noqa: E402
 
 import deseason as D  # noqa: E402
-import gens  # noqa: E402
-import mbcore as mb  # noqa: E402
+from kmem.legacy import gens  # noqa: E402
+from kmem.legacy import mbcore as mb  # noqa: E402
 
 rng = np.random.default_rng(2026102501)
 out = []

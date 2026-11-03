@@ -17,10 +17,11 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 EXP = os.path.dirname(HERE)
 sys.path.insert(0, EXP)
+sys.path.insert(0, os.path.abspath(os.path.join(EXP, "..", "..")))  # kmem (D7: not installed)
 from scipy import stats  # noqa: E402
 
 import analyze as A  # noqa: E402  (frozen EXP2 code: load, verdict, interaction, RULES)
-import gens  # noqa: E402
+from kmem.legacy import gens  # noqa: E402
 
 ALPHA = 0.05
 FLOOR = 0.02  # the 2 pp floor of the pre-declared reading rule

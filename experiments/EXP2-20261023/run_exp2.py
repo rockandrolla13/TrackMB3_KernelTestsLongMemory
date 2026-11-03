@@ -23,11 +23,12 @@ import sys  # noqa: E402
 import time  # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))  # kmem (D7: not installed)
 import numpy as np  # noqa: E402
 
-import gens  # noqa: E402
-import mbcore as mb  # noqa: E402
-import mmdcal as M  # noqa: E402
+from kmem.legacy import gens  # noqa: E402
+from kmem.legacy import mbcore as mb  # noqa: E402
+from kmem.legacy import mmdcal as M  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MASTER = {("mmd", "pilot"): 2026102321, ("mmd", "main"): 2026102322,
