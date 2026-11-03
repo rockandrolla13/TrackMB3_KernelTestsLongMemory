@@ -65,5 +65,47 @@ def run(experiment: str = typer.Argument(..., help="EXP2 ... EXP7"),
                     max_tasks_per_child=getattr(drv, "MAX_TASKS_PER_CHILD", 50))
 
 
+@app.command()
+def reproduce(experiment: str = typer.Argument(..., help="EXP2 ... EXP7"),
+              full: bool = typer.Option(False, "--full", help="rerun every saved cell (resumable) instead of the sample"),
+              out: str = typer.Option(None, help="--full: output folder; an existing one is resumed"),
+              workers: int = typer.Option(4, help="worker processes"),
+              tier: str = typer.Option("all", help="sample tier: fast, slow or all"),
+              dry_run: bool = typer.Option(False, "--dry-run", help="--full: list the rows a rerun would write")) -> None:
+    """Check that a past experiment still reproduces its saved rows exactly (value-exact, timing excluded)."""
+    from kmem import reproduce as R
+    from kmem import spec
+
+    sp = spec.load(experiment)
+    bad = [p.path for p in sp.prerequisites if not p.verify()]
+    if bad:
+        typer.echo(f"prerequisite files differ from the spec: {bad}. Rebuild: {[p.made_by for p in sp.prerequisites]}")
+        raise typer.Exit(2)
+    if not full:
+        res = R.sample(experiment, tier, workers)
+        bad_rows = {k: v for k, v in res.items() if v}
+        for k in sorted(bad_rows)[:10]:
+            typer.echo(f"DIFF {k}: {bad_rows[k][:3]}")
+        typer.echo(f"{experiment} sample ({tier}): {len(res) - len(bad_rows)} of {len(res)} saved rows reproduce exactly")
+        raise typer.Exit(1 if bad_rows else 0)
+    plan = R.planned_rows(experiment)
+    if dry_run:
+        for name, k in plan.items():
+            typer.echo(f"{k:7d}  {name}")
+        typer.echo(f"{experiment}: {len(plan)} cells, {sum(plan.values())} rows")
+        return
+    if out is None:
+        raise typer.BadParameter("--full needs --out")
+    run(experiment, out=out, workers=workers, only=None, reps=None)
+    report = R.compare_run(experiment, os.path.abspath(out), full=True)
+    ok = R.passed(report, full=True)
+    for name, r in report.items():
+        if r["diffs"] or not r["header_equal"] or r["rows"] != r["saved_rows"]:
+            typer.echo(f"DIFF {name}: rows {r['rows']}/{r['saved_rows']}, header {r['header_equal']}, {r['diffs'][:3]}")
+    typer.echo(f"{experiment} full: {sum(r['rows'] for r in report.values())} rows compared, "
+               f"{'all reproduce exactly' if ok else 'DIFFERENCES FOUND'}")
+    raise typer.Exit(0 if ok else 1)
+
+
 def main() -> None:
     app(prog_name=f"{os.path.basename(sys.executable)} -m kmem")
