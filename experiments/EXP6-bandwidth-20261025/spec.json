@@ -1,0 +1,137 @@
+{
+ "id": "EXP6",
+ "folder": "experiments/EXP6-bandwidth-20261025",
+ "driver": "run_exp6.py",
+ "mode": "main",
+ "masters": {
+  "main": 2026102562
+ },
+ "master_key": "main",
+ "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
+ "options": {
+  "B_wild": 500,
+  "kappas": [
+   0.5,
+   1.0,
+   2.0,
+   4.0
+  ],
+  "oracle_kappas": [
+   0.25,
+   8.0
+  ],
+  "numpy": "2.5.1",
+  "python": "3.12.13"
+ },
+ "writer": "str",
+ "chunk": {
+  "ind": {
+   "500": 20,
+   "2000": 4
+  }
+ },
+ "max_workers": 5,
+ "cells": [
+  {
+   "name": "ind__G0__null0__H0.5__n2000",
+   "seed_index": 0,
+   "family": "ind",
+   "n": 2000,
+   "target": 500,
+   "fields": {
+    "gen": "G0",
+    "alt": "null",
+    "H": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "idx": 0,
+    "name": "ind__G0__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.8__n2000",
+   "seed_index": 1,
+   "family": "ind",
+   "n": 2000,
+   "target": 500,
+   "fields": {
+    "gen": "G0",
+    "alt": "null",
+    "H": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "idx": 1,
+    "name": "ind__G0__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__SEAS-V__null0__H0.5__n2000",
+   "seed_index": 2,
+   "family": "ind",
+   "n": 2000,
+   "target": 500,
+   "fields": {
+    "gen": "SEAS-V",
+    "alt": "null",
+    "H": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "idx": 2,
+    "name": "ind__SEAS-V__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__lin0.065__H0.5__n2000",
+   "seed_index": 3,
+   "family": "ind",
+   "n": 2000,
+   "target": 500,
+   "fields": {
+    "gen": "G0",
+    "alt": "lin",
+    "H": 0.5,
+    "n": 2000,
+    "param": 0.065,
+    "idx": 3,
+    "name": "ind__G0__lin0.065__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__sq0.075__H0.5__n2000",
+   "seed_index": 4,
+   "family": "ind",
+   "n": 2000,
+   "target": 500,
+   "fields": {
+    "gen": "G0",
+    "alt": "sq",
+    "H": 0.5,
+    "n": 2000,
+    "param": 0.075,
+    "idx": 4,
+    "name": "ind__G0__sq0.075__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__SEAS-V__lin0.065__H0.5__n2000",
+   "seed_index": 5,
+   "family": "ind",
+   "n": 2000,
+   "target": 500,
+   "fields": {
+    "gen": "SEAS-V",
+    "alt": "lin",
+    "H": 0.5,
+    "n": 2000,
+    "param": 0.065,
+    "idx": 5,
+    "name": "ind__SEAS-V__lin0.065__H0.5__n2000"
+   }
+  }
+ ],
+ "prerequisites": [],
+ "source_manifests": [
+  "experiments/EXP6-bandwidth-20261025/main/manifest_20261025T185928Z.json",
+  "experiments/EXP6-bandwidth-20261025/main/manifest_20261025T190544Z.json"
+ ]
+}

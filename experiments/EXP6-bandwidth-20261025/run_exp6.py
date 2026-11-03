@@ -17,9 +17,6 @@ for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):
     os.environ[_v] = "1"
 
 import argparse  # noqa: E402
-import csv  # noqa: E402
-import json  # noqa: E402
-import multiprocessing as mp  # noqa: E402
 import sys  # noqa: E402
 import time  # noqa: E402
 
@@ -30,6 +27,7 @@ sys.path.insert(0, ROOT)
 import numpy as np  # noqa: E402
 
 import bw_core as K  # noqa: E402
+from kmem.runner import Job, run_jobs  # noqa: E402
 
 MASTER = {"pilot": 2026102561, "main": 2026102562, "regress": 2026102542}
 B_WB = 500
@@ -71,6 +69,15 @@ def run_chunk(args):
     return cell["name"], rows
 
 
+def job_for(cell: dict, target: int, master: int, opts: dict) -> Job:
+    """The runner's job for one cell (kmem.runner). opts holds kappas and oracle_kappas."""
+    kappas = tuple(float(k) for k in opts["kappas"])
+    okap = tuple(float(k) for k in opts.get("oracle_kappas", ()))
+    return Job(name=cell["name"], fields=cell, seed_index=cell["idx"], target=target, master=master,
+               columns=("rep", "status", "error", "cpu_s", *K.fields(kappas, okap)), chunk=CHUNK[cell["n"]],
+               extra=(kappas, okap))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", choices=list(MASTER), required=True)
@@ -93,49 +100,10 @@ def main():
     cells = cells_for(a.mode, n_grid)
     if a.only:
         cells = [c for c in cells if any(p in c["name"] for p in a.only.split(","))]
-    outdir = os.path.join(HERE, a.out)
-    os.makedirs(outdir, exist_ok=True)
-    fields = ["rep", "status", "error", "cpu_s"] + K.fields(kappas, okap)
-    tasks, mcells = [], []
-    for c in cells:
-        path = os.path.join(outdir, c["name"] + ".csv")
-        done = set()
-        if os.path.exists(path):
-            with open(path) as f:
-                rd = csv.DictReader(f)
-                if rd.fieldnames != fields:
-                    sys.exit(f"{path}: header differs from the requested kappa set")
-                done = {int(row["rep"]) for row in rd}
-        todo = [r for r in range(a.reps) if r not in done]
-        mcells.append({**c, "reps": a.reps, "already_done": len(done),
-                       "seed": {"entropy": master, "spawn_key": [c["idx"], "rep"]}})
-        cs = CHUNK[c["n"]]
-        for i in range(0, len(todo), cs):
-            tasks.append((c, todo[i:i + cs], master, kappas, okap))
-    stamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
-    with open(os.path.join(outdir, f"manifest_{stamp}.json"), "w") as f:
-        json.dump({"mode": a.mode, "master": master, "kappas": kappas, "oracle_kappas": okap,
-                   "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
-                   "B_wild": B_WB, "numpy": np.__version__, "python": sys.version.split()[0],
-                   "workers": a.workers, "argv": sys.argv, "cells": mcells}, f, indent=1)
-    # interleave cells so a partial run has balanced reps per cell
-    tasks.sort(key=lambda t: (-t[0]["n"], t[1][0], t[0]["idx"]))
-    print(f"{stamp} {len(tasks)} chunks, {sum(len(t[1]) for t in tasks)} replications, kappas {kappas}", flush=True)
-    t0 = time.time()
-    nd = 0
-    with mp.get_context("fork").Pool(a.workers, maxtasksperchild=50) as pool:
-        for name, rows in pool.imap_unordered(run_chunk, tasks):
-            path = os.path.join(outdir, name + ".csv")
-            new = not os.path.exists(path)
-            with open(path, "a", newline="") as f:
-                w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
-                if new:
-                    w.writeheader()
-                w.writerows(rows)
-            nd += 1
-            if nd % 25 == 0 or nd == len(tasks):
-                print(f"{nd}/{len(tasks)} chunks, {time.time() - t0:.0f}s wall", flush=True)
-    print(f"DONE {time.time() - t0:.0f}s wall", flush=True)
+    opts = {"kappas": kappas, "oracle_kappas": okap}
+    run_jobs([job_for(c, a.reps, master, opts) for c in cells], run_chunk, os.path.join(HERE, a.out), a.workers,
+             {"mode": a.mode, "master": master, "kappas": kappas, "oracle_kappas": okap, "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
+              "B_wild": B_WB})
 
 
 if __name__ == "__main__":

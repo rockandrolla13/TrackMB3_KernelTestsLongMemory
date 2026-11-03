@@ -195,13 +195,13 @@ def raw_exact(x, y, dx, dy, w, n: int) -> dict:
 
 def ind_bundle(x: np.ndarray, y: np.ndarray, rng: np.random.Generator, kernels=IND_KERNELS, B: int = B_WILD,
                HX: float | None = None, HY: float | None = None, exact: bool = False, full: bool = True,
-               hsplit: bool = True, dist: bool = True, strict: bool = False) -> dict:
+               hsplit: bool = True, strict: bool = False) -> dict:
     """All independence rules for one pair on one set of multipliers.
 
     exact: also compute the exact raw path (xraw_* columns). full = False skips the n x n matrices: no
-    dCov, dcov_inc1, Pearson or exact columns. dist = False skips dCov and dcov_inc1 only. hsplit: also test
-    the removed Hermite layers. strict: also compute the literal Harris form at N = 19. No random draw follows
-    the multipliers, so these switches and kernel subsets never change any other column.
+    dCov, distance kernels, Pearson or exact columns. hsplit: also test the removed Hermite layers. strict: also
+    compute the literal Harris form at N = 19. No random draw follows the multipliers, so these switches and
+    kernel subsets never change any other column. (The unused dist switch was removed on 2026-11-03, CR-017.)
     """
     n = x.size
     ln = math.floor(n ** 0.5)
@@ -211,21 +211,18 @@ def ind_bundle(x: np.ndarray, y: np.ndarray, rng: np.random.Generator, kernels=I
     w = mult.w
     sx, sy = median_bw_fast(x), median_bw_fast(y)
     if full:
-        if dist or exact:
-            dx = np.abs(x[:, None] - x[None, :])
-            dy = np.abs(y[:, None] - y[None, :])
+        dx = np.abs(x[:, None] - x[None, :])
+        dy = np.abs(y[:, None] - y[None, :])
         if exact:
             out.update({f"xraw_{k}": v for k, v in raw_exact(x, y, dx, dy, w, n).items() if k not in ("m", "q", "r975_wb", "r975_shift")})
-        if dist:
-            out.update(dcov_full_rules(x, y, dx, dy, w, n, ln, dn, wild=wild_prefix))
-            for kd in (kreg.get(k) for k in kernels):
-                if kd.kind == "distance":
-                    ka = kd.from_distances(dx)
-                    la = kd.from_distances(dy)
-                    out.update(tagged(kd.name, rules_distance(ka, la, mult.get(n - kd.lag))))
-                    del ka, la
-        if dist or exact:
-            del dx, dy
+        out.update(dcov_full_rules(x, y, dx, dy, w, n, ln, dn, wild=wild_prefix))
+        for kd in (kreg.get(k) for k in kernels):
+            if kd.kind == "distance":
+                ka = kd.from_distances(dx)
+                la = kd.from_distances(dy)
+                out.update(tagged(kd.name, rules_distance(ka, la, mult.get(n - kd.lag))))
+                del ka, la
+        del dx, dy
         out.update(pearson_rules(x, y))
     out["sx"], out["sy"] = sx, sy
     fx = gauss_features(x, sx)

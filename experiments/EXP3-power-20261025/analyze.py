@@ -18,6 +18,7 @@ import numpy as np  # noqa: E402
 
 from kmem.legacy import common as C  # noqa: E402
 import run_exp3 as R  # noqa: E402
+from kmem.analysis import boot_idx, boot_power, cstar  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 EXP2_MAIN = os.path.join(HERE, "..", "EXP2-20261023", "main")
@@ -57,12 +58,6 @@ def load(path):
     return ok, len(rows) - len(ok), sum(float(r["cpu_s"]) for r in rows)
 
 
-def cstar(null_vals: np.ndarray) -> float:
-    """Cut-off c* with #(null > c*) = floor(0.05 m) when there are no ties: the k-th order stat."""
-    v = np.sort(null_vals)
-    return float(v[v.size - int(math.floor(ALPHA * v.size)) - 1])
-
-
 def adj_power(null_vals, alt_vals):
     c = cstar(null_vals)
     return int(np.sum(alt_vals > c)), alt_vals.size, c, float(np.mean(null_vals > c))
@@ -76,17 +71,6 @@ def p_randomized(null_p, alt_p):
     less, eq = np.sum(null_p < c), np.sum(null_p == c)
     gam = (k - less) / eq
     return float(np.mean(alt_p < c) + gam * np.mean(alt_p == c)), float(c), int(eq)
-
-
-def boot_idx(m, rng):
-    return rng.integers(0, m, size=(NBOOT, m))
-
-
-def boot_power(null_vals, alt_vals, bi_null, bi_alt):
-    vn = np.sort(null_vals[bi_null], axis=1)
-    kk = vn.shape[1] - int(math.floor(ALPHA * vn.shape[1])) - 1
-    c = vn[:, kk]
-    return np.mean(alt_vals[bi_alt] > c[:, None], axis=1)
 
 
 def fmt(p, lo, hi):

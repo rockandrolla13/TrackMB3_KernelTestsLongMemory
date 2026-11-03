@@ -16,9 +16,6 @@ for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):
     os.environ[_v] = "1"
 
 import argparse  # noqa: E402
-import csv  # noqa: E402
-import json  # noqa: E402
-import multiprocessing as mp  # noqa: E402
 import sys  # noqa: E402
 import time  # noqa: E402
 
@@ -29,6 +26,7 @@ import numpy as np  # noqa: E402
 from kmem.legacy import gens  # noqa: E402
 from kmem.legacy import mbcore as mb  # noqa: E402
 from kmem.legacy import mmdcal as M  # noqa: E402
+from kmem.runner import Job, run_jobs  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MASTER = {("mmd", "pilot"): 2026102321, ("mmd", "main"): 2026102322,
@@ -37,6 +35,7 @@ H_GRID = (0.5, 0.7, 0.8)
 N_GRID = (500, 2000)
 B_WB = 500
 CHUNK = {500: 25, 2000: 5}
+MAX_WORKERS = 16
 KIND = ["hsic_stat", "dcov_stat", "p_hsic_wb", "p_hsic_shift", "p_hsic_sub", "rej_hsic_sub",
         "p_dcov_wb", "p_dcov_sub", "rej_dcov_sub", "shift_check"]
 LIND = ["pearson_r", "nw_bw", "t_nw", "p_nw", "rej_nw", "ewc_nu", "t_ewc", "rej_ewc", "nw_lrv_nonpos"]
@@ -79,6 +78,12 @@ def run_chunk(args):
     return cell["name"], rows
 
 
+def job_for(cell: dict, target: int, master: int, opts: dict | None = None) -> Job:
+    """The runner's job for one cell (kmem.runner); used by main() and by `python -m kmem run EXP2`."""
+    return Job(name=cell["name"], fields=cell, seed_index=cell["idx"], target=target, master=master,
+               columns=("rep", "status", "error", "cpu_s", *FIELDS[cell["family"]]), chunk=CHUNK[cell["n"]])
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", choices=["pilot", "main"], required=True)
@@ -88,53 +93,18 @@ def main():
     ap.add_argument("--family", default="mmd,ind")
     ap.add_argument("--only", default=None, help="comma list of substrings of cell names")
     a = ap.parse_args()
-    if a.workers > 16:
-        sys.exit("at most 16 worker processes")
-    outdir = os.path.join(HERE, a.out)
-    os.makedirs(outdir, exist_ok=True)
-    tasks, mcells = [], []
+    if a.workers > MAX_WORKERS:
+        sys.exit(f"at most {MAX_WORKERS} worker processes")
+    jobs = []
     for fam in a.family.split(","):
         master = MASTER[(fam, a.mode)]
         cells = cell_list(fam)
         if a.only:
             cells = [c for c in cells if any(p in c["name"] for p in a.only.split(","))]
-        for c in cells:
-            path = os.path.join(outdir, c["name"] + ".csv")
-            done = set()
-            if os.path.exists(path):
-                with open(path) as f:
-                    done = {int(row["rep"]) for row in csv.DictReader(f)}
-            todo = [r for r in range(a.reps) if r not in done]
-            mcells.append({**c, "reps": a.reps, "already_done": len(done),
-                           "seed": {"entropy": master, "spawn_key": [c["idx"], "rep"]}})
-            cs = CHUNK[c["n"]]
-            for i in range(0, len(todo), cs):
-                tasks.append((c, todo[i:i + cs], master))
-    stamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
-    with open(os.path.join(outdir, f"manifest_{stamp}.json"), "w") as f:
-        json.dump({"mode": a.mode, "masters": {f"{k[0]}_{k[1]}": v for k, v in MASTER.items()},
-                   "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
-                   "B_wild": B_WB, "numpy": np.__version__, "python": sys.version.split()[0],
-                   "workers": a.workers, "argv": sys.argv, "cells": mcells}, f, indent=1)
-    tasks.sort(key=lambda t: -t[0]["n"])
-    print(f"{stamp} {len(tasks)} chunks, {sum(len(t[1]) for t in tasks)} replications", flush=True)
-    t0 = time.time()
-    nd = 0
-    with mp.get_context("fork").Pool(a.workers, maxtasksperchild=50) as pool:
-        for name, rows in pool.imap_unordered(run_chunk, tasks):
-            fam = name.split("__")[0]
-            fields = ["rep", "status", "error", "cpu_s"] + FIELDS[fam]
-            path = os.path.join(outdir, name + ".csv")
-            new = not os.path.exists(path)
-            with open(path, "a", newline="") as f:
-                w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
-                if new:
-                    w.writeheader()
-                w.writerows(rows)
-            nd += 1
-            if nd % 25 == 0 or nd == len(tasks):
-                print(f"{nd}/{len(tasks)} chunks, {time.time() - t0:.0f}s wall", flush=True)
-    print(f"DONE {time.time() - t0:.0f}s wall", flush=True)
+        jobs += [job_for(c, a.reps, master) for c in cells]
+    run_jobs(jobs, run_chunk, os.path.join(HERE, a.out), a.workers,
+             {"mode": a.mode, "masters": {f"{k[0]}_{k[1]}": v for k, v in MASTER.items()},
+              "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication", "B_wild": B_WB})
 
 
 if __name__ == "__main__":

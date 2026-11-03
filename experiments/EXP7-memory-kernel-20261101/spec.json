@@ -1,0 +1,2756 @@
+{
+ "id": "EXP7",
+ "folder": "experiments/EXP7-memory-kernel-20261101",
+ "driver": "run_exp7.py",
+ "mode": "main",
+ "masters": {
+  "main": 2026110172
+ },
+ "master_key": "main",
+ "seed_rule": "np.random.SeedSequence(entropy=master, spawn_key=(cell_idx, rep)); one default_rng per replication",
+ "options": {
+  "B_wild": 500,
+  "exact_reps": {
+   "500": 100,
+   "2000": 100,
+   "4000": 25
+  },
+  "gamma": 0.1,
+  "scale_c": 1.1,
+  "shape_a": 0.1,
+  "tol_chol": 1e-12,
+  "tol_pair": 1e-07,
+  "numpy": "2.5.1",
+  "python": "3.12.13"
+ },
+ "writer": "fmt12g",
+ "chunk": {
+  "growth": {
+   "500": 200,
+   "1000": 100,
+   "2000": 100,
+   "4000": 50,
+   "8000": 25
+  },
+  "ind": {
+   "500": 25,
+   "2000": 5,
+   "4000": 2
+  },
+  "mmd": {
+   "500": 100,
+   "2000": 25
+  }
+ },
+ "max_workers": 16,
+ "cells": [
+  {
+   "name": "ind__G0__null0__H0.5__n2000",
+   "seed_index": 0,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 0,
+    "name": "ind__G0__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.6__n2000",
+   "seed_index": 1,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 1,
+    "name": "ind__G0__null0__H0.6__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.7__n2000",
+   "seed_index": 2,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 2,
+    "name": "ind__G0__null0__H0.7__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.8__n2000",
+   "seed_index": 3,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 3,
+    "name": "ind__G0__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.9__n2000",
+   "seed_index": 4,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 4,
+    "name": "ind__G0__null0__H0.9__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.95__n2000",
+   "seed_index": 5,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.95,
+    "HY": 0.95,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 5,
+    "name": "ind__G0__null0__H0.95__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__HX0.6_HY0.9__n2000",
+   "seed_index": 6,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 6,
+    "name": "ind__G0__null0__HX0.6_HY0.9__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__HX0.7_HY0.9__n2000",
+   "seed_index": 7,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 7,
+    "name": "ind__G0__null0__HX0.7_HY0.9__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.5__n500",
+   "seed_index": 8,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 8,
+    "name": "ind__G0__null0__H0.5__n500"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.6__n500",
+   "seed_index": 9,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 9,
+    "name": "ind__G0__null0__H0.6__n500"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.7__n500",
+   "seed_index": 10,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 10,
+    "name": "ind__G0__null0__H0.7__n500"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.8__n500",
+   "seed_index": 11,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 11,
+    "name": "ind__G0__null0__H0.8__n500"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.9__n500",
+   "seed_index": 12,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 12,
+    "name": "ind__G0__null0__H0.9__n500"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.95__n500",
+   "seed_index": 13,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.95,
+    "HY": 0.95,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 13,
+    "name": "ind__G0__null0__H0.95__n500"
+   }
+  },
+  {
+   "name": "ind__G0__null0__HX0.6_HY0.9__n500",
+   "seed_index": 14,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.9,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 14,
+    "name": "ind__G0__null0__HX0.6_HY0.9__n500"
+   }
+  },
+  {
+   "name": "ind__G0__null0__HX0.7_HY0.9__n500",
+   "seed_index": 15,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.9,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 15,
+    "name": "ind__G0__null0__HX0.7_HY0.9__n500"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.5__n4000",
+   "seed_index": 16,
+   "family": "ind",
+   "n": 4000,
+   "target": 300,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 4000,
+    "param": 0.0,
+    "target": 300,
+    "idx": 16,
+    "name": "ind__G0__null0__H0.5__n4000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.6__n4000",
+   "seed_index": 17,
+   "family": "ind",
+   "n": 4000,
+   "target": 300,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 4000,
+    "param": 0.0,
+    "target": 300,
+    "idx": 17,
+    "name": "ind__G0__null0__H0.6__n4000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.7__n4000",
+   "seed_index": 18,
+   "family": "ind",
+   "n": 4000,
+   "target": 300,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 4000,
+    "param": 0.0,
+    "target": 300,
+    "idx": 18,
+    "name": "ind__G0__null0__H0.7__n4000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.8__n4000",
+   "seed_index": 19,
+   "family": "ind",
+   "n": 4000,
+   "target": 300,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 4000,
+    "param": 0.0,
+    "target": 300,
+    "idx": 19,
+    "name": "ind__G0__null0__H0.8__n4000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.9__n4000",
+   "seed_index": 20,
+   "family": "ind",
+   "n": 4000,
+   "target": 300,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 4000,
+    "param": 0.0,
+    "target": 300,
+    "idx": 20,
+    "name": "ind__G0__null0__H0.9__n4000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__H0.95__n4000",
+   "seed_index": 21,
+   "family": "ind",
+   "n": 4000,
+   "target": 300,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.95,
+    "HY": 0.95,
+    "n": 4000,
+    "param": 0.0,
+    "target": 300,
+    "idx": 21,
+    "name": "ind__G0__null0__H0.95__n4000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__HX0.6_HY0.9__n4000",
+   "seed_index": 22,
+   "family": "ind",
+   "n": 4000,
+   "target": 300,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.9,
+    "n": 4000,
+    "param": 0.0,
+    "target": 300,
+    "idx": 22,
+    "name": "ind__G0__null0__HX0.6_HY0.9__n4000"
+   }
+  },
+  {
+   "name": "ind__G0__null0__HX0.7_HY0.9__n4000",
+   "seed_index": 23,
+   "family": "ind",
+   "n": 4000,
+   "target": 300,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.9,
+    "n": 4000,
+    "param": 0.0,
+    "target": 300,
+    "idx": 23,
+    "name": "ind__G0__null0__HX0.7_HY0.9__n4000"
+   }
+  },
+  {
+   "name": "ind__HT-S__null0__H0.5__n2000",
+   "seed_index": 24,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 24,
+    "name": "ind__HT-S__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__HT-S__null0__H0.8__n2000",
+   "seed_index": 25,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 25,
+    "name": "ind__HT-S__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__HT-L__null0__H0.5__n2000",
+   "seed_index": 26,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "HT-L",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 26,
+    "name": "ind__HT-L__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__HT-L__null0__H0.8__n2000",
+   "seed_index": 27,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "HT-L",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 27,
+    "name": "ind__HT-L__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__NL-SV__null0__H0.5__n2000",
+   "seed_index": 28,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "NL-SV",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 28,
+    "name": "ind__NL-SV__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__NL-SV__null0__H0.8__n2000",
+   "seed_index": 29,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "NL-SV",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 29,
+    "name": "ind__NL-SV__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__NL-TAR__null0__H0.5__n2000",
+   "seed_index": 30,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "NL-TAR",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 30,
+    "name": "ind__NL-TAR__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__NL-TAR__null0__H0.8__n2000",
+   "seed_index": 31,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "NL-TAR",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 31,
+    "name": "ind__NL-TAR__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__SEAS-M__null0__H0.5__n2000",
+   "seed_index": 32,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SEAS-M",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 32,
+    "name": "ind__SEAS-M__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__SEAS-M__null0__H0.8__n2000",
+   "seed_index": 33,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SEAS-M",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 33,
+    "name": "ind__SEAS-M__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__SEAS-V__null0__H0.5__n2000",
+   "seed_index": 34,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SEAS-V",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 34,
+    "name": "ind__SEAS-V__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__SEAS-V__null0__H0.8__n2000",
+   "seed_index": 35,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SEAS-V",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 35,
+    "name": "ind__SEAS-V__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__SEAS-M-shared__null0__H0.5__n2000",
+   "seed_index": 36,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SEAS-M-shared",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 36,
+    "name": "ind__SEAS-M-shared__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__SEAS-M-shared__null0__H0.8__n2000",
+   "seed_index": 37,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SEAS-M-shared",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 37,
+    "name": "ind__SEAS-M-shared__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__SEAS-V-slow__null0__H0.5__n2000",
+   "seed_index": 38,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SEAS-V-slow",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 38,
+    "name": "ind__SEAS-V-slow__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__SEAS-V-slow__null0__H0.8__n2000",
+   "seed_index": 39,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SEAS-V-slow",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 39,
+    "name": "ind__SEAS-V-slow__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__FACTOR__null0__H0.5__n2000",
+   "seed_index": 40,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "FACTOR",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 40,
+    "name": "ind__FACTOR__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__FACTOR__null0__H0.7__n2000",
+   "seed_index": 41,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "FACTOR",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 41,
+    "name": "ind__FACTOR__null0__H0.7__n2000"
+   }
+  },
+  {
+   "name": "ind__FACTOR__null0__H0.8__n2000",
+   "seed_index": 42,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "FACTOR",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 42,
+    "name": "ind__FACTOR__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__FACTOR__null0__H0.9__n2000",
+   "seed_index": 43,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "FACTOR",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 43,
+    "name": "ind__FACTOR__null0__H0.9__n2000"
+   }
+  },
+  {
+   "name": "ind__SCALE__null0.1__H0.5__n2000",
+   "seed_index": 44,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SCALE",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 44,
+    "name": "ind__SCALE__null0.1__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__SCALE__null0.1__H0.7__n2000",
+   "seed_index": 45,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SCALE",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 45,
+    "name": "ind__SCALE__null0.1__H0.7__n2000"
+   }
+  },
+  {
+   "name": "ind__SCALE__null0.1__H0.8__n2000",
+   "seed_index": 46,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SCALE",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 46,
+    "name": "ind__SCALE__null0.1__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__SCALE__null0.1__H0.9__n2000",
+   "seed_index": 47,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "SCALE",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 47,
+    "name": "ind__SCALE__null0.1__H0.9__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__lin0.065__H0.5__n2000",
+   "seed_index": 48,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "lin",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.065,
+    "target": 1000,
+    "idx": 48,
+    "name": "ind__G0__lin0.065__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__lin0.065__H0.7__n2000",
+   "seed_index": 49,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "lin",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.065,
+    "target": 1000,
+    "idx": 49,
+    "name": "ind__G0__lin0.065__H0.7__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__lin0.065__H0.8__n2000",
+   "seed_index": 50,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "lin",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.065,
+    "target": 1000,
+    "idx": 50,
+    "name": "ind__G0__lin0.065__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__lin0.065__H0.9__n2000",
+   "seed_index": 51,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "lin",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.065,
+    "target": 1000,
+    "idx": 51,
+    "name": "ind__G0__lin0.065__H0.9__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__sq0.075__H0.5__n2000",
+   "seed_index": 52,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "sq",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.075,
+    "target": 1000,
+    "idx": 52,
+    "name": "ind__G0__sq0.075__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__sq0.075__H0.7__n2000",
+   "seed_index": 53,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "sq",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.075,
+    "target": 1000,
+    "idx": 53,
+    "name": "ind__G0__sq0.075__H0.7__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__sq0.075__H0.8__n2000",
+   "seed_index": 54,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "sq",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.075,
+    "target": 1000,
+    "idx": 54,
+    "name": "ind__G0__sq0.075__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__sq0.075__H0.9__n2000",
+   "seed_index": 55,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "sq",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.075,
+    "target": 1000,
+    "idx": 55,
+    "name": "ind__G0__sq0.075__H0.9__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__lag0.13__H0.5__n2000",
+   "seed_index": 56,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "lag",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.13,
+    "target": 1000,
+    "idx": 56,
+    "name": "ind__G0__lag0.13__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__lag0.13__H0.7__n2000",
+   "seed_index": 57,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "lag",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.13,
+    "target": 1000,
+    "idx": 57,
+    "name": "ind__G0__lag0.13__H0.7__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__lag0.13__H0.8__n2000",
+   "seed_index": 58,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "lag",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.13,
+    "target": 1000,
+    "idx": 58,
+    "name": "ind__G0__lag0.13__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__lag0.13__H0.9__n2000",
+   "seed_index": 59,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "lag",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.13,
+    "target": 1000,
+    "idx": 59,
+    "name": "ind__G0__lag0.13__H0.9__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__flat0.13__H0.5__n2000",
+   "seed_index": 60,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "flat",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.13,
+    "target": 1000,
+    "idx": 60,
+    "name": "ind__G0__flat0.13__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__flat0.13__H0.7__n2000",
+   "seed_index": 61,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "flat",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.13,
+    "target": 1000,
+    "idx": 61,
+    "name": "ind__G0__flat0.13__H0.7__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__flat0.13__H0.8__n2000",
+   "seed_index": 62,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "flat",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.13,
+    "target": 1000,
+    "idx": 62,
+    "name": "ind__G0__flat0.13__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__flat0.13__H0.9__n2000",
+   "seed_index": 63,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "flat",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.13,
+    "target": 1000,
+    "idx": 63,
+    "name": "ind__G0__flat0.13__H0.9__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__factor0__H0.5__n2000",
+   "seed_index": 64,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "factor",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 64,
+    "name": "ind__G0__factor0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__factor0__H0.7__n2000",
+   "seed_index": 65,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "factor",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 65,
+    "name": "ind__G0__factor0__H0.7__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__factor0__H0.8__n2000",
+   "seed_index": 66,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "factor",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 66,
+    "name": "ind__G0__factor0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__factor0__H0.9__n2000",
+   "seed_index": 67,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "factor",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 67,
+    "name": "ind__G0__factor0__H0.9__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__scale0.1__H0.5__n2000",
+   "seed_index": 68,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "scale",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 68,
+    "name": "ind__G0__scale0.1__H0.5__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__scale0.1__H0.7__n2000",
+   "seed_index": 69,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "scale",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 69,
+    "name": "ind__G0__scale0.1__H0.7__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__scale0.1__H0.8__n2000",
+   "seed_index": 70,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "scale",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 70,
+    "name": "ind__G0__scale0.1__H0.8__n2000"
+   }
+  },
+  {
+   "name": "ind__G0__scale0.1__H0.9__n2000",
+   "seed_index": 71,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "ind",
+    "gen": "G0",
+    "alt": "scale",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 71,
+    "name": "ind__G0__scale0.1__H0.9__n2000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.5__n500",
+   "seed_index": 72,
+   "family": "growth",
+   "n": 500,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 500,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 72,
+    "name": "growth__G0__null0__H0.5__n500"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.6__n500",
+   "seed_index": 73,
+   "family": "growth",
+   "n": 500,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 500,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 73,
+    "name": "growth__G0__null0__H0.6__n500"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.7__n500",
+   "seed_index": 74,
+   "family": "growth",
+   "n": 500,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 500,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 74,
+    "name": "growth__G0__null0__H0.7__n500"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.8__n500",
+   "seed_index": 75,
+   "family": "growth",
+   "n": 500,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 500,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 75,
+    "name": "growth__G0__null0__H0.8__n500"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.9__n500",
+   "seed_index": 76,
+   "family": "growth",
+   "n": 500,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 500,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 76,
+    "name": "growth__G0__null0__H0.9__n500"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.95__n500",
+   "seed_index": 77,
+   "family": "growth",
+   "n": 500,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.95,
+    "HY": 0.95,
+    "n": 500,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 77,
+    "name": "growth__G0__null0__H0.95__n500"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.5__n1000",
+   "seed_index": 78,
+   "family": "growth",
+   "n": 1000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 1000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 78,
+    "name": "growth__G0__null0__H0.5__n1000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.6__n1000",
+   "seed_index": 79,
+   "family": "growth",
+   "n": 1000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 1000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 79,
+    "name": "growth__G0__null0__H0.6__n1000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.7__n1000",
+   "seed_index": 80,
+   "family": "growth",
+   "n": 1000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 1000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 80,
+    "name": "growth__G0__null0__H0.7__n1000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.8__n1000",
+   "seed_index": 81,
+   "family": "growth",
+   "n": 1000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 1000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 81,
+    "name": "growth__G0__null0__H0.8__n1000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.9__n1000",
+   "seed_index": 82,
+   "family": "growth",
+   "n": 1000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 1000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 82,
+    "name": "growth__G0__null0__H0.9__n1000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.95__n1000",
+   "seed_index": 83,
+   "family": "growth",
+   "n": 1000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.95,
+    "HY": 0.95,
+    "n": 1000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 83,
+    "name": "growth__G0__null0__H0.95__n1000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.5__n2000",
+   "seed_index": 84,
+   "family": "growth",
+   "n": 2000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 84,
+    "name": "growth__G0__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.6__n2000",
+   "seed_index": 85,
+   "family": "growth",
+   "n": 2000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 2000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 85,
+    "name": "growth__G0__null0__H0.6__n2000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.7__n2000",
+   "seed_index": 86,
+   "family": "growth",
+   "n": 2000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 86,
+    "name": "growth__G0__null0__H0.7__n2000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.8__n2000",
+   "seed_index": 87,
+   "family": "growth",
+   "n": 2000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 87,
+    "name": "growth__G0__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.9__n2000",
+   "seed_index": 88,
+   "family": "growth",
+   "n": 2000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 88,
+    "name": "growth__G0__null0__H0.9__n2000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.95__n2000",
+   "seed_index": 89,
+   "family": "growth",
+   "n": 2000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.95,
+    "HY": 0.95,
+    "n": 2000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 89,
+    "name": "growth__G0__null0__H0.95__n2000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.5__n4000",
+   "seed_index": 90,
+   "family": "growth",
+   "n": 4000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 4000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 90,
+    "name": "growth__G0__null0__H0.5__n4000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.6__n4000",
+   "seed_index": 91,
+   "family": "growth",
+   "n": 4000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 4000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 91,
+    "name": "growth__G0__null0__H0.6__n4000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.7__n4000",
+   "seed_index": 92,
+   "family": "growth",
+   "n": 4000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 4000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 92,
+    "name": "growth__G0__null0__H0.7__n4000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.8__n4000",
+   "seed_index": 93,
+   "family": "growth",
+   "n": 4000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 4000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 93,
+    "name": "growth__G0__null0__H0.8__n4000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.9__n4000",
+   "seed_index": 94,
+   "family": "growth",
+   "n": 4000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 4000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 94,
+    "name": "growth__G0__null0__H0.9__n4000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.95__n4000",
+   "seed_index": 95,
+   "family": "growth",
+   "n": 4000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.95,
+    "HY": 0.95,
+    "n": 4000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 95,
+    "name": "growth__G0__null0__H0.95__n4000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.5__n8000",
+   "seed_index": 96,
+   "family": "growth",
+   "n": 8000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 8000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 96,
+    "name": "growth__G0__null0__H0.5__n8000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.6__n8000",
+   "seed_index": 97,
+   "family": "growth",
+   "n": 8000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 8000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 97,
+    "name": "growth__G0__null0__H0.6__n8000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.7__n8000",
+   "seed_index": 98,
+   "family": "growth",
+   "n": 8000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 8000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 98,
+    "name": "growth__G0__null0__H0.7__n8000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.8__n8000",
+   "seed_index": 99,
+   "family": "growth",
+   "n": 8000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 8000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 99,
+    "name": "growth__G0__null0__H0.8__n8000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.9__n8000",
+   "seed_index": 100,
+   "family": "growth",
+   "n": 8000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 8000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 100,
+    "name": "growth__G0__null0__H0.9__n8000"
+   }
+  },
+  {
+   "name": "growth__G0__null0__H0.95__n8000",
+   "seed_index": 101,
+   "family": "growth",
+   "n": 8000,
+   "target": 2000,
+   "fields": {
+    "family": "growth",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.95,
+    "HY": 0.95,
+    "n": 8000,
+    "param": 0.0,
+    "target": 2000,
+    "idx": 101,
+    "name": "growth__G0__null0__H0.95__n8000"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.5__n2000",
+   "seed_index": 102,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 102,
+    "name": "mmd__G0__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.6__n2000",
+   "seed_index": 103,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 103,
+    "name": "mmd__G0__null0__H0.6__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.7__n2000",
+   "seed_index": 104,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 104,
+    "name": "mmd__G0__null0__H0.7__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.75__n2000",
+   "seed_index": 105,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.75,
+    "HY": 0.75,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 105,
+    "name": "mmd__G0__null0__H0.75__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.8__n2000",
+   "seed_index": 106,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 106,
+    "name": "mmd__G0__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.85__n2000",
+   "seed_index": 107,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.85,
+    "HY": 0.85,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 107,
+    "name": "mmd__G0__null0__H0.85__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.9__n2000",
+   "seed_index": 108,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 108,
+    "name": "mmd__G0__null0__H0.9__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.5__n500",
+   "seed_index": 109,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 109,
+    "name": "mmd__G0__null0__H0.5__n500"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.6__n500",
+   "seed_index": 110,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 110,
+    "name": "mmd__G0__null0__H0.6__n500"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.7__n500",
+   "seed_index": 111,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 111,
+    "name": "mmd__G0__null0__H0.7__n500"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.75__n500",
+   "seed_index": 112,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.75,
+    "HY": 0.75,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 112,
+    "name": "mmd__G0__null0__H0.75__n500"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.8__n500",
+   "seed_index": 113,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 113,
+    "name": "mmd__G0__null0__H0.8__n500"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.85__n500",
+   "seed_index": 114,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.85,
+    "HY": 0.85,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 114,
+    "name": "mmd__G0__null0__H0.85__n500"
+   }
+  },
+  {
+   "name": "mmd__G0__null0__H0.9__n500",
+   "seed_index": 115,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 115,
+    "name": "mmd__G0__null0__H0.9__n500"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.5__n2000",
+   "seed_index": 116,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 116,
+    "name": "mmd__HT-S__null0__H0.5__n2000"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.6__n2000",
+   "seed_index": 117,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 117,
+    "name": "mmd__HT-S__null0__H0.6__n2000"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.7__n2000",
+   "seed_index": 118,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 118,
+    "name": "mmd__HT-S__null0__H0.7__n2000"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.75__n2000",
+   "seed_index": 119,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.75,
+    "HY": 0.75,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 119,
+    "name": "mmd__HT-S__null0__H0.75__n2000"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.8__n2000",
+   "seed_index": 120,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 120,
+    "name": "mmd__HT-S__null0__H0.8__n2000"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.85__n2000",
+   "seed_index": 121,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.85,
+    "HY": 0.85,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 121,
+    "name": "mmd__HT-S__null0__H0.85__n2000"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.9__n2000",
+   "seed_index": 122,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 2000,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 122,
+    "name": "mmd__HT-S__null0__H0.9__n2000"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.5__n500",
+   "seed_index": 123,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 123,
+    "name": "mmd__HT-S__null0__H0.5__n500"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.6__n500",
+   "seed_index": 124,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.6,
+    "HY": 0.6,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 124,
+    "name": "mmd__HT-S__null0__H0.6__n500"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.7__n500",
+   "seed_index": 125,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 125,
+    "name": "mmd__HT-S__null0__H0.7__n500"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.75__n500",
+   "seed_index": 126,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.75,
+    "HY": 0.75,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 126,
+    "name": "mmd__HT-S__null0__H0.75__n500"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.8__n500",
+   "seed_index": 127,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 127,
+    "name": "mmd__HT-S__null0__H0.8__n500"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.85__n500",
+   "seed_index": 128,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.85,
+    "HY": 0.85,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 128,
+    "name": "mmd__HT-S__null0__H0.85__n500"
+   }
+  },
+  {
+   "name": "mmd__HT-S__null0__H0.9__n500",
+   "seed_index": 129,
+   "family": "mmd",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "HT-S",
+    "alt": "null",
+    "HX": 0.9,
+    "HY": 0.9,
+    "n": 500,
+    "param": 0.0,
+    "target": 1000,
+    "idx": 129,
+    "name": "mmd__HT-S__null0__H0.9__n500"
+   }
+  },
+  {
+   "name": "mmd__G0__mean0.1__H0.5__n2000",
+   "seed_index": 130,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "mean",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 130,
+    "name": "mmd__G0__mean0.1__H0.5__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__mean0.1__H0.7__n2000",
+   "seed_index": 131,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "mean",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 131,
+    "name": "mmd__G0__mean0.1__H0.7__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__mean0.1__H0.8__n2000",
+   "seed_index": 132,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "mean",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 132,
+    "name": "mmd__G0__mean0.1__H0.8__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__mean0.5__H0.5__n2000",
+   "seed_index": 133,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "mean",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.5,
+    "target": 1000,
+    "idx": 133,
+    "name": "mmd__G0__mean0.5__H0.5__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__mean0.5__H0.7__n2000",
+   "seed_index": 134,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "mean",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.5,
+    "target": 1000,
+    "idx": 134,
+    "name": "mmd__G0__mean0.5__H0.7__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__mean0.5__H0.8__n2000",
+   "seed_index": 135,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "mean",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.5,
+    "target": 1000,
+    "idx": 135,
+    "name": "mmd__G0__mean0.5__H0.8__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__scale1.1__H0.5__n2000",
+   "seed_index": 136,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "scale",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 1.1,
+    "target": 1000,
+    "idx": 136,
+    "name": "mmd__G0__scale1.1__H0.5__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__scale1.1__H0.7__n2000",
+   "seed_index": 137,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "scale",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 1.1,
+    "target": 1000,
+    "idx": 137,
+    "name": "mmd__G0__scale1.1__H0.7__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__scale1.1__H0.8__n2000",
+   "seed_index": 138,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "scale",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 1.1,
+    "target": 1000,
+    "idx": 138,
+    "name": "mmd__G0__scale1.1__H0.8__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__shape0.1__H0.5__n2000",
+   "seed_index": 139,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "shape",
+    "HX": 0.5,
+    "HY": 0.5,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 139,
+    "name": "mmd__G0__shape0.1__H0.5__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__shape0.1__H0.7__n2000",
+   "seed_index": 140,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "shape",
+    "HX": 0.7,
+    "HY": 0.7,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 140,
+    "name": "mmd__G0__shape0.1__H0.7__n2000"
+   }
+  },
+  {
+   "name": "mmd__G0__shape0.1__H0.8__n2000",
+   "seed_index": 141,
+   "family": "mmd",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "family": "mmd",
+    "gen": "G0",
+    "alt": "shape",
+    "HX": 0.8,
+    "HY": 0.8,
+    "n": 2000,
+    "param": 0.1,
+    "target": 1000,
+    "idx": 141,
+    "name": "mmd__G0__shape0.1__H0.8__n2000"
+   }
+  }
+ ],
+ "prerequisites": [
+  {
+   "path": "experiments/EXP7-memory-kernel-20261101/sn_table.json",
+   "sha256": "d71e18d44dd254d8dc06d55949ad35ec830eadf8bbb04919d9158062f39ba200",
+   "made_by": "python -I sn_tables.py in the EXP7 folder (master 2026110174, about 1 CPU-hour)"
+  }
+ ],
+ "source_manifests": [
+  "experiments/EXP7-memory-kernel-20261101/main/manifest_20261101T235729Z.json"
+ ]
+}
