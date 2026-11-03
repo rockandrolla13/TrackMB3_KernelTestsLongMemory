@@ -11,7 +11,7 @@ import sys
 import numpy as np
 import pytest
 
-from kmem import bandwidth, features, hsic, layers, mmd, rules
+from kmem import bandwidth, features, hsic, kernels, layers, mmd, rules
 from kmem import memory_kernels as mk
 from kmem.calibration import harris, selfnorm, shift, subsample, wild
 from kmem.generators import independence
@@ -44,7 +44,7 @@ def gaussian_gram(x: np.ndarray) -> np.ndarray:
 def test_transformed_gram_is_psd_and_centred(kernel: str, H: float) -> None:
     x = series(2, H)
     d = np.abs(x[:, None] - x[None, :])
-    g = K.gram_full(kernel, x, mb.median_bandwidth(d), H)
+    g = kernels.get(kernel).gram(x, mb.median_bandwidth(d), H)
     assert np.allclose(g, g.T, atol=1e-10)
     ev = np.linalg.eigvalsh(g)
     assert ev.min() >= -1e-9 * max(ev.max(), 1.0), f"{kernel}: min eigenvalue {ev.min()}"
@@ -241,14 +241,14 @@ def test_fast_rules_equal_full_rules(kernel: str) -> None:
     x, y = mb.fgn(H, n, rng(20)), mb.fgn(H, n, rng(21))
     sx, sy = bandwidth.median_bw_fast(x), bandwidth.median_bw_fast(y)
     mult = wild.Multipliers(n, 200, rng(22))
-    kc, lc = K.gram_full(kernel, x, sx, H), K.gram_full(kernel, y, sy, H)
+    kc, lc = kernels.get(kernel).gram(x, sx, H), kernels.get(kernel).gram(y, sy, H)
     if kernel in ("sym", "datadiff"):
-        ux, uy = K.own_series(kernel, x), K.own_series(kernel, y)
+        ux, uy = kernels.get(kernel).series(x), kernels.get(kernel).series(y)
         fx = features.gauss_features(ux, bandwidth.median_bw_fast(ux))
         fy = features.gauss_features(uy, bandwidth.median_bw_fast(uy))
     else:
-        fx = K.transform_features(kernel, features.gauss_features(x, sx), x, H)
-        fy = K.transform_features(kernel, features.gauss_features(y, sy), y, H)
+        fx = kernels.get(kernel).features(features.gauss_features(x, sx), x, H)
+        fy = kernels.get(kernel).features(features.gauss_features(y, sy), y, H)
     w = mult.get(kc.shape[0])
     full = rules.rules_full(kc, lc, w)
     fast = rules.rules_fast(features.compress(fx), features.compress(fy), w)
@@ -290,8 +290,8 @@ def _window_stats(gx: np.ndarray, gy: np.ndarray, l: int, dn: int) -> np.ndarray
 def test_sub_fast_equals_brute_force_windows(kernel: str) -> None:
     n = 400
     x, y = mb.fgn(0.8, n, rng(26)), mb.fgn(0.8, n, rng(27))
-    fx = K.transform_features(kernel, features.gauss_features(x, bandwidth.median_bw_fast(x)), x, 0.8)
-    fy = K.transform_features(kernel, features.gauss_features(y, bandwidth.median_bw_fast(y)), y, 0.8)
+    fx = kernels.get(kernel).features(features.gauss_features(x, bandwidth.median_bw_fast(x)), x, 0.8)
+    fy = kernels.get(kernel).features(features.gauss_features(y, bandwidth.median_bw_fast(y)), y, 0.8)
     (px, lx), (py, ly) = features.compress(fx), features.compress(fy)
     i, j = features.select_pairs(lx, ly)
     m = px.shape[0]
@@ -364,8 +364,8 @@ def test_harris_shifts_equal_brute_force(kernel: str, big_n: int) -> None:
     n = 400
     x, y = mb.fgn(0.8, n, rng(36)), mb.fgn(0.8, n, rng(37))
     sx, sy = bandwidth.median_bw_fast(x), bandwidth.median_bw_fast(y)
-    fx = K.transform_features(kernel, features.gauss_features(x, sx), x, 0.8)
-    fy = K.transform_features(kernel, features.gauss_features(y, sy), y, 0.8)
+    fx = kernels.get(kernel).features(features.gauss_features(x, sx), x, 0.8)
+    fy = kernels.get(kernel).features(features.gauss_features(y, sy), y, 0.8)
     kx, ky = fx @ fx.T, fy @ fy.T
     m = kx.shape[0]
     d = m - 2 * big_n
