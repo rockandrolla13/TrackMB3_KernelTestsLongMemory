@@ -14,7 +14,8 @@ import sys
 from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import common as C  # noqa: E402
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))  # kmem (D7: not installed)
+from kmem.legacy import common as C  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 EXP2 = os.path.join(HERE, "..", "EXP2-20261023", "summary_main.csv")

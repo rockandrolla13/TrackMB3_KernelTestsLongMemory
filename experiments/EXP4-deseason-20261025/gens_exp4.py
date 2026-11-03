@@ -8,8 +8,8 @@ from __future__ import annotations
 
 import numpy as np
 
-import gens
-import mbcore as mb
+from kmem.legacy import gens
+from kmem.legacy import mbcore as mb
 
 
 def generate(gen: str, H: float, n: int, rng: np.random.Generator) -> np.ndarray:

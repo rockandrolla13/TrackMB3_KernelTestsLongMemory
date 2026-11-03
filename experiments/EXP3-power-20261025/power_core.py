@@ -15,9 +15,9 @@ import math
 
 import numpy as np
 
-import gens
-import mbcore as mb
-import mmdcal as M
+from kmem.legacy import gens
+from kmem.legacy import mbcore as mb
+from kmem.legacy import mmdcal as M
 
 ALPHA = 0.05
 SEAS_PERIOD = gens.PERIOD
