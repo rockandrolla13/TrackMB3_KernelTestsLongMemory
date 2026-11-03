@@ -20,12 +20,8 @@ for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):
     os.environ[_v] = "1"
 
 import argparse  # noqa: E402
-import csv  # noqa: E402
-import json  # noqa: E402
-import multiprocessing as mp  # noqa: E402
 import sys  # noqa: E402
 import time  # noqa: E402
-from collections import defaultdict  # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))  # kmem (D7: not installed)
@@ -34,6 +30,7 @@ import numpy as np  # noqa: E402
 import deseason as D  # noqa: E402
 import gens_exp4  # noqa: E402
 from kmem.legacy import mbcore as mb  # noqa: E402
+from kmem.runner import Job, run_jobs  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MASTER = {"pilot": 2026102541, "main": 2026102542}
@@ -43,19 +40,11 @@ N_GRID = (500, 2000)
 ADJ = ("A0", "A1", "A2", "A3")
 B_WB = 500
 CHUNK = {500: 10, 2000: 2}
+MAX_WORKERS = 16
 KIND = ["hsic_stat", "dcov_stat", "p_hsic_wb", "p_hsic_shift", "p_hsic_sub", "rej_hsic_sub",
         "p_dcov_wb", "p_dcov_sub", "rej_dcov_sub", "shift_check"]
 LIND = ["pearson_r", "nw_bw", "t_nw", "p_nw", "rej_nw", "ewc_nu", "t_ewc", "rej_ewc", "nw_lrv_nonpos"]
 FIELDS = ["rep", "adj", "status", "error", "cpu_s", "px", "py", "srcx", "srcy", "reused"] + KIND + LIND
-
-
-def completed_pairs(path: str) -> set[tuple[int, str]]:
-    """(rep, adj) pairs with a complete status-ok row. Truncated rows (crash mid-write) are ignored."""
-    if not os.path.exists(path):
-        return set()
-    with open(path) as f:
-        return {(int(row["rep"]), row["adj"]) for row in csv.DictReader(f)
-                if None not in row.values() and row["status"] == "ok"}
 
 
 def cell_list() -> list[dict]:
@@ -104,6 +93,17 @@ def run_chunk(args):
     return cell["name"], rows
 
 
+def job_for(cell: dict, target: int, master: int, opts: dict | None = None, adjs: tuple | None = None) -> Job:
+    """The runner's job for one cell (kmem.runner). A replication is done when every adjustment has its row.
+    adjs defaults to the cell's recorded adjustments (as in the EXP4 spec)."""
+    adjs = tuple(adjs if adjs is not None else cell["adjustments"])
+    return Job(name=cell["name"], fields=cell, seed_index=cell["idx"], target=target, master=master,
+               columns=tuple(FIELDS), chunk=CHUNK[cell["n"]], subkeys=adjs, subkey_column="adj",
+               seed_doc={"entropy": master, "spawn_key_data": [cell["idx"], "rep", 0],
+                         "spawn_key_test": [cell["idx"], "rep", 1]},
+               manifest_cell={"adjustments": list(adjs)})
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", choices=["pilot", "main"], required=True)
@@ -114,54 +114,18 @@ def main():
     ap.add_argument("--adj", default=",".join(ADJ), help="adjustments; n=2000 may drop A0 (see --adj2000)")
     ap.add_argument("--adj2000", default=None, help="adjustment list for n = 2000 cells, if different")
     a = ap.parse_args()
-    if a.workers > 16:
-        sys.exit("at most 16 worker processes (DESIGN.md amendment 5)")
-    outdir = os.path.join(HERE, a.out)
-    os.makedirs(outdir, exist_ok=True)
+    if a.workers > MAX_WORKERS:
+        sys.exit(f"at most {MAX_WORKERS} worker processes (DESIGN.md amendment 5)")
     master = MASTER[a.mode]
-    tasks, mcells = [], []
     cells = cell_list()
     if a.only:
         cells = [c for c in cells if any(p in c["name"] for p in a.only.split(","))]
-    for c in cells:
-        adjs = tuple((a.adj2000 if (c["n"] == 2000 and a.adj2000) else a.adj).split(","))
-        path = os.path.join(outdir, c["name"] + ".csv")
-        done = completed_pairs(path)
-        todo = defaultdict(list)  # missing-adjustment tuple -> replications
-        for r in range(a.reps):
-            missing = tuple(x for x in adjs if (r, x) not in done)
-            if missing:
-                todo[missing].append(r)
-        mcells.append({**c, "reps": a.reps, "adjustments": adjs, "already_done_pairs": len(done),
-                       "seed": {"entropy": master, "spawn_key_data": [c["idx"], "rep", 0],
-                                "spawn_key_test": [c["idx"], "rep", 1]}})
-        cs = CHUNK[c["n"]]
-        for missing, reps in todo.items():
-            for i in range(0, len(reps), cs):
-                tasks.append((c, reps[i:i + cs], master, missing))
-    stamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
-    with open(os.path.join(outdir, f"manifest_{stamp}.json"), "w") as f:
-        json.dump({"mode": a.mode, "master": master,
-                   "seed_rule": "data: SeedSequence(master, spawn_key=(cell_idx, rep, 0)); tests: fresh rng on (cell_idx, rep, 1) per adjustment",
-                   "B_wild": B_WB, "period_true": D.P_TRUE, "numpy": np.__version__,
-                   "python": sys.version.split()[0], "workers": a.workers, "argv": sys.argv, "cells": mcells}, f, indent=1)
-    tasks.sort(key=lambda t: -t[0]["n"])
-    print(f"{stamp} {len(tasks)} chunks, {sum(len(t[1]) for t in tasks)} replications", flush=True)
-    t0 = time.time()
-    nd = 0
-    with mp.get_context("fork").Pool(a.workers, maxtasksperchild=50) as pool:
-        for name, rows in pool.imap_unordered(run_chunk, tasks):
-            path = os.path.join(outdir, name + ".csv")
-            new = not os.path.exists(path)
-            with open(path, "a", newline="") as f:
-                w = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore")
-                if new:
-                    w.writeheader()
-                w.writerows(rows)
-            nd += 1
-            if nd % 25 == 0 or nd == len(tasks):
-                print(f"{nd}/{len(tasks)} chunks, {time.time() - t0:.0f}s wall", flush=True)
-    print(f"DONE {time.time() - t0:.0f}s wall", flush=True)
+    jobs = [job_for(c, a.reps, master, adjs=tuple((a.adj2000 if (c["n"] == 2000 and a.adj2000) else a.adj).split(",")))
+            for c in cells]
+    run_jobs(jobs, run_chunk, os.path.join(HERE, a.out), a.workers,
+             {"mode": a.mode, "master": master,
+              "seed_rule": "data: SeedSequence(master, spawn_key=(cell_idx, rep, 0)); tests: fresh rng on (cell_idx, rep, 1) per adjustment",
+              "B_wild": B_WB, "period_true": D.P_TRUE})
 
 
 if __name__ == "__main__":

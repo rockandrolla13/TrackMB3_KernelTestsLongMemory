@@ -38,5 +38,32 @@ def env() -> None:
         raise typer.Exit(1)
 
 
+@app.command()
+def run(experiment: str = typer.Argument(..., help="EXP2 ... EXP7"),
+        out: str = typer.Option(..., help="output folder; an existing one is resumed"),
+        workers: int = typer.Option(4, help="worker processes (at most the spec's max_workers)"),
+        only: str = typer.Option(None, help="comma list of substrings of cell names"),
+        reps: int = typer.Option(None, help="replications per cell instead of the saved targets")) -> None:
+    """Run a past experiment's main grid from experiments/EXPn/spec.json, with its saved seeds."""
+    import hashlib
+
+    from kmem import drivers, runner, spec
+
+    sp = spec.load(experiment)
+    if workers > sp.max_workers:
+        raise typer.BadParameter(f"{experiment} allows at most {sp.max_workers} workers")
+    bad = [p.path for p in sp.prerequisites if not p.verify()]
+    if bad:
+        raise typer.BadParameter(f"prerequisite files differ from the spec: {bad}")
+    drv = drivers.load(sp)
+    jobs = drivers.jobs(sp, only, reps)
+    with open(spec.spec_path(experiment), "rb") as f:
+        digest = hashlib.sha256(f.read()).hexdigest()
+    manifest = {"mode": sp.mode, "spec": sp.id, "spec_sha256": digest, "masters": sp.masters,
+                "seed_rule": sp.seed_rule, **sp.options}
+    runner.run_jobs(jobs, drv.run_chunk, os.path.abspath(out), workers, manifest, writer=sp.writer,
+                    max_tasks_per_child=getattr(drv, "MAX_TASKS_PER_CHILD", 50))
+
+
 def main() -> None:
     app(prog_name=f"{os.path.basename(sys.executable)} -m kmem")
