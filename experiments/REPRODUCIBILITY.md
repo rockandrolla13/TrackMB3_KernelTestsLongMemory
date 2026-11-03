@@ -40,6 +40,10 @@ EXP7 needs `sn_table.json` first; its sha256 is in the spec and is checked befor
 
 Full reruns cost (CPU-hours): EXP2 26.4, EXP3 9.9, EXP4 8.8, EXP5 8.4, EXP6 4.3, EXP7 43.8.
 
+**Full rerun of EXP6, 2026-11-03 (decision D4).** `python -m kmem reproduce EXP6 --full --workers 5` reran all six
+cells from the spec through the refactored code: 3,000 rows in 1,681 s wall on 5 workers. Every row matches the saved
+main run exactly (value-exact, timing columns excluded). The rerun folder `reproduce_full/` is git-ignored.
+
 ## The analysis gate (G-analysis)
 
 `python -I tools/analysis_gate.py --check` reruns all 18 saved analysis jobs of EXP2 to EXP7 in a scratch copy

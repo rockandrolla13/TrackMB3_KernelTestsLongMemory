@@ -62,3 +62,13 @@ def split_mmd_ext(x: np.ndarray, rng: np.random.Generator, B: int = M.B_WILD) ->
     out["sn_q95_05"] = float(v[int(math.ceil((1 - ALPHA) * v.size)) - 1])
     out["r_sn_05"] = out["sn_T"] / out["sn_q95_05"]
     return out
+
+
+def split_mmd_fast_rule(g: np.ndarray, s: np.ndarray, a: np.ndarray) -> tuple[float, float, float, float]:
+    """MMD^2_V = s' K s and its uncentred wild draws a' Kc a, from features g of K. Centring does not change s' K s."""
+    psi = g - g.mean(axis=0, keepdims=True)
+    v = psi.T @ s
+    stat = float(v @ v)
+    b = psi.T @ a
+    boot = (b * b).sum(axis=0)
+    return stat, pboot(stat, boot), stat / q95(boot), stat / float(np.quantile(boot, 0.975))

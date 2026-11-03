@@ -32,6 +32,7 @@ Run everything from the repo root. `kmem` is not installed in the shared anacond
 `pyproject.toml` pins the exact versions the saved EXP2-EXP7 rows were made with (Python 3.12.13,
 numpy 2.5.1, scipy 1.17.1). Other versions may change the last bits of saved numbers.
 `experiments/REPRODUCIBILITY.md` explains what "reproduce exactly" means here.
+`kmem/EXTENDING.md` shows how to add a kernel, a generator, a calibration rule or an experiment grid.
 
 To install `kmem` editable, use a separate environment, never the shared base one:
 
