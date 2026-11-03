@@ -13,7 +13,6 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import math
 import os
 import sys
 
@@ -25,6 +24,8 @@ import numpy as np  # noqa: E402
 
 import exp7_core as K  # noqa: E402
 import run_exp7 as R  # noqa: E402
+from kmem.analysis import boot_power, cstar, mcnemar_p, size_class, wilson  # noqa: E402,F401
+from kmem.calibration import registry as cal  # noqa: E402
 
 ALPHA = 0.05
 NBOOT = 2000
@@ -102,44 +103,6 @@ def load_all(indir: str, cells: list[dict], extra: str | None = None) -> dict:
 
 # ---------------------------------------------------------------- statistics
 
-def wilson(k: int, m: int) -> tuple[float, float]:
-    if m == 0:
-        return float("nan"), float("nan")
-    p = k / m
-    d = 1 + Z * Z / m
-    c = (p + Z * Z / (2 * m)) / d
-    h = Z * math.sqrt(p * (1 - p) / m + Z * Z / (4 * m * m)) / d
-    return c - h, c + h
-
-
-def size_class(k: int, m: int) -> str:
-    p = k / m
-    lo, hi = wilson(k, m)
-    if lo <= ALPHA <= hi or hi <= 0.075:
-        return "valid"
-    return "mild" if p <= 0.10 else "over"
-
-
-def cstar(v: np.ndarray) -> float:
-    v = np.sort(v)
-    return float(v[v.size - int(math.floor(ALPHA * v.size)) - 1])
-
-
-def boot_power(nv: np.ndarray, av: np.ndarray, bi_n: np.ndarray, bi_a: np.ndarray) -> np.ndarray:
-    vn = np.sort(nv[bi_n], axis=1)
-    kk = vn.shape[1] - int(math.floor(ALPHA * vn.shape[1])) - 1
-    return np.mean(av[bi_a] > vn[:, kk][:, None], axis=1)
-
-
-def mcnemar_p(a: np.ndarray, b: np.ndarray) -> tuple[float, int, int]:
-    n10 = int(np.sum(a & ~b))
-    n01 = int(np.sum(~a & b))
-    m = n10 + n01
-    if m == 0:
-        return 1.0, n10, n01
-    k = min(n10, n01)
-    return min(1.0, 2 * sum(math.comb(m, i) for i in range(k + 1)) / 2 ** m), n10, n01
-
 
 # ---------------------------------------------------------------- rules
 
@@ -147,20 +110,20 @@ def ind_rules(kernels=K.IND_KERNELS) -> list[tuple]:
     """(kernel, rule, ratio column, function from data dict to a rejection array or None)."""
     out = []
     for k in kernels:
-        out.append((k, "wild", f"r_wb_{k}", lambda d, k=k: d[f"p_wb_{k}"] <= ALPHA))
-        out.append((k, "shift", f"r_shift_{k}", lambda d, k=k: d[f"p_shift_{k}"] <= ALPHA))
+        out.append((k, "wild", f"r_wb_{k}", lambda d, k=k: cal.WILD.reject(d, suffix=f"_{k}")))
+        out.append((k, "shift", f"r_shift_{k}", lambda d, k=k: cal.SHIFT.reject(d, suffix=f"_{k}")))
         if k in K.SUB_KERNELS:
-            out.append((k, "sub", f"r_sub_{k}", lambda d, k=k: d[f"rej_sub_{k}"] == 1))
+            out.append((k, "sub", f"r_sub_{k}", lambda d, k=k: cal.SUBSAMPLE.reject(d, suffix=f"_{k}")))
         if k in K.HARRIS_KERNELS:
-            out.append((k, "harris", f"rhc_{k}", lambda d, k=k: d[f"rhc_{k}"] > 1))
-            out.append((k, "harris19", f"rh19_{k}", lambda d, k=k: d[f"rh19_{k}"] > 1))
-            out.append((k, "harrisA", f"rha_{k}", lambda d, k=k: d[f"rha_{k}"] > 1))
+            out.append((k, "harris", f"rhc_{k}", lambda d, k=k: cal.HARRIS.reject(d, suffix=f"_{k}")))
+            out.append((k, "harris19", f"rh19_{k}", lambda d, k=k: cal.HARRIS19.reject(d, suffix=f"_{k}")))
+            out.append((k, "harrisA", f"rha_{k}", lambda d, k=k: cal.HARRIS_A.reject(d, suffix=f"_{k}")))
         out.append((k, "oracle", f"t_{k}", None))
-    out += [("dcov", "wild", "r_dcov_wb", lambda d: d["p_dcov_wb"] <= ALPHA),
-            ("dcov", "sub", "r_dcov_sub", lambda d: d["rej_dcov_sub"] == 1),
+    out += [("dcov", "wild", "r_dcov_wb", lambda d: cal.WILD.reject(d, "p_dcov_wb")),
+            ("dcov", "sub", "r_dcov_sub", lambda d: cal.SUBSAMPLE.reject(d, "rej_dcov_sub")),
             ("dcov", "oracle", "dcov_stat", None),
-            ("pearson", "nw", "r_nw", lambda d: d["rej_nw"] == 1),
-            ("pearson", "ewc", "r_ewc", lambda d: d["rej_ewc"] == 1),
+            ("pearson", "nw", "r_nw", lambda d: cal.NEWEY_WEST.reject(d, "rej_nw")),
+            ("pearson", "ewc", "r_ewc", lambda d: cal.EWC.reject(d, "rej_ewc")),
             ("pearson", "oracle", "abs_r", None)]
     out += hsplit_rules(("shift", "wild"))
     return out
@@ -176,15 +139,15 @@ def hsplit_rules(rules) -> list[tuple]:
                         lambda d, r=r, pc=pc: (d[f"{pc}_herm{r}"] <= ALPHA / 2) | (d[f"rl{r}"] > 1)))
             out.append((f"hsplit{r}", f"{rule}_blk", f"R_{rule}_blk_hsplit{r}",
                         lambda d, r=r, pc=pc: (d[f"{pc}_herm{r}"] <= ALPHA / 2) | (d[f"rb{r}"] > 1)))
-        out.append((f"hsplit{r}", "low", f"rl{r}", lambda d, r=r: d[f"rl{r}"] > 1))
-        out.append((f"hsplit{r}", "low_blk", f"rb{r}", lambda d, r=r: d[f"rb{r}"] > 1))
+        out.append((f"hsplit{r}", "low", f"rl{r}", lambda d, r=r: cal.SN_LOW.reject(d, f"rl{r}")))
+        out.append((f"hsplit{r}", "low_blk", f"rb{r}", lambda d, r=r: cal.SN_LOW_BLOCK.reject(d, f"rb{r}")))
     return out
 
 
 def mmd_rules() -> list[tuple]:
     out = []
     for k in K.MMD_KERNELS:
-        out.append((k, "wild", f"r_wb_{k}", lambda d, k=k: d[f"p_wb_{k}"] <= ALPHA))
+        out.append((k, "wild", f"r_wb_{k}", lambda d, k=k: cal.WILD.reject(d, suffix=f"_{k}")))
         out.append((k, "oracle", f"mmd2_{k}", None))
     return out + hsplit_rules(("wild",))
 

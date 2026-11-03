@@ -9,7 +9,6 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import math
 import os
 import sys
 
@@ -20,6 +19,7 @@ import numpy as np  # noqa: E402
 
 import bw_core as K  # noqa: E402
 import run_exp6 as R  # noqa: E402
+from kmem.analysis import boot_power, cstar, mcnemar_p, size_class, wilson  # noqa: E402,F401
 
 ALPHA = 0.05
 NBOOT = 2000
@@ -49,47 +49,6 @@ def load(path):
     for r in ok:
         r["abs_r"] = abs(float(r["pearson_r"]))
     return ok, len(rows) - len(ok), sum(float(r["cpu_s"]) for r in rows)
-
-
-def wilson(k, m, z=1.959963984540054):
-    if m == 0:
-        return float("nan"), float("nan")
-    p = k / m
-    d = 1 + z * z / m
-    c = (p + z * z / (2 * m)) / d
-    h = z * math.sqrt(p * (1 - p) / m + z * z / (4 * m * m)) / d
-    return c - h, c + h
-
-
-def cstar(v):
-    v = np.sort(v)
-    return float(v[v.size - int(math.floor(ALPHA * v.size)) - 1])
-
-
-def boot_power(null_vals, alt_vals, bi_null, bi_alt):
-    vn = np.sort(null_vals[bi_null], axis=1)
-    kk = vn.shape[1] - int(math.floor(ALPHA * vn.shape[1])) - 1
-    return np.mean(alt_vals[bi_alt] > vn[:, kk][:, None], axis=1)
-
-
-def mcnemar_p(a, b):
-    """Exact two-sided McNemar p-value on paired 0/1 vectors."""
-    n10 = int(np.sum(a & ~b))
-    n01 = int(np.sum(~a & b))
-    m = n10 + n01
-    if m == 0:
-        return 1.0, n10, n01
-    k = min(n10, n01)
-    tail = sum(math.comb(m, i) for i in range(k + 1)) / 2 ** m
-    return min(1.0, 2 * tail), n10, n01
-
-
-def size_class(k, m):
-    p = k / m
-    lo, hi = wilson(k, m)
-    if lo <= ALPHA <= hi or hi <= 0.075:
-        return "valid"
-    return "mild" if p <= 0.10 else "over"
 
 
 def col(rows, c):
