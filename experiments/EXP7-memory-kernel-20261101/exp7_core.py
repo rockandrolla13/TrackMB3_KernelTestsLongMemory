@@ -33,6 +33,8 @@ from kmem import kernels as kreg
 from kmem import memory_kernels as mk  # noqa: F401  (re-exported)
 from kmem.bandwidth import median_bw_fast  # noqa: F401  (re-exported)
 from kmem.calibration.common import ALPHA, pboot, q95  # noqa: F401
+from kmem.calibration import hsplit
+from kmem.calibration.hsplit import HSPLIT_R, IND_PAIRS, MMD_LAYERS  # noqa: F401  (re-exported)
 from kmem.calibration.harris import (HARRIS_N_MIN, harris_big_n, harris_ratio, harris_rules,  # noqa: F401
                                      harris_shifts, harris_strict19)
 from kmem.calibration.selfnorm import (SN_GRID, SN_LEVELS, SNTable, betken_sup, bridge_sum,  # noqa: F401
@@ -47,6 +49,7 @@ from kmem.generators.split import split_series as mmd_series  # noqa: F401
 from kmem.generators.stress import FACTOR_PHI, FACTOR_VAR, factor, flat_ma_norm, scale_norm  # noqa: F401
 from kmem.hsic import dcov_full_rules, pearson_rules
 from kmem.mmd import contrast, split_mmd_wild  # noqa: F401  (contrast re-exported)
+from kmem.mmd import split_mmd_fast_rule as mmd_fast_rule  # noqa: E402  (EXP7 name)
 from kmem.features import TOL_CHOL, TOL_PAIR, compress, gauss_features, select_pairs, window_sum  # noqa: F401
 from kmem.layers import hermite_layers, layer_memory  # noqa: F401
 from kmem.legacy import mbcore as mb
@@ -61,10 +64,7 @@ SUB_KERNELS = ("raw", "inc1")
 MMD_KERNELS = ("raw", "herm1", "herm2", "sym", "datadiff")
 R975_KERNELS = ("herm1", "herm2")  # also report the 97.5% ratios, used by hsplit (DESIGN.md A2)
 
-# hsplit: herm_r on the remainder plus a self-normalised test of the removed layers, Bonferroni (DESIGN.md A2)
-HSPLIT_R = (1, 2)
-IND_PAIRS = {1: ((1, 1),), 2: ((1, 1), (1, 2), (2, 1), (2, 2))}
-MMD_LAYERS = {1: (1,), 2: (1, 2)}
+# hsplit: herm_r on the remainder plus a self-normalised test of the removed layers (kmem.calibration.hsplit)
 SN_TABLE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sn_table.json")
 _SN = SNTable(SN_TABLE_PATH)
 
@@ -104,47 +104,13 @@ def sn_cut(kind: str, n: int, level: float, h: float) -> float:
 
 
 def hsplit_ind(x: np.ndarray, y: np.ndarray) -> dict:
-    """SN tests of the products He_a(z_x) He_b(z_y), a, b <= 2. rl_r and rb_r exceed 1 iff the low-layer part rejects.
-
-    hsplit_r spends alpha/2 on the low layers, split equally over r^2 products. rl uses the plug-in table, keyed on
-    H_u = max(1/2, H_a + H_b - 1) with H_a, H_b the local Whittle memories of the two layers. rb is the H-free
-    variant: the cut-off is a quantile of the same statistic on windows of length floor(n^0.5).
-    """
-    n = x.size
-    l = math.floor(n ** 0.5)
-    lx, ly = hermite_layers(x), hermite_layers(y)
-    hx = [layer_memory(lx[:, 0]), layer_memory(lx[:, 1])]
-    hy = [layer_memory(ly[:, 0]), layer_memory(ly[:, 1])]
-    out = {"hl_x1": hx[0], "hl_x2": hx[1], "hl_y1": hy[0], "hl_y2": hy[1]}
-    rl2, rb2 = 0.0, 0.0
-    for a, b in IND_PAIRS[2]:
-        u = lx[:, a - 1] * ly[:, b - 1]
-        t = sn_mean_stat(u)
-        win = sn_mean_windows(u, l)
-        hu = max(0.5, hx[a - 1] + hy[b - 1] - 1.0)
-        out[f"T_{a}{b}"] = t
-        rl2 = max(rl2, t / sn_cut("prod", n, 0.99375, hu))
-        rb2 = max(rb2, t / float(np.quantile(win, 0.99375)))
-        if (a, b) == (1, 1):
-            out["rl1"] = t / sn_cut("prod", n, 0.975, hu)
-            out["rb1"] = t / float(np.quantile(win, 0.975))
-    out["rl2"], out["rb2"] = rl2, rb2
-    return out
+    """kmem.calibration.hsplit.hsplit_ind with the EXP7 simulated table."""
+    return hsplit.hsplit_ind(x, y, _SN)
 
 
 def hsplit_mmd(x: np.ndarray) -> dict:
-    """SN tests of a change at n // 2 in He_1(z) and He_2(z). hsplit_r spends alpha/2 on the low layers, split over r."""
-    n = x.size
-    l = math.floor(n ** 0.5)
-    v = hermite_layers(x)
-    h1, h2 = layer_memory(v[:, 0]), layer_memory(v[:, 1])
-    t1, t2 = sn_split_stat(v[:, 0]), sn_split_stat(v[:, 1])
-    w1, w2 = sn_split_windows(v[:, 0], l), sn_split_windows(v[:, 1], l)
-    return {"hl_1": h1, "hl_2": h2, "T_1": t1, "T_2": t2,
-            "rl1": t1 / sn_cut("split1", n, 0.975, h1),
-            "rl2": max(t1 / sn_cut("split1", n, 0.9875, h1), t2 / sn_cut("split2", n, 0.9875, h2)),
-            "rb1": t1 / float(np.quantile(w1, 0.975)),
-            "rb2": max(t1 / float(np.quantile(w1, 0.9875)), t2 / float(np.quantile(w2, 0.9875)))}
+    """kmem.calibration.hsplit.hsplit_mmd with the EXP7 simulated table."""
+    return hsplit.hsplit_mmd(x, _SN)
 
 
 # ---------------------------------------------------------------- independence bundle
@@ -272,16 +238,6 @@ def mmd_raw_exact(x: np.ndarray, s: np.ndarray, a: np.ndarray) -> dict:
     del d
     stat, boot = split_mmd_wild(k, s, a)
     return {"xraw_sigma": sigma, "xraw_mmd2": stat, "xraw_p_wb": pboot(stat, boot), "xraw_r_wb": stat / q95(boot)}
-
-
-def mmd_fast_rule(g: np.ndarray, s: np.ndarray, a: np.ndarray) -> tuple[float, float, float, float]:
-    """MMD^2_V = s' K s and its uncentred wild draws a' Kc a, from features g of K. Centring does not change s' K s."""
-    psi = g - g.mean(axis=0, keepdims=True)
-    v = psi.T @ s
-    stat = float(v @ v)
-    b = psi.T @ a
-    boot = (b * b).sum(axis=0)
-    return stat, pboot(stat, boot), stat / q95(boot), stat / float(np.quantile(boot, 0.975))
 
 
 def mmd_bundle(x: np.ndarray, rng: np.random.Generator, kernels=MMD_KERNELS, B: int = M.B_WILD,
