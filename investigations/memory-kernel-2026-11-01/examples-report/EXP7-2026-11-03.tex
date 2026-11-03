@@ -1,0 +1,409 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=1.9cm,top=1.6cm,bottom=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage[most]{tcolorbox}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+
+\input{numbers.tex}
+
+\definecolor{ink2}{HTML}{52514E}
+\definecolor{boxbg}{HTML}{F3F6FB}
+\definecolor{boxrule}{HTML}{2A78D6}
+\definecolor{warnbg}{HTML}{FBF4EE}
+\definecolor{warnrule}{HTML}{EB6834}
+
+\titleformat{\section}{\Large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{2pt}{5pt}
+\titleformat{\subsection}{\large\bfseries}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+\setlist{nosep,leftmargin=1.3em,itemsep=2pt}
+\pagestyle{plain}
+
+\newtcolorbox{answer}{colback=boxbg,colframe=boxrule,boxrule=0pt,leftrule=3pt,arc=0pt,
+  left=8pt,right=8pt,top=4pt,bottom=4pt,fontupper=\bfseries}
+\newtcolorbox{caveat}{colback=warnbg,colframe=warnrule,boxrule=0pt,leftrule=3pt,arc=0pt,
+  left=8pt,right=8pt,top=4pt,bottom=4pt,fontupper=\small}
+
+\newtcolorbox{explain}[1]{colback=black!4,colframe=black!4,boxrule=0pt,arc=0pt,
+  left=8pt,right=8pt,top=3pt,bottom=3pt,fontupper=\small,before skip=2pt,after skip=6pt,
+  title={#1},coltitle=black,fonttitle=\small\bfseries,colbacktitle=black!4,toptitle=2pt,bottomtitle=0pt}
+\newcommand{\kn}[1]{\texttt{#1}}
+\newcommand{\pc}[1]{\N{#1}\%}
+% One figure per section, height capped so Part 1 stays short.
+\newcommand{\fig}[2]{\begin{center}\includegraphics[width=\linewidth,height=#2,keepaspectratio]{#1}\end{center}\vspace{-6pt}}
+
+\begin{document}
+
+% =====================================================================
+%  PART 1: ESSENTIAL
+% =====================================================================
+\section*{Does a kernel remove long memory from kernel tests?}
+{\color{ink2} EXP7, 3 November 2026. All results are simulation and exploratory.}
+
+\begin{answer}
+The answer
+\end{answer}
+\begin{enumerate}[leftmargin=1.6em,itemsep=6pt]
+\item Partly. For testing whether two series are independent, a differenced kernel stops false alarms from rising with memory.
+\item It does not fix the extra false alarms that resampling rules make anyway. So our pre-registered size test failed for every kernel.
+\item For split MMD, which compares two halves of one series, several memory kernels still climb on heavy-tailed data.
+\item Every memory kernel is blind to some dependence that the plain kernel sees, and the blind spots differ.
+\item Harris's shift test on the plain kernel already holds false alarms at \N{harris|min}\% to \N{harris|max}\% in every stationary case.
+\end{enumerate}
+
+{\color{ink2}\small Long memory means correlations fade so slowly that they never add up to a finite total.
+$H$ measures it: 0.5 means none, and values near 1 mean strong memory.}
+
+% ---------------------------------------------------------------------
+\newpage
+\needspace{9cm}
+\subsection*{Does the increment kernel stop false alarms?}
+\begin{explain}{What is the increment kernel?}
+\begin{itemize}[itemsep=1pt]
+\item It compares each point with the one before it, so it looks at changes rather than raw values.
+\item Changes forget the slow swings that create long memory, so their correlations die out quickly.
+\end{itemize}
+\end{explain}
+\textbf{It stops the climb with memory. It does not stop the extra false alarms that resampling rules make anyway.}
+
+\fig{figures/fig3_size.png}{6.2cm}
+
+A false alarm is a test reporting dependence between two independent series. The target rate is 5\%.
+In the figures, \kn{inc1} is the increment kernel and \kn{raw} is the plain kernel.
+
+With the plain kernel, false alarms climb as memory grows.
+At $H = 0.95$, block resampling rejects \pc{size|raw|wild|0.95|2000} with the plain kernel and \pc{size|inc1|wild|0.95|2000} with \kn{inc1}.
+Under subsampling the rates are \pc{size|raw|sub|0.95|2000} and \pc{size|inc1|sub|0.95|2000}.
+
+Under block resampling, every memory kernel still rejects \N{trend|wild|min}\% to \N{trend|wild|max}\%, even with no memory.
+So the size test we registered in advance failed for every kernel under the resampling rules.
+Under the shift rule, which slides one series past the other, they all sit near 5\%.
+
+% ---------------------------------------------------------------------
+\needspace{9cm}
+\subsection*{Does it work for split MMD?}
+\begin{explain}{Why test with split MMD?}
+\begin{itemize}[itemsep=1pt]
+\item It asks whether the first half and the second half of one series come from the same distribution.
+\item That is how you spot a change or regime shift, so a false alarm means a false regime call.
+\end{itemize}
+\end{explain}
+\textbf{Not reliably. On heavy-tailed data, several memory kernels climb with memory, as the plain kernel does.}
+
+\fig{figures/fig7_mmd_size.png}{7.6cm}
+
+\kn{inc1} cannot be used here, because its sum collapses to three points.
+
+Four kernels climb on heavy tails: \kn{datadiff} (differenced data), \kn{sym} (distance from the median), \kn{herm1} and \kn{hsplit1}.
+At $H = 0.9$ they reject \pc{mmdsize|HT-S|datadiff|0.9|2000}, \pc{mmdsize|HT-S|sym|0.9|2000}, \pc{mmdsize|HT-S|herm1|0.9|2000} and \pc{mmdsize|HT-S|hsplit1|0.9|2000}.
+The plain kernel rejects \pc{mmdsize|HT-S|raw|0.9|2000}.
+
+\kn{hsplit2} comes closest. Its block rule holds on both data types, and its plug-in rule has one rising cell.
+That one cell may be chance among many comparisons.
+
+% ---------------------------------------------------------------------
+\needspace{9cm}
+\subsection*{What does it cost?}
+\textbf{Each memory kernel is blind to one kind of dependence, and the blind spots differ by kernel.}
+
+\fig{figures/fig4_power.png}{7.8cm}
+
+Power is how often a test finds real dependence. Here each test is first tuned to exactly 5\% false alarms.
+That tuning needs the true null, so it compares statistics, not tests an analyst could run.
+
+\kn{inc1} misses a flat moving average: \pc{power|flat|inc1|shift|0.5} against \pc{power|flat|raw|shift|0.5} at $H = 0.5$.
+It also misses a slow common factor: \pc{power|factor|inc1|shift|0.5} against \pc{power|factor|raw|shift|0.5}.
+\kn{herm1} misses linear dependence: \pc{power|lin|herm1|shift|0.5} against \pc{power|lin|raw|shift|0.5}.
+
+Memory kernels win elsewhere. At $H = 0.9$, \kn{dcov\_inc1} (a differenced distance kernel) finds linear dependence \pc{power|lin|dcov_inc1|shift|0.9} of the time.
+The plain kernel finds it \pc{power|lin|raw|shift|0.9} of the time.
+
+% ---------------------------------------------------------------------
+\needspace{9cm}
+\subsection*{How does the Hermite split do?}
+\begin{explain}{What is the Hermite split?}
+\begin{itemize}[itemsep=1pt]
+\item It removes the low polynomial layers of the normal scores (ranks mapped to a bell curve), where memory sits.
+\item It then tests those removed layers on their own and combines both results into one decision.
+\end{itemize}
+\end{explain}
+\textbf{It wins back much of the power that \kn{herm1} loses. It breaks under seasons and has no size proof.}
+
+\fig{figures/fig6_hsplit.png}{6.6cm}
+
+\kn{hsplit1} and \kn{hsplit2} remove one or two layers. \kn{herm1} removes the first layer but skips the separate test.
+
+Linear power at $H = 0.5$ rises from \pc{power|lin|herm1|shift|0.5} with \kn{herm1} to \pc{power|lin|hsplit1|shift|0.5} with \kn{hsplit1}.
+The plain kernel has \pc{power|lin|raw|shift|0.5}. At $H = 0.9$ the gain has gone: \kn{hsplit1} finds \pc{power|lin|hsplit1|shift|0.9}.
+
+A seasonal pattern with the same period in both series pushes \kn{hsplit1} to \pc{arms|SEAS-M|hsplit1|shift|0.5} false alarms, as predicted.
+Under slowly wandering volatility, the memory sits in layer 2, as the user expected. Yet \kn{hsplit1} stays at \pc{arms|NL-SV|hsplit1|shift|0.8} there.
+
+% ---------------------------------------------------------------------
+\needspace{9cm}
+\subsection*{Is Harris's test enough?}
+\textbf{For stationary data it keeps false alarms below 5\%, and no memory kernel beats it on every alternative.}
+
+\fig{figures/fig8_harris.png}{6.0cm}
+
+Harris's test compares the real alignment of the two series with many shifted alignments.
+Its false-alarm bound holds at any sample size when the data are stationary. Stationary means their behaviour does not change over time.
+
+It rejects \N{harris|min}\% to \N{harris|max}\% in all \N{harris|cells} stationary null cases.
+A fixed season shared by both series is not stationary. There it rejects \pc{arms|SEAS-M-shared|raw|harris|0.5}, while \kn{inc1} rejects \pc{arms|SEAS-M-shared|inc1|harris|0.5}.
+
+On power it trails the plain kernel at $H = 0.5$, for example \pc{power|factor|raw|harris|0.5} against \pc{power|factor|raw|shift|0.5} on the factor.
+At $H = 0.9$ it is level or ahead. EXP7 checked its exact form only for small shift windows, so its main rates are observed, not proved.
+
+% ---------------------------------------------------------------------
+\needspace{9cm}
+\subsection*{What this means for the paper}
+\begin{itemize}[itemsep=4pt]
+\item Present \kn{inc1} as a cure for the memory climb in independence tests, not as a fix for size.
+\item Pair it with the shift rule or Harris's test. Resampling rules over-reject with or without memory.
+\item Do not claim the cure for split MMD. Only \kn{hsplit2} with its block rule holds there.
+\item Report levels and increments side by side. Each kernel is blind where the other sees.
+\item Limit the theory to a fixed kernel width. The data-driven width breaks the proofs at $H \ge 0.9$.
+\end{itemize}
+
+% =====================================================================
+%  PART 2: OPTIONAL
+% =====================================================================
+\newpage
+\section*{Part 2. Optional: read only if you need the detail}
+{\color{ink2} Each section below backs one point in Part 1. Skip any you do not need.}
+
+\subsection*{A. Terms}
+\begin{small}
+\begin{itemize}
+\item \textbf{$H$ (Hurst exponent).} 0.5 means no memory. Values near 1 mean strong long memory.
+\item \textbf{fGn (fractional Gaussian noise).} The standard simulated long-memory series. All main cells use it.
+\item \textbf{False-alarm rate (size).} How often a test rejects when the two series are truly independent. The target is 5\%.
+\item \textbf{Power at matched size.} The hit rate after each test's cut-off is reset to give exactly 5\% false alarms.
+  The reset uses the true null, which a real analyst never has.
+\item \textbf{Kernels.} \kn{raw} is the paper's Gaussian kernel. \kn{inc1} differences the kernel features at lag 1.
+  \kn{datadiff} uses a Gaussian kernel on differenced data. \kn{dcov\_inc1} differences a distance kernel.
+  \kn{sym} uses distance from the median. \kn{hp10} removes the lowest 10\% of frequencies.
+  \kn{herm1} and \kn{herm2} remove the first one or two Hermite layers (polynomial pieces) of the normal scores.
+  \kn{hsplit1} and \kn{hsplit2} add a separate test on the removed layers.
+\item \textbf{Rules} set the cut-off. Wild bootstrap is block resampling with random signs. Subsampling recomputes the statistic on short windows.
+  Circular shift slides one series past the other. Harris shift is a non-circular shift with a finite-sample bound.
+\item \textbf{Wilson interval.} A 95\% interval for a rate. With 1{,}000 replications it is about $\pm1.4$ points at 5\%.
+\item \textbf{Bandwidth.} The width $\sigma$ of the Gaussian kernel. Every arm sets it to the median distance in the sample.
+\item \textbf{Split MMD.} A two-sample test between the first and second halves of one series.
+\end{itemize}
+\end{small}
+{\color{ink2}\small Scale: \N{run|cells} cells, \N{run|rows} rows, \N{run|errors} error rows.
+\N{run|reps} replications per cell at $n \le 2000$, \N{run|reps4000} at $n = 4000$, \N{run|repsgrowth} per growth cell.}
+
+% ---------------------------------------------------------------------
+\newpage
+\subsection*{B. Why increments forget: one simulated path}
+\textbf{The lag-1 differences of a long-memory series have short memory. The sum that drives the null stays finite.}
+
+\fig{figures/fig1_paths.png}{6cm}
+
+Panel (a) shows one fGn path at $H = 0.9$ and its lag-1 differences.
+The raw path moves in long slow swings. The differences look like plain noise.
+
+The raw autocorrelation is still \N{ex1|acf|100|raw_theory} at lag 100 in theory.
+The differences have \N{ex1|acf|1|inc_theory} at lag 1 and are near zero from lag 5 on.
+
+The test's null mean grows with the sum over lags of $r_X(j)\,r_Y(j)$.
+For the raw pair that sum reaches \N{ex1|pair|theory|raw} by lag \N{ex1|maxlag} and keeps climbing. For differences it stops at \N{ex1|pair|theory|inc}.
+
+THEORY.md proves the same levelling-off for kernel features at every $H < 1$ (Theorem A).
+That proof assumes a fixed bandwidth and memory at frequency zero only.
+
+\begin{caveat}
+One path hides its own memory. This pair's sample sum is \N{ex1|pair|sample|raw}, against \N{ex1|pair|theory|raw} in theory.
+Subtracting the sample mean biases the sample autocorrelation down.
+Path: \kn{kmem.legacy.mbcore.fgn}, seed \N{ex1|seed}. Differences: \kn{kmem.memory\_kernels.first\_difference}.
+\end{caveat}
+
+% ---------------------------------------------------------------------
+\newpage
+\subsection*{C. Null growth and the bandwidth effect}
+\textbf{The raw null grows with $n$ once $H$ is above 0.75. The \kn{inc1} null falls at high $H$, and the bandwidth explains most of that fall.}
+
+\fig{figures/fig2_growth.png}{5cm}
+
+Each panel shows the 95th percentile of $T$ under independence, relative to $n = 500$.
+Each point uses 2{,}000 replications. Bands are bootstrap 95\% intervals.
+
+At $H = 0.95$, raw grows $\times$\N{growth|raw|0.95|ratio} from $n = 500$ to $8000$. \kn{inc1} falls to $\times$\N{growth|inc1|0.95|ratio}.
+With a fixed bandwidth the fall shrinks but stays: $\times$\N{bw|check|0.95|8000|fixed}.
+So the median bandwidth explains most of the fall, but not all of it.
+
+The sample bandwidth is still drifting up at $n = 8000$. Under strong memory the sample spread settles slowly.
+Putting the mean $\sigma$ into THEORY's fixed-bandwidth formula matches the EXP7 mean of $T$ within \N{bw|maxerr}\% in every cell.
+
+\begin{center}\small
+\begin{tabular}{lcccc}
+$H$, $n$ & mean $\sigma$ & EXP7 mean $T_{\mathrm{inc1}}$ & formula at mean $\sigma$ & THEORY limit ($\sigma = \N{bw|limit}$) \\ \hline
+0.9, 500 & \N{bw|0.9|500|sigma} & \N{bw|0.9|500|T} & \N{bw|0.9|500|formula} & \N{bw|lambda|0.9} \\
+0.9, 8000 & \N{bw|0.9|8000|sigma} & \N{bw|0.9|8000|T} & \N{bw|0.9|8000|formula} & \N{bw|lambda|0.9} \\
+0.95, 500 & \N{bw|0.95|500|sigma} & \N{bw|0.95|500|T} & \N{bw|0.95|500|formula} & \N{bw|lambda|0.95} \\
+0.95, 8000 & \N{bw|0.95|8000|sigma} & \N{bw|0.95|8000|T} & \N{bw|0.95|8000|formula} & \N{bw|lambda|0.95} \\
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item The fall does \textbf{not} make a rule conservative. Wild and shift rebuild their reference with the same bandwidth.
+\item THEORY's Theorems A, B and D assume a fixed bandwidth. At $H \ge 0.9$ they do not describe the computed statistic.
+\item The raw slope at $H = 0.9$ is \N{growth|raw|0.9|slope} [\N{growth|raw|0.9|slope|lo}, \N{growth|raw|0.9|slope|hi}], against 0.6 in theory.
+  Bandwidth drift may explain part of that gap. Nobody has tested this.
+\item Only raw and \kn{inc1} ran in the growth grid.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\newpage
+\subsection*{D. False-alarm detail for the independence test}
+\textbf{These are the rule-level numbers behind ``Does the increment kernel stop false alarms?''}
+
+The 24 Gaussian cells are $n = 500$, 2000 and 4000, with eight $H$ pairs.
+The pre-registered rule needs a valid rate in all 24 cells and no rise in $n$.
+\begin{itemize}
+\item None of the \N{verdict|wildsub|tested} wild or subsampling pairs passed it (\N{verdict|wildsub|pass} of \N{verdict|wildsub|tested}).
+\item ``All 24 valid'' cannot rank kernels. A rule at exactly 5\% fails one cell with probability \N{binom|cell}\%.
+  So it passes all 24 cells with probability only \N{binom|all24}.
+\item Pooled over \N{trend|mem|m} decisions, every memory kernel under shift rejects \N{trend|shift|min}\% to \N{trend|shift|max}\%.
+  Raw under shift pools at \N{trend|raw|shift|pooled}\%.
+\item Under wild, memory kernels pool at \N{trend|wild|min}\% to \N{trend|wild|max}\%. \kn{inc1} pools at \N{trend|inc1|wild|pooled}\%.
+\item A logistic trend test in $H$, with $n$ fixed effects, finds no trend for \kn{inc1}, \kn{herm1}, \kn{herm2}, \kn{sym}, \kn{datadiff} or \kn{hsplit1}.
+  Every $p$ is at least \N{trend|flat6|minp}, under both wild and shift.
+\item \kn{hp10} under wild climbs: slope \N{trend|hp10|wild|slope}, $p \N{trend|hp10|wild|p}$. \kn{hsplit2} under wild falls ($p \N{trend|hsplit2|wild|p}$).
+\item So prediction P1, ``\kn{inc1} holds size at every $H$'', is refuted on the wild half.
+  The shift half (\N{verdict|inc1|shift|valid} cells) fits exact size.
+\item Harris's bound covers the literal per-segment form. EXP7 checked that form only at $N = 19$.
+  The main rule uses $N = 99$ at $n = 2000$. So the main Harris rates are observed, not proved.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\subsection*{E. Split MMD detail and the REVIEW.md correction}
+All split-MMD cells use the wild rule and 1{,}000 replications.
+
+\begin{center}\small
+\begin{tabular}{lccc}
+kernel (heavy tails) & $H = 0.5$, $n = 2000$ & $H = 0.9$, $n = 2000$ & $H = 0.9$, $n = 500$ \\ \hline
+\kn{datadiff} & \pc{mmdsize|HT-S|datadiff|0.5|2000} & \pc{mmdsize|HT-S|datadiff|0.9|2000} & \pc{mmdsize|HT-S|datadiff|0.9|500} \\
+\kn{sym} & \pc{mmdsize|HT-S|sym|0.5|2000} & \pc{mmdsize|HT-S|sym|0.9|2000} & \pc{mmdsize|HT-S|sym|0.9|500} \\
+\kn{herm1} & \pc{mmdsize|HT-S|herm1|0.5|2000} & \pc{mmdsize|HT-S|herm1|0.9|2000} & \pc{mmdsize|HT-S|herm1|0.9|500} \\
+\kn{hsplit1} & \pc{mmdsize|HT-S|hsplit1|0.5|2000} & \pc{mmdsize|HT-S|hsplit1|0.9|2000} & \pc{mmdsize|HT-S|hsplit1|0.9|500} \\
+\kn{hsplit2} & \pc{mmdsize|HT-S|hsplit2|0.5|2000} & \pc{mmdsize|HT-S|hsplit2|0.9|2000} & \pc{mmdsize|HT-S|hsplit2|0.9|500} \\
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item The rise from $n = 500$ to $2000$ at $H = 0.9$ is the memory signature the study tests for.
+\item \kn{datadiff} holds on Gaussian data (\pc{mmdsize|G0|datadiff|0.9|2000} at $H = 0.9$) but breaks on heavy tails.
+\item \textbf{Correction to REVIEW.md.} Its table marks \kn{hsplit2} on Gaussian data as memory-flat.
+  At $H = 0.9$ the plug-in rule rises from \pc{mmdsize|G0|hsplit2|0.9|500} [\N{mmdsize|G0|hsplit2|0.9|500|lo}, \N{mmdsize|G0|hsplit2|0.9|500|hi}] to \pc{mmdsize|G0|hsplit2|0.9|2000} [\N{mmdsize|G0|hsplit2|0.9|2000|lo}, \N{mmdsize|G0|hsplit2|0.9|2000|hi}].
+  The intervals do not overlap. This is one cell among many comparisons, so it is weak evidence.
+\item The block rule of \kn{hsplit2} stays valid in that cell: \pc{mmdsize|G0|hsplit2_blk|0.9|500} and \pc{mmdsize|G0|hsplit2_blk|0.9|2000}.
+\item \kn{herm1} and \kn{herm2} rise on Gaussian data at $H = 0.7$, from $n = 500$ to $2000$.
+\item These flags use the Wilson-overlap rule. Nobody ran a trend test for split MMD.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\newpage
+\subsection*{F. Power and Hermite-split detail}
+\begin{itemize}
+\item All power cells use $n = 2000$ and the circular-shift rule. Bars are bootstrap 95\% intervals. Each alternative has one effect size.
+\item \kn{inc1} sees one-lag dependence the plain kernel misses: \pc{power|lag|inc1|shift|0.5} against \pc{power|lag|raw|shift|0.5} at $H = 0.5$.
+\item \kn{herm1} leads on scale dependence: \pc{power|scale|herm1|shift|0.5} at $H = 0.5$. Raw has \pc{power|scale|raw|shift|0.5}.
+\item Raw's linear power falls from \pc{power|lin|raw|shift|0.5} to \pc{power|lin|raw|shift|0.9} as $H$ goes from 0.5 to 0.9.
+\item \kn{hsplit2} recovers squared dependence: \pc{power|sq|hsplit2|shift|0.5} against \kn{herm1}'s \pc{power|sq|herm1|shift|0.5}. Raw has \pc{power|sq|raw|shift|0.5}.
+\item Split MMD mean shift 0.5 at $H = 0.5$: \kn{hsplit1} \pc{mmd|mean0.5|hsplit1|0.5}, \kn{herm1} \pc{mmd|mean0.5|herm1|0.5}.
+  At $H = 0.8$: \kn{hsplit1} \pc{mmd|mean0.5|hsplit1|0.8}, raw \pc{mmd|mean0.5|raw|0.8}.
+\item Under shift, \kn{hsplit1} pools at \N{trend|hsplit1|shift|pooled}\% and \kn{hsplit2} at \N{trend|hsplit2|shift|pooled}\% over the 24 Gaussian cells.
+\item \kn{hsplit2} rejects \pc{arms|SEAS-V|hsplit2|shift|0.5} with a seasonal scale. The low-layer test has no shift reference. This was predicted (P7).
+\item Under slow drift, \kn{hsplit1} rejects \pc{arms|SEAS-V-slow|hsplit1|shift|0.5}. The remainder causes this, not the low layer. \kn{herm1} alone rejects \pc{arms|SEAS-V-slow|herm1|shift|0.5}.
+\item Stochastic volatility (SV), $H = 0.8$: estimated memory is \N{sv|layer1} in layer 1 and \N{sv|layer2} in layer 2.
+  \kn{hsplit1} rejects \pc{arms|NL-SV|hsplit1|shift|0.8} under shift and \pc{arms|NL-SV|hsplit1|wild|0.8} under wild.
+  \kn{hsplit2} rejects \pc{arms|NL-SV|hsplit2|shift|0.8} and \pc{arms|NL-SV|hsplit2|wild|0.8}.
+  Raw shift rejects only \pc{arms|NL-SV|raw|shift|0.8}, so this cell is a weak test.
+\item THEORY.md finds that \kn{hsplit2} leaves 2.87\% of the rank-one memory. So any cure under SV is at finite $n$ only.
+\item Plug-in against true layer memory moved \kn{hsplit} size by at most \N{layer|maxdiff} points in \N{layer|count} comparisons.
+\end{itemize}
+\begin{caveat}
+Matched size uses the true null of each simulated cell. An analyst cannot do this. A different effect size could reorder the kernels.
+\end{caveat}
+
+% ---------------------------------------------------------------------
+\subsection*{G. Seasonal and process cells}
+\textbf{Differencing removes the false alarms from a shared fixed season and from slow drift. The plain kernel fails there under every rule.}
+
+\fig{figures/fig5_seasonal.png}{5.6cm}
+
+``Shared season'' gives both series a seasonal mean with the same fixed phase.
+``Slow drift'' gives both a scale that drifts with period $4n$. Both are non-stationary on purpose, with $n = 2000$.
+
+\begin{itemize}
+\item Shared season, $H = 0.5$: raw rejects \pc{arms|SEAS-M-shared|raw|shift|0.5} under shift. \kn{inc1} rejects \pc{arms|SEAS-M-shared|inc1|shift|0.5}.
+\item Slow drift, $H = 0.5$: raw rejects \pc{arms|SEAS-V-slow|raw|shift|0.5} under shift. \kn{inc1} rejects \pc{arms|SEAS-V-slow|inc1|shift|0.5}.
+\item Kernels that keep the level carry the season. At slow drift, \kn{herm1} rejects \pc{arms|SEAS-V-slow|herm1|shift|0.5} and \kn{sym} \pc{arms|SEAS-V-slow|sym|shift|0.5}.
+\item \kn{hsplit1} rejects \pc{arms|SEAS-M-shared|hsplit1|shift|0.5} in the shared season. RESULTS.md first omitted this cell.
+\item Harris's theorem needs stationarity, so it does not cover these cells. \kn{inc1}'s low Harris rates here are observed only.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\newpage
+\subsection*{H. Theory status}
+{\color{ink2}\small ``Proved'' means proved in THEORY.md or a source it opened.}
+
+\textbf{Proved}
+\begin{enumerate}
+\item The increment kernel's null mean stays bounded at every $H < 1$, for fGn-type memory and a fixed bandwidth (Theorem A).
+\item The increment kernel is exactly blind to flat three-lag dependence. On split MMD it collapses to three points.
+\item Harris's shift bound holds at finite $n$ for any statistic, when the shifted series is stationary.
+\item No location-invariant test detects a level shift below $\delta \sim n^{H-1}$ in the layer that carries the memory.
+\end{enumerate}
+
+\textbf{Rests on a preprint}
+\begin{itemize}
+\item An argument shows the shift rule's size is right asymptotically (\kn{inc1}, and raw below 3/2), but it rests on an unreviewed preprint.
+\end{itemize}
+
+\textbf{Only simulated (exploratory)}
+\begin{enumerate}
+\item Every rate in this report: \N{run|cells} cells, one setting per process, one effect size per alternative.
+\item The size of \kn{hsplit1} and \kn{hsplit2}. No part of either test has a size proof.
+\item Every arm uses a median bandwidth, while the proofs assume a fixed one. At $H \ge 0.9$ the proofs do not describe the computed statistic.
+\item \kn{dcov\_inc1}, \kn{sym} and \kn{hp10} have no exact theory. Wild multipliers on increments have no theory.
+\item The main Harris columns use whole-series bandwidths. The literal form was checked at $N = 19$ only.
+\end{enumerate}
+
+\textbf{Failed or refuted (kept on purpose)}
+\begin{enumerate}
+\item The pre-registered size rule failed under wild and subsampling for every kernel (\N{verdict|wildsub|pass} of \N{verdict|wildsub|tested} pairs).
+  P1 (\kn{inc1}) and P2 (\kn{datadiff}) are refuted on the wild half. They pool at \N{trend|inc1|wild|pooled}\% and \N{trend|datadiff|wild|pooled}\%.
+\item ``Memory kernels stop the climb'' fails for split MMD. On heavy tails \kn{datadiff}, \kn{sym}, \kn{herm1} and \kn{hsplit1} climb with $H$.
+  \kn{hp10} climbs under wild in the independence test too.
+\item The median bandwidth explains most of the falling \kn{inc1} null ($\times$\N{growth|inc1|0.95|ratio}, against $\times$\N{bw|check|0.95|8000|fixed} at a fixed bandwidth).
+  RESULTS.md first called it conservative, and that reading does not hold.
+\item The layer-2 memory unit check read 0.707 against 0.8. The threshold was relaxed after the failure was seen.
+\item Other refuted expectations: \kn{herm1} and \kn{sym} failing at $H \ge 0.9$, and Harris losing power under memory.
+  Three theory claims also fell: a bounded null for any process, ``deflation removes nothing under SV'', and ``the oracle filter sums to 1''.
+\end{enumerate}
+
+\subsection*{I. What to test next}
+\begin{enumerate}
+\item Harris on each Hermite layer plus Bonferroni. This is the one \kn{hsplit} version with a size proof. EXP7 did not run it.
+\item Rerun growth and size with a fixed bandwidth, to separate the kernel from the bandwidth drift.
+\item Split MMD on heavy tails at larger $n$, read with a trend test in $H$.
+\item \kn{hsplit2} on SV at $n \ge 16{,}000$, where theory says the memory effect still grows.
+\item A combined test that reports levels and increments together, scored on the flat and factor alternatives.
+\end{enumerate}
+
+\end{document}

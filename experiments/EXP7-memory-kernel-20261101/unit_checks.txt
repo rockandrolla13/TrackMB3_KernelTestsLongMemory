@@ -1,0 +1,184 @@
+PASS ind_pair G0 null equals EXP6 
+PASS ind_pair G0 lin equals EXP6 
+PASS ind_pair G0 sq equals EXP6 
+PASS ind_pair HT-S null equals gens.pair 
+PASS ind_pair HT-L null equals gens.pair 
+PASS ind_pair NL-SV null equals gens.pair 
+PASS ind_pair NL-TAR null equals gens.pair 
+PASS ind_pair SEAS-M null equals gens.pair 
+PASS ind_pair SEAS-V null equals gens.pair 
+PASS ind_pair SEAS-M-shared null equals gens.pair 
+PASS SEAS-V-slow equals EXP4 gens_exp4 
+PASS raw_exact equals EXP6 hsic_fields n=300 G0 lin maxdiff=0.0
+PASS dcov_stat equals EXP6 n=300 G0 lin rel diff=0.0e+00
+PASS r_dcov_wb equals EXP6 n=300 G0 lin rel diff=0.0e+00
+PASS r_dcov_sub equals EXP6 n=300 G0 lin rel diff=0.0e+00
+PASS p_dcov_wb equals EXP6 n=300 G0 lin 
+PASS p_dcov_sub equals EXP6 n=300 G0 lin 
+PASS rej_dcov_sub equals EXP6 n=300 G0 lin 
+PASS t_nw equals EXP6 n=300 G0 lin 
+PASS t_ewc equals EXP6 n=300 G0 lin 
+PASS rej_nw equals EXP6 n=300 G0 lin 
+PASS rej_ewc equals EXP6 n=300 G0 lin 
+PASS r_nw equals EXP6 n=300 G0 lin 
+PASS r_ewc equals EXP6 n=300 G0 lin 
+PASS pearson_r equals EXP6 n=300 G0 lin 
+PASS raw_exact equals EXP6 hsic_fields n=300 SEAS-V null maxdiff=0.0
+PASS dcov_stat equals EXP6 n=300 SEAS-V null rel diff=0.0e+00
+PASS r_dcov_wb equals EXP6 n=300 SEAS-V null rel diff=2.4e-15
+PASS r_dcov_sub equals EXP6 n=300 SEAS-V null rel diff=0.0e+00
+PASS p_dcov_wb equals EXP6 n=300 SEAS-V null 
+PASS p_dcov_sub equals EXP6 n=300 SEAS-V null 
+PASS rej_dcov_sub equals EXP6 n=300 SEAS-V null 
+PASS t_nw equals EXP6 n=300 SEAS-V null 
+PASS t_ewc equals EXP6 n=300 SEAS-V null 
+PASS rej_nw equals EXP6 n=300 SEAS-V null 
+PASS rej_ewc equals EXP6 n=300 SEAS-V null 
+PASS r_nw equals EXP6 n=300 SEAS-V null 
+PASS r_ewc equals EXP6 n=300 SEAS-V null 
+PASS pearson_r equals EXP6 n=300 SEAS-V null 
+PASS raw_exact equals EXP6 hsic_fields n=2000 G0 null maxdiff=0.0
+PASS dcov_stat equals EXP6 n=2000 G0 null rel diff=0.0e+00
+PASS r_dcov_wb equals EXP6 n=2000 G0 null rel diff=2.4e-15
+PASS r_dcov_sub equals EXP6 n=2000 G0 null rel diff=0.0e+00
+PASS p_dcov_wb equals EXP6 n=2000 G0 null 
+PASS p_dcov_sub equals EXP6 n=2000 G0 null 
+PASS rej_dcov_sub equals EXP6 n=2000 G0 null 
+PASS t_nw equals EXP6 n=2000 G0 null 
+PASS t_ewc equals EXP6 n=2000 G0 null 
+PASS rej_nw equals EXP6 n=2000 G0 null 
+PASS rej_ewc equals EXP6 n=2000 G0 null 
+PASS r_nw equals EXP6 n=2000 G0 null 
+PASS r_ewc equals EXP6 n=2000 G0 null 
+PASS pearson_r equals EXP6 n=2000 G0 null 
+PASS raw_exact equals saved EXP6 rows ind__G0__null0__H0.5__n2000 (3 reps, 33 values) maxdiff=0.0
+PASS raw_exact equals saved EXP6 rows ind__G0__null0__H0.8__n2000 (3 reps, 33 values) maxdiff=0.0
+PASS raw_exact equals saved EXP6 rows ind__SEAS-V__null0__H0.5__n2000 (3 reps, 33 values) maxdiff=0.0
+PASS fast=full raw G0 H=0.5 n=1000 T rel=9.3e-08 R rel=6.0e-08 q=154 p_wb 0.166/0.166 shift check=-7.2e-16
+PASS fast=full inc1 G0 H=0.5 n=1000 T rel=8.8e-08 R rel=5.2e-08 q=153 p_wb 0.481/0.481 shift check=8.9e-16
+PASS fast=full inc50 G0 H=0.5 n=1000 T rel=8.2e-08 R rel=3.3e-08 q=153 p_wb 0.022/0.022 shift check=-1.3e-15
+PASS fast=full herm1 G0 H=0.5 n=1000 T rel=4.6e-08 R rel=2.0e-08 q=156 p_wb 0.387/0.387 shift check=0.0e+00
+PASS fast=full herm2 G0 H=0.5 n=1000 T rel=9.9e-08 R rel=6.9e-08 q=160 p_wb 0.513/0.513 shift check=1.4e-17
+PASS fast=full sym G0 H=0.5 n=1000 T rel=2.2e-07 R rel=1.6e-07 q=140 p_wb 0.371/0.371 shift check=1.9e-16
+PASS fast=full datadiff G0 H=0.5 n=1000 T rel=2.0e-07 R rel=1.8e-07 q=136 p_wb 0.749/0.749 shift check=4.9e-16
+PASS fast=full hp10 G0 H=0.5 n=1000 T rel=7.4e-08 R rel=4.1e-08 q=153 p_wb 0.058/0.058 shift check=-3.3e-16
+PASS fast=full frac_oracle G0 H=0.5 n=1000 T rel=9.3e-08 R rel=6.0e-08 q=154 p_wb 0.166/0.166 shift check=-7.2e-16
+PASS distance shortcuts dcov_inc1 G0 H=0.5 n=1000 rel=1.3e-15
+PASS fast=full raw G0 H=0.95 n=1000 T rel=1.7e-08 R rel=1.2e-08 q=137 p_wb 0.261/0.261 shift check=-4.4e-16
+PASS fast=full inc1 G0 H=0.95 n=1000 T rel=9.3e-08 R rel=6.1e-08 q=153 p_wb 0.108/0.108 shift check=-1.1e-16
+PASS fast=full inc50 G0 H=0.95 n=1000 T rel=5.7e-08 R rel=2.7e-08 q=139 p_wb 0.451/0.451 shift check=-4.4e-16
+PASS fast=full herm1 G0 H=0.95 n=1000 T rel=1.9e-08 R rel=6.2e-09 q=139 p_wb 0.040/0.040 shift check=2.8e-17
+PASS fast=full herm2 G0 H=0.95 n=1000 T rel=8.6e-09 R rel=3.0e-08 q=144 p_wb 0.002/0.002 shift check=-2.8e-17
+PASS fast=full sym G0 H=0.95 n=1000 T rel=6.3e-08 R rel=4.1e-08 q=124 p_wb 0.174/0.174 shift check=-3.9e-16
+PASS fast=full datadiff G0 H=0.95 n=1000 T rel=5.7e-08 R rel=1.6e-08 q=142 p_wb 0.311/0.311 shift check=2.8e-17
+PASS fast=full hp10 G0 H=0.95 n=1000 T rel=3.2e-08 R rel=8.2e-09 q=148 p_wb 0.154/0.154 shift check=9.7e-17
+PASS fast=full frac_oracle G0 H=0.95 n=1000 T rel=6.6e-08 R rel=5.4e-08 q=150 p_wb 0.164/0.164 shift check=-5.6e-17
+PASS distance shortcuts dcov_inc1 G0 H=0.95 n=1000 rel=4.4e-16
+PASS fast=full raw HT-S H=0.8 n=1000 T rel=5.5e-08 R rel=2.5e-08 q=497 p_wb 0.192/0.192 shift check=-5.6e-17
+PASS fast=full inc1 HT-S H=0.8 n=1000 T rel=1.1e-07 R rel=6.3e-08 q=507 p_wb 0.437/0.437 shift check=-7.8e-16
+PASS fast=full inc50 HT-S H=0.8 n=1000 T rel=1.0e-07 R rel=6.2e-08 q=497 p_wb 0.375/0.375 shift check=-2.2e-16
+PASS fast=full herm1 HT-S H=0.8 n=1000 T rel=6.0e-08 R rel=1.7e-08 q=505 p_wb 0.132/0.132 shift check=0.0e+00
+PASS fast=full herm2 HT-S H=0.8 n=1000 T rel=6.5e-08 R rel=7.8e-08 q=516 p_wb 0.333/0.333 shift check=6.2e-17
+PASS fast=full sym HT-S H=0.8 n=1000 T rel=1.7e-07 R rel=1.5e-07 q=538 p_wb 0.725/0.725 shift check=-3.3e-16
+PASS fast=full datadiff HT-S H=0.8 n=1000 T rel=1.4e-07 R rel=1.0e-07 q=539 p_wb 0.890/0.890 shift check=1.1e-16
+PASS fast=full hp10 HT-S H=0.8 n=1000 T rel=8.6e-08 R rel=4.6e-08 q=503 p_wb 0.285/0.285 shift check=-3.3e-16
+PASS fast=full frac_oracle HT-S H=0.8 n=1000 T rel=1.1e-07 R rel=7.0e-08 q=504 p_wb 0.375/0.375 shift check=2.8e-17
+PASS distance shortcuts dcov_inc1 HT-S H=0.8 n=1000 rel=1.0e-15
+PASS fast=full raw NL-SV H=0.8 n=1000 T rel=9.3e-08 R rel=6.5e-08 q=253 p_wb 0.363/0.363 shift check=5.6e-17
+PASS fast=full inc1 NL-SV H=0.8 n=1000 T rel=3.1e-07 R rel=2.8e-07 q=255 p_wb 0.842/0.842 shift check=3.3e-16
+PASS fast=full inc50 NL-SV H=0.8 n=1000 T rel=1.5e-07 R rel=8.7e-08 q=251 p_wb 0.244/0.244 shift check=2.2e-16
+PASS fast=full herm1 NL-SV H=0.8 n=1000 T rel=1.1e-07 R rel=7.4e-08 q=255 p_wb 0.467/0.467 shift check=1.4e-17
+PASS fast=full herm2 NL-SV H=0.8 n=1000 T rel=7.7e-08 R rel=3.6e-08 q=262 p_wb 0.373/0.373 shift check=1.1e-16
+PASS fast=full sym NL-SV H=0.8 n=1000 T rel=1.1e-07 R rel=7.9e-08 q=204 p_wb 0.711/0.711 shift check=1.1e-16
+PASS fast=full datadiff NL-SV H=0.8 n=1000 T rel=1.2e-07 R rel=9.4e-08 q=262 p_wb 0.842/0.842 shift check=-1.7e-16
+PASS fast=full hp10 NL-SV H=0.8 n=1000 T rel=1.4e-07 R rel=1.0e-07 q=255 p_wb 0.565/0.565 shift check=-3.3e-16
+PASS fast=full frac_oracle NL-SV H=0.8 n=1000 T rel=1.7e-07 R rel=1.3e-07 q=255 p_wb 0.573/0.573 shift check=-1.4e-16
+PASS distance shortcuts dcov_inc1 NL-SV H=0.8 n=1000 rel=7.5e-15
+PASS fast=full raw SEAS-V H=0.5 n=1000 T rel=7.4e-08 R rel=6.0e-08 q=218 p_wb 0.170/0.170 shift check=5.0e-16
+PASS fast=full inc1 SEAS-V H=0.5 n=1000 T rel=7.6e-08 R rel=4.0e-08 q=220 p_wb 0.174/0.174 shift check=-2.2e-16
+PASS fast=full inc50 SEAS-V H=0.5 n=1000 T rel=8.1e-08 R rel=2.9e-08 q=219 p_wb 0.062/0.062 shift check=1.1e-15
+PASS fast=full herm1 SEAS-V H=0.5 n=1000 T rel=5.5e-08 R rel=5.2e-08 q=221 p_wb 0.050/0.050 shift check=-4.4e-16
+PASS fast=full herm2 SEAS-V H=0.5 n=1000 T rel=1.0e-07 R rel=5.5e-08 q=226 p_wb 0.641/0.641 shift check=0.0e+00
+PASS fast=full sym SEAS-V H=0.5 n=1000 T rel=5.9e-08 R rel=5.1e-08 q=184 p_wb 0.050/0.050 shift check=1.1e-16
+PASS fast=full datadiff SEAS-V H=0.5 n=1000 T rel=4.9e-08 R rel=3.0e-08 q=220 p_wb 0.202/0.202 shift check=-2.8e-16
+PASS fast=full hp10 SEAS-V H=0.5 n=1000 T rel=9.5e-08 R rel=6.6e-08 q=220 p_wb 0.154/0.154 shift check=2.2e-16
+PASS fast=full frac_oracle SEAS-V H=0.5 n=1000 T rel=7.4e-08 R rel=6.0e-08 q=218 p_wb 0.170/0.170 shift check=5.0e-16
+PASS distance shortcuts dcov_inc1 SEAS-V H=0.5 n=1000 rel=2.9e-15
+PASS fast=full raw SEAS-M-shared H=0.8 n=1000 T rel=2.7e-09 R rel=1.8e-08 q=122 p_wb 0.002/0.002 shift check=-8.9e-16
+PASS fast=full inc1 SEAS-M-shared H=0.8 n=1000 T rel=1.0e-07 R rel=5.5e-08 q=131 p_wb 0.479/0.479 shift check=-2.8e-16
+PASS fast=full inc50 SEAS-M-shared H=0.8 n=1000 T rel=2.3e-07 R rel=2.0e-07 q=125 p_wb 0.537/0.537 shift check=7.2e-16
+PASS fast=full herm1 SEAS-M-shared H=0.8 n=1000 T rel=4.8e-08 R rel=2.3e-08 q=123 p_wb 0.172/0.172 shift check=4.2e-17
+PASS fast=full herm2 SEAS-M-shared H=0.8 n=1000 T rel=3.2e-07 R rel=3.0e-07 q=127 p_wb 0.980/0.980 shift check=4.3e-19
+PASS fast=full sym SEAS-M-shared H=0.8 n=1000 T rel=9.0e-08 R rel=7.4e-08 q=114 p_wb 0.830/0.830 shift check=-6.9e-17
+PASS fast=full datadiff SEAS-M-shared H=0.8 n=1000 T rel=1.1e-07 R rel=7.4e-08 q=147 p_wb 0.727/0.727 shift check=1.4e-16
+PASS fast=full hp10 SEAS-M-shared H=0.8 n=1000 T rel=6.7e-08 R rel=3.4e-08 q=128 p_wb 0.228/0.228 shift check=-4.2e-17
+PASS fast=full frac_oracle SEAS-M-shared H=0.8 n=1000 T rel=2.1e-08 R rel=2.3e-08 q=127 p_wb 0.002/0.002 shift check=2.2e-16
+PASS distance shortcuts dcov_inc1 SEAS-M-shared H=0.8 n=1000 rel=5.1e-15
+PASS fast=full raw NL-TAR H=0.8 n=1000 T rel=5.9e-08 R rel=4.3e-08 q=153 p_wb 0.571/0.571 shift check=-1.0e-15
+PASS fast=full inc1 NL-TAR H=0.8 n=1000 T rel=2.0e-07 R rel=1.7e-07 q=169 p_wb 0.259/0.259 shift check=-2.2e-16
+PASS fast=full inc50 NL-TAR H=0.8 n=1000 T rel=7.6e-08 R rel=6.5e-08 q=153 p_wb 0.285/0.285 shift check=-2.4e-15
+PASS fast=full herm1 NL-TAR H=0.8 n=1000 T rel=4.1e-08 R rel=1.5e-08 q=156 p_wb 0.158/0.158 shift check=1.4e-16
+PASS fast=full herm2 NL-TAR H=0.8 n=1000 T rel=6.3e-08 R rel=4.2e-08 q=160 p_wb 0.375/0.375 shift check=-2.1e-17
+PASS fast=full sym NL-TAR H=0.8 n=1000 T rel=5.7e-08 R rel=3.3e-08 q=184 p_wb 0.118/0.118 shift check=-3.3e-16
+PASS fast=full datadiff NL-TAR H=0.8 n=1000 T rel=2.2e-07 R rel=1.9e-07 q=148 p_wb 0.790/0.790 shift check=4.0e-16
+PASS fast=full hp10 NL-TAR H=0.8 n=1000 T rel=1.6e-07 R rel=1.3e-07 q=161 p_wb 0.691/0.691 shift check=6.9e-17
+PASS fast=full frac_oracle NL-TAR H=0.8 n=1000 T rel=1.8e-07 R rel=1.3e-07 q=162 p_wb 0.477/0.477 shift check=5.6e-17
+PASS distance shortcuts dcov_inc1 NL-TAR H=0.8 n=1000 rel=3.6e-15
+PASS fast=full raw G0 H=0.8 n=2000 T rel=2.3e-08 R rel=2.0e-09 q=144 p_wb 0.048/0.048 shift check=-4.4e-16
+PASS fast=full inc1 G0 H=0.8 n=2000 T rel=5.1e-08 R rel=2.7e-08 q=151 p_wb 0.198/0.198 shift check=-6.7e-16
+PASS fast=full inc50 G0 H=0.8 n=2000 T rel=8.5e-08 R rel=4.3e-08 q=145 p_wb 0.351/0.351 shift check=6.7e-16
+PASS fast=full herm1 G0 H=0.8 n=2000 T rel=8.9e-08 R rel=5.3e-08 q=146 p_wb 0.371/0.371 shift check=-4.2e-17
+PASS fast=full herm2 G0 H=0.8 n=2000 T rel=5.9e-08 R rel=3.3e-08 q=150 p_wb 0.068/0.068 shift check=-1.4e-17
+PASS fast=full sym G0 H=0.8 n=2000 T rel=9.1e-08 R rel=6.6e-08 q=141 p_wb 0.491/0.491 shift check=1.7e-16
+PASS fast=full datadiff G0 H=0.8 n=2000 T rel=5.8e-08 R rel=2.7e-08 q=151 p_wb 0.497/0.497 shift check=-2.5e-16
+PASS fast=full hp10 G0 H=0.8 n=2000 T rel=8.4e-08 R rel=5.6e-08 q=148 p_wb 0.497/0.497 shift check=8.3e-17
+PASS fast=full frac_oracle G0 H=0.8 n=2000 T rel=6.6e-08 R rel=3.9e-08 q=148 p_wb 0.226/0.226 shift check=2.2e-16
+PASS distance shortcuts dcov_inc1 G0 H=0.8 n=2000 rel=9.8e-15
+PASS inc1 subsampling windows equal explicit Gram windows, H=0.9 rel=1.9e-07
+PASS inc1 subsampling q95 agrees 0.82329 0.82329
+PASS mmd_series G0 null equals EXP3 
+PASS mmd raw exact equals EXP3 mmd_ext G0 null n=500 maxdiff=0.0
+PASS mmd fast raw equals exact G0 null n=500 rel=7.1e-14
+PASS mmd_series G0 shift equals EXP3 
+PASS mmd raw exact equals EXP3 mmd_ext G0 shift n=2000 maxdiff=0.0
+PASS mmd fast raw equals exact G0 shift n=2000 rel=7.4e-13
+PASS mmd herm1 fast equals w'QKQw G0 rel=1.5e-12
+PASS mmd herm2 fast equals w'QKQw G0 rel=2.1e-12
+PASS mmd sym fast equals Gaussian kernel on the series G0 rel=4.5e-11
+PASS mmd datadiff fast equals Gaussian kernel on the series G0 rel=2.7e-12
+PASS mmd herm1 fast equals w'QKQw HT-S rel=1.2e-12
+PASS mmd herm2 fast equals w'QKQw HT-S rel=1.8e-12
+PASS mmd sym fast equals Gaussian kernel on the series HT-S rel=8.1e-14
+PASS mmd datadiff fast equals Gaussian kernel on the series HT-S rel=5.4e-14
+Telescoping: the increment kernel in split MMD. s' D K D' s = v' K v with v on three points.
+PASS telescoping identity n=500 H=0.5 inc MMD2=1.49e-05 l1 bound=2.57e-04 raw MMD2=1.15e-03 n*inc MMD2=7.45e-03
+PASS telescoping identity n=2000 H=0.5 inc MMD2=1.26e-06 l1 bound=1.60e-05 raw MMD2=2.17e-04 n*inc MMD2=2.52e-03
+PASS telescoping identity n=2000 H=0.9 inc MMD2=4.03e-06 l1 bound=1.60e-05 raw MMD2=1.25e-02 n*inc MMD2=8.05e-03
+PASS growth_bundle equals full T n=2000 H=0.9 raw rel=2.0e-12 inc1 rel=5.8e-12
+PASS growth_bundle equals full T n=8000 H=0.9 raw rel=4.1e-13 inc1 rel=4.6e-12
+PASS factor: Var X near 10/7 1.384
+PASS factor: corr(X, Y) near 0.3 0.281
+PASS factor null: mean corr near 0 0.004
+PASS scale: Var Y near 1 1.001
+PASS flat: Var Y near 1 1.007
+PASS shape alternative a=0.1: mean 0, variance 1 mean 0.0003 var 0.9999
+PASS shape alternative a=0.4: mean 0, variance 1 mean 0.0002 var 1.0008
+PASS lag: Y depends on X_{t-1} 
+PASS G_n(n/2)^2 equals mmdcal.sn_stat / 16 on the linear kernel diff=6.1e-15
+PASS SN mean windows equal direct computation rel=9.8e-11
+PASS SN split windows equal direct computation rel=2.5e-10
+PASS sn_split_stat equals Betken (2016) G_n(k) as written 1.15762
+PASS Betken Table 1 reproduced, H=0.6, n=1000, ranks mine 6.28 7.51 10.05 / hers 6.18 7.28 9.79
+PASS Betken Table 1 reproduced, H=0.7, n=1000, ranks mine 6.88 8.31 11.55 / hers 6.85 8.19 11.38
+PASS Betken Table 1 reproduced, H=0.8, n=1000, ranks mine 7.70 9.38 12.80 / hers 7.77 9.50 13.02
+PASS Betken Table 1 reproduced, H=0.9, n=1000, ranks mine 8.60 10.33 14.71 / hers 8.52 10.33 14.54
+PASS zero-mean SN statistic: 95% point near Lobato's 45.4, iid 45.5
+PASS hsplit-only pass equals the full bundle 
+PASS hsplit-only MMD pass equals the full bundle 
+PASS layer memory on fGn(0.9): first layer near 0.9, second layer between 0.6 and the first 0.903 0.707
+PASS table split1|2000|0.975 grows from H=0.5 to H=0.95 24 27 32 35 39 45 50 56 62 69
+PASS table split2|2000|0.975 grows from H=0.5 to H=0.95 25 24 25 24 25 24 24 26 26 25
+PASS table prod|2000|0.975 grows from H=0.5 to H=0.95 67 74 73 76 79 78 82 83 83 86
+PASS Harris V_s equal explicit segment Gram matrices, raw rel=2.7e-07, m=0
+PASS Harris V_s equal explicit segment Gram matrices, inc1 rel=4.7e-07, m=0
+ALL PASS

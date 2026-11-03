@@ -1,0 +1,363 @@
+
+==============================================================================
+C1 and C3: exact expected statistic and growth exponents  [0s]
+==============================================================================
+PASS  Psi series equals the closed form  
+PASS  2-D Gauss-Hermite equals the closed form  max err 2.2e-16
+PASS  c_p by quadrature equals c_p in closed form, p<=40  max err 1.2e-16
+PASS  deflated kernel r=1: direct 2-D quadrature equals the Hermite tail  max err 1.8e-16
+PASS  deflated kernel r=2: direct 2-D quadrature equals the Hermite tail  max err 1.8e-16
+PASS  O(n) formulas match the double sum at (0.8,0.7)  
+PASS  increment Gram D K D' matches kappa_D at (0.8,0.7)  
+PASS  O(n) formulas match the double sum at (0.9,0.9)  
+PASS  increment Gram D K D' matches kappa_D at (0.9,0.9)  
+PASS  C1: (1,1) balance at H_X+H_Y=3/2  
+PASS  C1: split-MMD rank 2 balance at H=3/4 and rank 1 long memory for every H>1/2  
+PASS  C1: pure (p,q) pairs grow at exactly 1 - p D_X - q D_Y  worst slope error 0.0000
+PASS  C1: centring keeps the exponent of each pure pair  worst slope error 0.0009
+PASS  C1/C3 growth exponents, kernel gauss_id: 154 cumulative fits, tol 0.02  
+PASS  monotone g=2 sinh(xi/2): quadrature equals the Hermite series  max err 7.5e-14
+PASS  C1/C3 growth exponents, kernel gauss_sinh: 211 cumulative fits, tol 0.05  
+
+==============================================================================
+C3: the uniform-in-p step and the tail exponent  [54s]
+==============================================================================
+  sup over p>=1, j>=2 of |Delta^2 rho^p (j)| j^(4-2H), and the proof constant
+    H=0.55: R=0.0718 A=    1.00 B=     2.00  sup seen=    0.234  bound C(H)=     0.247
+    H=0.6: R=0.1487 A=    1.00 B=     2.00  sup seen=    0.396  bound C(H)=     0.441
+    H=0.7: R=0.3195 A=    1.00 B=     2.00  sup seen=    0.535  bound C(H)=     0.649
+    H=0.75: R=0.4142 A=    1.00 B=     2.49  sup seen=    0.526  bound C(H)=     0.692
+    H=0.8: R=0.5157 A=    1.03 B=     3.19  sup seen=    0.482  bound C(H)=     0.701
+    H=0.85: R=0.6245 A=    1.25 B=     4.87  sup seen=    0.489  bound C(H)=     0.752
+    H=0.9: R=0.7411 A=    1.65 B=     9.39  sup seen=    0.464  bound C(H)=     0.777
+    H=0.95: R=0.8661 A=    2.95 B=    32.41  sup seen=    0.442  bound C(H)=     0.806
+    H=0.99: R=0.9725 A=   13.55 B=   724.07  sup seen=    0.423  bound C(H)=     0.829
+PASS  C3: |Delta^2 rho^p (j)| <= A|Delta^2 rho(j)| + (B/2)(u^2+v^2) for all p<500, 2<=j<2000  []
+    H=0.6: tail slope of kappa_D between j=1e8 and 1e9 = -2.8000 (theory -2.8)
+    H=0.75: tail slope of kappa_D between j=1e8 and 1e9 = -2.5000 (theory -2.5)
+    H=0.8: tail slope of kappa_D between j=1e8 and 1e9 = -2.4001 (theory -2.4)
+    H=0.9: tail slope of kappa_D between j=1e8 and 1e9 = -2.2035 (theory -2.2)
+    H=0.95: tail slope of kappa_D between j=1e8 and 1e9 = -2.1150 (theory -2.1)
+PASS  C3: kappa_D(j) decays like j^(2H-4) with j up to 1e9  []
+PASS  C3 scope: a memory pole at w=pi/3 keeps lag-1 at rate n^(1-2D); lag-6 removes it  slope lag-1 0.600 (want 0.600), slope lag-6 -1.000 (want -1)
+    H=0.5: Lambda = E T_infinity = 1.16592; kappa_D(0) = 0.88164
+    H=0.6: Lambda = E T_infinity = 0.98125; kappa_D(0) = 0.81970
+    H=0.7: Lambda = E T_infinity = 0.76233; kappa_D(0) = 0.73402
+    H=0.75: Lambda = E T_infinity = 0.63763; kappa_D(0) = 0.67768
+    H=0.8: Lambda = E T_infinity = 0.50214; kappa_D(0) = 0.60806
+    H=0.85: Lambda = E T_infinity = 0.35707; kappa_D(0) = 0.51969
+    H=0.9: Lambda = E T_infinity = 0.20784; kappa_D(0) = 0.40336
+    H=0.95: Lambda = E T_infinity = 0.07142; kappa_D(0) = 0.24209
+    H=0.99: Lambda = E T_infinity = 0.00387; kappa_D(0) = 0.05791
+    H=0.999: Lambda = E T_infinity = 0.00004; kappa_D(0) = 0.00606
+PASS  C3: Lambda stays finite and falls as H approaches one  
+
+==============================================================================
+C2: Hermite deflation  [58s]
+==============================================================================
+PASS  Q K Q is PSD and Q is a projection that annihilates the basis, r=1  min eig -1.2e-14
+PASS  Q K Q is PSD and Q is a projection that annihilates the basis, r=2  min eig -1.0e-14
+PASS  Q K Q is PSD and Q is a projection that annihilates the basis, r=4  min eig -8.7e-15
+PASS  monotone g (increasing sinh), r=1: first surviving Hermite rank is r+1  c_p=[4.25e-31 9.12e-02]
+PASS  monotone g (increasing sinh), r=2: first surviving Hermite rank is r+1  c_p=[4.25e-31 1.07e-31 4.89e-02]
+PASS  monotone g (decreasing cubic), r=1: first surviving Hermite rank is r+1  c_p=[3.52e-31 1.02e-01]
+PASS  monotone g (decreasing cubic), r=2: first surviving Hermite rank is r+1  c_p=[3.52e-31 1.20e-31 5.67e-02]
+PASS  SV: T(X) has unit variance under the quadrature  var 0.999856
+PASS  SV: product quadrature reproduces c_p from the closed conditional kernel  max err 1.0e-05
+PASS  SV: He_1(T) has zero correlation with every He_p(xi)  max |corr| 2.1e-17
+PASS  SV: r=1 deflation leaves every memory coefficient c_p unchanged  max change 4.3e-19
+PASS  SV: r=2,3,4,6 deflation leaves c_1 > 0, so the rank in xi stays one  
+  SV bandwidth 1.0242  k0 0.45162  sum c_p 0.03557  share of variance in memory layers 0.0788
+  corr(He_1(xi), He_q(T)), q=1..6: [-0.      0.488   0.     -0.113   0.      0.0514]
+  r=0: c_1=3.237e-02 ratio to r=0: 1.0000   c_2=2.135e-03 ratio: 1.0000
+  r=1: c_1=3.237e-02 ratio to r=0: 1.0000   c_2=2.135e-03 ratio: 1.0000
+  r=2: c_1=9.303e-04 ratio to r=0: 0.0287   c_2=3.481e-03 ratio: 1.6302
+  r=3: c_1=9.303e-04 ratio to r=0: 0.0287   c_2=3.481e-03 ratio: 1.6302
+  r=4: c_1=1.044e-04 ratio to r=0: 0.0032   c_2=4.551e-04 ratio: 0.2131
+  r=6: c_1=1.868e-05 ratio to r=0: 0.0006   c_2=9.337e-05 ratio: 0.0437
+  SV H=0.8: slope raw 0.200, def r=2 0.189, rank-one layer alone 0.200 (theory 0.200), increment -1.000; E T_n at n=64000: raw 0.2205, def2 0.0399, inc1 1.1225
+  SV H=0.9: slope raw 0.598, def r=2 0.523, rank-one layer alone 0.600 (theory 0.600), increment -1.000; E T_n at n=64000: raw 1.0853, def2 0.0417, inc1 1.0823
+  SV H=0.95: slope raw 0.796, def r=2 0.688, rank-one layer alone 0.800 (theory 0.800), increment -1.000; E T_n at n=64000: raw 8.0365, def2 0.0788, inc1 1.0609
+PASS  SV: rank-one layer grows at the C1 rate and the increment kernel converges  []
+  X=xi^2: corr(He_2(xi), He_q(T)) q=1..4: [ 0.8324  0.5293  0.1623 -0.0105]
+  X=xi^2: c_2 after deflation / c_2 raw: [(1, 0.10817), (2, 0.00762), (3, 0.00011), (4, 6e-05), (6, 0.0), (8, 0.0)]
+PASS  X=xi^2: deflation lowers c_2 but leaves it positive for r<=8, so the rank in xi stays two  
+  shift fixed  lam=0.5 r=0: MMD^2 slope in delta 1.996 (want 2); MMD^2(0.2)=7.660e-03
+  shift pooled lam=0.5 r=0: MMD^2 slope in delta 1.996 (want 2); MMD^2(0.2)=7.660e-03
+  shift fixed  lam=0.5 r=1: MMD^2 slope in delta 5.997 (want 6); MMD^2(0.2)=3.773e-08
+  shift pooled lam=0.5 r=1: MMD^2 slope in delta 5.979 (want 6); MMD^2(0.2)=1.484e-07
+  shift fixed  lam=0.5 r=2: MMD^2 slope in delta 5.997 (want 6); MMD^2(0.2)=3.773e-08
+  shift pooled lam=0.5 r=2: MMD^2 slope in delta 5.979 (want 6); MMD^2(0.2)=1.484e-07
+  shift fixed  lam=0.5 r=3: MMD^2 slope in delta 9.998 (want 10); MMD^2(0.2)=7.023e-14
+  shift pooled lam=0.5 r=3: MMD^2 slope in delta 9.935 (want 10); MMD^2(0.2)=1.696e-11
+  shift pooled lam=0.25 r=1: MMD^2 slope in delta 3.991 (want 4); MMD^2(0.2)=1.965e-05
+  shift pooled lam=0.25 r=2: MMD^2 slope in delta 6.143 (want 6); MMD^2(0.2)=1.083e-08
+PASS  C2 local rates: MMD^2 slope in delta is 2(r+1) for even r, 2(r+2) for odd r in the symmetric split  []
+  r=1, delta=0.1: fixed 5.9066e-10 vs delta^6||a_3||^2/576 = 5.9102e-10; pooled 2.3524e-09 vs delta^6||a_3||^2/144 = 2.3641e-09
+PASS  C2 leading constants: pooled reference gives delta^6||a_3||^2/144 and fixed gives /576  ratios 0.999, 0.995
+PASS  C2 blind pair, fixed reference: both are densities, raw MMD>0, deflated r=1 MMD=0  raw 1.922e-01, deflated 2.8e-28
+PASS  C2 HSIC: Hermite series for ||C||^2 equals the closed Gaussian form  max err 2.0e-16
+PASS  C2 HSIC: ||C^r||^2 has slope 2(r+1) in rho  []
+
+==============================================================================
+C4: population target and power of the increment kernel  [67s]
+==============================================================================
+PASS  C4: the p-th term formula equals the closed-form target (16 Gaussian integrals)  max err 3.3e-16
+PASS  C4: blind set, flat MA dependence r(0)=r(1)=r(-1) gives target exactly zero  value 0.0e+00
+  Y=rho X + sqrt(1-rho^2) Z. Target ||.||^2 at rho=0.2 for H grid and its first-layer approximation:
+    H=0.5: R=0.0000 target=6.0577e-03  4 rho^2 (1-R)^2 c_1^2=5.9085e-03
+    H=0.6: R=0.1487 target=4.4156e-03  4 rho^2 (1-R)^2 c_1^2=4.2820e-03
+    H=0.7: R=0.3195 target=2.8441e-03  4 rho^2 (1-R)^2 c_1^2=2.7361e-03
+    H=0.75: R=0.4142 target=2.1182e-03  4 rho^2 (1-R)^2 c_1^2=2.0275e-03
+    H=0.8: R=0.5157 target=1.4563e-03  4 rho^2 (1-R)^2 c_1^2=1.3857e-03
+    H=0.85: R=0.6245 target=8.8154e-04  4 rho^2 (1-R)^2 c_1^2=8.3308e-04
+    H=0.9: R=0.7411 target=4.2245e-04  4 rho^2 (1-R)^2 c_1^2=3.9604e-04
+    H=0.95: R=0.8661 target=1.1412e-04  4 rho^2 (1-R)^2 c_1^2=1.0599e-04
+PASS  C4: target positive for rho != 0 at every H on the grid  
+  Common smooth factor: X=F+e, Y=F+u with F fGn(H_F) of variance share s. Target against raw HSIC ratio:
+    H_F=0.7: R_F=0.3195, target/raw HSIC = 1.9103e+00
+    H_F=0.9: R_F=0.7411, target/raw HSIC = 2.9294e-01
+    H_F=0.99: R_F=0.9725, target/raw HSIC = 3.4488e-03
+    H= 0.5: raw rank-one layer sum rho^2 = 1.00000, efficiency 1.0000
+    H= 0.5: R=0.0000 sum r_D^2=1.50000 (spectral 1.50000) efficiency=0.6667; one-sided efficiency=0.5000; frac filter sum r^2=1.000000 (spectral 1.000000)
+    H= 0.6: raw rank-one layer sum rho^2 = 1.08213, efficiency 0.9241
+    H= 0.6: R=0.1487 sum r_D^2=1.41542 (spectral 1.41542) efficiency=0.7065; one-sided efficiency=0.4955; frac filter sum r^2=1.002623 (spectral 1.002623)
+    H= 0.7: raw rank-one layer sum rho^2 = 1.92863, efficiency 0.5185
+    H= 0.7: R=0.3195 sum r_D^2=1.33520 (spectral 1.33520) efficiency=0.7490; one-sided efficiency=0.4792; frac filter sum r^2=1.009334 (spectral 1.009334)
+    H=0.75: raw rank-one layer sum rho^2 = inf, efficiency 0.0000
+    H=0.75: R=0.4142 sum r_D^2=1.29716 (spectral 1.29716) efficiency=0.7709; one-sided efficiency=0.4653; frac filter sum r^2=1.013824 (spectral 1.013824)
+    H= 0.8: raw rank-one layer sum rho^2 = inf, efficiency 0.0000
+    H= 0.8: R=0.5157 sum r_D^2=1.26075 (spectral 1.26075) efficiency=0.7932; one-sided efficiency=0.4468; frac filter sum r^2=1.018924 (spectral 1.018924)
+    H=0.85: raw rank-one layer sum rho^2 = inf, efficiency 0.0000
+    H=0.85: R=0.6245 sum r_D^2=1.22616 (spectral 1.22616) efficiency=0.8156; one-sided efficiency=0.4231; frac filter sum r^2=1.024551 (spectral 1.024551)
+    H= 0.9: raw rank-one layer sum rho^2 = inf, efficiency 0.0000
+    H= 0.9: R=0.7411 sum r_D^2=1.19360 (spectral 1.19360) efficiency=0.8378; one-sided efficiency=0.3936; frac filter sum r^2=1.030634 (spectral 1.030634)
+    H=0.95: raw rank-one layer sum rho^2 = inf, efficiency 0.0000
+    H=0.95: R=0.8661 sum r_D^2=1.16327 (spectral 1.16327) efficiency=0.8596; one-sided efficiency=0.3577; frac filter sum r^2=1.037119 (spectral 1.037119)
+PASS  C4: lag sums and spectral integrals agree  []
+PASS  C4: sum r_D^2 = 1.5 exactly at H=1/2  
+PASS  C4 claim 'about 1.26 at H=0.8'  exact 1.26075
+PASS  C4 claim 'oracle fractional filter gives sum 1' holds only approximately for fGn  sums [1.0, 1.00262, 1.00933, 1.01382, 1.01892, 1.02455, 1.03063, 1.03712]
+
+==============================================================================
+Power proxy: rho at which the first-order signal equals the null mean (n=2000 and n=64000)  [77s]
+==============================================================================
+    H= 0.5, n=2000: raw=0.051  def1=0.237  def2=0.389  inc1=0.063  inc50=0.063  frac=0.051
+    H= 0.5, n=64000:raw=0.009  def1=0.100  def2=0.218  inc1=0.011  inc50=0.011  frac=0.009
+    H= 0.6, n=2000: raw=0.052  def1=0.237  def2=0.389  inc1=0.068  inc50=0.063  frac=0.053
+    H= 0.6, n=64000:raw=0.009  def1=0.100  def2=0.218  inc1=0.012  inc50=0.011  frac=0.009
+    H= 0.7, n=2000: raw=0.054  def1=0.237  def2=0.389  inc1=0.075  inc50=0.066  frac=0.057
+    H= 0.7, n=64000:raw=0.010  def1=0.100  def2=0.218  inc1=0.013  inc50=0.012  frac=0.010
+    H=0.75, n=2000: raw=0.058  def1=0.238  def2=0.389  inc1=0.079  inc50=0.070  frac=0.060
+    H=0.75, n=64000:raw=0.011  def1=0.100  def2=0.219  inc1=0.014  inc50=0.012  frac=0.011
+    H= 0.8, n=2000: raw=0.065  def1=0.241  def2=0.390  inc1=0.085  inc50=0.076  frac=0.065
+    H= 0.8, n=64000:raw=0.014  def1=0.101  def2=0.219  inc1=0.015  inc50=0.013  frac=0.011
+    H=0.85, n=2000: raw=0.077  def1=0.250  def2=0.393  inc1=0.093  inc50=0.087  frac=0.071
+    H=0.85, n=64000:raw=0.022  def1=0.107  def2=0.221  inc1=0.016  inc50=0.015  frac=0.013
+    H= 0.9, n=2000: raw=0.096  def1=0.279  def2=0.407  inc1=0.102  inc50=0.109  frac=0.081
+    H= 0.9, n=64000:raw=0.038  def1=0.131  def2=0.231  inc1=0.018  inc50=0.019  frac=0.014
+    H=0.95, n=2000: raw=0.118  def1=0.348  def2=0.474  inc1=0.116  inc50=0.160  frac=0.097
+    H=0.95, n=64000:raw=0.064  def1=0.219  def2=0.315  inc1=0.021  inc50=0.028  frac=0.017
+
+==============================================================================
+C5: telescoping and the location cap  [77s]
+==============================================================================
+PASS  C5: reproduces the paper's delta I_n^{1/2} = 2.24, 0.71, 0.46 at n=2000  {0.5: 2.236, 0.7: 0.713, 0.8: 0.457}
+    H= 0.5: I_n/n^(2-2H)=0.2500 slope=1.0000 (theory 1.000); half-mean efficiency=1.0000
+    H= 0.6: I_n/n^(2-2H)=0.3446 slope=0.8000 (theory 0.800); half-mean efficiency=0.9790
+    H= 0.7: I_n/n^(2-2H)=0.5325 slope=0.6000 (theory 0.600); half-mean efficiency=0.9103
+    H=0.75: I_n/n^(2-2H)=0.7081 slope=0.5000 (theory 0.500); half-mean efficiency=0.8524
+    H= 0.8: I_n/n^(2-2H)=1.0117 slope=0.4000 (theory 0.400); half-mean efficiency=0.7734
+    H=0.85: I_n/n^(2-2H)=1.6175 slope=0.3000 (theory 0.300); half-mean efficiency=0.6687
+    H= 0.9: I_n/n^(2-2H)=3.1355 slope=0.2000 (theory 0.200); half-mean efficiency=0.5362
+    H=0.95: I_n/n^(2-2H)=9.0747 slope=0.1000 (theory 0.100); half-mean efficiency=0.3838
+PASS  C5: I_n grows at n^(2-2H), so no location-invariant test has a sqrt(n) rate for H>1/2  []
+    half-mean efficiency falls with H: the cap is reachable only by a contrast that weights the change point
+    H=0.6 n=2000: half-mean bound 147.5321 <= I_n 150.6823 <= spectral bound 152.7944
+    H=0.6 n=16000: half-mean bound 778.6791 <= I_n 795.3954 <= spectral bound 806.5805
+    H=0.8 n=2000: half-mean bound 16.3633 <= I_n 20.8556 <= spectral bound 23.7070
+    H=0.8 n=16000: half-mean bound 37.5929 <= I_n 48.3712 <= spectral bound 55.1494
+    H=0.95 n=2000: half-mean bound 7.4487 <= I_n 15.9533 <= spectral bound 20.8627
+    H=0.95 n=16000: half-mean bound 9.1704 <= I_n 21.7169 <= spectral bound 28.7986
+PASS  C5: both proved bounds on I_n hold, so I_n has exact order n^(2-2H)  []
+PASS  C5: GLS on differences has the same information at H=0.7  I=24.6377; a plain contrast on the differences has I=0.7348
+PASS  C5: GLS on differences has the same information at H=0.9  I=9.8907; a plain contrast on the differences has I=1.9313
+PASS  C5: scale-change Fisher information is at least m at H=0.7  I/n=1.0005
+PASS  C5: scale-change Fisher information is at least m at H=0.9  I/n=1.0044
+PASS  C5: scale-change Fisher information is at least m at H=0.95  I/n=1.0103
+
+==============================================================================
+C6: seasonality  [100s]
+==============================================================================
+PASS  C6: reproduces Proposition 1 h(0)=0.005869 and min h=0.000039  h(0)=0.005869, min=0.000039
+  (2 sin(pi/P))^4 = 2.4871e-04; (2 pi/P)^4 = 2.4937e-04; h_1(0)/h_raw(0) = 2.6426e-04
+PASS  C6: lag-1 attenuates the seasonal-mean limit h by about (2 sin(pi/P))^4  ratio/att=1.0625
+PASS  C6: h_1(d) > 0 at every phase gap, so lag-1 does not reach a zero limit for fixed P  min h_1=7.057e-08 at d=38
+  seasonal scale, sig=0.9539: h_raw(0)=5.4104e-04, h_1(0)=1.4122e-07, ratio=2.6101e-04
+  H=0.5: exact E T_n given the phase gap (n, raw centred, lag-1, lag-50)
+    no season          gap=0   n=2000  raw=   0.1942  lag1=  1.1657  lag50=  1.1562
+    no season          gap=0   n=4000  raw=   0.1943  lag1=  1.1658  lag50=  1.1611
+    no season, SEAS-M sig gap=0   n=2000  raw=   0.1291  lag1=  0.7746  lag50=  0.7682
+    no season, SEAS-M sig gap=0   n=4000  raw=   0.1291  lag1=  0.7746  lag50=  0.7715
+    SEAS-M P=50        gap=0   n=2000  raw=  11.9244  lag1=  0.7777  lag50=  0.7682
+    SEAS-M P=50        gap=12  n=2000  raw=   0.2659  lag1=  0.7747  lag50=  0.7682
+    SEAS-M P=50        gap=0   n=4000  raw=  23.6619  lag1=  0.7809  lag50=  0.7715
+    SEAS-V P=50        gap=0   n=2000  raw=   1.2933  lag1=  1.1576  lag50=  1.1482
+    SEAS-V P=50        gap=12  n=2000  raw=   0.1983  lag1=  1.0465  lag50=  1.0378
+    SEAS-V P=50        gap=0   n=4000  raw=   2.3755  lag1=  1.1580  lag50=  1.1530
+    SEAS-V-slow P=4n   gap=0   n=2000  raw=   0.3168  lag1=  1.7677  lag50=  1.7654
+    SEAS-V-slow P=4n   gap=12  n=2000  raw=   0.1981  lag1=  0.9666  lag50=  0.9709
+    SEAS-V-slow P=4n   gap=0   n=4000  raw=   0.3359  lag1=  1.7678  lag50=  1.7667
+PASS  C6: lag-50 is bounded under mean, H=0.5: E T_n changes by under 1% from n=2000 to 4000  0.7682 -> 0.7715
+PASS  C6: lag-50 is bounded under scale, H=0.5: E T_n changes by under 1% from n=2000 to 4000  1.1482 -> 1.1530
+    lag-1 slope in n under SEAS-M gap 0: 1.583e-06; closed h_1(0) = 1.551e-06; ratio 1.020
+    n at which n*h_1(0) equals the null mean 1.166: 7.517e+05
+PASS  C6: lag-1 slope in n matches h_1(0) at H=0.5  ratio 1.020
+  H=0.8: exact E T_n given the phase gap (n, raw centred, lag-1, lag-50)
+    no season          gap=0   n=2000  raw=   0.3077  lag1=  0.5021  lag50=  1.3690
+    no season          gap=0   n=4000  raw=   0.3349  lag1=  0.5021  lag50=  1.3747
+    no season, SEAS-M sig gap=0   n=2000  raw=   0.2332  lag1=  0.2879  lag50=  0.9647
+    no season, SEAS-M sig gap=0   n=4000  raw=   0.2586  lag1=  0.2879  lag50=  0.9688
+    SEAS-M P=50        gap=0   n=2000  raw=  12.9610  lag1=  0.2921  lag50=  0.9342
+    SEAS-M P=50        gap=12  n=2000  raw=   0.4135  lag1=  0.2889  lag50=  0.9290
+    SEAS-M P=50        gap=0   n=4000  raw=  25.1671  lag1=  0.2953  lag50=  0.9381
+    SEAS-V P=50        gap=0   n=2000  raw=   1.4553  lag1=  0.5598  lag50=  1.3096
+    SEAS-V P=50        gap=12  n=2000  raw=   0.3054  lag1=  0.4768  lag50=  1.1954
+    SEAS-V P=50        gap=0   n=4000  raw=   2.5855  lag1=  0.5601  lag50=  1.3151
+    SEAS-V-slow P=4n   gap=0   n=2000  raw=   0.4606  lag1=  0.9233  lag50=  1.9500
+    SEAS-V-slow P=4n   gap=12  n=2000  raw=   0.3473  lag1=  0.4137  lag50=  1.1355
+    SEAS-V-slow P=4n   gap=0   n=4000  raw=   0.5240  lag1=  0.9233  lag50=  1.9525
+PASS  C6: lag-50 is bounded under mean, H=0.8: E T_n changes by under 1% from n=2000 to 4000  0.9342 -> 0.9381
+PASS  C6: lag-50 is bounded under scale, H=0.8: E T_n changes by under 1% from n=2000 to 4000  1.3096 -> 1.3151
+    lag-1 slope in n under SEAS-M gap 0: 1.623e-06; closed h_1(0) = 1.551e-06; ratio 1.046
+    n at which n*h_1(0) equals the null mean 0.502: 3.237e+05
+PASS  C6: lag-1 slope in n matches h_1(0) at H=0.8  ratio 1.046
+
+==============================================================================
+C7: circular-shift rule  [138s]
+==============================================================================
+PASS  C7: wrap formulas match the literal double sums  
+  mean ratio = E T_n(s)/E T_n(0); cross = E<Z(0),Z(s)>/E||Z(0)||^2
+    (0.6,0.6) n=2000   s=n/2: raw centred ratio=1.0000 raw uncentred ratio=0.9999 inc ratio-1=-1.58e-04 | cross raw=-0.0023 cross inc=-1.16e-13
+    (0.6,0.6) n=8000   s=n/2: raw centred ratio=1.0000 raw uncentred ratio=1.0000 inc ratio-1=-3.95e-05 | cross raw=-0.0009 cross inc=-6.08e-16
+    (0.6,0.6) n=64000  s=n/2: raw centred ratio=1.0000 raw uncentred ratio=1.0000 inc ratio-1=-4.93e-06 | cross raw=-0.0002 cross inc=-2.30e-19
+    (0.7,0.7) n=2000   s=n/2: raw centred ratio=0.9991 raw uncentred ratio=0.9985 inc ratio-1=-1.47e-04 | cross raw=-0.0158 cross inc=-9.04e-13
+    (0.7,0.7) n=8000   s=n/2: raw centred ratio=0.9993 raw uncentred ratio=0.9989 inc ratio-1=-3.69e-05 | cross raw=-0.0105 cross inc=-6.32e-15
+    (0.7,0.7) n=64000  s=n/2: raw centred ratio=0.9996 raw uncentred ratio=0.9993 inc ratio-1=-4.61e-06 | cross raw=-0.0062 cross inc=-3.53e-18
+    (0.8,0.8) n=2000   s=n/2: raw centred ratio=0.9910 raw uncentred ratio=0.9901 inc ratio-1=-1.34e-04 | cross raw=-0.0892 cross inc=-5.33e-12
+    (0.8,0.8) n=8000   s=n/2: raw centred ratio=0.9905 raw uncentred ratio=0.9897 inc ratio-1=-3.36e-05 | cross raw=-0.0898 cross inc=-4.96e-14
+    (0.8,0.8) n=64000  s=n/2: raw centred ratio=0.9894 raw uncentred ratio=0.9890 inc ratio-1=-4.20e-06 | cross raw=-0.0963 cross inc=-4.27e-17
+    (0.9,0.9) n=2000   s=n/2: raw centred ratio=0.9626 raw uncentred ratio=0.9910 inc ratio-1=-1.15e-04 | cross raw=-0.2626 cross inc=-3.39e-11
+    (0.9,0.9) n=8000   s=n/2: raw centred ratio=0.9583 raw uncentred ratio=0.9912 inc ratio-1=-2.88e-05 | cross raw=-0.2820 cross inc=-4.16e-13
+    (0.9,0.9) n=64000  s=n/2: raw centred ratio=0.9525 raw uncentred ratio=0.9915 inc ratio-1=-3.60e-06 | cross raw=-0.3097 cross inc=-5.22e-16
+    (0.95,0.95) n=2000   s=n/2: raw centred ratio=0.9395 raw uncentred ratio=0.9961 inc ratio-1=-1.02e-04 | cross raw=-0.3635 cross inc=-1.17e-10
+    (0.95,0.95) n=8000   s=n/2: raw centred ratio=0.9357 raw uncentred ratio=0.9964 inc ratio-1=-2.54e-05 | cross raw=-0.3766 cross inc=-1.66e-12
+    (0.95,0.95) n=64000  s=n/2: raw centred ratio=0.9308 raw uncentred ratio=0.9967 inc ratio-1=-3.17e-06 | cross raw=-0.3943 cross inc=-2.94e-15
+    (0.7,0.9) n=2000   s=n/2: raw centred ratio=0.9921 raw uncentred ratio=0.9921 inc ratio-1=-1.28e-04 | cross raw=-0.0914 cross inc=-1.19e-11
+    (0.7,0.9) n=8000   s=n/2: raw centred ratio=0.9918 raw uncentred ratio=0.9919 inc ratio-1=-3.19e-05 | cross raw=-0.0891 cross inc=-1.34e-13
+    (0.7,0.9) n=64000  s=n/2: raw centred ratio=0.9911 raw uncentred ratio=0.9915 inc ratio-1=-3.99e-06 | cross raw=-0.0922 cross inc=-1.49e-16
+    (0.8,0.9) n=2000   s=n/2: raw centred ratio=0.9800 raw uncentred ratio=0.9887 inc ratio-1=-1.23e-04 | cross raw=-0.1687 cross inc=-1.65e-11
+    (0.8,0.9) n=8000   s=n/2: raw centred ratio=0.9776 raw uncentred ratio=0.9885 inc ratio-1=-3.08e-05 | cross raw=-0.1804 cross inc=-1.86e-13
+    (0.8,0.9) n=64000  s=n/2: raw centred ratio=0.9739 raw uncentred ratio=0.9882 inc ratio-1=-3.85e-06 | cross raw=-0.2028 cross inc=-2.10e-16
+PASS  C7: for the increment kernel the wrap changes E T_n(s) by under 0.1% at n>=2000  
+PASS  C7: for the increment kernel statistics at distant offsets are almost uncorrelated, |cross|<1e-3  
+  SEAS-V-slow: ratio E T_n(0) / mean over offsets of E T_n(s), n=2000, 16 phase pairs
+    H=0.5 raw  : min 1.032  median 1.173  max 1.737
+    H=0.5 lag1 : min 0.927  median 1.001  max 1.078
+    H=0.8 raw  : min 1.056  median 1.167  max 1.449
+    H=0.8 lag1 : min 0.887  median 1.001  max 1.127
+
+==============================================================================
+C3 and C7: contraction conditions of the fourth-moment theorem  [175s]
+==============================================================================
+    raw        (0.7,0.7): S_n at n=500,1000,2000 [0.108  0.0821 0.0623]; slope -0.398; theory -0.400
+    raw mixed  (0.9,0.55): S_n at n=500,1000,2000 [0.3047 0.2653 0.231 ]; slope -0.200; theory -0.200
+    raw mixed  (0.85,0.6): S_n at n=500,1000,2000 [0.3188 0.2777 0.2418]; slope -0.200; theory -0.200
+    increment  (0.95,0.95): S_n at n=500,1000,2000 [1.8226e-05 9.1171e-06 4.5595e-06]; slope -1.000; theory -1.000
+    increment  (0.9,0.9): S_n at n=500,1000,2000 [2.7968e-04 1.3990e-04 6.9967e-05]; slope -1.000; theory -1.000
+    increment  (0.95,0.6): S_n at n=500,1000,2000 [0.001  0.0005 0.0002]; slope -1.000; theory -1.000
+PASS  second-chaos contraction vanishes at the predicted rate, including mixed pairs and the increment kernel  []
+    layer (2,2), m=(1,1), H=(0.95,0.95), raw      : S_n at n=12,24,36 = [20.8469 48.1282 78.4338]
+    layer (2,2), m=(1,1), H=(0.95,0.95), increment: S_n at n=12,24,36 = [0.0068 0.0049 0.0041]
+    layer (2,2), m=(1,1), H=(0.9,0.6), raw      : S_n at n=12,24,36 = [0.0998 0.0509 0.0342]
+    layer (2,2), m=(1,1), H=(0.9,0.6), increment: S_n at n=12,24,36 = [0.2166 0.1119 0.0754]
+PASS  fourth-chaos contraction falls with n for the increment kernel  
+
+==============================================================================
+C8: the Hermite-split design  [181s]
+==============================================================================
+  kernel on normal scores, sigma = 0.6745; n=800; inflation = E T(H) / E T(1/2)
+    fGn m=1: exact x3.12, x6.91; note x3.0, x5.9; exact at H=0.8, n=64000: x78.21
+    fGn m=2: exact x1.18, x2.14; note x1.1, x1.3; exact at H=0.8, n=64000: x4.26
+    fGn m=3: exact x1.03, x1.28; note x1.1, x1.1; exact at H=0.8, n=64000: x1.35
+    fGn m=4: exact x1.01, x1.09; note x1.0, x1.1; exact at H=0.8, n=64000: x1.10
+PASS  C8: exact fGn inflation with T known agrees with the note within 25% for m=1,3,4  
+  The note's m=2, H=0.8 value (x1.3) differs from T known (x2.14). Estimated scores cause it: see the centre ratio below and theory_path_check.py.
+  SV on normal scores: corr(h_p(xi), h_q(T)), rows p=1,2,3, columns q=1..8
+    p=1: -0.0000  +0.4880  +0.0000  -0.1130  +0.0000  +0.0514  +0.0000  -0.0286
+    p=2: -0.0000  +0.1993  +0.0000  +0.2142  +0.0000  -0.1073  -0.0000  +0.0665
+    p=3: -0.0000  +0.0486  -0.0000  +0.2223  +0.0000  +0.0323  -0.0000  -0.0404
+  share of the rank-one memory R^2 by score layer: q=2 0.9362, q=4 0.0502, q=6 0.0104, q=8 0.0032; total R^2 of xi on these layers 0.2543
+PASS  C8: odd score layers carry no SV memory  max 2.1e-17
+PASS  C8: the second score layer carries most of the SV rank-one memory, but not all  
+    SV  m=1: exact x1.41, x2.08; note x1.4, x2.4; d_1=3.619e-02, d_1/raw=1.0000; at n=1,024,000: x9.25, x83.05
+    SV  m=2: exact x1.60, x2.55; note x1.7, x3.1; d_1=3.619e-02, d_1/raw=1.0000; at n=1,024,000: x12.92, x119.49
+    SV  m=3: exact x1.05, x1.16; note x1.2, x1.2; d_1=1.433e-03, d_1/raw=0.0396; at n=1,024,000: x1.67, x7.90
+    SV  m=4: exact x1.06, x1.22; note x1.0, x1.2; d_1=1.433e-03, d_1/raw=0.0396; at n=1,024,000: x1.89, x10.22
+PASS  C8: exact SV inflation agrees with the note to within 25% at n=800  {1: [1.41, 2.08], 2: [1.6, 2.55], 3: [1.05, 1.16], 4: [1.06, 1.22]}
+  Location shift, rank contrast of He_1(T), pooled T: E_A T - E_B T over delta
+    delta=0.1: ratio 0.99875
+    delta=0.5: ratio 0.97011
+    delta=1.0: ratio 0.89331
+    delta=2.0: ratio 0.69161
+  delta at which the first-order signal equals the noise scale, n=2000. first_layer uses sd of the half-mean contrast. Others use the null mean of T.
+    H= 0.5: first_layer=0.045  raw=0.081  deflated r=1=0.799  r=2=0.758
+    H= 0.6: first_layer=0.082  raw=0.107  deflated r=1=0.802  r=2=0.758
+    H= 0.7: first_layer=0.147  raw=0.164  deflated r=1=0.824  r=2=0.762
+    H=0.75: first_layer=0.192  raw=0.210  deflated r=1=0.858  r=2=0.770
+    H= 0.8: first_layer=0.247  raw=0.269  deflated r=1=0.928  r=2=0.792
+    H=0.85: first_layer=0.307  raw=0.343  deflated r=1=1.050  r=2=0.856
+    H= 0.9: first_layer=0.361  raw=0.435  deflated r=1=1.227  r=2=1.014
+    H=0.95: first_layer=0.366  raw=0.544  deflated r=1=1.452  r=2=1.294
+  Rank-(1,1) signal, Y = rho X + sqrt(1-rho^2) Z. Variance factor S: z = sqrt(n) rho / sqrt(S)
+    H= 0.5: S_low(n=2000)=1.000  S_low(n=64000)=1.000  S_inc=1.500
+    H= 0.6: S_low(n=2000)=1.070  S_low(n=64000)=1.081  S_inc=1.415
+    H= 0.7: S_low(n=2000)=1.494  S_low(n=64000)=1.711  S_inc=1.335
+    H=0.75: S_low(n=2000)=2.080  S_low(n=64000)=3.054  S_inc=1.297
+    H= 0.8: S_low(n=2000)=3.214  S_low(n=64000)=7.390  S_inc=1.261
+    H=0.85: S_low(n=2000)=5.138  S_low(n=64000)=21.440  S_inc=1.226
+    H= 0.9: S_low(n=2000)=7.332  S_low(n=64000)=59.347  S_inc=1.194
+    H=0.95: S_low(n=2000)=6.395  S_low(n=64000)=102.641  S_inc=1.163
+  Common factor: X=sqrt(s)F+sqrt(1-s)e, Y=sqrt(s)F+sqrt(1-s)u, s=0.3, e and u white. z per sqrt(n) units at n=2000 and 64000
+    H_F=0.7: level corr=0.300 z_low(2000)=13.16 z_low(64000)=73.60; increment corr=0.2258 z_inc(2000)=8.36 z_inc(64000)=47.31
+    H_F=0.8: level corr=0.300 z_low(2000)=12.36 z_low(64000)=60.57; increment corr=0.1719 z_inc(2000)=6.38 z_inc(64000)=36.11
+    H_F=0.9: level corr=0.300 z_low(2000)=11.04 z_low(64000)=30.47; increment corr=0.0999 z_inc(2000)=3.70 z_inc(64000)=20.92
+    H_F=0.95: level corr=0.300 z_low(2000)=11.82 z_low(64000)=23.99; increment corr=0.0543 z_inc(2000)=2.00 z_inc(64000)=11.31
+    H_F=0.99: level corr=0.300 z_low(2000)=17.12 z_low(64000)=49.09; increment corr=0.0117 z_inc(2000)=0.43 z_inc(64000)=2.41
+  Common SV factor on the (2,2) score layer: X=exp(F/2)e, Y=exp(F/2)u, n=2000 and 64000
+    H=0.6: level corr=0.2802 z_low(2000)=12.51 z_low(64000)=70.72; increment corr=0.2531 z_inc(2000)=9.30 z_inc(64000)=52.62
+    H=0.7: level corr=0.2802 z_low(2000)=12.37 z_low(64000)=69.45; increment corr=0.2174 z_inc(2000)=8.04 z_inc(64000)=45.46
+    H=0.8: level corr=0.2802 z_low(2000)=11.84 z_low(64000)=60.41; increment corr=0.1691 z_inc(2000)=6.27 z_inc(64000)=35.47
+    H=0.9: level corr=0.2802 z_low(2000)=10.75 z_low(64000)=32.85; increment corr=0.1011 z_inc(2000)=3.74 z_inc(64000)=21.17
+    H=0.95: level corr=0.2802 z_low(2000)=11.16 z_low(64000)=24.66; increment corr=0.0559 z_inc(2000)=2.06 z_inc(64000)=11.66
+  Corr(Delta_1^2, Delta_2^2) for the half contrasts of He_1 and He_2, exact by cumulants
+  known = He_2(xi_t). centred = He_2(xi_t - xibar), a quadratic form with matrix A - (1w'+w1')/n
+    H= 0.6: known  0.0330  0.0218  0.0144   centred  0.0003  0.0002  0.0001
+    H= 0.7: known  0.1792  0.1542  0.1327   centred  0.0031  0.0026  0.0021
+    H=0.75: known  0.3009  0.2840  0.2686   centred  0.0073  0.0065  0.0059
+    H= 0.8: known  0.3974  0.3912  0.3858   centred  0.0142  0.0135  0.0128
+    H= 0.9: known  0.4796  0.4793  0.4791   centred  0.0363  0.0359  0.0357
+    H=0.95: known  0.4932  0.4932  0.4931   centred  0.0507  0.0505  0.0504
+PASS  C8: with a known centre the layers decouple below H=3/4 and stay correlated above it  H=0.6: 0.033->0.014; H=0.9: 0.480->0.479
+  Var(sum w_t He_2(xi_t - xibar)) / Var(sum w_t He_2(xi_t)) for the half contrast
+    H= 0.6: n=2000 0.9857  n=64000 0.9982  n=1024000 0.9997
+    H= 0.7: n=2000 0.8643  n=64000 0.9374  n=1024000 0.9652
+    H=0.75: n=2000 0.6958  n=64000 0.7765  n=1024000 0.8157
+    H= 0.8: n=2000 0.4786  n=64000 0.5203  n=1024000 0.5360
+    H=0.85: n=2000 0.2832  n=64000 0.2950  n=1024000 0.2975
+    H= 0.9: n=2000 0.1437  n=64000 0.1459  n=1024000 0.1462
+    H=0.95: n=2000 0.0544  n=64000 0.0547  n=1024000 0.0547
+PASS  C8: an estimated centre leaves the second-layer variance alone below H=3/4 and changes it above  H=0.6: 0.9997; H=0.9: 0.1462
+
+==============================================================================
+74 checks, 0 failed, 222s, 2988 rows in theory_exact.csv
