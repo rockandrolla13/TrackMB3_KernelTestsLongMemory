@@ -20,6 +20,7 @@ import numpy as np  # noqa: E402
 import exp5_core as P  # noqa: E402
 import run_exp5 as R  # noqa: E402
 from kmem.legacy import common as C  # noqa: E402
+from kmem.analysis import boot_power, cstar  # noqa: E402,F401
 
 EXPS = os.path.join(HERE, "..")
 EXP3_MAIN = os.path.join(EXPS, "EXP3-power-20261025", "main")
@@ -56,17 +57,6 @@ def norm_cdf(x):
 
 def lin_exact(c):
     return norm_cdf(c - Z975) + norm_cdf(-c - Z975)
-
-
-def cstar(v):
-    v = np.sort(v)
-    return float(v[v.size - int(math.floor(ALPHA * v.size)) - 1])
-
-
-def boot_power(null_vals, alt_vals, bi_null, bi_alt):
-    vn = np.sort(null_vals[bi_null], axis=1)
-    c = vn[:, vn.shape[1] - int(math.floor(ALPHA * vn.shape[1])) - 1]
-    return np.mean(alt_vals[bi_alt] > c[:, None], axis=1)
 
 
 def fmt(p, lo, hi):

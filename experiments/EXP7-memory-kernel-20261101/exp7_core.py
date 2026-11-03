@@ -29,7 +29,8 @@ import os
 
 import numpy as np
 
-from kmem import memory_kernels as mk
+from kmem import kernels as kreg
+from kmem import memory_kernels as mk  # noqa: F401  (re-exported)
 from kmem.bandwidth import median_bw_fast  # noqa: F401  (re-exported)
 from kmem.calibration.common import ALPHA, pboot, q95  # noqa: F401
 from kmem.calibration.harris import (HARRIS_N_MIN, harris_big_n, harris_ratio, harris_rules,  # noqa: F401
@@ -53,11 +54,12 @@ from kmem.legacy import mmdcal as M
 from kmem.rules import rules_distance, rules_fast, rules_full  # noqa: F401
 
 B_WILD = 500
-HP_FRAC = 0.1
+HP_FRAC = kreg.HP_FRAC
 
 IND_KERNELS = ("raw", "inc1", "inc50", "herm1", "herm2", "sym", "datadiff", "hp10", "dcov_inc1", "frac_oracle")
 SUB_KERNELS = ("raw", "inc1")
 MMD_KERNELS = ("raw", "herm1", "herm2", "sym", "datadiff")
+R975_KERNELS = ("herm1", "herm2")  # also report the 97.5% ratios, used by hsplit (DESIGN.md A2)
 
 # hsplit: herm_r on the remainder plus a self-normalised test of the removed layers, Bonferroni (DESIGN.md A2)
 HSPLIT_R = (1, 2)
@@ -74,56 +76,20 @@ HARRIS_STRICT_REPS = {500: 40, 2000: 40, 4000: 10}
 # ---------------------------------------------------------------- kernel feature maps (fast path)
 
 def transform_features(kernel: str, f: np.ndarray, x: np.ndarray, H: float | None) -> np.ndarray:
-    """Apply the kernel's linear feature map to the Gaussian features f of raw x."""
-    if kernel == "raw":
-        return f
-    if kernel == "inc1":
-        return f[1:] - f[:-1]
-    if kernel == "inc50":
-        return f[INC_LONG:] - f[:-INC_LONG]
-    if kernel in ("herm1", "herm2"):
-        u = mk.hermite_basis(x, int(kernel[-1]))
-        return f - u @ (u.T @ f)
-    if kernel == "hp10":
-        u = mk.dct_basis(x.size, mk.n_low(x.size, HP_FRAC))
-        return f - u @ (u.T @ f)
-    if kernel == "frac_oracle":
-        if H is None:
-            raise ValueError("frac_oracle needs the true H")
-        d = H - 0.5
-        return f - f.mean(axis=0, keepdims=True) if d == 0.0 else mk.fracdiff_features(f - f.mean(axis=0, keepdims=True), d)
-    raise ValueError(kernel)
+    """Apply the kernel's linear feature map to the Gaussian features f of raw x (kmem.kernels)."""
+    return kreg.get(kernel).features(f, x, H)
 
 
 def own_series(kernel: str, x: np.ndarray) -> np.ndarray:
-    """Series on which sym and datadiff build their own Gaussian kernel."""
-    return mk.even_map(x) if kernel == "sym" else mk.first_difference(x)
+    """Series on which sym and datadiff build their own Gaussian kernel (kmem.kernels)."""
+    return kreg.get(kernel).series(x)
 
 
 # ---------------------------------------------------------------- full Gram matrices of each kernel (checks)
 
 def gram_full(kernel: str, x: np.ndarray, sigma: float, H: float | None = None) -> np.ndarray:
-    """Full-path transformed Gram matrix for one series. Used by unit checks and tests."""
-    if kernel in ("sym", "datadiff"):
-        u = own_series(kernel, x)
-        d = np.abs(u[:, None] - u[None, :])
-        return mk.double_center(mb.gauss_gram(d, mb.median_bandwidth(d)))
-    if kernel == "dcov_inc1":
-        return mk.increment(mk.distance_kernel(x), 1)
-    k = mb.gauss_gram(np.abs(x[:, None] - x[None, :]), sigma)
-    if kernel == "raw":
-        return mk.double_center(k)
-    if kernel == "inc1":
-        return mk.increment(k, 1)
-    if kernel == "inc50":
-        return mk.increment(k, INC_LONG)
-    if kernel in ("herm1", "herm2"):
-        return mk.hermite(k, x, int(kernel[-1]))
-    if kernel == "hp10":
-        return mk.highpass(k, HP_FRAC)
-    if kernel == "frac_oracle":
-        return mk.fracdiff(k, H - 0.5)
-    raise ValueError(kernel)
+    """Full-path transformed Gram matrix for one series (kmem.kernels). Used by unit checks and tests."""
+    return kreg.get(kernel).gram(x, sigma, H)
 
 
 # ---------------------------------------------------------------- hsplit: tests of the removed Hermite layers
@@ -193,7 +159,7 @@ def kernel_columns(kernels) -> list[str]:
         out += [f"{key}_{k}" for key in ("t", "m", "q", "p_wb", "r_wb", "p_shift", "r_shift", "check")]
         if k in SUB_KERNELS:
             out += [f"{key}_{k}" for key in ("p_sub", "rej_sub", "r_sub")]
-        if k in ("herm1", "herm2"):
+        if k in R975_KERNELS:
             out += [f"{key}_{k}" for key in ("r975_wb", "r975_shift")]
         if k in HARRIS_KERNELS:
             out += [f"{key}_{k}" for key in ("rhc", "rh19", "rha", "xh19")]
@@ -252,11 +218,12 @@ def ind_bundle(x: np.ndarray, y: np.ndarray, rng: np.random.Generator, kernels=I
             out.update({f"xraw_{k}": v for k, v in raw_exact(x, y, dx, dy, w, n).items() if k not in ("m", "q", "r975_wb", "r975_shift")})
         if dist:
             out.update(dcov_full_rules(x, y, dx, dy, w, n, ln, dn, wild=wild_prefix))
-            if "dcov_inc1" in kernels:
-                ka = mk.increment(-dx, 1)
-                la = mk.increment(-dy, 1)
-                out.update(tagged("dcov_inc1", rules_distance(ka, la, mult.get(n - 1))))
-                del ka, la
+            for kd in (kreg.get(k) for k in kernels):
+                if kd.kind == "distance":
+                    ka = kd.from_distances(dx)
+                    la = kd.from_distances(dy)
+                    out.update(tagged(kd.name, rules_distance(ka, la, mult.get(n - kd.lag))))
+                    del ka, la
         if dist or exact:
             del dx, dy
         out.update(pearson_rules(x, y))
@@ -265,15 +232,16 @@ def ind_bundle(x: np.ndarray, y: np.ndarray, rng: np.random.Generator, kernels=I
     fy = gauss_features(y, sy)
     out["rx_rank"], out["ry_rank"] = fx.shape[1], fy.shape[1]
     for k in kernels:
-        if k == "dcov_inc1":
+        kern = kreg.get(k)
+        if kern.kind == "distance":  # done above on the n x n distance matrices
             continue
-        if k in ("sym", "datadiff"):
-            ux, uy = own_series(k, x), own_series(k, y)
+        if kern.kind == "own":
+            ux, uy = kern.series(x), kern.series(y)
             gx = gauss_features(ux, median_bw_fast(ux))
             gy = gauss_features(uy, median_bw_fast(uy))
         else:
-            gx = transform_features(k, fx, x, HX)
-            gy = transform_features(k, fy, y, HY)
+            gx = kern.features(fx, x, HX)
+            gy = kern.features(fy, y, HY)
         cx, cy = compress(gx), compress(gy)
         out.update(tagged(k, rules_fast(cx, cy, mult.get(gx.shape[0]), sub=k in SUB_KERNELS)))
         if k in HARRIS_KERNELS:
@@ -294,7 +262,7 @@ def mmd_columns(kernels) -> list[str]:
     out = ["sigma", "rank"] + MMD_EXACT_COLS + HSPLIT_MMD_COLS
     for k in kernels:
         out += [f"{key}_{k}" for key in ("mmd2", "p_wb", "r_wb")]
-        if k in ("herm1", "herm2"):
+        if k in R975_KERNELS:
             out.append(f"r975_wb_{k}")
     return out
 
@@ -339,21 +307,20 @@ def mmd_bundle(x: np.ndarray, rng: np.random.Generator, kernels=MMD_KERNELS, B: 
     f = gauss_features(x, sigma)
     out["sigma"], out["rank"] = sigma, f.shape[1]
     for kn in kernels:
-        if kn == "raw":
-            st, pv, rv, r975 = mmd_fast_rule(f, s, a)
-        elif kn in ("herm1", "herm2"):
-            u = mk.hermite_basis(x, int(kn[-1]))
-            st, pv, rv, r975 = mmd_fast_rule(f - u @ (u.T @ f), s, a)
-            out[f"r975_wb_{kn}"] = r975
-        elif kn == "sym":
-            v = mk.even_map(x)
+        kern = kreg.get(kn)
+        if kern.kind == "feature" and kern.lag == 0:
+            st, pv, rv, r975 = mmd_fast_rule(kern.features(f, x, None), s, a)
+        elif kern.kind == "own" and kern.lag == 0:
+            v = kern.series(x)
             st, pv, rv, r975 = mmd_fast_rule(gauss_features(v, median_bw_fast(v)), s, a)
-        elif kn == "datadiff":
-            v = mk.first_difference(x)
+        elif kern.kind == "own" and kern.lag == 1:  # one point fewer: split at h - 1, drop that chain row
+            v = kern.series(x)
             sd = contrast(n - 1, h1 - 1)
             st, pv, rv, r975 = mmd_fast_rule(gauss_features(v, median_bw_fast(v)), sd, np.delete(w, h1 - 1, axis=0) * sd[:, None])
         else:
-            raise ValueError(kn)
+            raise ValueError(f"split MMD is not defined for kernel {kn!r}")
+        if kn in R975_KERNELS:
+            out[f"r975_wb_{kn}"] = r975
         out.update({f"mmd2_{kn}": st, f"p_wb_{kn}": pv, f"r_wb_{kn}": rv})
     if hsplit:
         out.update(hsplit_mmd(x))

@@ -1,4 +1,4 @@
-"""Independence rules on one pair of kernels: bare statistic, wild bootstrap, circular shift, subsampling.
+"""Independence rules on one pair of kernels: the bare statistic plus calibration rules from kmem.calibration.registry.
 
 Three paths compute the same rules: rules_fast on compressed low-rank features, rules_full on transformed n x n
 Gram matrices with the mbcore functions, and rules_distance on n x n matrices with two exact shortcuts.
@@ -9,7 +9,7 @@ import math
 
 import numpy as np
 
-from kmem.calibration.common import pboot, q95
+from kmem.calibration import registry as cal
 from kmem.calibration.shift import shift_stats_sym
 from kmem.calibration.subsample import sub_fast
 from kmem.calibration.wild import wild_prefix
@@ -17,10 +17,19 @@ from kmem.features import select_pairs
 from kmem.legacy import mbcore as mb
 
 
-def rules_fast(fx, fy, w: np.ndarray, sub: bool = False) -> dict:
-    """Bare statistic, wild bootstrap, circular shift, optional subsampling, from compressed features.
+def _decide(out: dict, names, draws: dict) -> dict:
+    """Add each named calibration rule's columns, computed from the draws it names."""
+    for name in names:
+        rule = cal.get(name)
+        out.update(rule.decide(*draws[rule.draws]))
+    return out
 
-    fx, fy = compress(...). T = (1/m) sum_ij Kc_ij Lc_ij; w is m x B and centred.
+
+def rules_fast(fx, fy, w: np.ndarray, sub: bool = False, rules=None) -> dict:
+    """Bare statistic and calibration rules from compressed features.
+
+    fx, fy = compress(...). T = (1/m) sum_ij Kc_ij Lc_ij; w is m x B and centred. rules: names in
+    kmem.calibration.registry; the default is wild, shift and their 97.5% ratios, plus subsampling if sub.
     """
     px, lx = fx
     py, ly = fy
@@ -38,18 +47,14 @@ def rules_fast(fx, fy, w: np.ndarray, sub: bool = False) -> dict:
     s = (xc * xc).sum(axis=1) / m
     del xc
     shifts = s[A:m - A + 1]
-    q_w, q_s = q95(bw), q95(shifts)
-    out = {"t": t, "m": m, "q": i.size, "p_wb": pboot(t, bw), "r_wb": t / q_w,
-           "p_shift": pboot(s[0], shifts), "r_shift": s[0] / q_s, "check": float(s[0] - t),
-           "r975_wb": t / float(np.quantile(bw, 0.975)), "r975_shift": s[0] / float(np.quantile(shifts, 0.975))}
-    if sub:
-        sb = sub_fast(px, py, i, j, math.floor(m ** 0.5), math.floor(0.1 * m))
-        q_b = q95(sb)
-        out.update({"p_sub": float(np.mean(sb >= t)), "rej_sub": int(t > q_b), "r_sub": t / q_b})
-    return out
+    names = tuple(rules) if rules is not None else cal.FAST_RULES + (("subsample",) if sub else ())
+    draws = {"wild": (t, bw), "shift": (s[0], shifts)}
+    if any(cal.get(nm).draws == "subsample" for nm in names):
+        draws["subsample"] = (t, sub_fast(px, py, i, j, math.floor(m ** 0.5), math.floor(0.1 * m)))
+    return _decide({"t": t, "m": m, "q": i.size, "check": float(s[0] - t)}, names, draws)
 
 
-def rules_full(kc: np.ndarray, lc: np.ndarray, w: np.ndarray) -> dict:
+def rules_full(kc: np.ndarray, lc: np.ndarray, w: np.ndarray, rules=cal.FULL_RULES) -> dict:
     """Full path on transformed Gram matrices. Same statistic and rules as rules_fast (no subsampling)."""
     m = kc.shape[0]
     A = math.floor(0.1 * m)
@@ -59,12 +64,10 @@ def rules_full(kc: np.ndarray, lc: np.ndarray, w: np.ndarray) -> dict:
     del mh
     s = mb.shift_stats(kc, lc)
     shifts = s[A:m - A + 1]
-    q_w, q_s = q95(bw), q95(shifts)
-    return {"t": t, "m": m, "q": -1, "p_wb": pboot(t, bw), "r_wb": t / q_w,
-            "p_shift": pboot(s[0], shifts), "r_shift": s[0] / q_s, "check": float(s[0] - t)}
+    return _decide({"t": t, "m": m, "q": -1, "check": float(s[0] - t)}, rules, {"wild": (t, bw), "shift": (s[0], shifts)})
 
 
-def rules_distance(kc: np.ndarray, lc: np.ndarray, w: np.ndarray) -> dict:
+def rules_distance(kc: np.ndarray, lc: np.ndarray, w: np.ndarray, rules=cal.FULL_RULES) -> dict:
     """rules_full with the two shortcuts. Same values up to rounding (unit_checks.py)."""
     m = kc.shape[0]
     A = math.floor(0.1 * m)
@@ -74,6 +77,4 @@ def rules_distance(kc: np.ndarray, lc: np.ndarray, w: np.ndarray) -> dict:
     del mh
     s = shift_stats_sym(kc, lc)
     shifts = s[A:m - A + 1]
-    q_w, q_s = q95(bw), q95(shifts)
-    return {"t": t, "m": m, "q": -1, "p_wb": pboot(t, bw), "r_wb": t / q_w,
-            "p_shift": pboot(s[0], shifts), "r_shift": s[0] / q_s, "check": float(s[0] - t)}
+    return _decide({"t": t, "m": m, "q": -1, "check": float(s[0] - t)}, rules, {"wild": (t, bw), "shift": (s[0], shifts)})
