@@ -107,5 +107,18 @@ def reproduce(experiment: str = typer.Argument(..., help="EXP2 ... EXP7"),
     raise typer.Exit(0 if ok else 1)
 
 
+@app.command()
+def lineage() -> None:
+    """Which experiment reads which other experiment's outputs (from the specs' inputs and consumers)."""
+    from kmem import spec
+
+    for exp in spec.EXPERIMENTS:
+        sp = spec.load(exp)
+        for i in sp.inputs:
+            typer.echo(f"{i.path} -> {exp}   [{i.used_by}]{'' if i.verify() else '   MISSING OR CHANGED'}")
+        for c in sp.consumers:
+            typer.echo(f"{exp} -> {c.path}   [reads {', '.join(c.reads)}]")
+
+
 def main() -> None:
     app(prog_name=f"{os.path.basename(sys.executable)} -m kmem")

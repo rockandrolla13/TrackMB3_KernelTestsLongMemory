@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import csv
 import glob
-import hashlib
 import importlib.util
 import json
 import os
@@ -16,11 +15,23 @@ import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO)
-from kmem.spec import EXPERIMENTS, ExperimentSpec  # noqa: E402
+from kmem.spec import EXPERIMENTS, ExperimentSpec, digest  # noqa: E402
 
 DRIVERS = {"EXP2": "run_exp2.py", "EXP3": "run_exp3.py", "EXP4": "run_exp4.py", "EXP5": "run_exp5.py",
            "EXP6": "run_exp6.py", "EXP7": "run_exp7.py"}
 BOOKKEEPING = {"already_done", "already_done_pairs", "reps", "seed"}
+INPUTS = {  # (path, used by): files of other experiments that an analysis reads
+    "EXP3": [("experiments/EXP2-20261023/main", "analyze.py: null regression against EXP2")],
+    "EXP4": [("experiments/EXP2-20261023/summary_main.csv", "analyze_exp4.py: unadjusted A0-EXP2 rows")],
+    "EXP5": [("experiments/EXP3-power-20261025/main", "analyze_exp5.py: null regression against EXP3"),
+             ("experiments/EXP1-20261016/e3_summary.csv", "analyze_exp5.py: E3 baseline (Part 2)"),
+             ("experiments/JOB-NEW-MEMORY-BOUNDARY-SIM-20261015_kernel-linear/cells/cell_summary.csv",
+              "analyze_exp5.py: KL baseline")],
+}
+CONSUMERS = {
+    "EXP7": [("investigations/memory-kernel-2026-11-01/examples-report/build_data.py",
+              ["summary_main.csv", "results.json (hand-made, see RESULTS.md)", "main/*.csv"])],
+}
 OPTION_KEYS = ("B_wild", "kappas", "oracle_kappas", "exact_reps", "gamma", "scale_c", "shape_a", "tol_chol",
                "tol_pair", "period_true", "numpy", "python")
 
@@ -71,14 +82,16 @@ def build(exp: str) -> ExperimentSpec:
     prereq = []
     if exp == "EXP7":
         rel = os.path.join(folder, "sn_table.json")
-        digest = hashlib.sha256(open(os.path.join(REPO, rel), "rb").read()).hexdigest()
-        prereq.append({"path": rel, "sha256": digest,
+        prereq.append({"path": rel, "sha256": digest(rel),
                        "made_by": "python -I sn_tables.py in the EXP7 folder (master 2026110174, about 1 CPU-hour)"})
     return ExperimentSpec.model_validate({
         "id": exp, "folder": folder, "driver": DRIVERS[exp], "masters": masters, "master_key": master_key,
         "seed_rule": m0["seed_rule"], "options": options, "writer": "fmt12g" if exp == "EXP7" else "str",
         "chunk": chunk, "max_workers": int(getattr(drv, "MAX_WORKERS", 16)), "cells": out_cells,
-        "prerequisites": prereq, "source_manifests": [os.path.relpath(p, REPO) for p in paths]})
+        "prerequisites": prereq,
+        "inputs": [{"path": p, "sha256": digest(p), "used_by": u} for p, u in INPUTS.get(exp, [])],
+        "consumers": [{"path": p, "reads": r} for p, r in CONSUMERS.get(exp, [])],
+        "source_manifests": [os.path.relpath(p, REPO) for p in paths]})
 
 
 def main() -> None:

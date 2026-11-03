@@ -2750,6 +2750,17 @@
    "made_by": "python -I sn_tables.py in the EXP7 folder (master 2026110174, about 1 CPU-hour)"
   }
  ],
+ "inputs": [],
+ "consumers": [
+  {
+   "path": "investigations/memory-kernel-2026-11-01/examples-report/build_data.py",
+   "reads": [
+    "summary_main.csv",
+    "results.json (hand-made, see RESULTS.md)",
+    "main/*.csv"
+   ]
+  }
+ ],
  "source_manifests": [
   "experiments/EXP7-memory-kernel-20261101/main/manifest_20261101T235729Z.json"
  ]

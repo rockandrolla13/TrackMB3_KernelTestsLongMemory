@@ -265,3 +265,10 @@ In all 54 comparisons, the two columns differ by at most 0.4 pp, and no McNemar 
 - No theorem covers the exact HSIC or MMD rules here. The hsplit low-layer statistic replaces ranks with Hermite layers and fixes the split, so Betken's (2016) theorem does not cover it either.
 - frac_oracle uses the true H and is an infeasible benchmark only.
 - The main run's wall time (95,877 s) includes a 23-hour laptop suspend. CPU time was 43.8 h.
+
+## Files without a writing script (added 2026-11-03, refactor decision D11)
+
+`results.json` is a hand-curated summary: it adds notes (`canonical_metrics_note`, `post_review_2026_11_03`)
+and selected verdicts to `results_main.json`, which `analyze_exp7.py` writes. No script regenerates it byte for
+byte, so it is a record, not a regenerable output. `investigations/memory-kernel-2026-11-01/examples-report/build_data.py`
+reads it (see `spec.json`, consumers). Its hash is pinned in `experiments/OUTPUTS.sha256`.

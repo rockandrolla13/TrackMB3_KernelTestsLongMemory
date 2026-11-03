@@ -18,7 +18,7 @@ import numpy as np  # noqa: E402
 
 from kmem.legacy import common as C  # noqa: E402
 import run_exp3 as R  # noqa: E402
-from kmem.analysis import boot_idx, boot_power, cstar  # noqa: E402
+from kmem.analysis import boot_idx, boot_power, cstar, require_input  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 EXP2_MAIN = os.path.join(HERE, "..", "EXP2-20261023", "main")
@@ -102,7 +102,7 @@ def main():
         if alt != "null":
             continue
         p2 = os.path.join(EXP2_MAIN, f"{fam}__{g}__H{h}__n{n}.csv")
-        old = [r for r in csv.DictReader(open(p2)) if r["status"] == "ok"] if os.path.exists(p2) else []
+        old = [r for r in csv.DictReader(open(require_input(p2, "EXP2 main run, null regression"))) if r["status"] == "ok"]
         for rule, (rc, raw, pc) in RULES[fam].items():
             if rule == "pearson_nw":
                 rows_ = [r for r in rows if r["rej_nw"] != "-1"]

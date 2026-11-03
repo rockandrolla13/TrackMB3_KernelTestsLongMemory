@@ -5,6 +5,7 @@ The numerics are those every EXP3 to EXP7 analysis used, so their saved outputs 
 from __future__ import annotations
 
 import math
+import os
 
 import numpy as np
 
@@ -13,6 +14,14 @@ from kmem.calibration.common import ALPHA, NORMAL_975
 Z = NORMAL_975
 NBOOT = 2000  # bootstrap resamples of replications
 SEED = 42  # the bootstrap seed every saved analysis used
+
+
+def require_input(path: str, what: str) -> str:
+    """A declared input from another experiment (experiments/EXPn/spec.json, inputs). Missing is an error,
+    never a silent skip (code review CR-009)."""
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"declared input missing: {os.path.normpath(path)} ({what})")
+    return path
 
 
 def wilson(k: int, m: int, z: float = Z) -> tuple[float, float]:

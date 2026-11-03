@@ -16,6 +16,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))  # kmem (D7: not installed)
 from kmem.legacy import common as C  # noqa: E402
+from kmem.analysis import require_input  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 EXP2 = os.path.join(HERE, "..", "EXP2-20261023", "summary_main.csv")
@@ -76,12 +77,12 @@ def load(indir):
                                              "pairs": len(rows),
                                              "src_square": sum(1 for s in src if s == "square"),
                                              "median_P": sorted(px)[len(px) // 2]}
-    if os.path.exists(EXP2):
-        for r in csv.DictReader(open(EXP2)):
-            if r["family"] != "ind" or r["gen"] not in GENS:
-                continue
-            key = (r["gen"], float(r["H"]), int(r["n"]), "A0-EXP2")
-            d.setdefault(key, {"errors": int(r["errors"])})[r["rule"]] = rate(int(r["rejections"]), int(r["valid_reps"]))
+    # a declared input (spec inputs): missing is an error, not a silent skip
+    for r in csv.DictReader(open(require_input(EXP2, "EXP2 main summary, unadjusted A0-EXP2 rows"))):
+        if r["family"] != "ind" or r["gen"] not in GENS:
+            continue
+        key = (r["gen"], float(r["H"]), int(r["n"]), "A0-EXP2")
+        d.setdefault(key, {"errors": int(r["errors"])})[r["rule"]] = rate(int(r["rejections"]), int(r["valid_reps"]))
     return d, flags, period, cpu
 
 

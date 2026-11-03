@@ -1379,6 +1379,8 @@
   }
  ],
  "prerequisites": [],
+ "inputs": [],
+ "consumers": [],
  "source_manifests": [
   "experiments/EXP2-20261023/main/manifest_20261024T234644Z.json"
  ]

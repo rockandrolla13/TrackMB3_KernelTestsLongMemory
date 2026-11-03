@@ -130,6 +130,8 @@
   }
  ],
  "prerequisites": [],
+ "inputs": [],
+ "consumers": [],
  "source_manifests": [
   "experiments/EXP6-bandwidth-20261025/main/manifest_20261025T185928Z.json",
   "experiments/EXP6-bandwidth-20261025/main/manifest_20261025T190544Z.json"
