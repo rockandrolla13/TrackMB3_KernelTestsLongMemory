@@ -1,0 +1,422 @@
+{
+ "id": "EXP4",
+ "folder": "experiments/EXP4-deseason-20261025",
+ "driver": "run_exp4.py",
+ "mode": "main",
+ "masters": {
+  "main": 2026102542
+ },
+ "master_key": "main",
+ "seed_rule": "data: SeedSequence(master, spawn_key=(cell_idx, rep, 0)); tests: fresh rng on (cell_idx, rep, 1) per adjustment",
+ "options": {
+  "B_wild": 500,
+  "period_true": 50,
+  "numpy": "2.5.1",
+  "python": "3.12.13"
+ },
+ "writer": "str",
+ "chunk": {
+  "ind": {
+   "500": 10,
+   "2000": 2
+  }
+ },
+ "max_workers": 16,
+ "cells": [
+  {
+   "name": "ind__G0__H0.5__n500",
+   "seed_index": 0,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "G0",
+    "H": 0.5,
+    "n": 500,
+    "idx": 0,
+    "name": "ind__G0__H0.5__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__G0__H0.5__n2000",
+   "seed_index": 1,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "gen": "G0",
+    "H": 0.5,
+    "n": 2000,
+    "idx": 1,
+    "name": "ind__G0__H0.5__n2000",
+    "adjustments": [
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__G0__H0.7__n500",
+   "seed_index": 2,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "G0",
+    "H": 0.7,
+    "n": 500,
+    "idx": 2,
+    "name": "ind__G0__H0.7__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__G0__H0.8__n500",
+   "seed_index": 4,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "G0",
+    "H": 0.8,
+    "n": 500,
+    "idx": 4,
+    "name": "ind__G0__H0.8__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__G0__H0.8__n2000",
+   "seed_index": 5,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "gen": "G0",
+    "H": 0.8,
+    "n": 2000,
+    "idx": 5,
+    "name": "ind__G0__H0.8__n2000",
+    "adjustments": [
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-M__H0.5__n500",
+   "seed_index": 6,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-M",
+    "H": 0.5,
+    "n": 500,
+    "idx": 6,
+    "name": "ind__SEAS-M__H0.5__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-M__H0.7__n500",
+   "seed_index": 8,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-M",
+    "H": 0.7,
+    "n": 500,
+    "idx": 8,
+    "name": "ind__SEAS-M__H0.7__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-M__H0.8__n500",
+   "seed_index": 10,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-M",
+    "H": 0.8,
+    "n": 500,
+    "idx": 10,
+    "name": "ind__SEAS-M__H0.8__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-V__H0.5__n500",
+   "seed_index": 12,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-V",
+    "H": 0.5,
+    "n": 500,
+    "idx": 12,
+    "name": "ind__SEAS-V__H0.5__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-V__H0.5__n2000",
+   "seed_index": 13,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-V",
+    "H": 0.5,
+    "n": 2000,
+    "idx": 13,
+    "name": "ind__SEAS-V__H0.5__n2000",
+    "adjustments": [
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-V__H0.7__n500",
+   "seed_index": 14,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-V",
+    "H": 0.7,
+    "n": 500,
+    "idx": 14,
+    "name": "ind__SEAS-V__H0.7__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-V__H0.8__n500",
+   "seed_index": 16,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-V",
+    "H": 0.8,
+    "n": 500,
+    "idx": 16,
+    "name": "ind__SEAS-V__H0.8__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-V__H0.8__n2000",
+   "seed_index": 17,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-V",
+    "H": 0.8,
+    "n": 2000,
+    "idx": 17,
+    "name": "ind__SEAS-V__H0.8__n2000",
+    "adjustments": [
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-M-shared__H0.5__n500",
+   "seed_index": 18,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-M-shared",
+    "H": 0.5,
+    "n": 500,
+    "idx": 18,
+    "name": "ind__SEAS-M-shared__H0.5__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-M-shared__H0.7__n500",
+   "seed_index": 20,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-M-shared",
+    "H": 0.7,
+    "n": 500,
+    "idx": 20,
+    "name": "ind__SEAS-M-shared__H0.7__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-M-shared__H0.8__n500",
+   "seed_index": 22,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-M-shared",
+    "H": 0.8,
+    "n": 500,
+    "idx": 22,
+    "name": "ind__SEAS-M-shared__H0.8__n500",
+    "adjustments": [
+     "A0",
+     "A1",
+     "A2",
+     "A3"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-V-slow__H0.5__n500",
+   "seed_index": 24,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-V-slow",
+    "H": 0.5,
+    "n": 500,
+    "idx": 24,
+    "name": "ind__SEAS-V-slow__H0.5__n500",
+    "adjustments": [
+     "A0"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-V-slow__H0.5__n2000",
+   "seed_index": 25,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-V-slow",
+    "H": 0.5,
+    "n": 2000,
+    "idx": 25,
+    "name": "ind__SEAS-V-slow__H0.5__n2000",
+    "adjustments": [
+     "A0"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-V-slow__H0.8__n500",
+   "seed_index": 28,
+   "family": "ind",
+   "n": 500,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-V-slow",
+    "H": 0.8,
+    "n": 500,
+    "idx": 28,
+    "name": "ind__SEAS-V-slow__H0.8__n500",
+    "adjustments": [
+     "A0"
+    ]
+   }
+  },
+  {
+   "name": "ind__SEAS-V-slow__H0.8__n2000",
+   "seed_index": 29,
+   "family": "ind",
+   "n": 2000,
+   "target": 1000,
+   "fields": {
+    "gen": "SEAS-V-slow",
+    "H": 0.8,
+    "n": 2000,
+    "idx": 29,
+    "name": "ind__SEAS-V-slow__H0.8__n2000",
+    "adjustments": [
+     "A0"
+    ]
+   }
+  }
+ ],
+ "prerequisites": [],
+ "source_manifests": [
+  "experiments/EXP4-deseason-20261025/main/manifest_20261025T135916Z.json",
+  "experiments/EXP4-deseason-20261025/main/manifest_20261025T141009Z.json",
+  "experiments/EXP4-deseason-20261025/main/manifest_20261025T171657Z.json",
+  "experiments/EXP4-deseason-20261025/main/manifest_20261025T173945Z.json",
+  "experiments/EXP4-deseason-20261025/main/manifest_20261025T181049Z.json",
+  "experiments/EXP4-deseason-20261025/main/manifest_20261025T181256Z.json",
+  "experiments/EXP4-deseason-20261025/main/manifest_20261025T184152Z.json",
+  "experiments/EXP4-deseason-20261025/main/manifest_20261025T185844Z.json"
+ ]
+}
