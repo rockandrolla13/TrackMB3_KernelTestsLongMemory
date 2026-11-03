@@ -7,8 +7,13 @@ import numpy as np
 
 from kmem.legacy import gens
 from kmem.legacy import mbcore as mb
+from kmem.legacy import mmdcal as M
 
 INC_LONG = gens.PERIOD  # lag of the long increment kernel inc50; its chain may need its own ln
+
+# Two multiplier laws share the name markov_rademacher in the legacy core (code review CR-020).
+markov_rademacher_mbcore = mb.markov_rademacher  # HSIC and dCov wild bootstrap of EXP2 to EXP7
+multipliers_mmdcal = M.multipliers  # split-MMD wild bootstrap forms of mmdcal (EXP2, EXP3, EXP5, EXP7)
 
 
 def wild_prefix(mh: np.ndarray, w: np.ndarray) -> np.ndarray:

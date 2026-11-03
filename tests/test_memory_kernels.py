@@ -11,16 +11,15 @@ import sys
 import numpy as np
 import pytest
 
-from kmem import bandwidth, features, layers, rules
+from kmem import bandwidth, features, hsic, layers, mmd, rules
 from kmem import memory_kernels as mk
 from kmem.calibration import harris, selfnorm, shift, subsample, wild
+from kmem.generators import independence
 from kmem.legacy import mbcore as mb
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "experiments", "EXP7-memory-kernel-20261101"))
-sys.path.insert(0, os.path.join(REPO, "experiments", "EXP6-bandwidth-20261025"))
-import bw_core  # noqa: E402
-import exp7_core as K  # noqa: E402
+import exp7_core as K  # noqa: E402  (kernel switches and the EXP7 bundle; they move in steps 3.2 and 5.2)
 
 N = 240
 
@@ -174,7 +173,7 @@ def test_increment_kernel_telescopes_in_split_mmd(n: int, h: int) -> None:
     x = series(12, 0.8, n)
     k = gaussian_gram(x)
     m = n - 1
-    s = K.contrast(m, h)
+    s = mmd.contrast(m, h)
     v = mk.telescoped_contrast(n, h)
     assert np.count_nonzero(v) == 3
     assert abs(s @ mk.increment_raw(k, 1) @ s - v @ k @ v) < 1e-12
@@ -193,9 +192,13 @@ def test_telescoped_statistic_shrinks_as_one_over_n_squared() -> None:
 @pytest.mark.parametrize("gen,alt,rho,H,n", [("G0", "null", 0.0, 0.8, 300), ("SEAS-V", "lin", 0.1, 0.5, 300)])
 def test_raw_exact_reproduces_exp6_hsic_fields(gen: str, alt: str, rho: float, H: float, n: int) -> None:
     r6, r7 = rng(13), rng(13)
-    x, y = bw_core.ind_pair(gen, alt, H, n, rho, r6)
-    bw_core.ind_pair(gen, alt, H, n, rho, r7)
-    want = bw_core.kind_bw(x, y, r6, kappas=(1.0,))
+    x, y = independence.pair(gen, alt, H, H, n, rho, r6)
+    independence.pair(gen, alt, H, H, n, rho, r7)
+    ln, dn = math.floor(n ** 0.5), math.floor(0.1 * n)
+    dx, dy = np.abs(x[:, None] - x[None, :]), np.abs(y[:, None] - y[None, :])
+    w = mb.markov_rademacher(n, 500, ln, r6)  # EXP6 kind_bw draws its multipliers this way
+    f = hsic.hsic_full_rules(x, y, dx, dy, mb.median_bandwidth(dx), mb.median_bandwidth(dy), w, n, ln, dn, dn)
+    want = {f"{key}_k1": v for key, v in f.items()}
     got = K.ind_bundle(x, y, r7, kernels=("raw",), exact=True, hsplit=False)
     pairs = {"hsic_stat": "t", "sx": "sx", "sy": "sy", "p_hsic_wb": "p_wb", "r_hsic_wb": "r_wb", "p_hsic_shift": "p_shift",
              "r_hsic_shift": "r_shift", "p_hsic_sub": "p_sub", "rej_hsic_sub": "rej_sub", "r_hsic_sub": "r_sub",

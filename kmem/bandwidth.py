@@ -1,13 +1,21 @@
 """Bandwidths of the Gaussian kernel, named by algorithm.
 
-median_bw_fast: median pairwise distance by bisection on the sorted series (the EXP7 fast path). It equals
-mbcore.median_bandwidth to about 1e-13 relative when the median is positive, and falls back to it otherwise.
+Three algorithms share the name "median bandwidth" in the code base (code review CR-020):
+- median_full_matrix: mbcore.median_bandwidth, the off-diagonal median of a full n x n distance matrix,
+  with a positive-distance fallback. Used by the HSIC and dCov rules of EXP2 to EXP7.
+- median_mmdcal: mmdcal.median_heuristic, used by the split-MMD rules of EXP2, EXP3, EXP5 and EXP7.
+- median_bw_fast: median pairwise distance by bisection on the sorted series (the EXP7 fast path). It equals
+  median_full_matrix to about 1e-13 relative when the median is positive, and falls back to it otherwise.
 """
 from __future__ import annotations
 
 import numpy as np
 
 from kmem.legacy import mbcore as mb
+from kmem.legacy import mmdcal as M
+
+median_full_matrix = mb.median_bandwidth
+median_mmdcal = M.median_heuristic
 
 
 def median_bw_fast(x: np.ndarray) -> float:

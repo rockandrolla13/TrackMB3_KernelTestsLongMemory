@@ -20,19 +20,11 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 
+from kmem.calibration.common import ALPHA, pboot, q95  # noqa: E402,F401  (re-exported)
 from kmem.generators.split import split_series  # noqa: E402
 from kmem.legacy import mbcore as mb  # noqa: E402
 from kmem.legacy import mmdcal as M  # noqa: E402
-
-ALPHA = 0.05
-
-
-def q95(v: np.ndarray) -> float:
-    return float(np.quantile(v, 1.0 - ALPHA))
-
-
-def pboot(t: float, b: np.ndarray) -> float:
-    return float((1.0 + np.sum(b >= t)) / (1.0 + b.size))
+from kmem.mmd import split_mmd_ext  # noqa: E402
 
 
 def sd_half(H: float, n: int) -> float:
@@ -66,38 +58,8 @@ def mmd_ext(x: np.ndarray, rng: np.random.Generator, B: int = M.B_WILD) -> dict:
     a1, a2 = x[:h1], x[h1:]
     hm = float(a2.mean() - a1.mean())
     t_naive = hm / math.sqrt(a1.var(ddof=1) / a1.size + a2.var(ddof=1) / a2.size)
-
-    d = np.abs(x[:, None] - x[None, :])
-    sigma = M.median_heuristic(d)
-    k = np.exp(-(d * d) / (2.0 * sigma * sigma))
-    del d
-    s = np.empty(n)
-    s[:h1] = 1.0 / h1
-    s[h1:] = -1.0 / (n - h1)
-    stat = float(s @ k @ s)
-    t_n = n * stat
-    out: dict = {"mmd2": stat, "sigma": sigma, "t_n": t_n, "hm_diff": hm, "t_naive": t_naive}
-
-    kc = k - k.mean(axis=0, keepdims=True) - k.mean(axis=1, keepdims=True) + k.mean()
-    l = max(1, math.floor(n ** 0.5))
-    w = M.multipliers("unc", n, h1, l, rng, B)
-    a = w * s[:, None]
-    boot = np.einsum("ij,ij->j", a, kc @ a)
-    del kc, a, w
-    out["p_unc_05"] = pboot(stat, boot)
-    out["r_unc_05"] = stat / q95(boot)
-
-    p = M.prefix2(k)
-    del k
-    v = np.sort(M.window_mmd(p, n, l))
-    q_sub = float(v[int(math.ceil((1 - ALPHA) * v.size)) - 1])  # rep_e2 convention
-    out["l_sqrt"] = l
-    out["q95_sqrt"] = q_sub
-    out["r_sub_sqrt"] = t_n / q_sub
-    out["sn_T"] = float(M.sn_stat(p, np.array([0]), n)[0])
-    v = np.sort(M.sn_stat(p, np.arange(n - l + 1), l))
-    out["sn_q95_05"] = float(v[int(math.ceil((1 - ALPHA) * v.size)) - 1])
-    out["r_sn_05"] = out["sn_T"] / out["sn_q95_05"]
+    out: dict = {"hm_diff": hm, "t_naive": t_naive}
+    out.update(split_mmd_ext(x, rng, B))  # no random draw above, so the order does not matter
     return out
 
 

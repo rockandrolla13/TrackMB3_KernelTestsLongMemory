@@ -44,6 +44,8 @@ from kmem.generators.independence import pair as ind_pair  # noqa: F401
 from kmem.generators.seasonal import seas_scale, seas_v_slow  # noqa: F401
 from kmem.generators.split import split_series as mmd_series  # noqa: F401
 from kmem.generators.stress import FACTOR_PHI, FACTOR_VAR, factor, flat_ma_norm, scale_norm  # noqa: F401
+from kmem.hsic import dcov_full_rules, pearson_rules
+from kmem.mmd import contrast, split_mmd_wild  # noqa: F401  (contrast re-exported)
 from kmem.features import TOL_CHOL, TOL_PAIR, compress, gauss_features, select_pairs, window_sum  # noqa: F401
 from kmem.layers import hermite_layers, layer_memory  # noqa: F401
 from kmem.legacy import mbcore as mb
@@ -249,18 +251,7 @@ def ind_bundle(x: np.ndarray, y: np.ndarray, rng: np.random.Generator, kernels=I
         if exact:
             out.update({f"xraw_{k}": v for k, v in raw_exact(x, y, dx, dy, w, n).items() if k not in ("m", "q", "r975_wb", "r975_shift")})
         if dist:
-            ac = mb.double_center(dx)
-            bc = mb.double_center(dy)
-            md = ac * bc
-            del ac, bc
-            t_d = float(md.sum() / n)
-            bd = wild_prefix(md, w)
-            del md
-            sub_d = mb.subsample_stats(x, y, ln, dn, "dcov")
-            q_dw, q_db = q95(bd), q95(sub_d)
-            out.update({"dcov_stat": t_d, "p_dcov_wb": pboot(t_d, bd), "r_dcov_wb": t_d / q_dw,
-                        "p_dcov_sub": float(np.mean(sub_d >= t_d)), "rej_dcov_sub": int(t_d > q_db),
-                        "r_dcov_sub": t_d / q_db})
+            out.update(dcov_full_rules(x, y, dx, dy, w, n, ln, dn, wild=wild_prefix))
             if "dcov_inc1" in kernels:
                 ka = mk.increment(-dx, 1)
                 la = mk.increment(-dy, 1)
@@ -268,11 +259,7 @@ def ind_bundle(x: np.ndarray, y: np.ndarray, rng: np.random.Generator, kernels=I
                 del ka, la
         if dist or exact:
             del dx, dy
-        lt = mb.lind_tests(x, y)
-        nu = lt["ewc_nu"]
-        out.update(lt)
-        out["r_nw"] = abs(lt["t_nw"]) / 1.959963984540054 if np.isfinite(lt["t_nw"]) else float("nan")
-        out["r_ewc"] = abs(lt["t_ewc"]) / mb._TQ[nu]
+        out.update(pearson_rules(x, y))
     out["sx"], out["sy"] = sx, sy
     fx = gauss_features(x, sx)
     fy = gauss_features(y, sy)
@@ -312,23 +299,13 @@ def mmd_columns(kernels) -> list[str]:
     return out
 
 
-def contrast(m: int, h: int) -> np.ndarray:
-    s = np.empty(m)
-    s[:h] = 1.0 / h
-    s[h:] = -1.0 / (m - h)
-    return s
-
-
 def mmd_raw_exact(x: np.ndarray, s: np.ndarray, a: np.ndarray) -> dict:
-    """EXP3 mmd_ext for the uncentred wild rule: same arithmetic. a = w * s."""
+    """EXP3 mmd_ext for the uncentred wild rule: same arithmetic (kmem.mmd.split_mmd_wild). a = w * s."""
     d = np.abs(x[:, None] - x[None, :])
     sigma = M.median_heuristic(d)
     k = np.exp(-(d * d) / (2.0 * sigma * sigma))
     del d
-    stat = float(s @ k @ s)
-    kc = k - k.mean(axis=0, keepdims=True) - k.mean(axis=1, keepdims=True) + k.mean()
-    del k
-    boot = np.einsum("ij,ij->j", a, kc @ a)
+    stat, boot = split_mmd_wild(k, s, a)
     return {"xraw_sigma": sigma, "xraw_mmd2": stat, "xraw_p_wb": pboot(stat, boot), "xraw_r_wb": stat / q95(boot)}
 
 
