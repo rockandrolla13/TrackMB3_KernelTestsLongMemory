@@ -1,0 +1,497 @@
+{
+ "experiment": "EXP8",
+ "mode": "main",
+ "master": 2026110801,
+ "stock_seed": 2026102301,
+ "kernels": [
+  "raw",
+  "inc1",
+  "inc50",
+  "herm1",
+  "herm2",
+  "sym",
+  "datadiff",
+  "hp10",
+  "dcov_inc1"
+ ],
+ "B_wild": 500,
+ "min_gap_days": 20,
+ "series": "dur (log duration minus pooled clock-bin mean)",
+ "seed_rule": "arm A: STOCK-20261023 seeds and draw order; others SeedSequence(master, (cell_idx, rep))",
+ "writer": "fmt12g",
+ "kmem": "0.2.0",
+ "git": {
+  "commit": "a857f1895a51aefcfcb88a1d51f224ffdc4b6d4f",
+  "code_modified": []
+ },
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 16,
+ "argv": [
+  "experiments/EXP8-stock-surrogate-20261108/run_exp8.py",
+  "--mode",
+  "main",
+  "--out",
+  "main",
+  "--workers",
+  "16"
+ ],
+ "cells": [
+  {
+   "arm": "A",
+   "a": "AAPL",
+   "b": "MSFT",
+   "n": 500,
+   "stock_cell": 0,
+   "target": 500,
+   "idx": 0,
+   "name": "A__AAPL-MSFT__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102301,
+    "spawn_key": [
+     0,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "A",
+   "a": "AAPL",
+   "b": "MSFT",
+   "n": 2000,
+   "stock_cell": 2,
+   "target": 500,
+   "idx": 1,
+   "name": "A__AAPL-MSFT__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102301,
+    "spawn_key": [
+     2,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "A",
+   "a": "AAPL",
+   "b": "NVDA",
+   "n": 500,
+   "stock_cell": 3,
+   "target": 500,
+   "idx": 2,
+   "name": "A__AAPL-NVDA__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102301,
+    "spawn_key": [
+     3,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "A",
+   "a": "AAPL",
+   "b": "NVDA",
+   "n": 2000,
+   "stock_cell": 5,
+   "target": 500,
+   "idx": 3,
+   "name": "A__AAPL-NVDA__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102301,
+    "spawn_key": [
+     5,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "A",
+   "a": "MSFT",
+   "b": "NVDA",
+   "n": 500,
+   "stock_cell": 6,
+   "target": 500,
+   "idx": 4,
+   "name": "A__MSFT-NVDA__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102301,
+    "spawn_key": [
+     6,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "A",
+   "a": "MSFT",
+   "b": "NVDA",
+   "n": 2000,
+   "stock_cell": 8,
+   "target": 500,
+   "idx": 5,
+   "name": "A__MSFT-NVDA__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102301,
+    "spawn_key": [
+     8,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "A",
+   "a": "AAPL",
+   "b": "AAPL",
+   "n": 500,
+   "stock_cell": 9,
+   "target": 500,
+   "idx": 6,
+   "name": "A__AAPL-AAPL__n500",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102301,
+    "spawn_key": [
+     9,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "A",
+   "a": "AAPL",
+   "b": "AAPL",
+   "n": 2000,
+   "stock_cell": 11,
+   "target": 500,
+   "idx": 7,
+   "name": "A__AAPL-AAPL__n2000",
+   "reps": 500,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026102301,
+    "spawn_key": [
+     11,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S1",
+   "a": "AAPL",
+   "b": "MSFT",
+   "n": 500,
+   "stock_cell": 0,
+   "target": 1000,
+   "idx": 8,
+   "name": "S1__AAPL-MSFT__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     8,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S1",
+   "a": "AAPL",
+   "b": "MSFT",
+   "n": 2000,
+   "stock_cell": 2,
+   "target": 1000,
+   "idx": 9,
+   "name": "S1__AAPL-MSFT__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     9,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S1",
+   "a": "AAPL",
+   "b": "NVDA",
+   "n": 500,
+   "stock_cell": 3,
+   "target": 1000,
+   "idx": 10,
+   "name": "S1__AAPL-NVDA__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     10,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S1",
+   "a": "AAPL",
+   "b": "NVDA",
+   "n": 2000,
+   "stock_cell": 5,
+   "target": 1000,
+   "idx": 11,
+   "name": "S1__AAPL-NVDA__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     11,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S1",
+   "a": "MSFT",
+   "b": "NVDA",
+   "n": 500,
+   "stock_cell": 6,
+   "target": 1000,
+   "idx": 12,
+   "name": "S1__MSFT-NVDA__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     12,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S1",
+   "a": "MSFT",
+   "b": "NVDA",
+   "n": 2000,
+   "stock_cell": 8,
+   "target": 1000,
+   "idx": 13,
+   "name": "S1__MSFT-NVDA__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     13,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S1",
+   "a": "AAPL",
+   "b": "AAPL",
+   "n": 500,
+   "stock_cell": 9,
+   "target": 1000,
+   "idx": 14,
+   "name": "S1__AAPL-AAPL__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     14,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S1",
+   "a": "AAPL",
+   "b": "AAPL",
+   "n": 2000,
+   "stock_cell": 11,
+   "target": 1000,
+   "idx": 15,
+   "name": "S1__AAPL-AAPL__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     15,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S2",
+   "a": "AAPL",
+   "b": "MSFT",
+   "n": 500,
+   "stock_cell": 0,
+   "target": 1000,
+   "idx": 16,
+   "name": "S2__AAPL-MSFT__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     16,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S2",
+   "a": "AAPL",
+   "b": "MSFT",
+   "n": 2000,
+   "stock_cell": 2,
+   "target": 1000,
+   "idx": 17,
+   "name": "S2__AAPL-MSFT__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     17,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S2",
+   "a": "AAPL",
+   "b": "NVDA",
+   "n": 500,
+   "stock_cell": 3,
+   "target": 1000,
+   "idx": 18,
+   "name": "S2__AAPL-NVDA__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     18,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S2",
+   "a": "AAPL",
+   "b": "NVDA",
+   "n": 2000,
+   "stock_cell": 5,
+   "target": 1000,
+   "idx": 19,
+   "name": "S2__AAPL-NVDA__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     19,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S2",
+   "a": "MSFT",
+   "b": "NVDA",
+   "n": 500,
+   "stock_cell": 6,
+   "target": 1000,
+   "idx": 20,
+   "name": "S2__MSFT-NVDA__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     20,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S2",
+   "a": "MSFT",
+   "b": "NVDA",
+   "n": 2000,
+   "stock_cell": 8,
+   "target": 1000,
+   "idx": 21,
+   "name": "S2__MSFT-NVDA__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     21,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S2",
+   "a": "AAPL",
+   "b": "AAPL",
+   "n": 500,
+   "stock_cell": 9,
+   "target": 1000,
+   "idx": 22,
+   "name": "S2__AAPL-AAPL__n500",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     22,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "S2",
+   "a": "AAPL",
+   "b": "AAPL",
+   "n": 2000,
+   "stock_cell": 11,
+   "target": 1000,
+   "idx": 23,
+   "name": "S2__AAPL-AAPL__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110801,
+    "spawn_key": [
+     23,
+     "rep"
+    ]
+   }
+  }
+ ]
+}

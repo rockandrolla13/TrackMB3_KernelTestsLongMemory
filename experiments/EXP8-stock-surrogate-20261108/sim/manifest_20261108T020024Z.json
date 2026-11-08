@@ -1,0 +1,72 @@
+{
+ "experiment": "EXP8",
+ "mode": "sim",
+ "master": 2026110802,
+ "stock_seed": 2026102301,
+ "kernels": [
+  "raw",
+  "inc1"
+ ],
+ "B_wild": 500,
+ "min_gap_days": 20,
+ "series": "dur (log duration minus pooled clock-bin mean)",
+ "seed_rule": "arm A: STOCK-20261023 seeds and draw order; others SeedSequence(master, (cell_idx, rep))",
+ "writer": "fmt12g",
+ "kmem": "0.2.0",
+ "git": {
+  "commit": "a857f1895a51aefcfcb88a1d51f224ffdc4b6d4f",
+  "code_modified": []
+ },
+ "numpy": "2.5.1",
+ "python": "3.12.13",
+ "workers": 16,
+ "argv": [
+  "experiments/EXP8-stock-surrogate-20261108/run_exp8.py",
+  "--mode",
+  "sim",
+  "--out",
+  "sim",
+  "--workers",
+  "16"
+ ],
+ "cells": [
+  {
+   "arm": "sim",
+   "a": "fGn",
+   "b": "fGn",
+   "n": 2000,
+   "H": 0.8,
+   "idx": 0,
+   "target": 1000,
+   "name": "sim__S1__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110802,
+    "spawn_key": [
+     0,
+     "rep"
+    ]
+   }
+  },
+  {
+   "arm": "simraw",
+   "a": "fGn",
+   "b": "fGn",
+   "n": 2000,
+   "H": 0.8,
+   "idx": 1,
+   "target": 1000,
+   "name": "sim__none__H0.8__n2000",
+   "reps": 1000,
+   "already_done": 0,
+   "seed": {
+    "entropy": 2026110802,
+    "spawn_key": [
+     1,
+     "rep"
+    ]
+   }
+  }
+ ]
+}
