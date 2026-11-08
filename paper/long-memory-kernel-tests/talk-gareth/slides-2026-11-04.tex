@@ -425,6 +425,33 @@ Present inc1 as a cure for the memory climb in HSIC, paired with shifts or Harri
 \end{alertblock}
 \end{frame}
 
+\begin{frame}
+\frametitle{Real stock data with a known null (EXP8)}
+\fig[0.42]{EXP8-surrogate-null}
+\begin{why}{EXP8, 4,000 pairs per bar, AAPL, MSFT, NVDA durations, Jan--Jun 2024}
+\begin{itemize}
+\item \textbf{The design.} Pair a real window with a shuffled copy of another stock's window. The copy keeps its values and memory but loses any time alignment, so independence holds by construction.
+\item \textbf{Shifts hold on real data.} 4.9\% with the ordinary kernel and 4.7\% with inc1. Wild gives 6.3\% and subsampling 7.6\%.
+\item \textbf{The placebo matches the known null.} The real--real rates (diamonds) sit close to the bars, so most of the stock excess looks like rule error, not cross-stock links.
+\end{itemize}
+\end{why}
+\end{frame}
+
+\begin{frame}
+\frametitle{EXP8: what held, what failed, what it changes}
+\begin{why}{five predictions fixed before the run, DESIGN.md amendments A1--A2}
+\begin{itemize}
+\item \textbf{Held.} The windows match the saved stock windows exactly. Shifts stay in 3.4--6.8\% in every $n=2000$ cell. Harris stays at or below 3.2\%.
+\item \textbf{Failed: memory trend.} Wild and subsampling exceed 5\%, but the stock windows have mild memory ($H\approx0.61$), too narrow a range to show a trend with $H$.
+\item \textbf{Failed: drift.} Keeping each copy's slow drift adds about one point, and the interval includes zero.
+\item \textbf{Failed: inc1 under wild.} 6.6\% falls to 5.7\%, not significant ($p=0.11$). Under subsampling inc1 does fix it, 8.8\% to 4.3\% (not pre-registered).
+\end{itemize}
+\end{why}
+\begin{alertblock}{For the paper}\small
+The stock section can now report measured false-alarm rates, not only placebo fractions. Shifts hold at 5\% on market data.
+\end{alertblock}
+\end{frame}
+
 \section{Answers}
 \begin{frame}
 \frametitle{Answers to the four research questions}
