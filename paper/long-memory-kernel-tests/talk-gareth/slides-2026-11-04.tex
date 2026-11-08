@@ -50,7 +50,7 @@ pdftitle={False Alarms from Kernel Tests on Time Series with Long Memory}, pdfau
 \begin{frame}[plain]\titlepage\end{frame}
 
 \begin{frame}
-\frametitle{Research problem and questions (1)}
+\frametitle{Research problem and questions}
 \begin{block}{Setting}\small
 We observe one path $(X_t,Y_t)_{t\le n}$ and test $H_0$: the processes $X$ and $Y$ are independent. Each process may have long memory, $\rho(k)\sim ck^{2H-2}$ with $H\in(1/2,1)$. Our baseline is fractional Gaussian noise (fGn). The statistic is $T_n=nV_n$, the Gaussian-kernel HSIC $V$-statistic with median bandwidth. For split MMD, $H_0$ is that the two halves of one stationary series share a distribution. A rule estimates the critical value $\hat c_{n,1-\alpha}$ from the same path. The rule is calibrated if $\Pr_{H_0}(T_n>\hat c_{n,1-\alpha})\to\alpha$.
 \end{block}
@@ -65,24 +65,7 @@ We observe one path $(X_t,Y_t)_{t\le n}$ and test $H_0$: the processes $X$ and $
 \end{frame}
 
 \begin{frame}
-\frametitle{Research problem and questions (2): the intuition in plain English}
-\begin{block}{What goes wrong}\small
-\begin{itemize}
-\setlength{\itemsep}{0pt}
-\item A test must learn how large its statistic gets when nothing is going on. It learns this threshold from the data it is testing.
-\item That works if distant stretches of a series are nearly unrelated, because one path then holds many separate pieces of evidence.
-\item Under long memory, distant stretches stay related, so one path holds far fewer pieces than $n$ suggests. Two unrelated series can wander in step for long periods by chance.
-\item A rule that learns from short stretches can miss these slow swings. Its threshold can then be too low, and the test reports links that do not exist.
-\item Seasonal patterns add a second route. Two unrelated seasonal series keep one timing gap for the whole path, so more data repeats that gap and does not average it out.
-\end{itemize}
-\end{block}
-\begin{block}{What we want to find out}\small
-Did the theory already rule these data out? How wrong are the tests, and under which rules? Is memory to blame, or something else? What should someone do in practice?
-\end{block}
-\end{frame}
-
-\begin{frame}
-\frametitle{Why calibration is in doubt: where the validity argument breaks}
+\frametitle{Why the 5\% false-alarm guarantee is in doubt: its proof breaks at the first step}
 \begin{center}
 \begin{tikzpicture}[every node/.style={font=\scriptsize, align=left},
   ok/.style={draw=ktblue, fill=ktblue!6, rounded corners=2pt, inner sep=3pt, text width=28mm, minimum height=15mm},
@@ -111,7 +94,7 @@ Did the theory already rule these data out? How wrong are the tests, and under w
 \end{center}
 \vspace{-2mm}
 \begin{why}{source audit and Proposition 1}
-The guarantee needs all four links. Our data break the first link, so links 2 to 4 lose their support. Without a null limit we cannot derive the size for fGn.
+The top row is a chain: fast-fading dependence gives a limit for $T_n$, the limit sets the critical value, and that sets the size. fGn with $H>1/2$ fails at the first box. The later steps may still hold, but nobody has proved them, and the null limit of HSIC under fGn is unknown. So we measure the size by simulation.
 \end{why}
 \thread{So the size must be measured. First, the objects we compare.}
 \end{frame}
